@@ -74,6 +74,7 @@ void main(void) {
     SYSTEM_Initialize();
     
     DMX_LED_Init();
+    TM1650_init
     TRISB6 = 0;
     LATB6 = 0;
     EUSART1_SetRxInterruptHandler(DMX_ISR);
