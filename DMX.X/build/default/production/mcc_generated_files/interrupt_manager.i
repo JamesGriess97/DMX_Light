@@ -18153,6 +18153,29 @@ typedef uint32_t uint_fast32_t;
 # 53 "mcc_generated_files/mcc.h" 2
 
 
+# 1 "mcc_generated_files/tmr0.h" 1
+# 100 "mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 196 "mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 235 "mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 272 "mcc_generated_files/tmr0.h"
+void TMR0_Reload(uint8_t periodVal);
+# 291 "mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 310 "mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 328 "mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 346 "mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 55 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/eusart1.h" 1
 # 75 "mcc_generated_files/eusart1.h"
 typedef union {
@@ -18207,12 +18230,12 @@ void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
 # 515 "mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 55 "mcc_generated_files/mcc.h" 2
-# 70 "mcc_generated_files/mcc.h"
+# 56 "mcc_generated_files/mcc.h" 2
+# 71 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "mcc_generated_files/mcc.h"
+# 84 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 96 "mcc_generated_files/mcc.h"
+# 97 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 50 "mcc_generated_files/interrupt_manager.c" 2
 
@@ -18220,7 +18243,11 @@ void PMD_Initialize(void);
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 {
 
-    if(INTCONbits.PEIE == 1)
+    if(PIE0bits.TMR0IE == 1 && PIR0bits.TMR0IF == 1)
+    {
+        TMR0_ISR();
+    }
+    else if(INTCONbits.PEIE == 1)
     {
         if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
         {

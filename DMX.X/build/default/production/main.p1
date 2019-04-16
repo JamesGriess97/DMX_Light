@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F10879 `(v ~T0 @X0 0 tf ]
-[v F10881 `(v ~T0 @X0 0 tf ]
+[v F10895 `(v ~T0 @X0 0 tf ]
+[v F10897 `(v ~T0 @X0 0 tf ]
 "34795 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 34795: extern volatile __bit LATB6 __attribute__((address(0xCE)));
 [v _LATB6 `Vb ~T0 @X0 0 e@206 ]
@@ -19,19 +19,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 4956: extern volatile unsigned char RC1REG __attribute__((address(0x119)));
 [v _RC1REG `Vuc ~T0 @X0 0 e@281 ]
 [p mainexit ]
-"70 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 70: void SYSTEM_Initialize(void);
+"71 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"50 main.c
-[; ;main.c: 50: void initLED();
+"51 main.c
+[; ;main.c: 51: void initLED();
 [v _initLED `(v ~T0 @X0 0 e? ]
+"15 ./clock.h
+[; ;./clock.h: 15: void CLOCK_init();
+[v _CLOCK_init `(v ~T0 @X0 0 e? ]
 "38992 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 38992: extern volatile __bit TRISB6 __attribute__((address(0x9E)));
 [v _TRISB6 `Vb ~T0 @X0 0 e@158 ]
-[v F10910 `(v ~T0 @X0 0 tf ]
+[v F10926 `(v ~T0 @X0 0 tf ]
 "515 ./mcc_generated_files/eusart1.h
 [; ;./mcc_generated_files/eusart1.h: 515: void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-[v _EUSART1_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F10910 ]
+[v _EUSART1_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F10926 ]
 "419 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 419:     struct {
 [s S31 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -43,8 +46,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "426
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"51 main.c
-[; ;main.c: 51: void LED_setColor(uint8_t, uint8_t, uint8_t, uint8_t);
+"52 main.c
+[; ;main.c: 52: void LED_setColor(uint8_t, uint8_t, uint8_t, uint8_t);
 [v _LED_setColor `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
 "39019 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 39019: extern volatile __bit TRISC7 __attribute__((address(0xA7)));
@@ -1592,183 +1595,186 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 01FEFh ;# ">
 "95 ./mcc_generated_files/eusart1.h
 [; ;./mcc_generated_files/eusart1.h: 95: void (*EUSART1_TxDefaultInterruptHandler)(void);
-[v _EUSART1_TxDefaultInterruptHandler `*F10879 ~T0 @X0 1 e ]
+[v _EUSART1_TxDefaultInterruptHandler `*F10895 ~T0 @X0 1 e ]
 "96
 [; ;./mcc_generated_files/eusart1.h: 96: void (*EUSART1_RxDefaultInterruptHandler)(void);
-[v _EUSART1_RxDefaultInterruptHandler `*F10881 ~T0 @X0 1 e ]
-"53 main.c
-[; ;main.c: 53: volatile char dmxData[513];
+[v _EUSART1_RxDefaultInterruptHandler `*F10897 ~T0 @X0 1 e ]
+"54 main.c
+[; ;main.c: 54: volatile char dmxData[513];
 [v _dmxData `Vuc ~T0 @X0 -> 513 `i e ]
-"54
-[; ;main.c: 54: int dmxPointer = 0;
+"55
+[; ;main.c: 55: int dmxPointer = 0;
 [v _dmxPointer `i ~T0 @X0 1 e ]
 [i _dmxPointer
 -> 0 `i
 ]
-"56
-[; ;main.c: 56: void DMX_ISR(void) {
+"57
+[; ;main.c: 57: void DMX_ISR(void) {
 [v _DMX_ISR `(v ~T0 @X0 1 ef ]
 {
 [e :U _DMX_ISR ]
 [f ]
-"57
-[; ;main.c: 57:         LATB6 = 1;
-[e = _LATB6 -> -> 1 `i `b ]
 "58
-[; ;main.c: 58:         LATB6 = 0;
-[e = _LATB6 -> -> 0 `i `b ]
+[; ;main.c: 58:         LATB6 = 1;
+[e = _LATB6 -> -> 1 `i `b ]
 "59
-[; ;main.c: 59:     if (RC1STAbits.FERR) {
+[; ;main.c: 59:         LATB6 = 0;
+[e = _LATB6 -> -> 0 `i `b ]
+"60
+[; ;main.c: 60:     if (RC1STAbits.FERR) {
 [e $ ! != -> . . _RC1STAbits 0 2 `i -> 0 `i 1516  ]
 {
-"61
-[; ;main.c: 61:         dmxPointer = 0;
-[e = _dmxPointer -> 0 `i ]
 "62
-[; ;main.c: 62:     } else {
+[; ;main.c: 62:         dmxPointer = 0;
+[e = _dmxPointer -> 0 `i ]
+"63
+[; ;main.c: 63:     } else {
 }
 [e $U 1517  ]
 [e :U 1516 ]
 {
-"63
-[; ;main.c: 63:         dmxPointer++;
-[e ++ _dmxPointer -> 1 `i ]
 "64
-[; ;main.c: 64:     }
+[; ;main.c: 64:         dmxPointer++;
+[e ++ _dmxPointer -> 1 `i ]
+"65
+[; ;main.c: 65:     }
 }
 [e :U 1517 ]
-"65
-[; ;main.c: 65:     dmxData[dmxPointer] = RC1REG;
+"66
+[; ;main.c: 66:     dmxData[dmxPointer] = RC1REG;
 [e = *U + &U _dmxData * -> -> _dmxPointer `ui `ux -> -> # *U &U _dmxData `ui `ux -> _RC1REG `uc ]
-"67
-[; ;main.c: 67:     if (RC1STAbits.OERR) {
+"68
+[; ;main.c: 68:     if (RC1STAbits.OERR) {
 [e $ ! != -> . . _RC1STAbits 0 1 `i -> 0 `i 1518  ]
 {
-"68
-[; ;main.c: 68:         RC1STAbits.CREN = 0;
-[e = . . _RC1STAbits 0 4 -> -> 0 `i `uc ]
 "69
-[; ;main.c: 69:         RC1STAbits.CREN = 1;
-[e = . . _RC1STAbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 69:         RC1STAbits.CREN = 0;
+[e = . . _RC1STAbits 0 4 -> -> 0 `i `uc ]
 "70
-[; ;main.c: 70:     }
+[; ;main.c: 70:         RC1STAbits.CREN = 1;
+[e = . . _RC1STAbits 0 4 -> -> 1 `i `uc ]
+"71
+[; ;main.c: 71:     }
 }
 [e :U 1518 ]
-"76
-[; ;main.c: 76: }
+"77
+[; ;main.c: 77: }
 [e :UE 1515 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"78
-[; ;main.c: 78: void main(void) {
+"79
+[; ;main.c: 79: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"80
-[; ;main.c: 80:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
 "81
-[; ;main.c: 81:     initLED();
-[e ( _initLED ..  ]
+[; ;main.c: 81:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "82
-[; ;main.c: 82:     TRISB6 = 0;
-[e = _TRISB6 -> -> 0 `i `b ]
+[; ;main.c: 82:     initLED();
+[e ( _initLED ..  ]
 "83
-[; ;main.c: 83:     LATB6 = 0;
-[e = _LATB6 -> -> 0 `i `b ]
+[; ;main.c: 83:     CLOCK_init();
+[e ( _CLOCK_init ..  ]
 "84
-[; ;main.c: 84:     EUSART1_SetRxInterruptHandler(DMX_ISR);
+[; ;main.c: 84:     TRISB6 = 0;
+[e = _TRISB6 -> -> 0 `i `b ]
+"85
+[; ;main.c: 85:     LATB6 = 0;
+[e = _LATB6 -> -> 0 `i `b ]
+"86
+[; ;main.c: 86:     EUSART1_SetRxInterruptHandler(DMX_ISR);
 [e ( _EUSART1_SetRxInterruptHandler (1 &U _DMX_ISR ]
-"90
-[; ;main.c: 90:     (INTCONbits.GIE = 1);
+"92
+[; ;main.c: 92:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"93
-[; ;main.c: 93:     (INTCONbits.PEIE = 1);
+"95
+[; ;main.c: 95:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"101
-[; ;main.c: 101:     while (1) {
+"103
+[; ;main.c: 103:     while (1) {
 [e :U 1521 ]
 {
-"103
-[; ;main.c: 103:         LED_setColor(dmxData[2], dmxData[3], dmxData[4], dmxData[5]);
+"105
+[; ;main.c: 105:         LED_setColor(dmxData[2], dmxData[3], dmxData[4], dmxData[5]);
 [e ( _LED_setColor (4 , , , -> *U + &U _dmxData * -> -> -> 2 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> -> -> 3 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> -> -> 4 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> -> -> 5 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc ]
-"104
-[; ;main.c: 104:     }
+"106
+[; ;main.c: 106:     }
 }
 [e :U 1520 ]
 [e $U 1521  ]
 [e :U 1522 ]
-"105
-[; ;main.c: 105: }
+"107
+[; ;main.c: 107: }
 [e :UE 1519 ]
 }
-"108
-[; ;main.c: 108: void initLED() {
+"110
+[; ;main.c: 110: void initLED() {
 [v _initLED `(v ~T0 @X0 1 ef ]
 {
 [e :U _initLED ]
 [f ]
-"111
-[; ;main.c: 111:     TRISC7 = 0;
-[e = _TRISC7 -> -> 0 `i `b ]
-"112
-[; ;main.c: 112:     TRISC6 = 0;
-[e = _TRISC6 -> -> 0 `i `b ]
 "113
-[; ;main.c: 113:     TRISC4 = 0;
-[e = _TRISC4 -> -> 0 `i `b ]
+[; ;main.c: 113:     TRISC7 = 0;
+[e = _TRISC7 -> -> 0 `i `b ]
 "114
-[; ;main.c: 114:     TRISC3 = 0;
-[e = _TRISC3 -> -> 0 `i `b ]
+[; ;main.c: 114:     TRISC6 = 0;
+[e = _TRISC6 -> -> 0 `i `b ]
+"115
+[; ;main.c: 115:     TRISC4 = 0;
+[e = _TRISC4 -> -> 0 `i `b ]
 "116
-[; ;main.c: 116:     T2CLKCON = 0x01;
+[; ;main.c: 116:     TRISC3 = 0;
+[e = _TRISC3 -> -> 0 `i `b ]
+"118
+[; ;main.c: 118:     T2CLKCON = 0x01;
 [e = _T2CLKCON -> -> 1 `i `uc ]
-"117
-[; ;main.c: 117:     T2CONbits.ON = 1;
-[e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
 "119
-[; ;main.c: 119:     CCP1CONbits.CCP1EN = 1;
-[e = . . _CCP1CONbits 2 4 -> -> 1 `i `uc ]
-"120
-[; ;main.c: 120:     CCP1CONbits.MODE = 0b1100;
-[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
+[; ;main.c: 119:     T2CONbits.ON = 1;
+[e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
 "121
-[; ;main.c: 121:     CCP2CONbits.CCP2EN = 1;
-[e = . . _CCP2CONbits 2 4 -> -> 1 `i `uc ]
+[; ;main.c: 121:     CCP1CONbits.CCP1EN = 1;
+[e = . . _CCP1CONbits 2 4 -> -> 1 `i `uc ]
 "122
-[; ;main.c: 122:     CCP2CONbits.MODE = 0b1100;
-[e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
+[; ;main.c: 122:     CCP1CONbits.MODE = 0b1100;
+[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
 "123
-[; ;main.c: 123:     CCP3CONbits.CCP3EN = 1;
-[e = . . _CCP3CONbits 2 4 -> -> 1 `i `uc ]
+[; ;main.c: 123:     CCP2CONbits.CCP2EN = 1;
+[e = . . _CCP2CONbits 2 4 -> -> 1 `i `uc ]
 "124
-[; ;main.c: 124:     CCP3CONbits.MODE = 0b1100;
-[e = . . _CCP3CONbits 0 0 -> -> 12 `i `uc ]
+[; ;main.c: 124:     CCP2CONbits.MODE = 0b1100;
+[e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
 "125
-[; ;main.c: 125:     CCP4CONbits.CCP4EN = 1;
-[e = . . _CCP4CONbits 2 4 -> -> 1 `i `uc ]
+[; ;main.c: 125:     CCP3CONbits.CCP3EN = 1;
+[e = . . _CCP3CONbits 2 4 -> -> 1 `i `uc ]
 "126
-[; ;main.c: 126:     CCP4CONbits.MODE = 0b1100;
+[; ;main.c: 126:     CCP3CONbits.MODE = 0b1100;
+[e = . . _CCP3CONbits 0 0 -> -> 12 `i `uc ]
+"127
+[; ;main.c: 127:     CCP4CONbits.CCP4EN = 1;
+[e = . . _CCP4CONbits 2 4 -> -> 1 `i `uc ]
+"128
+[; ;main.c: 128:     CCP4CONbits.MODE = 0b1100;
 [e = . . _CCP4CONbits 0 0 -> -> 12 `i `uc ]
-"129
-[; ;main.c: 129:     RC7PPS = 0x09;
-[e = _RC7PPS -> -> 9 `i `uc ]
-"130
-[; ;main.c: 130:     RC6PPS = 0x0A;
-[e = _RC6PPS -> -> 10 `i `uc ]
 "131
-[; ;main.c: 131:     RC4PPS = 0x0B;
-[e = _RC4PPS -> -> 11 `i `uc ]
+[; ;main.c: 131:     RC7PPS = 0x09;
+[e = _RC7PPS -> -> 9 `i `uc ]
 "132
-[; ;main.c: 132:     RC3PPS = 0x0C;
-[e = _RC3PPS -> -> 12 `i `uc ]
+[; ;main.c: 132:     RC6PPS = 0x0A;
+[e = _RC6PPS -> -> 10 `i `uc ]
 "133
-[; ;main.c: 133: }
+[; ;main.c: 133:     RC4PPS = 0x0B;
+[e = _RC4PPS -> -> 11 `i `uc ]
+"134
+[; ;main.c: 134:     RC3PPS = 0x0C;
+[e = _RC3PPS -> -> 12 `i `uc ]
+"135
+[; ;main.c: 135: }
 [e :UE 1523 ]
 }
-"136
-[; ;main.c: 136: void LED_setColor(uint8_t red, uint8_t green, uint8_t white, uint8_t blue) {
+"138
+[; ;main.c: 138: void LED_setColor(uint8_t red, uint8_t green, uint8_t white, uint8_t blue) {
 [v _LED_setColor `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
 {
 [e :U _LED_setColor ]
@@ -1777,75 +1783,75 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _white `uc ~T0 @X0 1 r3 ]
 [v _blue `uc ~T0 @X0 1 r4 ]
 [f ]
-"137
-[; ;main.c: 137:     red/=2;
-[e =/ _red -> 2 `i ]
-"138
-[; ;main.c: 138:     green/=2;
-[e =/ _green -> 2 `i ]
 "139
-[; ;main.c: 139:     blue/=2;
-[e =/ _blue -> 2 `i ]
+[; ;main.c: 139:     red/=2;
+[e =/ _red -> 2 `i ]
 "140
-[; ;main.c: 140:     white/=2;
-[e =/ _white -> 2 `i ]
+[; ;main.c: 140:     green/=2;
+[e =/ _green -> 2 `i ]
 "141
-[; ;main.c: 141:     int hi1 = (red & 0xFF00) >> 8;
+[; ;main.c: 141:     blue/=2;
+[e =/ _blue -> 2 `i ]
+"142
+[; ;main.c: 142:     white/=2;
+[e =/ _white -> 2 `i ]
+"143
+[; ;main.c: 143:     int hi1 = (red & 0xFF00) >> 8;
 [v _hi1 `i ~T0 @X0 1 a ]
 [e = _hi1 -> >> & -> _red `ui -> 65280 `ui -> 8 `i `i ]
-"142
-[; ;main.c: 142:     int lo1 = red & 0x00FF;
+"144
+[; ;main.c: 144:     int lo1 = red & 0x00FF;
 [v _lo1 `i ~T0 @X0 1 a ]
 [e = _lo1 & -> _red `i -> 255 `i ]
-"143
-[; ;main.c: 143:     int hi2 = (green & 0xFF00) >> 8;
+"145
+[; ;main.c: 145:     int hi2 = (green & 0xFF00) >> 8;
 [v _hi2 `i ~T0 @X0 1 a ]
 [e = _hi2 -> >> & -> _green `ui -> 65280 `ui -> 8 `i `i ]
-"144
-[; ;main.c: 144:     int lo2 = green & 0x00FF;
+"146
+[; ;main.c: 146:     int lo2 = green & 0x00FF;
 [v _lo2 `i ~T0 @X0 1 a ]
 [e = _lo2 & -> _green `i -> 255 `i ]
-"145
-[; ;main.c: 145:     int hi3 = (blue & 0xFF00) >> 8;
+"147
+[; ;main.c: 147:     int hi3 = (blue & 0xFF00) >> 8;
 [v _hi3 `i ~T0 @X0 1 a ]
 [e = _hi3 -> >> & -> _blue `ui -> 65280 `ui -> 8 `i `i ]
-"146
-[; ;main.c: 146:     int lo3 = blue & 0x00FF;
+"148
+[; ;main.c: 148:     int lo3 = blue & 0x00FF;
 [v _lo3 `i ~T0 @X0 1 a ]
 [e = _lo3 & -> _blue `i -> 255 `i ]
-"147
-[; ;main.c: 147:     int hi4 = (white & 0xFF00) >> 8;
+"149
+[; ;main.c: 149:     int hi4 = (white & 0xFF00) >> 8;
 [v _hi4 `i ~T0 @X0 1 a ]
 [e = _hi4 -> >> & -> _white `ui -> 65280 `ui -> 8 `i `i ]
-"148
-[; ;main.c: 148:     int lo4 = white & 0x00FF;
+"150
+[; ;main.c: 150:     int lo4 = white & 0x00FF;
 [v _lo4 `i ~T0 @X0 1 a ]
 [e = _lo4 & -> _white `i -> 255 `i ]
-"150
-[; ;main.c: 150:     CCPR1H = hi1;
+"152
+[; ;main.c: 152:     CCPR1H = hi1;
 [e = _CCPR1H -> _hi1 `uc ]
-"151
-[; ;main.c: 151:     CCPR1L = lo1;
-[e = _CCPR1L -> _lo1 `uc ]
 "153
-[; ;main.c: 153:     CCPR2H = hi2;
+[; ;main.c: 153:     CCPR1L = lo1;
+[e = _CCPR1L -> _lo1 `uc ]
+"155
+[; ;main.c: 155:     CCPR2H = hi2;
 [e = _CCPR2H -> _hi2 `uc ]
-"154
-[; ;main.c: 154:     CCPR2L = lo2;
-[e = _CCPR2L -> _lo2 `uc ]
 "156
-[; ;main.c: 156:     CCPR3H = hi3;
+[; ;main.c: 156:     CCPR2L = lo2;
+[e = _CCPR2L -> _lo2 `uc ]
+"158
+[; ;main.c: 158:     CCPR3H = hi3;
 [e = _CCPR3H -> _hi3 `uc ]
-"157
-[; ;main.c: 157:     CCPR3L = lo3;
-[e = _CCPR3L -> _lo3 `uc ]
 "159
-[; ;main.c: 159:     CCPR4H = hi4;
-[e = _CCPR4H -> _hi4 `uc ]
-"160
-[; ;main.c: 160:     CCPR4L = lo4;
-[e = _CCPR4L -> _lo4 `uc ]
+[; ;main.c: 159:     CCPR3L = lo3;
+[e = _CCPR3L -> _lo3 `uc ]
 "161
-[; ;main.c: 161: }
+[; ;main.c: 161:     CCPR4H = hi4;
+[e = _CCPR4H -> _hi4 `uc ]
+"162
+[; ;main.c: 162:     CCPR4L = lo4;
+[e = _CCPR4L -> _lo4 `uc ]
+"163
+[; ;main.c: 163: }
 [e :UE 1524 ]
 }

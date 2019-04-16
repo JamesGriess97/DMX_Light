@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/mcc.c"
+# 1 "mcc_generated_files/tmr0.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/mcc.c" 2
-# 47 "mcc_generated_files/mcc.c"
-# 1 "mcc_generated_files/mcc.h" 1
-# 49 "mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/tmr0.c" 2
+# 51 "mcc_generated_files/tmr0.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -18049,18 +18047,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 49 "mcc_generated_files/mcc.h" 2
+# 51 "mcc_generated_files/tmr0.c" 2
 
-# 1 "mcc_generated_files/device_config.h" 1
-# 50 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 90 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 102 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "mcc_generated_files/mcc.h" 2
-
+# 1 "mcc_generated_files/tmr0.h" 1
+# 54 "mcc_generated_files/tmr0.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -18144,15 +18134,10 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "mcc_generated_files/mcc.h" 2
+# 54 "mcc_generated_files/tmr0.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/interrupt_manager.h" 1
-# 54 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/tmr0.h" 1
+# 55 "mcc_generated_files/tmr0.h" 2
 # 100 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
 # 129 "mcc_generated_files/tmr0.h"
@@ -18173,112 +18158,94 @@ void TMR0_ISR(void);
 extern void (*TMR0_InterruptHandler)(void);
 # 346 "mcc_generated_files/tmr0.h"
 void TMR0_DefaultInterruptHandler(void);
-# 55 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/eusart1.h" 1
-# 75 "mcc_generated_files/eusart1.h"
-typedef union {
-    struct {
-        unsigned perr : 1;
-        unsigned ferr : 1;
-        unsigned oerr : 1;
-        unsigned reserved : 5;
-    };
-    uint8_t status;
-}eusart1_status_t;
-
-
-
-
-extern volatile uint8_t eusart1TxBufferRemaining;
-extern volatile uint8_t eusart1RxCount;
+# 52 "mcc_generated_files/tmr0.c" 2
 
 
 
 
 
-void (*EUSART1_TxDefaultInterruptHandler)(void);
-void (*EUSART1_RxDefaultInterruptHandler)(void);
-# 118 "mcc_generated_files/eusart1.h"
-void EUSART1_Initialize(void);
-# 171 "mcc_generated_files/eusart1.h"
-uint8_t EUSART1_is_tx_ready(void);
-# 223 "mcc_generated_files/eusart1.h"
-uint8_t EUSART1_is_rx_ready(void);
-# 270 "mcc_generated_files/eusart1.h"
-_Bool EUSART1_is_tx_done(void);
-# 318 "mcc_generated_files/eusart1.h"
-eusart1_status_t EUSART1_get_last_status(void);
-# 338 "mcc_generated_files/eusart1.h"
-uint8_t EUSART1_Read(void);
-# 358 "mcc_generated_files/eusart1.h"
-void EUSART1_Write(uint8_t txData);
-# 379 "mcc_generated_files/eusart1.h"
-void EUSART1_Transmit_ISR(void);
-# 400 "mcc_generated_files/eusart1.h"
-void EUSART1_Receive_ISR(void);
-# 421 "mcc_generated_files/eusart1.h"
-void EUSART1_RxDataHandler(void);
-# 439 "mcc_generated_files/eusart1.h"
-void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 457 "mcc_generated_files/eusart1.h"
-void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 475 "mcc_generated_files/eusart1.h"
-void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
-# 495 "mcc_generated_files/eusart1.h"
-void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 515 "mcc_generated_files/eusart1.h"
-void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 56 "mcc_generated_files/mcc.h" 2
-# 71 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 84 "mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 97 "mcc_generated_files/mcc.h"
-void PMD_Initialize(void);
-# 47 "mcc_generated_files/mcc.c" 2
 
 
+void (*TMR0_InterruptHandler)(void);
 
-void SYSTEM_Initialize(void)
+void TMR0_Initialize(void)
 {
-    PMD_Initialize();
-    PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
-    TMR0_Initialize();
-    EUSART1_Initialize();
+
+
+
+    T0CON1 = 0x45;
+
+
+    TMR0H = 0xF9;
+
+
+    TMR0L = 0x00;
+
+
+    PIR0bits.TMR0IF = 0;
+
+
+    PIE0bits.TMR0IE = 1;
+
+
+    TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
+
+
+    T0CON0 = 0x80;
 }
 
-void OSCILLATOR_Initialize(void)
+void TMR0_StartTimer(void)
 {
 
-    OSCCON1 = 0x60;
-
-    OSCCON3 = 0x00;
-
-    OSCEN = 0x00;
-
-    OSCFRQ = 0x06;
-
-    OSCTUNE = 0x00;
+    T0CON0bits.T0EN = 1;
 }
 
-void PMD_Initialize(void)
+void TMR0_StopTimer(void)
 {
 
-    PMD0 = 0x00;
+    T0CON0bits.T0EN = 0;
+}
 
-    PMD1 = 0x00;
+uint8_t TMR0_ReadTimer(void)
+{
+    uint8_t readVal;
 
-    PMD2 = 0x00;
 
-    PMD3 = 0x00;
+    readVal = TMR0L;
 
-    PMD4 = 0x00;
+    return readVal;
+}
 
-    PMD5 = 0x00;
+void TMR0_WriteTimer(uint8_t timerVal)
+{
 
-    PMD6 = 0x00;
+    TMR0L = timerVal;
+ }
 
-    PMD7 = 0x00;
+void TMR0_Reload(uint8_t periodVal)
+{
+
+   TMR0H = periodVal;
+}
+
+void TMR0_ISR(void)
+{
+
+    PIR0bits.TMR0IF = 0;
+    if(TMR0_InterruptHandler)
+    {
+        TMR0_InterruptHandler();
+    }
+
+
+}
+
+
+void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
+    TMR0_InterruptHandler = InterruptHandler;
+}
+
+void TMR0_DefaultInterruptHandler(void){
+
+
 }
