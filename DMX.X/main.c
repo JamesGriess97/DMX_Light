@@ -42,6 +42,7 @@
  */
 
 #include "mcc_generated_files/mcc.h"
+#include "clock.h"
 
 /*
                          Main application
@@ -79,10 +80,11 @@ void main(void) {
     // initialize the device
     SYSTEM_Initialize();
     initLED();
+    CLOCK_init();
     TRISB6 = 0;
     LATB6 = 0;
     EUSART1_SetRxInterruptHandler(DMX_ISR);
-
+    
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
 
