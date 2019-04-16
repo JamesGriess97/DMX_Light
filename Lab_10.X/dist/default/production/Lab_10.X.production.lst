@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.05 build -831301201 
-                                                                                               Tue Apr 09 16:43:37 2019
+                                                                                               Tue Apr 16 10:55:35 2019
 
 Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
      1                           	processor	16F18446
@@ -2827,28 +2827,28 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2813  005C                     	ds	2
   2814  005E                     _eusart1TxBufferRemaining:	
   2815  005E                     	ds	1
-  2816  0014                     _TRISC	set	20
-  2817  0013                     _TRISB	set	19
-  2818  0012                     _TRISA	set	18
-  2819  001A                     _LATC	set	26
-  2820  0019                     _LATB	set	25
-  2821  0018                     _LATA	set	24
-  2822  000B                     _INTCONbits	set	11
+  2816  000B                     _INTCONbits	set	11
+  2817  0014                     _TRISC	set	20
+  2818  0013                     _TRISB	set	19
+  2819  0012                     _TRISA	set	18
+  2820  001A                     _LATC	set	26
+  2821  0019                     _LATB	set	25
+  2822  0018                     _LATA	set	24
   2823  00A3                     _TRISC3	set	163
   2824  00A4                     _TRISC4	set	164
   2825  00A6                     _TRISC6	set	166
   2826  00A7                     _TRISC7	set	167
   2827  009E                     _TRISB6	set	158
   2828  00CE                     _LATB6	set	206
-  2829  011A                     _TX1REG	set	282
-  2830  011E                     _TX1STAbits	set	286
-  2831  011C                     _SP1BRGH	set	284
-  2832  011B                     _SP1BRGL	set	283
-  2833  011E                     _TX1STA	set	286
-  2834  011D                     _RC1STA	set	285
-  2835  011F                     _BAUD1CON	set	287
-  2836  0119                     _RC1REG	set	281
-  2837  011D                     _RC1STAbits	set	285
+  2829  0119                     _RC1REG	set	281
+  2830  011D                     _RC1STAbits	set	285
+  2831  011A                     _TX1REG	set	282
+  2832  011E                     _TX1STAbits	set	286
+  2833  011C                     _SP1BRGH	set	284
+  2834  011B                     _SP1BRGL	set	283
+  2835  011E                     _TX1STA	set	286
+  2836  011D                     _RC1STA	set	285
+  2837  011F                     _BAUD1CON	set	287
   2838  028E                     _T2CONbits	set	654
   2839  0290                     _T2CLKCON	set	656
   2840  0318                     _CCPR4L	set	792
@@ -2879,22 +2879,22 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2865  088F                     _OSCCON3	set	2191
   2866  088D                     _OSCCON1	set	2189
   2867  1ECB                     _RX1DTPPS	set	7883
-  2868  1F51                     _SLRCONC	set	8017
-  2869  1F46                     _SLRCONB	set	8006
-  2870  1F3B                     _SLRCONA	set	7995
-  2871  1F50                     _ODCONC	set	8016
-  2872  1F45                     _ODCONB	set	8005
-  2873  1F3A                     _ODCONA	set	7994
-  2874  1F4F                     _WPUC	set	8015
-  2875  1F39                     _WPUA	set	7993
-  2876  1F44                     _WPUB	set	8004
-  2877  1F38                     _ANSELA	set	7992
-  2878  1F43                     _ANSELB	set	8003
-  2879  1F4E                     _ANSELC	set	8014
-  2880  1F23                     _RC3PPS	set	7971
-  2881  1F24                     _RC4PPS	set	7972
-  2882  1F26                     _RC6PPS	set	7974
-  2883  1F27                     _RC7PPS	set	7975
+  2868  1F23                     _RC3PPS	set	7971
+  2869  1F24                     _RC4PPS	set	7972
+  2870  1F26                     _RC6PPS	set	7974
+  2871  1F27                     _RC7PPS	set	7975
+  2872  1F51                     _SLRCONC	set	8017
+  2873  1F46                     _SLRCONB	set	8006
+  2874  1F3B                     _SLRCONA	set	7995
+  2875  1F50                     _ODCONC	set	8016
+  2876  1F45                     _ODCONB	set	8005
+  2877  1F3A                     _ODCONA	set	7994
+  2878  1F4F                     _WPUC	set	8015
+  2879  1F39                     _WPUA	set	7993
+  2880  1F44                     _WPUB	set	8004
+  2881  1F38                     _ANSELA	set	7992
+  2882  1F43                     _ANSELB	set	8003
+  2883  1F4E                     _ANSELC	set	8014
   2884                           
   2885                           ; #config settings
   2886  0000                     
@@ -2985,62 +2985,62 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2971                           
   2972                           	psect	cstackCOMMON
   2973  0075                     __pcstackCOMMON:	
-  2974  0075                     ?_SYSTEM_Initialize:	
-  2975  0075                     ?_initLED:	
+  2974  0075                     ?_EUSART1_Receive_ISR:	
+  2975  0075                     ?_EUSART1_Transmit_ISR:	
   2976                           ; 1 bytes @ 0x0
   2977                           
-  2978  0075                     ?_EUSART1_Receive_ISR:	
+  2978  0075                     ??_EUSART1_Transmit_ISR:	
   2979                           ; 1 bytes @ 0x0
   2980                           
-  2981  0075                     ?_EUSART1_Transmit_ISR:	
+  2981  0075                     ?_EUSART1_DefaultFramingErrorHandler:	
   2982                           ; 1 bytes @ 0x0
   2983                           
-  2984  0075                     ??_EUSART1_Transmit_ISR:	
+  2984  0075                     ??_EUSART1_DefaultFramingErrorHandler:	
   2985                           ; 1 bytes @ 0x0
   2986                           
-  2987  0075                     ?_EUSART1_DefaultFramingErrorHandler:	
+  2987  0075                     ?_EUSART1_DefaultOverrunErrorHandler:	
   2988                           ; 1 bytes @ 0x0
   2989                           
-  2990  0075                     ??_EUSART1_DefaultFramingErrorHandler:	
+  2990  0075                     ??_EUSART1_DefaultOverrunErrorHandler:	
   2991                           ; 1 bytes @ 0x0
   2992                           
-  2993  0075                     ?_EUSART1_DefaultOverrunErrorHandler:	
+  2993  0075                     ?_EUSART1_DefaultErrorHandler:	
   2994                           ; 1 bytes @ 0x0
   2995                           
-  2996  0075                     ??_EUSART1_DefaultOverrunErrorHandler:	
+  2996  0075                     ?_EUSART1_RxDataHandler:	
   2997                           ; 1 bytes @ 0x0
   2998                           
-  2999  0075                     ?_EUSART1_DefaultErrorHandler:	
+  2999  0075                     ??_EUSART1_RxDataHandler:	
   3000                           ; 1 bytes @ 0x0
   3001                           
-  3002  0075                     ?_EUSART1_RxDataHandler:	
+  3002  0075                     ?_PMD_Initialize:	
   3003                           ; 1 bytes @ 0x0
   3004                           
-  3005  0075                     ??_EUSART1_RxDataHandler:	
+  3005  0075                     ?_PIN_MANAGER_Initialize:	
   3006                           ; 1 bytes @ 0x0
   3007                           
-  3008  0075                     ?_PMD_Initialize:	
+  3008  0075                     ?_OSCILLATOR_Initialize:	
   3009                           ; 1 bytes @ 0x0
   3010                           
-  3011  0075                     ?_PIN_MANAGER_Initialize:	
+  3011  0075                     ?_initLED:	
   3012                           ; 1 bytes @ 0x0
   3013                           
-  3014  0075                     ?_OSCILLATOR_Initialize:	
+  3014  0075                     ?_EUSART1_Initialize:	
   3015                           ; 1 bytes @ 0x0
   3016                           
-  3017  0075                     ?_DMX_ISR:	
+  3017  0075                     ?_SYSTEM_Initialize:	
   3018                           ; 1 bytes @ 0x0
   3019                           
-  3020  0075                     ??_DMX_ISR:	
+  3020  0075                     ?_INTERRUPT_InterruptManager:	
   3021                           ; 1 bytes @ 0x0
   3022                           
-  3023  0075                     ?_main:	
+  3023  0075                     ?_DMX_ISR:	
   3024                           ; 1 bytes @ 0x0
   3025                           
-  3026  0075                     ?_EUSART1_Initialize:	
+  3026  0075                     ??_DMX_ISR:	
   3027                           ; 1 bytes @ 0x0
   3028                           
-  3029  0075                     ?_INTERRUPT_InterruptManager:	
+  3029  0075                     ?_main:	
   3030                           ; 1 bytes @ 0x0
   3031                           
   3032                           
@@ -3053,29 +3053,29 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3039                           
   3040                           ; 1 bytes @ 0x1
   3041  0076                     	ds	3
-  3042  0079                     ??_initLED:	
-  3043  0079                     ??_EUSART1_SetRxInterruptHandler:	
+  3042  0079                     ??_EUSART1_SetRxInterruptHandler:	
+  3043  0079                     ??_EUSART1_SetTxInterruptHandler:	
   3044                           ; 1 bytes @ 0x4
   3045                           
-  3046  0079                     ??_EUSART1_SetTxInterruptHandler:	
+  3046  0079                     ??_EUSART1_SetFramingErrorHandler:	
   3047                           ; 1 bytes @ 0x4
   3048                           
-  3049  0079                     ??_EUSART1_SetFramingErrorHandler:	
+  3049  0079                     ??_EUSART1_SetOverrunErrorHandler:	
   3050                           ; 1 bytes @ 0x4
   3051                           
-  3052  0079                     ??_EUSART1_SetOverrunErrorHandler:	
+  3052  0079                     ??_EUSART1_SetErrorHandler:	
   3053                           ; 1 bytes @ 0x4
   3054                           
-  3055  0079                     ??_EUSART1_SetErrorHandler:	
+  3055  0079                     ??_PMD_Initialize:	
   3056                           ; 1 bytes @ 0x4
   3057                           
-  3058  0079                     ??_PMD_Initialize:	
+  3058  0079                     ??_PIN_MANAGER_Initialize:	
   3059                           ; 1 bytes @ 0x4
   3060                           
-  3061  0079                     ??_PIN_MANAGER_Initialize:	
+  3061  0079                     ??_OSCILLATOR_Initialize:	
   3062                           ; 1 bytes @ 0x4
   3063                           
-  3064  0079                     ??_OSCILLATOR_Initialize:	
+  3064  0079                     ??_initLED:	
   3065                           ; 1 bytes @ 0x4
   3066                           
   3067  0079                     ??_EUSART1_Initialize:	
@@ -3094,19 +3094,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3080                           ; 1 bytes @ 0x5
   3081                           
   3082  003B                     ?_EUSART1_SetRxInterruptHandler:	
-  3083  003B                     ?_LED_setColor:	
+  3083  003B                     ?_EUSART1_SetTxInterruptHandler:	
   3084                           ; 1 bytes @ 0x0
   3085                           
-  3086  003B                     ?_EUSART1_SetTxInterruptHandler:	
+  3086  003B                     ?_EUSART1_SetFramingErrorHandler:	
   3087                           ; 1 bytes @ 0x0
   3088                           
-  3089  003B                     ?_EUSART1_SetFramingErrorHandler:	
+  3089  003B                     ?_EUSART1_SetOverrunErrorHandler:	
   3090                           ; 1 bytes @ 0x0
   3091                           
-  3092  003B                     ?_EUSART1_SetOverrunErrorHandler:	
+  3092  003B                     ?_EUSART1_SetErrorHandler:	
   3093                           ; 1 bytes @ 0x0
   3094                           
-  3095  003B                     ?_EUSART1_SetErrorHandler:	
+  3095  003B                     ?_LED_setColor:	
   3096                           ; 1 bytes @ 0x0
   3097                           
   3098  003B                     LED_setColor@green:	
@@ -3930,7 +3930,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3869 ;;		line 277 in file "mcc_generated_files/eusart1.c"
   3870 ;; Parameters:    Size  Location     Type
   3871 ;;  interruptHan    2    0[BANK0 ] PTR FTN()void 
-  3872 ;;		 -> EUSART1_Receive_ISR(1), DMX_ISR(1), 
+  3872 ;;		 -> DMX_ISR(1), EUSART1_Receive_ISR(1), 
   3873 ;; Auto vars:     Size  Location     Type
   3874 ;;		None
   3875 ;; Return value:  Size  Location     Type
@@ -3957,8 +3957,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3891 ;; This function calls:
   3892 ;;		Nothing
   3893 ;; This function is called by:
-  3894 ;;		_main
-  3895 ;;		_EUSART1_Initialize
+  3894 ;;		_EUSART1_Initialize
+  3895 ;;		_main
   3896 ;; This function uses a non-reentrant model
   3897 ;;
   3898                           
@@ -4341,14 +4341,14 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4248                           
   4249                           ;mcc_generated_files/interrupt_manager.c: 55:     if(INTCONbits.PEIE == 1)
   4250  0006  1F0B               	btfss	11,6	;volatile
-  4251  0007  281C               	goto	i1l346
+  4251  0007  281C               	goto	i1l256
   4252                           
   4253                           ;mcc_generated_files/interrupt_manager.c: 56:     {;mcc_generated_files/interrupt_manage
       +                          r.c: 57:         if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
   4254  0008  014E               	movlb	14	; select bank14
   4255  0009  1A19               	btfsc	25,4	;volatile
   4256  000A  1E0F               	btfss	15,4	;volatile
-  4257  000B  2813               	goto	i1l341
+  4257  000B  2813               	goto	i1l251
   4258                           
   4259                           ;mcc_generated_files/interrupt_manager.c: 58:         {;mcc_generated_files/interrupt_ma
       +                          nager.c: 59:             EUSART1_TxDefaultInterruptHandler();
@@ -4360,14 +4360,14 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4265  0011  3180               	pagesel	$
   4266                           
   4267                           ;mcc_generated_files/interrupt_manager.c: 60:         }
-  4268  0012  281C               	goto	i1l346
-  4269  0013                     i1l341:	
+  4268  0012  281C               	goto	i1l256
+  4269  0013                     i1l251:	
   4270                           ;mcc_generated_files/interrupt_manager.c: 61:         else if(PIE3bits.RC1IE == 1 && PIR
       +                          3bits.RC1IF == 1)
   4271                           
   4272  0013  1A99               	btfsc	25,5	;volatile
   4273  0014  1E8F               	btfss	15,5	;volatile
-  4274  0015  281C               	goto	i1l346
+  4274  0015  281C               	goto	i1l256
   4275                           
   4276                           ;mcc_generated_files/interrupt_manager.c: 62:         {;mcc_generated_files/interrupt_ma
       +                          nager.c: 63:             EUSART1_RxDefaultInterruptHandler();
@@ -4377,7 +4377,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4280  0019  085A               	movf	_EUSART1_RxDefaultInterruptHandler,w
   4281  001A  000A               	callw
   4282  001B  3180               	pagesel	$
-  4283  001C                     i1l346:	
+  4283  001C                     i1l256:	
   4284                           ;mcc_generated_files/interrupt_manager.c: 69:     }
   4285                           
   4286                           ;mcc_generated_files/interrupt_manager.c: 64:         }
@@ -4436,7 +4436,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4333  0196  0140               	movlb	0	; select bank0
   4334  0197  025E               	subwf	_eusart1TxBufferRemaining,w	;volatile
   4335  0198  1803               	skipnc
-  4336  0199  29AF               	goto	i1l196
+  4336  0199  29AF               	goto	i1l106
   4337                           
   4338                           ;mcc_generated_files/eusart1.c: 199:     {;mcc_generated_files/eusart1.c: 200:         T
       +                          X1REG = eusart1TxBuffer[eusart1TxTail++];
@@ -4471,7 +4471,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4365                           
   4366                           ;mcc_generated_files/eusart1.c: 206:     }
   4367  01AE  0008               	return
-  4368  01AF                     i1l196:	
+  4368  01AF                     i1l106:	
   4369                           ;mcc_generated_files/eusart1.c: 207:     else
   4370                           
   4371                           
@@ -4536,7 +4536,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4424                           ;main.c: 59:     if (RC1STAbits.FERR) {
   4425  0152  0142               	movlb	2	; select bank2
   4426  0153  1D1D               	btfss	29,2	;volatile
-  4427  0154  2959               	goto	i1l1280
+  4427  0154  2959               	goto	i1l1320
   4428                           
   4429                           ;main.c: 61:         dmxPointer = 0;
   4430  0155  0140               	movlb	0	; select bank0
@@ -4544,8 +4544,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4432  0157  01B9               	clrf	_dmxPointer+1
   4433                           
   4434                           ;main.c: 62:     } else {
-  4435  0158  295E               	goto	i1l1282
-  4436  0159                     i1l1280:	
+  4435  0158  295E               	goto	i1l1322
+  4436  0159                     i1l1320:	
   4437                           
   4438                           ;main.c: 63:         dmxPointer++;
   4439  0159  3001               	movlw	1
@@ -4553,7 +4553,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4441  015B  07B8               	addwf	_dmxPointer,f
   4442  015C  3000               	movlw	0
   4443  015D  3DB9               	addwfc	_dmxPointer+1,f
-  4444  015E                     i1l1282:	
+  4444  015E                     i1l1322:	
   4445                           
   4446                           ;main.c: 65:     dmxData[dmxPointer] = RC1REG;
   4447  015E  30EF               	movlw	239
@@ -4646,7 +4646,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4528                           ;mcc_generated_files/eusart1.c: 218:     if(RC1STAbits.FERR){
   4529  00FA  0142               	movlb	2	; select bank2
   4530  00FB  1D1D               	btfss	29,2	;volatile
-  4531  00FC  2908               	goto	i1l1346
+  4531  00FC  2908               	goto	i1l1296
   4532                           
   4533                           ;mcc_generated_files/eusart1.c: 219:         eusart1RxStatusBuffer[eusart1RxHead].ferr =
       +                           1;
@@ -4663,12 +4663,12 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4544  0105  0858               	movf	_EUSART1_FramingErrorHandler,w
   4545  0106  000A               	callw
   4546  0107  3180               	pagesel	$
-  4547  0108                     i1l1346:	
+  4547  0108                     i1l1296:	
   4548                           
   4549                           ;mcc_generated_files/eusart1.c: 223:     if(RC1STAbits.OERR){
   4550  0108  0142               	movlb	2	; select bank2
   4551  0109  1C9D               	btfss	29,1	;volatile
-  4552  010A  2916               	goto	i1l1352
+  4552  010A  2916               	goto	i1l1302
   4553                           
   4554                           ;mcc_generated_files/eusart1.c: 224:         eusart1RxStatusBuffer[eusart1RxHead].oerr =
       +                           1;
@@ -4685,7 +4685,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4565  0113  0856               	movf	_EUSART1_OverrunErrorHandler,w
   4566  0114  000A               	callw
   4567  0115  3180               	pagesel	$
-  4568  0116                     i1l1352:	
+  4568  0116                     i1l1302:	
   4569                           
   4570                           ;mcc_generated_files/eusart1.c: 228:     if(eusart1RxStatusBuffer[eusart1RxHead].status)
       +                          {
@@ -4695,7 +4695,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4574  0119  0187               	clrf	7
   4575  011A  0801               	movf	1,w
   4576  011B  1903               	btfsc	3,2
-  4577  011C  2924               	goto	i1l1356
+  4577  011C  2924               	goto	i1l1306
   4578                           
   4579                           ;mcc_generated_files/eusart1.c: 229:         EUSART1_ErrorHandler();
   4580  011D  0140               	movlb	0	; select bank0
@@ -4707,7 +4707,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4586                           
   4587                           ;mcc_generated_files/eusart1.c: 230:     } else {
   4588  0123  0008               	return
-  4589  0124                     i1l1356:	
+  4589  0124                     i1l1306:	
   4590                           
   4591                           ;mcc_generated_files/eusart1.c: 231:         EUSART1_RxDataHandler();
   4592  0124  3181  21B2         	fcall	_EUSART1_RxDataHandler
@@ -4985,10 +4985,10 @@ Auto Spaces:
 Pointer List with Targets:
 
     EUSART1_SetRxInterruptHandler@interruptHandler	PTR FTN()void  size(2) Largest target is 1
-		 -> EUSART1_Receive_ISR(), DMX_ISR(), 
+		 -> DMX_ISR(), EUSART1_Receive_ISR(), 
 
     EUSART1_RxDefaultInterruptHandler	PTR FTN()void  size(2) Largest target is 1
-		 -> Absolute function(), EUSART1_Receive_ISR(), DMX_ISR(), 
+		 -> Absolute function(), DMX_ISR(), EUSART1_Receive_ISR(), 
 
     EUSART1_SetTxInterruptHandler@interruptHandler	PTR FTN()void  size(2) Largest target is 1
 		 -> EUSART1_Transmit_ISR(), 
@@ -5551,7 +5551,7 @@ SFR63                0      0       0      64        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.05 build -831301201 
-Symbol Table                                                                                   Tue Apr 09 16:43:37 2019
+Symbol Table                                                                                   Tue Apr 16 10:55:35 2019
 
                       _eusart1TxBufferRemaining 005E                                     __CFG_CP$OFF 0000  
                                    __CFG_LVP$ON 0000                         __size_of_PMD_Initialize 000A  
@@ -5573,8 +5573,8 @@ Symbol Table                                                                    
                                  __CFG_MCLRE$ON 0000                  __size_of_OSCILLATOR_Initialize 0009  
                  __end_of_OSCILLATOR_Initialize 01F3                           _eusart1RxStatusBuffer 0020  
                                          ?_main 0075                                   __CFG_WDTE$OFF 0000  
-                                         _LATB6 00CE                                           i1l341 0013  
-                                         i1l346 001C                                           i1l196 01AF  
+                                         _LATB6 00CE                                           i1l106 01AF  
+                                         i1l251 0013                                           i1l256 001C  
                                          _OSCEN 0891                                           _TRISA 0012  
                                          _TRISB 0013                                           _TRISC 0014  
                           _EUSART1_Transmit_ISR 0195                                   __CFG_WRTB$OFF 0000  
@@ -5596,11 +5596,11 @@ Symbol Table                                                                    
                                         _ANSELC 1F4E                              __CFG_RSTOSC$HFINT1 0000  
                                         _RC1REG 0119                                          _RC1STA 011D  
                                         _RC3PPS 1F23                                          _RC4PPS 1F24  
-                                        i1l1352 0116                                          i1l1280 0159  
-                                        _ODCONA 1F3A                                          i1l1346 0108  
-                                        i1l1282 015E                                          _ODCONB 1F45  
-                                        _RC6PPS 1F26                                          _ODCONC 1F50  
-                                        i1l1356 0124                                          _RC7PPS 1F27  
+                                        i1l1302 0116                                          i1l1320 0159  
+                                        i1l1306 0124                                          i1l1322 015E  
+                                        _ODCONA 1F3A                                          _ODCONB 1F45  
+                                        _ODCONC 1F50                                          _RC6PPS 1F26  
+                                        i1l1296 0108                                          _RC7PPS 1F27  
                                 __CFG_WDTCCS$SC 0000                                          _OSCFRQ 0893  
                                         _TX1REG 011A                                          _TX1STA 011E  
                                         _TRISC3 00A3                                          _TRISB6 009E  
