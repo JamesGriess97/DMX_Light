@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\User\AppData\Local\Temp\sc8o.o
+$C:\Users\User\AppData\Local\Temp\s4bs.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 33 33 2 2
 config CONFIG 0 8007 8007 5 2
@@ -206,45 +206,45 @@ STRING 5CB-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\DMX.X.debug.o
-35 cinit CODE >9637:C:\Users\User\AppData\Local\Temp\sc8o.
-35 cinit CODE >9640:C:\Users\User\AppData\Local\Temp\sc8o.
-35 cinit CODE >9770:C:\Users\User\AppData\Local\Temp\sc8o.
-36 cinit CODE >9771:C:\Users\User\AppData\Local\Temp\sc8o.
-37 cinit CODE >9772:C:\Users\User\AppData\Local\Temp\sc8o.
-38 cinit CODE >9773:C:\Users\User\AppData\Local\Temp\sc8o.
-39 cinit CODE >9774:C:\Users\User\AppData\Local\Temp\sc8o.
-3A cinit CODE >9775:C:\Users\User\AppData\Local\Temp\sc8o.
-3B cinit CODE >9776:C:\Users\User\AppData\Local\Temp\sc8o.
-3C cinit CODE >9777:C:\Users\User\AppData\Local\Temp\sc8o.
-3D cinit CODE >9778:C:\Users\User\AppData\Local\Temp\sc8o.
-40 cinit CODE >9782:C:\Users\User\AppData\Local\Temp\sc8o.
-41 cinit CODE >9783:C:\Users\User\AppData\Local\Temp\sc8o.
-42 cinit CODE >9784:C:\Users\User\AppData\Local\Temp\sc8o.
-43 cinit CODE >9785:C:\Users\User\AppData\Local\Temp\sc8o.
-44 cinit CODE >9786:C:\Users\User\AppData\Local\Temp\sc8o.
-45 cinit CODE >9787:C:\Users\User\AppData\Local\Temp\sc8o.
-46 cinit CODE >9791:C:\Users\User\AppData\Local\Temp\sc8o.
-47 cinit CODE >9792:C:\Users\User\AppData\Local\Temp\sc8o.
-48 cinit CODE >9793:C:\Users\User\AppData\Local\Temp\sc8o.
-49 cinit CODE >9794:C:\Users\User\AppData\Local\Temp\sc8o.
-4A cinit CODE >9795:C:\Users\User\AppData\Local\Temp\sc8o.
-4B cinit CODE >9796:C:\Users\User\AppData\Local\Temp\sc8o.
-4C cinit CODE >9797:C:\Users\User\AppData\Local\Temp\sc8o.
-4D cinit CODE >9798:C:\Users\User\AppData\Local\Temp\sc8o.
-4E cinit CODE >9799:C:\Users\User\AppData\Local\Temp\sc8o.
-51 cinit CODE >9803:C:\Users\User\AppData\Local\Temp\sc8o.
-52 cinit CODE >9804:C:\Users\User\AppData\Local\Temp\sc8o.
-53 cinit CODE >9805:C:\Users\User\AppData\Local\Temp\sc8o.
-54 cinit CODE >9806:C:\Users\User\AppData\Local\Temp\sc8o.
-55 cinit CODE >9807:C:\Users\User\AppData\Local\Temp\sc8o.
-56 cinit CODE >9808:C:\Users\User\AppData\Local\Temp\sc8o.
-57 cinit CODE >9809:C:\Users\User\AppData\Local\Temp\sc8o.
-58 cinit CODE >9810:C:\Users\User\AppData\Local\Temp\sc8o.
-59 cinit CODE >9811:C:\Users\User\AppData\Local\Temp\sc8o.
-5B cinit CODE >9817:C:\Users\User\AppData\Local\Temp\sc8o.
-5B cinit CODE >9819:C:\Users\User\AppData\Local\Temp\sc8o.
-5C cinit CODE >9820:C:\Users\User\AppData\Local\Temp\sc8o.
-5D cinit CODE >9821:C:\Users\User\AppData\Local\Temp\sc8o.
+35 cinit CODE >9637:C:\Users\User\AppData\Local\Temp\s4bs.
+35 cinit CODE >9640:C:\Users\User\AppData\Local\Temp\s4bs.
+35 cinit CODE >9770:C:\Users\User\AppData\Local\Temp\s4bs.
+36 cinit CODE >9771:C:\Users\User\AppData\Local\Temp\s4bs.
+37 cinit CODE >9772:C:\Users\User\AppData\Local\Temp\s4bs.
+38 cinit CODE >9773:C:\Users\User\AppData\Local\Temp\s4bs.
+39 cinit CODE >9774:C:\Users\User\AppData\Local\Temp\s4bs.
+3A cinit CODE >9775:C:\Users\User\AppData\Local\Temp\s4bs.
+3B cinit CODE >9776:C:\Users\User\AppData\Local\Temp\s4bs.
+3C cinit CODE >9777:C:\Users\User\AppData\Local\Temp\s4bs.
+3D cinit CODE >9778:C:\Users\User\AppData\Local\Temp\s4bs.
+40 cinit CODE >9782:C:\Users\User\AppData\Local\Temp\s4bs.
+41 cinit CODE >9783:C:\Users\User\AppData\Local\Temp\s4bs.
+42 cinit CODE >9784:C:\Users\User\AppData\Local\Temp\s4bs.
+43 cinit CODE >9785:C:\Users\User\AppData\Local\Temp\s4bs.
+44 cinit CODE >9786:C:\Users\User\AppData\Local\Temp\s4bs.
+45 cinit CODE >9787:C:\Users\User\AppData\Local\Temp\s4bs.
+46 cinit CODE >9791:C:\Users\User\AppData\Local\Temp\s4bs.
+47 cinit CODE >9792:C:\Users\User\AppData\Local\Temp\s4bs.
+48 cinit CODE >9793:C:\Users\User\AppData\Local\Temp\s4bs.
+49 cinit CODE >9794:C:\Users\User\AppData\Local\Temp\s4bs.
+4A cinit CODE >9795:C:\Users\User\AppData\Local\Temp\s4bs.
+4B cinit CODE >9796:C:\Users\User\AppData\Local\Temp\s4bs.
+4C cinit CODE >9797:C:\Users\User\AppData\Local\Temp\s4bs.
+4D cinit CODE >9798:C:\Users\User\AppData\Local\Temp\s4bs.
+4E cinit CODE >9799:C:\Users\User\AppData\Local\Temp\s4bs.
+51 cinit CODE >9803:C:\Users\User\AppData\Local\Temp\s4bs.
+52 cinit CODE >9804:C:\Users\User\AppData\Local\Temp\s4bs.
+53 cinit CODE >9805:C:\Users\User\AppData\Local\Temp\s4bs.
+54 cinit CODE >9806:C:\Users\User\AppData\Local\Temp\s4bs.
+55 cinit CODE >9807:C:\Users\User\AppData\Local\Temp\s4bs.
+56 cinit CODE >9808:C:\Users\User\AppData\Local\Temp\s4bs.
+57 cinit CODE >9809:C:\Users\User\AppData\Local\Temp\s4bs.
+58 cinit CODE >9810:C:\Users\User\AppData\Local\Temp\s4bs.
+59 cinit CODE >9811:C:\Users\User\AppData\Local\Temp\s4bs.
+5B cinit CODE >9817:C:\Users\User\AppData\Local\Temp\s4bs.
+5B cinit CODE >9819:C:\Users\User\AppData\Local\Temp\s4bs.
+5C cinit CODE >9820:C:\Users\User\AppData\Local\Temp\s4bs.
+5D cinit CODE >9821:C:\Users\User\AppData\Local\Temp\s4bs.
 4 intentry CODE >52:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/interrupt_manager.c
 6 intentry CODE >55:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/interrupt_manager.c
 A intentry CODE >57:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/interrupt_manager.c
@@ -664,20 +664,20 @@ FE text31 CODE >418:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_f
 46F maintext CODE >124:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 472 maintext CODE >125:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 475 maintext CODE >129:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
-550 clrtext CODE >9753:C:\Users\User\AppData\Local\Temp\sc8o.
-550 clrtext CODE >9754:C:\Users\User\AppData\Local\Temp\sc8o.
-551 clrtext CODE >9755:C:\Users\User\AppData\Local\Temp\sc8o.
-551 clrtext CODE >9756:C:\Users\User\AppData\Local\Temp\sc8o.
-552 clrtext CODE >9757:C:\Users\User\AppData\Local\Temp\sc8o.
-553 clrtext CODE >9758:C:\Users\User\AppData\Local\Temp\sc8o.
-554 clrtext CODE >9759:C:\Users\User\AppData\Local\Temp\sc8o.
-555 clrtext CODE >9760:C:\Users\User\AppData\Local\Temp\sc8o.
-556 clrtext CODE >9761:C:\Users\User\AppData\Local\Temp\sc8o.
-557 clrtext CODE >9762:C:\Users\User\AppData\Local\Temp\sc8o.
-558 clrtext CODE >9763:C:\Users\User\AppData\Local\Temp\sc8o.
-559 clrtext CODE >9764:C:\Users\User\AppData\Local\Temp\sc8o.
-55A clrtext CODE >9766:C:\Users\User\AppData\Local\Temp\sc8o.
-55B clrtext CODE >9765:C:\Users\User\AppData\Local\Temp\sc8o.
+550 clrtext CODE >9753:C:\Users\User\AppData\Local\Temp\s4bs.
+550 clrtext CODE >9754:C:\Users\User\AppData\Local\Temp\s4bs.
+551 clrtext CODE >9755:C:\Users\User\AppData\Local\Temp\s4bs.
+551 clrtext CODE >9756:C:\Users\User\AppData\Local\Temp\s4bs.
+552 clrtext CODE >9757:C:\Users\User\AppData\Local\Temp\s4bs.
+553 clrtext CODE >9758:C:\Users\User\AppData\Local\Temp\s4bs.
+554 clrtext CODE >9759:C:\Users\User\AppData\Local\Temp\s4bs.
+555 clrtext CODE >9760:C:\Users\User\AppData\Local\Temp\s4bs.
+556 clrtext CODE >9761:C:\Users\User\AppData\Local\Temp\s4bs.
+557 clrtext CODE >9762:C:\Users\User\AppData\Local\Temp\s4bs.
+558 clrtext CODE >9763:C:\Users\User\AppData\Local\Temp\s4bs.
+559 clrtext CODE >9764:C:\Users\User\AppData\Local\Temp\s4bs.
+55A clrtext CODE >9766:C:\Users\User\AppData\Local\Temp\s4bs.
+55B clrtext CODE >9765:C:\Users\User\AppData\Local\Temp\s4bs.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -724,13 +724,13 @@ _PMD7 79D 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 _WPUA 1F39 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 _WPUB 1F44 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 _WPUC 1F4F 0 ABS 0 - dist/default/debug\DMX.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\sc8o.o
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s4bs.o
 _down 41 0 BANK0 1 bssBANK0 dist/default/debug\DMX.X.debug.o
 _init 92C 0 CODE 0 text26 dist/default/debug\DMX.X.debug.o
 _main 8B4 0 CODE 0 maintext dist/default/debug\DMX.X.debug.o
 _menu 3F 0 BANK0 1 bssBANK0 dist/default/debug\DMX.X.debug.o
 btemp 7E 0 ABS 0 - dist/default/debug\DMX.X.debug.o
-start 66 0 CODE 0 init C:\Users\User\AppData\Local\Temp\sc8o.o
+start 66 0 CODE 0 init C:\Users\User\AppData\Local\Temp\s4bs.o
 _TMR0_InterruptHandler 6A 0 BANK0 1 nvBANK0 dist/default/debug\DMX.X.debug.o
 __size_of_init 0 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 __size_of_main 0 0 ABS 0 - dist/default/debug\DMX.X.debug.o
@@ -748,12 +748,12 @@ __Hpowerup 0 0 CODE 0 powerup -
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 TMR0_SetInterruptHandler@InterruptHandler 58 0 BANK0 1 cstackBANK0 dist/default/debug\DMX.X.debug.o
 I2C1_MasterWriteTRBBuild@ptrb 5E 0 BANK0 1 cstackBANK0 dist/default/debug\DMX.X.debug.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sc8o.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sc8o.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sc8o.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sc8o.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sc8o.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sc8o.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s4bs.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s4bs.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s4bs.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s4bs.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s4bs.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s4bs.o
 __size_of_EUSART1_SetErrorHandler 0 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 I2C1_ISR@pi2c_buf_ptr 46 0 BANK0 1 bssBANK0 dist/default/debug\DMX.X.debug.o
@@ -802,8 +802,8 @@ __CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 EUSART1_SetFramingErrorHandler@interruptHandler 58 0 BANK0 1 cstackBANK0 dist/default/debug\DMX.X.debug.o
 __size_of_CLOCK_init 0 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 I2C1_MasterWriteTRBBuild@pdata 58 0 BANK0 1 cstackBANK0 dist/default/debug\DMX.X.debug.o
-___stackhi 25EE 0 ABS 0 - C:\Users\User\AppData\Local\Temp\sc8o.o
-___stacklo 207A 0 ABS 0 - C:\Users\User\AppData\Local\Temp\sc8o.o
+___stackhi 25EE 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s4bs.o
+___stacklo 207A 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s4bs.o
 __CFG_SAFEN$OFF 0 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 _CLOCK_getTime B5C 0 CODE 0 text24 dist/default/debug\DMX.X.debug.o
 writeData@data 66 0 BANK0 1 cstackBANK0 dist/default/debug\DMX.X.debug.o
@@ -849,7 +849,7 @@ _EUSART1_DefaultOverrunErrorHandler B7E 0 CODE 0 text38 dist/default/debug\DMX.X
 __end_of_EUSART1_Receive_ISR 6EE 0 CODE 0 text37 dist/default/debug\DMX.X.debug.o
 __size_of_EUSART1_Initialize 0 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 __end_of_initLED 798 0 CODE 0 text1 dist/default/debug\DMX.X.debug.o
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\sc8o.o
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s4bs.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1128,7 +1128,7 @@ __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __HnvBANK1 0 0 ABS 0 nvBANK1 -
 __end_of_CLOCK_getTime B68 0 CODE 0 text24 dist/default/debug\DMX.X.debug.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\sc8o.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\s4bs.o
 __size_of_BUTTONS_init 0 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 __size_of_BUTTONS_task 0 0 ABS 0 - dist/default/debug\DMX.X.debug.o
 __size_of___bmul 0 0 ABS 0 - dist/default/debug\DMX.X.debug.o

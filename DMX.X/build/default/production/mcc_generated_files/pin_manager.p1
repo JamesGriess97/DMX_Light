@@ -1457,23 +1457,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 69:     TRISC = 0xFF;
 [e = _TRISC -> -> 255 `i `uc ]
 "74
-[; ;mcc_generated_files/pin_manager.c: 74:     ANSELC = 0xFF;
-[e = _ANSELC -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 74:     ANSELC = 0xF8;
+[e = _ANSELC -> -> 248 `i `uc ]
 "75
 [; ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0xE0;
 [e = _ANSELB -> -> 224 `i `uc ]
 "76
-[; ;mcc_generated_files/pin_manager.c: 76:     ANSELA = 0x07;
-[e = _ANSELA -> -> 7 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 76:     ANSELA = 0x03;
+[e = _ANSELA -> -> 3 `i `uc ]
 "81
 [; ;mcc_generated_files/pin_manager.c: 81:     WPUB = 0x00;
 [e = _WPUB -> -> 0 `i `uc ]
 "82
-[; ;mcc_generated_files/pin_manager.c: 82:     WPUA = 0x00;
-[e = _WPUA -> -> 0 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 82:     WPUA = 0x04;
+[e = _WPUA -> -> 4 `i `uc ]
 "83
-[; ;mcc_generated_files/pin_manager.c: 83:     WPUC = 0x00;
-[e = _WPUC -> -> 0 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 83:     WPUC = 0x07;
+[e = _WPUC -> -> 7 `i `uc ]
 "88
 [; ;mcc_generated_files/pin_manager.c: 88:     ODCONA = 0x00;
 [e = _ODCONA -> -> 0 `i `uc ]

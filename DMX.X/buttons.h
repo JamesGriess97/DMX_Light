@@ -11,9 +11,29 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+#include <stdint.h>
+    
+    typedef enum {
+        EVENT_IDLE,
+        EVENT_PRESSED
+    } event_t;
 
+    typedef enum {
+        STATE_UNPRESSED,
+        STATE_PRESSED
+    } btnState_t;
+
+    typedef struct {
+        volatile uint8_t* port;
+        uint8_t pin;
+        btnState_t state;
+        btnState_t lastState;
+        event_t event;
+    } button_t;
+
+    
     //extern button_t buttons[];
-    //extern button_t *up, *down, *enter, *menu;
+    extern button_t *up, *down, *enter, *menu;
     void BUTTONS_init();
     void BUTTONS_task();
 #ifdef	__cplusplus

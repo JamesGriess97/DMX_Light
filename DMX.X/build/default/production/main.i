@@ -18055,9 +18055,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 130 "./mcc_generated_files/pin_manager.h"
+# 210 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 142 "./mcc_generated_files/pin_manager.h"
+# 222 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -18322,12 +18322,35 @@ void TM1650_init();
 # 46 "main.c" 2
 
 # 1 "./buttons.h" 1
-# 17 "./buttons.h"
+# 16 "./buttons.h"
+    typedef enum {
+        EVENT_IDLE,
+        EVENT_PRESSED
+    } event_t;
+
+    typedef enum {
+        STATE_UNPRESSED,
+        STATE_PRESSED
+    } btnState_t;
+
+    typedef struct {
+        volatile uint8_t* port;
+        uint8_t pin;
+        btnState_t state;
+        btnState_t lastState;
+        event_t event;
+    } button_t;
+
+
+
+    extern button_t *up, *down, *enter, *menu;
     void BUTTONS_init();
     void BUTTONS_task();
 # 47 "main.c" 2
 
 # 1 "./controller.h" 1
+# 15 "./controller.h"
+void CONTROLLER_task();
 # 48 "main.c" 2
 
 

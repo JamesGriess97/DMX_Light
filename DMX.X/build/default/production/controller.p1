@@ -1,1 +1,128 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"9 controller.c
+[; ;controller.c: 9:     TM1650_fastPrintNum(address);
+[v _TM1650_fastPrintNum `(i ~T0 @X0 0 e? ]
+"41
+[; ;controller.c: 41:     if (BUTTONS_isClicked(up)) {
+[v _BUTTONS_isClicked `(i ~T0 @X0 0 e? ]
+[c E39 0 1 .. ]
+[n E39 . STATE_UNPRESSED STATE_PRESSED  ]
+[c E35 0 1 .. ]
+[n E35 . EVENT_IDLE EVENT_PRESSED  ]
+"26 ./buttons.h
+[; ;./buttons.h: 26:     typedef struct {
+[s S1 `*Vuc 1 `uc 1 `E39 1 `E39 1 `E35 1 ]
+[n S1 . port pin state lastState event ]
+"36
+[; ;./buttons.h: 36:     extern button_t *up, *down, *enter, *menu;
+[v _up `*S1 ~T0 @X0 0 e ]
+[v _down `*S1 ~T0 @X0 0 e ]
+"6 controller.c
+[; ;controller.c: 6: uint16_t address = 1;
+[v _address `us ~T0 @X0 1 e ]
+[i _address
+-> -> 1 `i `us
+]
+"8
+[; ;controller.c: 8: void CONTROLLER_init() {
+[v _CONTROLLER_init `(v ~T0 @X0 1 ef ]
+{
+[e :U _CONTROLLER_init ]
+[f ]
+"9
+[; ;controller.c: 9:     TM1650_fastPrintNum(address);
+[e ( _TM1650_fastPrintNum -> _address `ui ]
+"10
+[; ;controller.c: 10: }
+[e :UE 2 ]
+}
+"15
+[; ;controller.c: 15: void address_inc()
+[v _address_inc `(v ~T0 @X0 1 ef ]
+"16
+[; ;controller.c: 16: {
+{
+[e :U _address_inc ]
+[f ]
+"17
+[; ;controller.c: 17:     if(address == 512)
+[e $ ! == -> _address `ui -> -> 512 `i `ui 4  ]
+"18
+[; ;controller.c: 18:         address = 1;
+[e = _address -> -> 1 `i `us ]
+[e $U 5  ]
+"19
+[; ;controller.c: 19:     else
+[e :U 4 ]
+"20
+[; ;controller.c: 20:         address++;
+[e ++ _address -> -> 1 `i `us ]
+[e :U 5 ]
+"23
+[; ;controller.c: 23:     TM1650_fastPrintNum(address);
+[e ( _TM1650_fastPrintNum -> _address `ui ]
+"24
+[; ;controller.c: 24: }
+[e :UE 3 ]
+}
+"29
+[; ;controller.c: 29: void address_dec()
+[v _address_dec `(v ~T0 @X0 1 ef ]
+"30
+[; ;controller.c: 30: {
+{
+[e :U _address_dec ]
+[f ]
+"31
+[; ;controller.c: 31:     if(address == 1)
+[e $ ! == -> _address `ui -> -> 1 `i `ui 7  ]
+"32
+[; ;controller.c: 32:         address = 512;
+[e = _address -> -> 512 `i `us ]
+[e $U 8  ]
+"33
+[; ;controller.c: 33:     else
+[e :U 7 ]
+"34
+[; ;controller.c: 34:         address--;
+[e -- _address -> -> 1 `i `us ]
+[e :U 8 ]
+"37
+[; ;controller.c: 37:     TM1650_fastPrintNum(address);
+[e ( _TM1650_fastPrintNum -> _address `ui ]
+"38
+[; ;controller.c: 38: }
+[e :UE 6 ]
+}
+"40
+[; ;controller.c: 40: void CONTROLLER_task() {
+[v _CONTROLLER_task `(v ~T0 @X0 1 ef ]
+{
+[e :U _CONTROLLER_task ]
+[f ]
+"41
+[; ;controller.c: 41:     if (BUTTONS_isClicked(up)) {
+[e $ ! != ( _BUTTONS_isClicked _up -> 0 `i 10  ]
+{
+"42
+[; ;controller.c: 42:         address_inc();
+[e ( _address_inc ..  ]
+"44
+[; ;controller.c: 44:     } else if (BUTTONS_isClicked(down)) {
+}
+[e $U 11  ]
+[e :U 10 ]
+[e $ ! != ( _BUTTONS_isClicked _down -> 0 `i 12  ]
+{
+"45
+[; ;controller.c: 45:         address_dec();
+[e ( _address_dec ..  ]
+"46
+[; ;controller.c: 46:     }
+}
+[e :U 12 ]
+[e :U 11 ]
+"47
+[; ;controller.c: 47: }
+[e :UE 9 ]
+}

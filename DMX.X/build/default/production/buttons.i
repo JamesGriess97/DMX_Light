@@ -18144,7 +18144,28 @@ extern __bank0 __bit __timeout;
 
 
 # 1 "./buttons.h" 1
-# 17 "./buttons.h"
+# 16 "./buttons.h"
+    typedef enum {
+        EVENT_IDLE,
+        EVENT_PRESSED
+    } event_t;
+
+    typedef enum {
+        STATE_UNPRESSED,
+        STATE_PRESSED
+    } btnState_t;
+
+    typedef struct {
+        volatile uint8_t* port;
+        uint8_t pin;
+        btnState_t state;
+        btnState_t lastState;
+        event_t event;
+    } button_t;
+
+
+
+    extern button_t *up, *down, *enter, *menu;
     void BUTTONS_init();
     void BUTTONS_task();
 # 6 "buttons.c" 2
@@ -18157,24 +18178,6 @@ void CLOCK_init();
 time_t CLOCK_getTime();
 # 7 "buttons.c" 2
 
-
-typedef enum {
-    EVENT_IDLE,
-    EVENT_PRESSED
-} event_t;
-
-typedef enum {
-    STATE_UNPRESSED,
-    STATE_PRESSED
-} btnState_t;
-
-typedef struct {
-        volatile uint8_t* port;
-        uint8_t pin;
-        btnState_t state;
-        btnState_t lastState;
-        event_t event;
-    } button_t;
 
 button_t buttons[4];
 button_t *up, *down, *enter, *menu;
