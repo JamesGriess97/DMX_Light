@@ -1,5 +1,6 @@
 #include "mcc_generated_files/tmr0.h"
 #include "clock.h"
+#include <stdint.h>
 
 static time_t currentTime = 0;
 

@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/pin_manager.c"
+# 1 "buttons.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,115 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/pin_manager.c" 2
-# 49 "mcc_generated_files/pin_manager.c"
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 54 "mcc_generated_files/pin_manager.h"
+# 1 "buttons.c" 2
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 135 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 150 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 166 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 196 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 237 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
+# 3 "buttons.c" 2
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -23,17 +128,7 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-
+# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\features.h" 1 3
 # 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
@@ -42,10 +137,6 @@ extern double __fpnormalize(double);
 typedef long int wchar_t;
 # 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 176 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 212 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -18049,69 +18140,90 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/pin_manager.h" 2
-# 210 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 222 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 49 "mcc_generated_files/pin_manager.c" 2
+# 4 "buttons.c" 2
 
 
+# 1 "./buttons.h" 1
+# 17 "./buttons.h"
+    void BUTTONS_init();
+    void BUTTONS_task();
+# 6 "buttons.c" 2
+
+# 1 "./clock.h" 1
+# 11 "./clock.h"
+typedef uint16_t time_t;
+
+void CLOCK_init();
+time_t CLOCK_getTime();
+# 7 "buttons.c" 2
 
 
+typedef enum {
+    EVENT_IDLE,
+    EVENT_PRESSED
+} event_t;
 
+typedef enum {
+    STATE_UNPRESSED,
+    STATE_PRESSED
+} btnState_t;
 
-void PIN_MANAGER_Initialize(void)
-{
+typedef struct {
+        volatile uint8_t* port;
+        uint8_t pin;
+        btnState_t state;
+        btnState_t lastState;
+        event_t event;
+    } button_t;
 
+button_t buttons[4];
+button_t *up, *down, *enter, *menu;
 
-
-    LATA = 0x00;
-    LATB = 0x00;
-    LATC = 0x00;
-
-
-
-
-    TRISA = 0x3F;
-    TRISB = 0xF0;
-    TRISC = 0xFF;
-
-
-
-
-    ANSELC = 0xF8;
-    ANSELB = 0xE0;
-    ANSELA = 0x03;
-
-
-
-
-    WPUB = 0x00;
-    WPUA = 0x04;
-    WPUC = 0x07;
-
-
-
-
-    ODCONA = 0x00;
-    ODCONB = 0x00;
-    ODCONC = 0x00;
-
-
-
-
-    SLRCONA = 0x37;
-    SLRCONB = 0xF0;
-    SLRCONC = 0xFF;
-# 106 "mcc_generated_files/pin_manager.c"
-    SSP1CLKPPS = 0x05;
-    RA4PPS = 0x14;
-    RA5PPS = 0x13;
-    SSP1DATPPS = 0x04;
-    RX1DTPPS = 0x0C;
+static void init(button_t* btn, volatile uint8_t* port, uint8_t pin) {
+    btn->port = port;
+    btn->pin = pin;
+    btn->state = STATE_UNPRESSED;
+    btn->event = EVENT_IDLE;
 }
 
-void PIN_MANAGER_IOC(void)
-{
+void BUTTONS_init() {
+    menu = &buttons[0];
+    up = &buttons[1];
+    down = &buttons[2];
+    enter = &buttons[3];
+
+    init(menu, &PORTC, 2);
+    init(enter, &PORTA, 2);
+    init(down, &PORTC, 0);
+    init(up, &PORTC, 1);
+}
+
+int lastTime = 0;
+void BUTTONS_task() {
+    time_t time = CLOCK_getTime();
+
+
+    if (time - lastTime < 50)
+        return;
+
+    lastTime = time;
+
+
+    for (uint8_t i = 0; i < 4; i++) {
+        button_t* btn = buttons + i;
+
+
+        if ((*(btn->port) & (1 << (btn->pin))) == 0) {
+            btn->state = STATE_PRESSED;
+        } else {
+            btn->state = STATE_UNPRESSED;
+        }
+
+        if (btn->state == STATE_UNPRESSED && btn->lastState == STATE_PRESSED) {
+
+            btn->event = EVENT_PRESSED;
+        }
+
+        btn->lastState = btn->state;
+    }
 }

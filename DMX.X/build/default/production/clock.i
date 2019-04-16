@@ -140,12 +140,13 @@ void TMR0_DefaultInterruptHandler(void);
 # 1 "clock.c" 2
 
 # 1 "./clock.h" 1
-# 13 "./clock.h"
+# 11 "./clock.h"
 typedef uint16_t time_t;
 
 void CLOCK_init();
 time_t CLOCK_getTime();
 # 2 "clock.c" 2
+
 
 
 static time_t currentTime = 0;

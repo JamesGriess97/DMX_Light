@@ -39,6 +39,10 @@
       <itemPath>clock.h</itemPath>
       <itemPath>tm1650.h</itemPath>
       <itemPath>tm1650.c</itemPath>
+      <itemPath>buttons.c</itemPath>
+      <itemPath>controller.c</itemPath>
+      <itemPath>buttons.h</itemPath>
+      <itemPath>controller.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

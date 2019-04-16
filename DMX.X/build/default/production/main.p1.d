@@ -8,4 +8,6 @@ mcc_generated_files/i2c1.h  \
 mcc_generated_files/tmr0.h  \
 mcc_generated_files/eusart1.h  \
 clock.h  \
-tm1650.h 
+tm1650.h  \
+buttons.h  \
+controller.h 

@@ -38,26 +38,43 @@ I2C1_MESSAGE_ADDRESS_NO_ACK 4
 I2C1_DATA_NO_ACK 5
 I2C1_LOST_STATE 6
 ]
+"27 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[e E10874 . `uc
+STATE_UNPRESSED 0
+STATE_PRESSED 1
+]
+[e E10870 . `uc
+EVENT_IDLE 0
+EVENT_PRESSED 1
+]
+"30
+[v _init init `(v  1 s 1 init ]
+"37
+[v _BUTTONS_init BUTTONS_init `(v  1 e 1 0 ]
+"50
+[v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"8 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
+"9 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
 [v _CLOCK_init CLOCK_init `(v  1 e 1 0 ]
-"20
+"17
+[v _CLOCK_getTime CLOCK_getTime `(us  1 e 2 0 ]
+"21
 [v _CLOCK_timerCallback CLOCK_timerCallback `(v  1 s 1 CLOCK_timerCallback ]
-"58 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
+"60 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _DMX_ISR DMX_ISR `(v  1 e 1 0 ]
-"80
+"101
 [v _main main `(v  1 e 1 0 ]
-"113
+"136
 [v _initLED initLED `(v  1 e 1 0 ]
-"141
-[v _LED_setColor LED_setColor `(v  1 e 1 0 ]
 "85 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
 "194
@@ -130,6 +147,16 @@ I2C1_LOST_STATE 6
 [v _EUSART1_TxDefaultInterruptHandler EUSART1_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
 "96
 [v _EUSART1_RxDefaultInterruptHandler EUSART1_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+[s S1314 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10874 1 state 1 3 `E10874 1 lastState 1 4 `E10870 1 event 1 5 ]
+"27 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[v _buttons buttons `[4]S1314  1 e 24 0 ]
+"28
+[v _up up `*.4S1314  1 e 1 0 ]
+[v _down down `*.4S1314  1 e 1 0 ]
+[v _enter enter `*.4S1314  1 e 1 0 ]
+[v _menu menu `*.4S1314  1 e 1 0 ]
+"49
+[v _lastTime lastTime `i  1 e 2 0 ]
 [s S339 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
@@ -138,6 +165,10 @@ I2C1_LOST_STATE 6
 "426 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [u S344 . 1 `S339 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES344  1 e 1 @11 ]
+"446
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+"535
+[v _PORTC PORTC `VEuc  1 e 1 @14 ]
 "597
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
 "647
@@ -196,19 +227,19 @@ I2C1_LOST_STATE 6
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @399 ]
 "6375
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @400 ]
-[s S1014 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S1022 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "6405
-[s S1020 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S1028 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S1025 . 1 `uc 1 SSPM01 1 0 :1:0 
+[s S1033 . 1 `uc 1 SSPM01 1 0 :1:0 
 `uc 1 SSPM11 1 0 :1:1 
 `uc 1 SSPM21 1 0 :1:2 
 `uc 1 SSPM31 1 0 :1:3 
@@ -217,9 +248,9 @@ I2C1_LOST_STATE 6
 `uc 1 SSPOV1 1 0 :1:6 
 `uc 1 WCOL1 1 0 :1:7 
 ]
-[u S1034 . 1 `S1014 1 . 1 0 `S1020 1 . 1 0 `S1025 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES1034  1 e 1 @400 ]
-[s S1059 . 1 `uc 1 SEN 1 0 :1:0 
+[u S1042 . 1 `S1022 1 . 1 0 `S1028 1 . 1 0 `S1033 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES1042  1 e 1 @400 ]
+[s S1067 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -229,17 +260,17 @@ I2C1_LOST_STATE 6
 `uc 1 GCEN 1 0 :1:7 
 ]
 "6542
-[s S1068 . 1 `uc 1 . 1 0 :1:0 
+[s S1076 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK 1 0 :5:1 
 ]
-[s S1071 . 1 `uc 1 . 1 0 :1:0 
+[s S1079 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[s S1078 . 1 `uc 1 SEN1 1 0 :1:0 
+[s S1086 . 1 `uc 1 SEN1 1 0 :1:0 
 `uc 1 ADMSK11 1 0 :1:1 
 `uc 1 ADMSK21 1 0 :1:2 
 `uc 1 ADMSK31 1 0 :1:3 
@@ -248,23 +279,23 @@ I2C1_LOST_STATE 6
 `uc 1 ACKSTAT1 1 0 :1:6 
 `uc 1 GCEN1 1 0 :1:7 
 ]
-[s S1087 . 1 `uc 1 . 1 0 :1:0 
+[s S1095 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RSEN1 1 0 :1:1 
 `uc 1 PEN1 1 0 :1:2 
 `uc 1 RCEN1 1 0 :1:3 
 `uc 1 ADMSK41 1 0 :1:4 
 `uc 1 ADMSK51 1 0 :1:5 
 ]
-[u S1094 . 1 `S1059 1 . 1 0 `S1068 1 . 1 0 `S1071 1 . 1 0 `S1078 1 . 1 0 `S1087 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES1094  1 e 1 @401 ]
+[u S1102 . 1 `S1067 1 . 1 0 `S1076 1 . 1 0 `S1079 1 . 1 0 `S1086 1 . 1 0 `S1095 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES1102  1 e 1 @401 ]
 "6682
 [v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @402 ]
-[s S474 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S478 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "10529
-[s S478 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S482 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -272,11 +303,11 @@ I2C1_LOST_STATE 6
 `uc 1 CKPS1 1 0 :1:5 
 `uc 1 CKPS2 1 0 :1:6 
 ]
-[s S486 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S490 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S490 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S494 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -285,132 +316,132 @@ I2C1_LOST_STATE 6
 `uc 1 T2CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S499 . 1 `S474 1 . 1 0 `S478 1 . 1 0 `S486 1 . 1 0 `S490 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES499  1 e 1 @654 ]
+[u S503 . 1 `S478 1 . 1 0 `S482 1 . 1 0 `S490 1 . 1 0 `S494 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES503  1 e 1 @654 ]
 "10767
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @656 ]
 "12081
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @780 ]
 "12101
 [v _CCPR1H CCPR1H `VEuc  1 e 1 @781 ]
-[s S530 . 1 `uc 1 MODE 1 0 :4:0 
+[s S534 . 1 `uc 1 MODE 1 0 :4:0 
 `uc 1 FMT 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "12158
-[s S536 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S540 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 ]
-[s S541 . 1 `uc 1 CCP1MODE 1 0 :4:0 
+[s S545 . 1 `uc 1 CCP1MODE 1 0 :4:0 
 `uc 1 CCP1FMT 1 0 :1:4 
 `uc 1 CCP1OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP1EN 1 0 :1:7 
 ]
-[s S547 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
+[s S551 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
 `uc 1 CCP1MODE1 1 0 :1:1 
 `uc 1 CCP1MODE2 1 0 :1:2 
 `uc 1 CCP1MODE3 1 0 :1:3 
 ]
-[s S552 . 1 `uc 1 . 1 0 :7:0 
+[s S556 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P1M1 1 0 :1:7 
 ]
-[u S555 . 1 `S530 1 . 1 0 `S536 1 . 1 0 `S541 1 . 1 0 `S547 1 . 1 0 `S552 1 . 1 0 ]
-[v _CCP1CONbits CCP1CONbits `VES555  1 e 1 @782 ]
+[u S559 . 1 `S534 1 . 1 0 `S540 1 . 1 0 `S545 1 . 1 0 `S551 1 . 1 0 `S556 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES559  1 e 1 @782 ]
 "12323
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @784 ]
 "12343
 [v _CCPR2H CCPR2H `VEuc  1 e 1 @785 ]
 "12400
-[s S598 . 1 `uc 1 CCP2MODE 1 0 :4:0 
+[s S602 . 1 `uc 1 CCP2MODE 1 0 :4:0 
 `uc 1 CCP2FMT 1 0 :1:4 
 `uc 1 CCP2OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP2EN 1 0 :1:7 
 ]
-[s S604 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
+[s S608 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
 `uc 1 CCP2MODE1 1 0 :1:1 
 `uc 1 CCP2MODE2 1 0 :1:2 
 `uc 1 CCP2MODE3 1 0 :1:3 
 ]
-[s S609 . 1 `uc 1 . 1 0 :7:0 
+[s S613 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P2M1 1 0 :1:7 
 ]
-[u S612 . 1 `S530 1 . 1 0 `S536 1 . 1 0 `S598 1 . 1 0 `S604 1 . 1 0 `S609 1 . 1 0 ]
-[v _CCP2CONbits CCP2CONbits `VES612  1 e 1 @786 ]
+[u S616 . 1 `S534 1 . 1 0 `S540 1 . 1 0 `S602 1 . 1 0 `S608 1 . 1 0 `S613 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES616  1 e 1 @786 ]
 "12565
 [v _CCPR3L CCPR3L `VEuc  1 e 1 @788 ]
 "12585
 [v _CCPR3H CCPR3H `VEuc  1 e 1 @789 ]
 "12642
-[s S655 . 1 `uc 1 CCP3MODE 1 0 :4:0 
+[s S659 . 1 `uc 1 CCP3MODE 1 0 :4:0 
 `uc 1 CCP3FMT 1 0 :1:4 
 `uc 1 CCP3OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP3EN 1 0 :1:7 
 ]
-[s S661 . 1 `uc 1 CCP3MODE0 1 0 :1:0 
+[s S665 . 1 `uc 1 CCP3MODE0 1 0 :1:0 
 `uc 1 CCP3MODE1 1 0 :1:1 
 `uc 1 CCP3MODE2 1 0 :1:2 
 `uc 1 CCP3MODE3 1 0 :1:3 
 ]
-[s S666 . 1 `uc 1 . 1 0 :7:0 
+[s S670 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P3M1 1 0 :1:7 
 ]
-[u S669 . 1 `S530 1 . 1 0 `S536 1 . 1 0 `S655 1 . 1 0 `S661 1 . 1 0 `S666 1 . 1 0 ]
-[v _CCP3CONbits CCP3CONbits `VES669  1 e 1 @790 ]
+[u S673 . 1 `S534 1 . 1 0 `S540 1 . 1 0 `S659 1 . 1 0 `S665 1 . 1 0 `S670 1 . 1 0 ]
+[v _CCP3CONbits CCP3CONbits `VES673  1 e 1 @790 ]
 "12807
 [v _CCPR4L CCPR4L `VEuc  1 e 1 @792 ]
 "12827
 [v _CCPR4H CCPR4H `VEuc  1 e 1 @793 ]
 "12884
-[s S712 . 1 `uc 1 CCP4MODE 1 0 :4:0 
+[s S716 . 1 `uc 1 CCP4MODE 1 0 :4:0 
 `uc 1 CCP4FMT 1 0 :1:4 
 `uc 1 CCP4OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP4EN 1 0 :1:7 
 ]
-[s S718 . 1 `uc 1 CCP4MODE0 1 0 :1:0 
+[s S722 . 1 `uc 1 CCP4MODE0 1 0 :1:0 
 `uc 1 CCP4MODE1 1 0 :1:1 
 `uc 1 CCP4MODE2 1 0 :1:2 
 `uc 1 CCP4MODE3 1 0 :1:3 
 ]
-[s S723 . 1 `uc 1 . 1 0 :7:0 
+[s S727 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P4M1 1 0 :1:7 
 ]
-[u S726 . 1 `S530 1 . 1 0 `S536 1 . 1 0 `S712 1 . 1 0 `S718 1 . 1 0 `S723 1 . 1 0 ]
-[v _CCP4CONbits CCP4CONbits `VES726  1 e 1 @794 ]
+[u S730 . 1 `S534 1 . 1 0 `S540 1 . 1 0 `S716 1 . 1 0 `S722 1 . 1 0 `S727 1 . 1 0 ]
+[v _CCP4CONbits CCP4CONbits `VES730  1 e 1 @794 ]
 "16651
 [v _TMR0L TMR0L `VEuc  1 e 1 @1436 ]
 "16789
 [v _TMR0H TMR0H `VEuc  1 e 1 @1437 ]
 "17043
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @1438 ]
-[s S880 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S888 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 MD16 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "17071
-[s S886 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S894 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T0MD16 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
-[s S892 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S900 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
 `uc 1 T016BIT 1 0 :1:4 
 ]
-[u S898 . 1 `S880 1 . 1 0 `S886 1 . 1 0 `S892 1 . 1 0 ]
-[v _T0CON0bits T0CON0bits `VES898  1 e 1 @1438 ]
+[u S906 . 1 `S888 1 . 1 0 `S894 1 . 1 0 `S900 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES906  1 e 1 @1438 ]
 "17141
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @1439 ]
 [s S322 . 1 `uc 1 INTF 1 0 :1:0 
@@ -530,11 +561,11 @@ I2C1_LOST_STATE 6
 [v _TRISC6 TRISC6 `VEb  1 e 0 @166 ]
 "39019
 [v _TRISC7 TRISC7 `VEb  1 e 0 @167 ]
-"4 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
+"5 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
 [v _currentTime currentTime `us  1 s 2 currentTime ]
-"55 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
+"57 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _dmxData dmxData `VE[513]uc  1 e 513 @9711 ]
-"56
+"58
 [v _dmxPointer dmxPointer `i  1 e 2 0 ]
 "62 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/eusart1.c
 [v _eusart1TxHead eusart1TxHead `VEuc  1 e 1 0 ]
@@ -568,56 +599,43 @@ I2C1_LOST_STATE 6
 [v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "79
 [v _EUSART1_ErrorHandler EUSART1_ErrorHandler `*.37(v  1 e 2 0 ]
-[s S948 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
+[s S956 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
 "185 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/i2c1.c
-[s S960 . 3 `uc 1 count 1 0 `*.4S948 1 ptrb_list 1 1 `*.4E10866 1 pTrFlag 1 2 ]
-[v _i2c1_tr_queue i2c1_tr_queue `[1]S960  1 s 3 i2c1_tr_queue ]
+[s S968 . 3 `uc 1 count 1 0 `*.4S956 1 ptrb_list 1 1 `*.4E10866 1 pTrFlag 1 2 ]
+[v _i2c1_tr_queue i2c1_tr_queue `[1]S968  1 s 3 i2c1_tr_queue ]
 "186
-[s S964 . 1 `uc 1 full 1 0 :1:0 
+[s S972 . 1 `uc 1 full 1 0 :1:0 
 `uc 1 empty 1 0 :1:1 
 `uc 1 reserved 1 0 :6:2 
 ]
-[u S968 . 1 `S964 1 s 1 0 `uc 1 status 1 0 ]
-[s S971 . 5 `*.4S960 1 pTrTail 1 0 `*.4S960 1 pTrHead 1 1 `S968 1 trStatus 1 2 `uc 1 i2cDoneFlag 1 3 `uc 1 i2cErrors 1 4 ]
-[v _i2c1_object i2c1_object `S971  1 s 5 i2c1_object ]
+[u S976 . 1 `S972 1 s 1 0 `uc 1 status 1 0 ]
+[s S979 . 5 `*.4S968 1 pTrTail 1 0 `*.4S968 1 pTrHead 1 1 `S976 1 trStatus 1 2 `uc 1 i2cDoneFlag 1 3 `uc 1 i2cErrors 1 4 ]
+[v _i2c1_object i2c1_object `S979  1 s 5 i2c1_object ]
 "187
 [v _i2c1_state i2c1_state `E10929  1 s 1 i2c1_state ]
 "188
 [v _i2c1_trb_count i2c1_trb_count `uc  1 s 1 i2c1_trb_count ]
 "190
-[v _p_i2c1_trb_current p_i2c1_trb_current `*.4S948  1 s 1 p_i2c1_trb_current ]
+[v _p_i2c1_trb_current p_i2c1_trb_current `*.4S956  1 s 1 p_i2c1_trb_current ]
 "191
-[v _p_i2c1_current p_i2c1_current `*.4VES960  1 s 1 p_i2c1_current ]
+[v _p_i2c1_current p_i2c1_current `*.4VES968  1 s 1 p_i2c1_current ]
 "59 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/tmr0.c
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
 "4 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _count count `i  1 e 2 0 ]
 "6
 [v _charTable charTable `DC[96]uc  1 e 96 0 ]
-"80 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
+"101 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"110
+"133
 } 0
-"113
+"136
 [v _initLED initLED `(v  1 e 1 0 ]
 {
-"138
+"161
 } 0
-"22 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
-[v _TM1650_setDigit TM1650_setDigit `(v  1 e 1 0 ]
-{
-[v TM1650_setDigit@digit digit `uc  1 a 1 wreg ]
-"23
-[v TM1650_setDigit@foo foo `VEuc  1 a 1 27 ]
-"22
-[v TM1650_setDigit@digit digit `uc  1 a 1 wreg ]
-[v TM1650_setDigit@data data `uc  1 p 1 20 ]
-[v TM1650_setDigit@dp dp `i  1 p 2 21 ]
-[v TM1650_setDigit@digit digit `uc  1 a 1 26 ]
-"25
-} 0
-"27
+"27 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _TM1650_init TM1650_init `(v  1 e 1 0 ]
 {
 "29
@@ -627,11 +645,11 @@ I2C1_LOST_STATE 6
 {
 [v writeData@address address `uc  1 a 1 wreg ]
 "17
-[v writeData@status status `VEE10866  1 a 1 19 ]
+[v writeData@status status `VEE10866  1 a 1 1 ]
 "16
 [v writeData@address address `uc  1 a 1 wreg ]
 [v writeData@data data `uc  1 p 1 14 ]
-[v writeData@address address `uc  1 a 1 18 ]
+[v writeData@address address `uc  1 a 1 0 ]
 "20
 } 0
 "600 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/i2c1.c
@@ -646,9 +664,9 @@ I2C1_LOST_STATE 6
 [v I2C1_MasterWrite@address address `us  1 p 2 8 ]
 "604
 [v I2C1_MasterWrite@pflag pflag `*.4E10866  1 p 1 10 ]
-[s S948 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
+[s S956 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
 "606
-[v I2C1_MasterWrite@trBlock trBlock `S948  1 s 4 trBlock ]
+[v I2C1_MasterWrite@trBlock trBlock `S956  1 s 4 trBlock ]
 "609
 [v I2C1_MasterWrite@pdata pdata `*.4uc  1 a 1 13 ]
 "619
@@ -656,10 +674,10 @@ I2C1_LOST_STATE 6
 "721
 [v _I2C1_MasterWriteTRBBuild I2C1_MasterWriteTRBBuild `(v  1 e 1 0 ]
 {
-[s S948 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
+[s S956 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
 "722
-[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S948  1 a 1 wreg ]
-[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S948  1 a 1 wreg ]
+[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S956  1 a 1 wreg ]
+[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S956  1 a 1 wreg ]
 "723
 [v I2C1_MasterWriteTRBBuild@pdata pdata `*.4uc  1 p 1 0 ]
 "724
@@ -668,7 +686,7 @@ I2C1_LOST_STATE 6
 [v I2C1_MasterWriteTRBBuild@address address `us  1 p 2 2 ]
 "727
 "722
-[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S948  1 a 1 6 ]
+[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S956  1 a 1 6 ]
 "730
 } 0
 "654
@@ -677,9 +695,9 @@ I2C1_LOST_STATE 6
 "655
 [v I2C1_MasterTRBInsert@count count `uc  1 a 1 wreg ]
 [v I2C1_MasterTRBInsert@count count `uc  1 a 1 wreg ]
-[s S948 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
+[s S956 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
 "656
-[v I2C1_MasterTRBInsert@ptrb_list ptrb_list `*.4S948  1 p 1 0 ]
+[v I2C1_MasterTRBInsert@ptrb_list ptrb_list `*.4S956  1 p 1 0 ]
 "657
 [v I2C1_MasterTRBInsert@pflag pflag `*.4E10866  1 p 1 1 ]
 "661
@@ -756,36 +774,62 @@ I2C1_LOST_STATE 6
 [v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "271
 } 0
-"141 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
-[v _LED_setColor LED_setColor `(v  1 e 1 0 ]
-{
-[v LED_setColor@red red `uc  1 a 1 wreg ]
-"153
-[v LED_setColor@lo4 lo4 `i  1 a 2 19 ]
-"151
-[v LED_setColor@lo3 lo3 `i  1 a 2 15 ]
-"149
-[v LED_setColor@lo2 lo2 `i  1 a 2 11 ]
-"147
-[v LED_setColor@lo1 lo1 `i  1 a 2 7 ]
-"141
-[v LED_setColor@red red `uc  1 a 1 wreg ]
-[v LED_setColor@green green `uc  1 p 1 0 ]
-[v LED_setColor@white white `uc  1 p 1 1 ]
-[v LED_setColor@blue blue `uc  1 p 1 2 ]
-[v LED_setColor@red red `uc  1 a 1 21 ]
-"166
-} 0
-"8 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
+"9 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
 [v _CLOCK_init CLOCK_init `(v  1 e 1 0 ]
 {
-"14
+"15
 } 0
 "134 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/tmr0.c
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "136
+} 0
+"50 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
+{
+[s S1314 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10874 1 state 1 3 `E10874 1 lastState 1 4 `E10870 1 event 1 5 ]
+"61
+[v BUTTONS_task@btn btn `*.4S1314  1 a 1 10 ]
+"60
+[v BUTTONS_task@i i `uc  1 a 1 9 ]
+"51
+[v BUTTONS_task@time time `us  1 a 2 7 ]
+"77
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 2 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 3 ]
+"51
+} 0
+"17 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
+[v _CLOCK_getTime CLOCK_getTime `(us  1 e 2 0 ]
+{
+"19
+} 0
+"37 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[v _BUTTONS_init BUTTONS_init `(v  1 e 1 0 ]
+{
+"47
+} 0
+"30
+[v _init init `(v  1 s 1 init ]
+{
+[s S1314 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10874 1 state 1 3 `E10874 1 lastState 1 4 `E10870 1 event 1 5 ]
+[v init@btn btn `*.4S1314  1 a 1 wreg ]
+[v init@btn btn `*.4S1314  1 a 1 wreg ]
+[v init@port port `*.39VEuc  1 p 2 0 ]
+[v init@pin pin `uc  1 p 1 2 ]
+[v init@btn btn `*.4S1314  1 a 1 4 ]
+"35
 } 0
 "52 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
@@ -797,10 +841,10 @@ I2C1_LOST_STATE 6
 {
 "131
 } 0
-"20 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
+"21 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
 [v _CLOCK_timerCallback CLOCK_timerCallback `(v  1 s 1 CLOCK_timerCallback ]
 {
-"22
+"23
 } 0
 "138 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/tmr0.c
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
@@ -844,10 +888,10 @@ I2C1_LOST_STATE 6
 {
 "211
 } 0
-"58 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
+"60 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _DMX_ISR DMX_ISR `(v  1 e 1 0 ]
 {
-"78
+"80
 } 0
 "213 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Receive_ISR EUSART1_Receive_ISR `(v  1 e 1 0 ]

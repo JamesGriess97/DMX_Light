@@ -44,6 +44,8 @@
 #include "mcc_generated_files/mcc.h"
 #include "clock.h"
 #include "tm1650.h"
+#include "buttons.h"
+#include "controller.h"
 
 /*
                          Main application
@@ -78,6 +80,24 @@ void DMX_ISR(void) {
 }
 
 
+void Blink2() {
+    static bool value = 0;
+    static time_t lastTime = 0;
+    
+    time_t time = CLOCK_getTime();
+    if(time <= lastTime + 51)
+        return;
+    
+    lastTime = time;
+    value = !value;
+    
+    if(value)
+        TM1650_setDigit(1, '8', 0);
+    else
+        TM1650_setDigit(1, ' ', 0);
+    
+}
+
 void main(void) {
     // initialize the device
     SYSTEM_Initialize();
@@ -102,11 +122,13 @@ void main(void) {
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     TM1650_init();
-
+    BUTTONS_init();
     while (1) {
         // Add your application code
-        LED_setColor(dmxData[2], dmxData[3], dmxData[4], dmxData[5]);
-        TM1650_setDigit(1, 'c', 0);
+        //LED_setColor(dmxData[2], dmxData[3], dmxData[4], dmxData[5]);
+        BUTTONS_task();
+        //TM1650_setDigit(1, 'c', 0);
+        
     }
 }
 

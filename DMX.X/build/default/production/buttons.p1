@@ -1,68 +1,23 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F10882 `(v ~T0 @X0 0 tf ]
-"17141 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 17141: extern volatile unsigned char T0CON1 __attribute__((address(0x59F)));
-[v _T0CON1 `Vuc ~T0 @X0 0 e@1439 ]
-"16789
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 16789: extern volatile unsigned char TMR0H __attribute__((address(0x59D)));
-[v _TMR0H `Vuc ~T0 @X0 0 e@1437 ]
-"16651
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 16651: extern volatile unsigned char TMR0L __attribute__((address(0x59C)));
-[v _TMR0L `Vuc ~T0 @X0 0 e@1436 ]
-"18927
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 18927:     struct {
-[s S881 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S881 . INTF . IOCIF TMR0IF ]
-"18926
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 18926: typedef union {
-[u S880 `S881 1 ]
-[n S880 . . ]
-"18934
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 18934: extern volatile PIR0bits_t PIR0bits __attribute__((address(0x70C)));
-[v _PIR0bits `VS880 ~T0 @X0 0 e@1804 ]
-"19298
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 19298:     struct {
-[s S899 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S899 . INTE . IOCIE TMR0IE ]
-"19297
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 19297: typedef union {
-[u S898 `S899 1 ]
-[n S898 . . ]
-"19305
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 19305: extern volatile PIE0bits_t PIE0bits __attribute__((address(0x716)));
-[v _PIE0bits `VS898 ~T0 @X0 0 e@1814 ]
-[v F10875 `(v ~T0 @X0 0 tf ]
-"310 mcc_generated_files/tmr0.h
-[; ;mcc_generated_files/tmr0.h: 310:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F10875 ]
-"346
-[; ;mcc_generated_files/tmr0.h: 346: void TMR0_DefaultInterruptHandler(void);
-[v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
-"17043 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 17043: extern volatile unsigned char T0CON0 __attribute__((address(0x59E)));
-[v _T0CON0 `Vuc ~T0 @X0 0 e@1438 ]
-"17049
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 17049:     struct {
-[s S792 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S792 . OUTPS MD16 OUT . EN ]
-"17056
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 17056:     struct {
-[s S793 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S793 . T0OUTPS T0MD16 T0OUT . T0EN ]
-"17063
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 17063:     struct {
-[s S794 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S794 . OUTPS0 OUTPS1 OUTPS2 OUTPS3 T016BIT ]
-"17048
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 17048: typedef union {
-[u S791 `S792 1 `S793 1 `S794 1 ]
-[n S791 . . . . ]
-"17071
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 17071: extern volatile T0CON0bits_t T0CON0bits __attribute__((address(0x59E)));
-[v _T0CON0bits `VS791 ~T0 @X0 0 e@1438 ]
-[v F10894 `(v ~T0 @X0 0 tf ]
-[v F10896 `(v ~T0 @X0 0 tf ]
-[v F10898 `(v ~T0 @X0 0 tf ]
+"27 buttons.c
+[; ;buttons.c: 27: button_t buttons[4];
+[c E10874 0 1 .. ]
+[n E10874 . STATE_UNPRESSED STATE_PRESSED  ]
+[c E10870 0 1 .. ]
+[n E10870 . EVENT_IDLE EVENT_PRESSED  ]
+"19
+[; ;buttons.c: 19: typedef struct {
+[s S1513 `*Vuc 1 `uc 1 `E10874 1 `E10874 1 `E10870 1 ]
+[n S1513 . port pin state lastState event ]
+"535 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 535: extern volatile unsigned char PORTC __attribute__((address(0x00E)));
+[v _PORTC `Vuc ~T0 @X0 0 e@14 ]
+"446
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 446: extern volatile unsigned char PORTA __attribute__((address(0x00C)));
+[v _PORTA `Vuc ~T0 @X0 0 e@12 ]
+"14 ./clock.h
+[; ;./clock.h: 14: time_t CLOCK_getTime();
+[v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1425,183 +1380,155 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"59 mcc_generated_files/tmr0.c
-[; ;mcc_generated_files/tmr0.c: 59: void (*TMR0_InterruptHandler)(void);
-[v _TMR0_InterruptHandler `*F10882 ~T0 @X0 1 e ]
-"61
-[; ;mcc_generated_files/tmr0.c: 61: void TMR0_Initialize(void)
-[v _TMR0_Initialize `(v ~T0 @X0 1 ef ]
-"62
-[; ;mcc_generated_files/tmr0.c: 62: {
+"27 buttons.c
+[; ;buttons.c: 27: button_t buttons[4];
+[v _buttons `S1513 ~T0 @X0 -> 4 `i e ]
+"28
+[; ;buttons.c: 28: button_t *up, *down, *enter, *menu;
+[v _up `*S1513 ~T0 @X0 1 e ]
+[v _down `*S1513 ~T0 @X0 1 e ]
+[v _enter `*S1513 ~T0 @X0 1 e ]
+[v _menu `*S1513 ~T0 @X0 1 e ]
+"30
+[; ;buttons.c: 30: static void init(button_t* btn, volatile uint8_t* port, uint8_t pin) {
+[v _init `(v ~T0 @X0 1 sf3`*S1513`*Vuc`uc ]
 {
-[e :U _TMR0_Initialize ]
+[e :U _init ]
+[v _btn `*S1513 ~T0 @X0 1 r1 ]
+[v _port `*Vuc ~T0 @X0 1 r2 ]
+[v _pin `uc ~T0 @X0 1 r3 ]
 [f ]
-"66
-[; ;mcc_generated_files/tmr0.c: 66:     T0CON1 = 0x45;
-[e = _T0CON1 -> -> 69 `i `uc ]
-"69
-[; ;mcc_generated_files/tmr0.c: 69:     TMR0H = 0xF9;
-[e = _TMR0H -> -> 249 `i `uc ]
-"72
-[; ;mcc_generated_files/tmr0.c: 72:     TMR0L = 0x00;
-[e = _TMR0L -> -> 0 `i `uc ]
-"75
-[; ;mcc_generated_files/tmr0.c: 75:     PIR0bits.TMR0IF = 0;
-[e = . . _PIR0bits 0 3 -> -> 0 `i `uc ]
-"78
-[; ;mcc_generated_files/tmr0.c: 78:     PIE0bits.TMR0IE = 1;
-[e = . . _PIE0bits 0 3 -> -> 1 `i `uc ]
-"81
-[; ;mcc_generated_files/tmr0.c: 81:     TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
-[e ( _TMR0_SetInterruptHandler (1 &U _TMR0_DefaultInterruptHandler ]
-"84
-[; ;mcc_generated_files/tmr0.c: 84:     T0CON0 = 0x80;
-[e = _T0CON0 -> -> 128 `i `uc ]
-"85
-[; ;mcc_generated_files/tmr0.c: 85: }
-[e :UE 1513 ]
-}
-"87
-[; ;mcc_generated_files/tmr0.c: 87: void TMR0_StartTimer(void)
-[v _TMR0_StartTimer `(v ~T0 @X0 1 ef ]
-"88
-[; ;mcc_generated_files/tmr0.c: 88: {
-{
-[e :U _TMR0_StartTimer ]
-[f ]
-"90
-[; ;mcc_generated_files/tmr0.c: 90:     T0CON0bits.T0EN = 1;
-[e = . . _T0CON0bits 1 4 -> -> 1 `i `uc ]
-"91
-[; ;mcc_generated_files/tmr0.c: 91: }
+"31
+[; ;buttons.c: 31:     btn->port = port;
+[e = . *U _btn 0 _port ]
+"32
+[; ;buttons.c: 32:     btn->pin = pin;
+[e = . *U _btn 1 _pin ]
+"33
+[; ;buttons.c: 33:     btn->state = STATE_UNPRESSED;
+[e = . *U _btn 2 . `E10874 0 ]
+"34
+[; ;buttons.c: 34:     btn->event = EVENT_IDLE;
+[e = . *U _btn 4 . `E10870 0 ]
+"35
+[; ;buttons.c: 35: }
 [e :UE 1514 ]
 }
-"93
-[; ;mcc_generated_files/tmr0.c: 93: void TMR0_StopTimer(void)
-[v _TMR0_StopTimer `(v ~T0 @X0 1 ef ]
-"94
-[; ;mcc_generated_files/tmr0.c: 94: {
+"37
+[; ;buttons.c: 37: void BUTTONS_init() {
+[v _BUTTONS_init `(v ~T0 @X0 1 ef ]
 {
-[e :U _TMR0_StopTimer ]
+[e :U _BUTTONS_init ]
 [f ]
-"96
-[; ;mcc_generated_files/tmr0.c: 96:     T0CON0bits.T0EN = 0;
-[e = . . _T0CON0bits 1 4 -> -> 0 `i `uc ]
-"97
-[; ;mcc_generated_files/tmr0.c: 97: }
+"38
+[; ;buttons.c: 38:     menu = &buttons[0];
+[e = _menu &U *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
+"39
+[; ;buttons.c: 39:     up = &buttons[1];
+[e = _up &U *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
+"40
+[; ;buttons.c: 40:     down = &buttons[2];
+[e = _down &U *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
+"41
+[; ;buttons.c: 41:     enter = &buttons[3];
+[e = _enter &U *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
+"43
+[; ;buttons.c: 43:     init(menu, &PORTC, 2);
+[e ( _init (3 , , _menu &U _PORTC -> -> 2 `i `uc ]
+"44
+[; ;buttons.c: 44:     init(enter, &PORTA, 2);
+[e ( _init (3 , , _enter &U _PORTA -> -> 2 `i `uc ]
+"45
+[; ;buttons.c: 45:     init(down, &PORTC, 0);
+[e ( _init (3 , , _down &U _PORTC -> -> 0 `i `uc ]
+"46
+[; ;buttons.c: 46:     init(up, &PORTC, 1);
+[e ( _init (3 , , _up &U _PORTC -> -> 1 `i `uc ]
+"47
+[; ;buttons.c: 47: }
 [e :UE 1515 ]
 }
-"99
-[; ;mcc_generated_files/tmr0.c: 99: uint8_t TMR0_ReadTimer(void)
-[v _TMR0_ReadTimer `(uc ~T0 @X0 1 ef ]
-"100
-[; ;mcc_generated_files/tmr0.c: 100: {
+"49
+[; ;buttons.c: 49: int lastTime = 0;
+[v _lastTime `i ~T0 @X0 1 e ]
+[i _lastTime
+-> 0 `i
+]
+"50
+[; ;buttons.c: 50: void BUTTONS_task() {
+[v _BUTTONS_task `(v ~T0 @X0 1 ef ]
 {
-[e :U _TMR0_ReadTimer ]
+[e :U _BUTTONS_task ]
 [f ]
-"101
-[; ;mcc_generated_files/tmr0.c: 101:     uint8_t readVal;
-[v _readVal `uc ~T0 @X0 1 a ]
-"104
-[; ;mcc_generated_files/tmr0.c: 104:     readVal = TMR0L;
-[e = _readVal _TMR0L ]
-"106
-[; ;mcc_generated_files/tmr0.c: 106:     return readVal;
-[e ) _readVal ]
+"51
+[; ;buttons.c: 51:     time_t time = CLOCK_getTime();
+[v _time `us ~T0 @X0 1 a ]
+[e = _time ( _CLOCK_getTime ..  ]
+"54
+[; ;buttons.c: 54:     if (time - lastTime < 50)
+[e $ ! < - -> _time `ui -> _lastTime `ui -> -> 50 `i `ui 1517  ]
+"55
+[; ;buttons.c: 55:         return;
 [e $UE 1516  ]
-"107
-[; ;mcc_generated_files/tmr0.c: 107: }
+[e :U 1517 ]
+"57
+[; ;buttons.c: 57:     lastTime = time;
+[e = _lastTime -> _time `i ]
+"60
+[; ;buttons.c: 60:     for (uint8_t i = 0; i < 4; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 4 `i 1518  ]
+[e $U 1519  ]
+[e :U 1518 ]
+{
+"61
+[; ;buttons.c: 61:         button_t* btn = buttons + i;
+[v _btn `*S1513 ~T0 @X0 1 a ]
+[e = _btn + &U _buttons * -> -> _i `i `x -> -> # *U &U _buttons `i `x ]
+"64
+[; ;buttons.c: 64:         if ((*(btn->port) & (1 << (btn->pin))) == 0) {
+[e $ ! == & -> *U . *U _btn 0 `i << -> 1 `i -> . *U _btn 1 `i -> 0 `i 1521  ]
+{
+"65
+[; ;buttons.c: 65:             btn->state = STATE_PRESSED;
+[e = . *U _btn 2 . `E10874 1 ]
+"66
+[; ;buttons.c: 66:         } else {
+}
+[e $U 1522  ]
+[e :U 1521 ]
+{
+"67
+[; ;buttons.c: 67:             btn->state = STATE_UNPRESSED;
+[e = . *U _btn 2 . `E10874 0 ]
+"68
+[; ;buttons.c: 68:         }
+}
+[e :U 1522 ]
+"70
+[; ;buttons.c: 70:         if (btn->state == STATE_UNPRESSED && btn->lastState == STATE_PRESSED) {
+[e $ ! && == -> . *U _btn 2 `ui -> . `E10874 0 `ui == -> . *U _btn 3 `ui -> . `E10874 1 `ui 1523  ]
+{
+"72
+[; ;buttons.c: 72:             btn->event = EVENT_PRESSED;
+[e = . *U _btn 4 . `E10870 1 ]
+"73
+[; ;buttons.c: 73:         }
+}
+[e :U 1523 ]
+"75
+[; ;buttons.c: 75:         btn->lastState = btn->state;
+[e = . *U _btn 3 . *U _btn 2 ]
+"76
+[; ;buttons.c: 76:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 4 `i 1518  ]
+[e :U 1519 ]
+}
+"77
+[; ;buttons.c: 77: }
 [e :UE 1516 ]
-}
-"109
-[; ;mcc_generated_files/tmr0.c: 109: void TMR0_WriteTimer(uint8_t timerVal)
-[v _TMR0_WriteTimer `(v ~T0 @X0 1 ef1`uc ]
-"110
-[; ;mcc_generated_files/tmr0.c: 110: {
-{
-[e :U _TMR0_WriteTimer ]
-"109
-[; ;mcc_generated_files/tmr0.c: 109: void TMR0_WriteTimer(uint8_t timerVal)
-[v _timerVal `uc ~T0 @X0 1 r1 ]
-"110
-[; ;mcc_generated_files/tmr0.c: 110: {
-[f ]
-"112
-[; ;mcc_generated_files/tmr0.c: 112:     TMR0L = timerVal;
-[e = _TMR0L _timerVal ]
-"113
-[; ;mcc_generated_files/tmr0.c: 113:  }
-[e :UE 1517 ]
-}
-"115
-[; ;mcc_generated_files/tmr0.c: 115: void TMR0_Reload(uint8_t periodVal)
-[v _TMR0_Reload `(v ~T0 @X0 1 ef1`uc ]
-"116
-[; ;mcc_generated_files/tmr0.c: 116: {
-{
-[e :U _TMR0_Reload ]
-"115
-[; ;mcc_generated_files/tmr0.c: 115: void TMR0_Reload(uint8_t periodVal)
-[v _periodVal `uc ~T0 @X0 1 r1 ]
-"116
-[; ;mcc_generated_files/tmr0.c: 116: {
-[f ]
-"118
-[; ;mcc_generated_files/tmr0.c: 118:    TMR0H = periodVal;
-[e = _TMR0H _periodVal ]
-"119
-[; ;mcc_generated_files/tmr0.c: 119: }
-[e :UE 1518 ]
-}
-"121
-[; ;mcc_generated_files/tmr0.c: 121: void TMR0_ISR(void)
-[v _TMR0_ISR `(v ~T0 @X0 1 ef ]
-"122
-[; ;mcc_generated_files/tmr0.c: 122: {
-{
-[e :U _TMR0_ISR ]
-[f ]
-"124
-[; ;mcc_generated_files/tmr0.c: 124:     PIR0bits.TMR0IF = 0;
-[e = . . _PIR0bits 0 3 -> -> 0 `i `uc ]
-"125
-[; ;mcc_generated_files/tmr0.c: 125:     if(TMR0_InterruptHandler)
-[e $ ! != _TMR0_InterruptHandler -> -> 0 `i `*F10894 1520  ]
-"126
-[; ;mcc_generated_files/tmr0.c: 126:     {
-{
-"127
-[; ;mcc_generated_files/tmr0.c: 127:         TMR0_InterruptHandler();
-[e ( *U _TMR0_InterruptHandler ..  ]
-"128
-[; ;mcc_generated_files/tmr0.c: 128:     }
-}
-[e :U 1520 ]
-"131
-[; ;mcc_generated_files/tmr0.c: 131: }
-[e :UE 1519 ]
-}
-"134
-[; ;mcc_generated_files/tmr0.c: 134: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _TMR0_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F10896 ]
-{
-[e :U _TMR0_SetInterruptHandler ]
-[v _InterruptHandler `*F10898 ~T0 @X0 1 r1 ]
-[f ]
-"135
-[; ;mcc_generated_files/tmr0.c: 135:     TMR0_InterruptHandler = InterruptHandler;
-[e = _TMR0_InterruptHandler _InterruptHandler ]
-"136
-[; ;mcc_generated_files/tmr0.c: 136: }
-[e :UE 1521 ]
-}
-"138
-[; ;mcc_generated_files/tmr0.c: 138: void TMR0_DefaultInterruptHandler(void){
-[v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
-{
-[e :U _TMR0_DefaultInterruptHandler ]
-[f ]
-"141
-[; ;mcc_generated_files/tmr0.c: 141: }
-[e :UE 1522 ]
 }

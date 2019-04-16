@@ -18055,9 +18055,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 130 "./mcc_generated_files/pin_manager.h"
+# 210 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 142 "./mcc_generated_files/pin_manager.h"
+# 222 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -18308,7 +18308,7 @@ void PMD_Initialize(void);
 # 44 "main.c" 2
 
 # 1 "./clock.h" 1
-# 13 "./clock.h"
+# 11 "./clock.h"
 typedef uint16_t time_t;
 
 void CLOCK_init();
@@ -18320,6 +18320,15 @@ time_t CLOCK_getTime();
 void TM1650_setDigit(uint8_t, char, int);
 void TM1650_init();
 # 46 "main.c" 2
+
+# 1 "./buttons.h" 1
+# 17 "./buttons.h"
+    void BUTTONS_init();
+    void BUTTONS_task();
+# 47 "main.c" 2
+
+# 1 "./controller.h" 1
+# 48 "main.c" 2
 
 
 
@@ -18354,6 +18363,25 @@ void DMX_ISR(void) {
 
 }
 
+
+void Blink2() {
+    static _Bool value = 0;
+    static time_t lastTime = 0;
+
+    time_t time = CLOCK_getTime();
+    if(time <= lastTime + 51)
+        return;
+
+    lastTime = time;
+    value = !value;
+
+    if(value)
+        TM1650_setDigit(1, '8', 0);
+    else
+        TM1650_setDigit(1, ' ', 0);
+
+}
+
 void main(void) {
 
     SYSTEM_Initialize();
@@ -18378,11 +18406,13 @@ void main(void) {
 
 
     TM1650_init();
-
+    BUTTONS_init();
     while (1) {
 
-        LED_setColor(dmxData[2], dmxData[3], dmxData[4], dmxData[5]);
-        TM1650_setDigit(1, 'c', 0);
+
+        BUTTONS_task();
+
+
     }
 }
 

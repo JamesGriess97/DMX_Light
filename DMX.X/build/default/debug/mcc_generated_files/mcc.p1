@@ -4,8 +4,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "98 mcc_generated_files/mcc.h
 [; ;mcc_generated_files/mcc.h: 98: void PMD_Initialize(void);
 [v _PMD_Initialize `(v ~T0 @X0 0 ef ]
-"130 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 130: void PIN_MANAGER_Initialize (void);
+"210 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 210: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "85 mcc_generated_files/mcc.h
 [; ;mcc_generated_files/mcc.h: 85: void OSCILLATOR_Initialize(void);
@@ -1465,8 +1465,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _OSCILLATOR_Initialize ]
 [f ]
 "63
-[; ;mcc_generated_files/mcc.c: 63:     OSCCON1 = 0x62;
-[e = _OSCCON1 -> -> 98 `i `uc ]
+[; ;mcc_generated_files/mcc.c: 63:     OSCCON1 = 0x60;
+[e = _OSCCON1 -> -> 96 `i `uc ]
 "65
 [; ;mcc_generated_files/mcc.c: 65:     OSCCON3 = 0x00;
 [e = _OSCCON3 -> -> 0 `i `uc ]
@@ -1474,8 +1474,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 67:     OSCEN = 0x00;
 [e = _OSCEN -> -> 0 `i `uc ]
 "69
-[; ;mcc_generated_files/mcc.c: 69:     OSCFRQ = 0x02;
-[e = _OSCFRQ -> -> 2 `i `uc ]
+[; ;mcc_generated_files/mcc.c: 69:     OSCFRQ = 0x06;
+[e = _OSCFRQ -> -> 6 `i `uc ]
 "71
 [; ;mcc_generated_files/mcc.c: 71:     OSCTUNE = 0x00;
 [e = _OSCTUNE -> -> 0 `i `uc ]

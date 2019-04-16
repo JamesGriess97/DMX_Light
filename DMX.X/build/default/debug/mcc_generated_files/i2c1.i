@@ -18299,7 +18299,7 @@ void I2C1_Initialize(void)
 
     SSP1CON3 = 0x00;
 
-    SSP1ADD = 0x03;
+    SSP1ADD = 0x50;
 
 
     PIR3bits.SSP1IF = 0;
