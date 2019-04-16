@@ -43,6 +43,7 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "clock.h"
+#include "tm1650.h"
 
 /*
                          Main application
@@ -76,6 +77,7 @@ void DMX_ISR(void) {
     // or set custom function using EUSART1_SetRxInterruptHandler()
 }
 
+
 void main(void) {
     // initialize the device
     SYSTEM_Initialize();
@@ -99,10 +101,12 @@ void main(void) {
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
+    TM1650_init();
 
     while (1) {
         // Add your application code
         LED_setColor(dmxData[2], dmxData[3], dmxData[4], dmxData[5]);
+        TM1650_setDigit(1, 'c', 0);
     }
 }
 

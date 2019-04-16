@@ -18058,9 +18058,9 @@ extern __bank0 __bit __timeout;
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 90 "mcc_generated_files/pin_manager.h"
+# 130 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 102 "mcc_generated_files/pin_manager.h"
+# 142 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
@@ -18153,6 +18153,98 @@ typedef uint32_t uint_fast32_t;
 # 53 "mcc_generated_files/mcc.h" 2
 
 
+# 1 "mcc_generated_files/i2c1.h" 1
+# 55 "mcc_generated_files/i2c1.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 140 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ptrdiff_t;
+# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 2 3
+# 55 "mcc_generated_files/i2c1.h" 2
+# 86 "mcc_generated_files/i2c1.h"
+typedef enum
+{
+    I2C1_MESSAGE_COMPLETE,
+    I2C1_MESSAGE_FAIL,
+    I2C1_MESSAGE_PENDING,
+    I2C1_STUCK_START,
+    I2C1_MESSAGE_ADDRESS_NO_ACK,
+    I2C1_DATA_NO_ACK,
+    I2C1_LOST_STATE
+} I2C1_MESSAGE_STATUS;
+# 111 "mcc_generated_files/i2c1.h"
+typedef struct
+{
+    uint16_t address;
+
+
+    uint8_t length;
+    uint8_t *pbuffer;
+} I2C1_TRANSACTION_REQUEST_BLOCK;
+# 223 "mcc_generated_files/i2c1.h"
+void I2C1_Initialize(void);
+# 262 "mcc_generated_files/i2c1.h"
+void I2C1_MasterWrite(
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address,
+                                I2C1_MESSAGE_STATUS *pstatus);
+# 409 "mcc_generated_files/i2c1.h"
+void I2C1_MasterRead(
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address,
+                                I2C1_MESSAGE_STATUS *pstatus);
+# 519 "mcc_generated_files/i2c1.h"
+void I2C1_MasterTRBInsert(
+                                uint8_t count,
+                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb_list,
+                                I2C1_MESSAGE_STATUS *pflag);
+# 563 "mcc_generated_files/i2c1.h"
+void I2C1_MasterReadTRBBuild(
+                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address);
+# 608 "mcc_generated_files/i2c1.h"
+void I2C1_MasterWriteTRBBuild(
+                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address);
+# 650 "mcc_generated_files/i2c1.h"
+_Bool I2C1_MasterQueueIsEmpty(void);
+# 688 "mcc_generated_files/i2c1.h"
+_Bool I2C1_MasterQueueIsFull(void);
+
+void I2C1_BusCollisionISR( void );
+void I2C1_ISR ( void );
+# 55 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/tmr0.h" 1
+# 100 "mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 196 "mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 235 "mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 272 "mcc_generated_files/tmr0.h"
+void TMR0_Reload(uint8_t periodVal);
+# 291 "mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 310 "mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 328 "mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 346 "mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 56 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/eusart1.h" 1
 # 75 "mcc_generated_files/eusart1.h"
 typedef union {
@@ -18207,12 +18299,12 @@ void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
 # 515 "mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 55 "mcc_generated_files/mcc.h" 2
-# 70 "mcc_generated_files/mcc.h"
+# 57 "mcc_generated_files/mcc.h" 2
+# 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "mcc_generated_files/mcc.h"
+# 85 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 96 "mcc_generated_files/mcc.h"
+# 98 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 50 "mcc_generated_files/interrupt_manager.c" 2
 
@@ -18220,9 +18312,21 @@ void PMD_Initialize(void);
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 {
 
-    if(INTCONbits.PEIE == 1)
+    if(PIE0bits.TMR0IE == 1 && PIR0bits.TMR0IF == 1)
     {
-        if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
+        TMR0_ISR();
+    }
+    else if(INTCONbits.PEIE == 1)
+    {
+        if(PIE3bits.BCL1IE == 1 && PIR3bits.BCL1IF == 1)
+        {
+            I2C1_BusCollisionISR();
+        }
+        else if(PIE3bits.SSP1IE == 1 && PIR3bits.SSP1IF == 1)
+        {
+            I2C1_ISR();
+        }
+        else if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
         {
             EUSART1_TxDefaultInterruptHandler();
         }
