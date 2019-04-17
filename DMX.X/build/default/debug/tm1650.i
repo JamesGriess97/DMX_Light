@@ -18243,15 +18243,15 @@ void TM1650_init() {
 
 void TM1650_fastPrintNum(uint16_t num) {
     if(num > 9999) {
-        TM1650_setDigit(0, 'e', 0);
-        TM1650_setDigit(1, 'e', 0);
-        TM1650_setDigit(2, 'e', 0);
-        TM1650_setDigit(3, 'e', 0);
+        TM1650_setDigit(0, 'E', 0);
+        TM1650_setDigit(1, 'E', 0);
+        TM1650_setDigit(2, 'E', 0);
+        TM1650_setDigit(3, 'E', 0);
     } else {
         int i=0;
         for(i=0; i<4; i++) {
             int numWrite = num %10;
-            TM1650_setDigit(i, numWrite+48, 0);
+            TM1650_setDigit(3-i, numWrite+48, 0);
             num = num/10;
         }
     }

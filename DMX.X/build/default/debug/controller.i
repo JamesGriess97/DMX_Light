@@ -344,6 +344,16 @@ void address_dec()
 
 void CONTROLLER_task() {
     if (BUTTONS_isClicked(up)) {
+        TM1650_fastPrintNum(0);
+        TM1650_fastPrintNum(100);
+        TM1650_fastPrintNum(5);
+        TM1650_fastPrintNum(999);
+        TM1650_fastPrintNum(9);
+        TM1650_fastPrintNum(1000);
+        TM1650_fastPrintNum(10);
+        TM1650_fastPrintNum(99);
+        TM1650_fastPrintNum(9999);
+        TM1650_fastPrintNum(10000);
         address_inc();
 
     } else if (BUTTONS_isClicked(down)) {
