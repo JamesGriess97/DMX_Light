@@ -9,6 +9,8 @@
 # 1 "buttons.c" 2
 
 
+
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -113,7 +115,7 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 3 "buttons.c" 2
+# 5 "buttons.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
@@ -18140,14 +18142,15 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 4 "buttons.c" 2
+# 6 "buttons.c" 2
 
 
 # 1 "./buttons.h" 1
 # 16 "./buttons.h"
     typedef enum {
         EVENT_IDLE,
-        EVENT_PRESSED
+        EVENT_PRESSED,
+        EVENT_HELD
     } event_t;
 
     typedef enum {
@@ -18161,6 +18164,7 @@ extern __bank0 __bit __timeout;
         btnState_t state;
         btnState_t lastState;
         event_t event;
+        uint16_t pressTime;
     } button_t;
 
 
@@ -18169,7 +18173,7 @@ extern __bank0 __bit __timeout;
     void BUTTONS_init();
     void BUTTONS_task();
     int BUTTONS_isClicked(button_t*);
-# 6 "buttons.c" 2
+# 8 "buttons.c" 2
 
 # 1 "./clock.h" 1
 # 11 "./clock.h"
@@ -18177,7 +18181,7 @@ typedef uint16_t time_t;
 
 void CLOCK_init();
 time_t CLOCK_getTime();
-# 7 "buttons.c" 2
+# 9 "buttons.c" 2
 
 
 button_t buttons[4];
@@ -18226,6 +18230,14 @@ void BUTTONS_task() {
         if (btn->state == STATE_UNPRESSED && btn->lastState == STATE_PRESSED) {
 
             btn->event = EVENT_PRESSED;
+        } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_PRESSED){
+
+            volatile dif = time - btn->pressTime;
+            if(dif > 500) {
+                btn->event = EVENT_HELD;
+            }
+        } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_UNPRESSED){
+            btn->pressTime = time;
         }
 
         btn->lastState = btn->state;
@@ -18235,6 +18247,13 @@ void BUTTONS_task() {
 int BUTTONS_isClicked(button_t* button) {
     if (button->event == EVENT_PRESSED) {
         button->event = EVENT_IDLE;
+        return 1;
+    }
+    return 0;
+}
+
+int BUTTONS_isHeld(button_t* button) {
+    if (button->event == EVENT_HELD) {
         return 1;
     }
 

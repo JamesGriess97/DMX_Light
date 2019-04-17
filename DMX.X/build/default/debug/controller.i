@@ -124,7 +124,8 @@ typedef uint32_t uint_fast32_t;
 
     typedef enum {
         EVENT_IDLE,
-        EVENT_PRESSED
+        EVENT_PRESSED,
+        EVENT_HELD
     } event_t;
 
     typedef enum {
@@ -138,6 +139,7 @@ typedef uint32_t uint_fast32_t;
         btnState_t state;
         btnState_t lastState;
         event_t event;
+        uint16_t pressTime;
     } button_t;
 
 
@@ -344,19 +346,13 @@ void address_dec()
 
 void CONTROLLER_task() {
     if (BUTTONS_isClicked(up)) {
-        TM1650_fastPrintNum(0);
-        TM1650_fastPrintNum(100);
-        TM1650_fastPrintNum(5);
-        TM1650_fastPrintNum(999);
-        TM1650_fastPrintNum(9);
-        TM1650_fastPrintNum(1000);
-        TM1650_fastPrintNum(10);
-        TM1650_fastPrintNum(99);
-        TM1650_fastPrintNum(9999);
-        TM1650_fastPrintNum(10000);
         address_inc();
 
     } else if (BUTTONS_isClicked(down)) {
+        address_dec();
+    } else if (BUTTONS_isHeld(up)) {
+        address_inc();
+    } else if (BUTTONS_isHeld(down)) {
         address_dec();
     }
 }

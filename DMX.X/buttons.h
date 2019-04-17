@@ -15,7 +15,8 @@ extern "C" {
     
     typedef enum {
         EVENT_IDLE,
-        EVENT_PRESSED
+        EVENT_PRESSED,
+        EVENT_HELD
     } event_t;
 
     typedef enum {
@@ -29,6 +30,7 @@ extern "C" {
         btnState_t state;
         btnState_t lastState;
         event_t event;
+        uint16_t pressTime;
     } button_t;
 
     

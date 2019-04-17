@@ -45,5 +45,9 @@ void CONTROLLER_task() {
         
     } else if (BUTTONS_isClicked(down)) {
         address_dec();
+    } else if (BUTTONS_isHeld(up)) {
+        address_inc();
+    } else if (BUTTONS_isHeld(down)) {
+        address_dec();
     }
 }

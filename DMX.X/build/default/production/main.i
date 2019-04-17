@@ -18326,7 +18326,8 @@ void TM1650_init();
 # 16 "./buttons.h"
     typedef enum {
         EVENT_IDLE,
-        EVENT_PRESSED
+        EVENT_PRESSED,
+        EVENT_HELD
     } event_t;
 
     typedef enum {
@@ -18340,6 +18341,7 @@ void TM1650_init();
         btnState_t state;
         btnState_t lastState;
         event_t event;
+        uint16_t pressTime;
     } button_t;
 
 

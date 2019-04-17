@@ -4,21 +4,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _TM1650_fastPrintNum `(v ~T0 @X0 0 ef1`us ]
 "43 controller.c
 [; ;controller.c: 43:     if (BUTTONS_isClicked(up)) {
-[c E40 0 1 .. ]
-[n E40 . STATE_UNPRESSED STATE_PRESSED  ]
-[c E36 0 1 .. ]
-[n E36 . EVENT_IDLE EVENT_PRESSED  ]
-"26 ./buttons.h
-[; ;./buttons.h: 26:     typedef struct {
-[s S1 `*Vuc 1 `uc 1 `E40 1 `E40 1 `E36 1 ]
-[n S1 . port pin state lastState event ]
-"39
-[; ;./buttons.h: 39:     int BUTTONS_isClicked(button_t*);
+[c E41 0 1 .. ]
+[n E41 . STATE_UNPRESSED STATE_PRESSED  ]
+[c E36 0 1 2 .. ]
+[n E36 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
+"27 ./buttons.h
+[; ;./buttons.h: 27:     typedef struct {
+[s S1 `*Vuc 1 `uc 1 `E41 1 `E41 1 `E36 1 `us 1 ]
+[n S1 . port pin state lastState event pressTime ]
+"41
+[; ;./buttons.h: 41:     int BUTTONS_isClicked(button_t*);
 [v _BUTTONS_isClicked `(i ~T0 @X0 0 ef1`*S1 ]
-"36
-[; ;./buttons.h: 36:     extern button_t *up, *down, *enter, *menu;
+"38
+[; ;./buttons.h: 38:     extern button_t *up, *down, *enter, *menu;
 [v _up `*S1 ~T0 @X0 0 e ]
 [v _down `*S1 ~T0 @X0 0 e ]
+"48 controller.c
+[; ;controller.c: 48:     } else if (BUTTONS_isHeld(up)) {
+[v _BUTTONS_isHeld `(i ~T0 @X0 0 e? ]
 "6 controller.c
 [; ;controller.c: 6: uint16_t address = 1;
 [v _address `us ~T0 @X0 1 e ]
@@ -132,11 +135,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;controller.c: 47:         address_dec();
 [e ( _address_dec ..  ]
 "48
-[; ;controller.c: 48:     }
+[; ;controller.c: 48:     } else if (BUTTONS_isHeld(up)) {
 }
+[e $U 15  ]
 [e :U 14 ]
-[e :U 13 ]
+[e $ ! != ( _BUTTONS_isHeld _up -> 0 `i 16  ]
+{
 "49
-[; ;controller.c: 49: }
+[; ;controller.c: 49:         address_inc();
+[e ( _address_inc ..  ]
+"50
+[; ;controller.c: 50:     } else if (BUTTONS_isHeld(down)) {
+}
+[e $U 17  ]
+[e :U 16 ]
+[e $ ! != ( _BUTTONS_isHeld _down -> 0 `i 18  ]
+{
+"51
+[; ;controller.c: 51:         address_dec();
+[e ( _address_dec ..  ]
+"52
+[; ;controller.c: 52:     }
+}
+[e :U 18 ]
+[e :U 17 ]
+[e :U 15 ]
+[e :U 13 ]
+"53
+[; ;controller.c: 53: }
 [e :UE 11 ]
 }

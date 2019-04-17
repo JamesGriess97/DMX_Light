@@ -1,14 +1,14 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"9 buttons.c
-[; ;buttons.c: 9: button_t buttons[4];
-[c E10869 0 1 .. ]
-[n E10869 . STATE_UNPRESSED STATE_PRESSED  ]
-[c E10865 0 1 .. ]
-[n E10865 . EVENT_IDLE EVENT_PRESSED  ]
-"26 ./buttons.h
-[; ;./buttons.h: 26:     typedef struct {
-[s S1513 `*Vuc 1 `uc 1 `E10869 1 `E10869 1 `E10865 1 ]
-[n S1513 . port pin state lastState event ]
+"11 buttons.c
+[; ;buttons.c: 11: button_t buttons[4];
+[c E10870 0 1 .. ]
+[n E10870 . STATE_UNPRESSED STATE_PRESSED  ]
+[c E10865 0 1 2 .. ]
+[n E10865 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
+"27 ./buttons.h
+[; ;./buttons.h: 27:     typedef struct {
+[s S1513 `*Vuc 1 `uc 1 `E10870 1 `E10870 1 `E10865 1 `us 1 ]
+[n S1513 . port pin state lastState event pressTime ]
 "535 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 535: extern volatile unsigned char PORTC __attribute__((address(0x00E)));
 [v _PORTC `Vuc ~T0 @X0 0 e@14 ]
@@ -1380,17 +1380,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"9 buttons.c
-[; ;buttons.c: 9: button_t buttons[4];
+"11 buttons.c
+[; ;buttons.c: 11: button_t buttons[4];
 [v _buttons `S1513 ~T0 @X0 -> 4 `i e ]
-"10
-[; ;buttons.c: 10: button_t *up, *down, *enter, *menu;
+"12
+[; ;buttons.c: 12: button_t *up, *down, *enter, *menu;
 [v _up `*S1513 ~T0 @X0 1 e ]
 [v _down `*S1513 ~T0 @X0 1 e ]
 [v _enter `*S1513 ~T0 @X0 1 e ]
 [v _menu `*S1513 ~T0 @X0 1 e ]
-"12
-[; ;buttons.c: 12: static void init(button_t* btn, volatile uint8_t* port, uint8_t pin) {
+"14
+[; ;buttons.c: 14: static void init(button_t* btn, volatile uint8_t* port, uint8_t pin) {
 [v _init `(v ~T0 @X0 1 sf3`*S1513`*Vuc`uc ]
 {
 [e :U _init ]
@@ -1398,84 +1398,84 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _port `*Vuc ~T0 @X0 1 r2 ]
 [v _pin `uc ~T0 @X0 1 r3 ]
 [f ]
-"13
-[; ;buttons.c: 13:     btn->port = port;
-[e = . *U _btn 0 _port ]
-"14
-[; ;buttons.c: 14:     btn->pin = pin;
-[e = . *U _btn 1 _pin ]
 "15
-[; ;buttons.c: 15:     btn->state = STATE_UNPRESSED;
-[e = . *U _btn 2 . `E10869 0 ]
+[; ;buttons.c: 15:     btn->port = port;
+[e = . *U _btn 0 _port ]
 "16
-[; ;buttons.c: 16:     btn->event = EVENT_IDLE;
-[e = . *U _btn 4 . `E10865 0 ]
+[; ;buttons.c: 16:     btn->pin = pin;
+[e = . *U _btn 1 _pin ]
 "17
-[; ;buttons.c: 17: }
+[; ;buttons.c: 17:     btn->state = STATE_UNPRESSED;
+[e = . *U _btn 2 . `E10870 0 ]
+"18
+[; ;buttons.c: 18:     btn->event = EVENT_IDLE;
+[e = . *U _btn 4 . `E10865 0 ]
+"19
+[; ;buttons.c: 19: }
 [e :UE 1514 ]
 }
-"19
-[; ;buttons.c: 19: void BUTTONS_init() {
+"21
+[; ;buttons.c: 21: void BUTTONS_init() {
 [v _BUTTONS_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _BUTTONS_init ]
 [f ]
-"20
-[; ;buttons.c: 20:     menu = &buttons[0];
-[e = _menu &U *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
-"21
-[; ;buttons.c: 21:     up = &buttons[1];
-[e = _up &U *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
 "22
-[; ;buttons.c: 22:     down = &buttons[2];
-[e = _down &U *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
+[; ;buttons.c: 22:     menu = &buttons[0];
+[e = _menu &U *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
 "23
-[; ;buttons.c: 23:     enter = &buttons[3];
-[e = _enter &U *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
+[; ;buttons.c: 23:     up = &buttons[1];
+[e = _up &U *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
+"24
+[; ;buttons.c: 24:     down = &buttons[2];
+[e = _down &U *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
 "25
-[; ;buttons.c: 25:     init(menu, &PORTC, 2);
-[e ( _init (3 , , _menu &U _PORTC -> -> 2 `i `uc ]
-"26
-[; ;buttons.c: 26:     init(enter, &PORTA, 2);
-[e ( _init (3 , , _enter &U _PORTA -> -> 2 `i `uc ]
+[; ;buttons.c: 25:     enter = &buttons[3];
+[e = _enter &U *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux ]
 "27
-[; ;buttons.c: 27:     init(down, &PORTC, 0);
-[e ( _init (3 , , _down &U _PORTC -> -> 0 `i `uc ]
+[; ;buttons.c: 27:     init(menu, &PORTC, 2);
+[e ( _init (3 , , _menu &U _PORTC -> -> 2 `i `uc ]
 "28
-[; ;buttons.c: 28:     init(up, &PORTC, 1);
-[e ( _init (3 , , _up &U _PORTC -> -> 1 `i `uc ]
+[; ;buttons.c: 28:     init(enter, &PORTA, 2);
+[e ( _init (3 , , _enter &U _PORTA -> -> 2 `i `uc ]
 "29
-[; ;buttons.c: 29: }
+[; ;buttons.c: 29:     init(down, &PORTC, 0);
+[e ( _init (3 , , _down &U _PORTC -> -> 0 `i `uc ]
+"30
+[; ;buttons.c: 30:     init(up, &PORTC, 1);
+[e ( _init (3 , , _up &U _PORTC -> -> 1 `i `uc ]
+"31
+[; ;buttons.c: 31: }
 [e :UE 1515 ]
 }
-"31
-[; ;buttons.c: 31: int lastTime = 0;
+"33
+[; ;buttons.c: 33: int lastTime = 0;
 [v _lastTime `i ~T0 @X0 1 e ]
 [i _lastTime
 -> 0 `i
 ]
-"32
-[; ;buttons.c: 32: void BUTTONS_task() {
+"34
+[; ;buttons.c: 34: void BUTTONS_task() {
 [v _BUTTONS_task `(v ~T0 @X0 1 ef ]
 {
 [e :U _BUTTONS_task ]
 [f ]
-"33
-[; ;buttons.c: 33:     time_t time = CLOCK_getTime();
+"35
+[; ;buttons.c: 35:     time_t time = CLOCK_getTime();
 [v _time `us ~T0 @X0 1 a ]
 [e = _time ( _CLOCK_getTime ..  ]
-"36
-[; ;buttons.c: 36:     if (time - lastTime < 50)
+"38
+[; ;buttons.c: 38:     if (time - lastTime < 50)
 [e $ ! < - -> _time `ui -> _lastTime `ui -> -> 50 `i `ui 1517  ]
-"37
-[; ;buttons.c: 37:         return;
+"39
+[; ;buttons.c: 39:         return;
 [e $UE 1516  ]
 [e :U 1517 ]
-"39
-[; ;buttons.c: 39:     lastTime = time;
+"41
+[; ;buttons.c: 41:     lastTime = time;
 [e = _lastTime -> _time `i ]
-"42
-[; ;buttons.c: 42:     for (uint8_t i = 0; i < 4; i++) {
+"44
+[; ;buttons.c: 44:     for (uint8_t i = 0; i < 4; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -1483,82 +1483,143 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1519  ]
 [e :U 1518 ]
 {
-"43
-[; ;buttons.c: 43:         button_t* btn = buttons + i;
+"45
+[; ;buttons.c: 45:         button_t* btn = buttons + i;
 [v _btn `*S1513 ~T0 @X0 1 a ]
 [e = _btn + &U _buttons * -> -> _i `i `x -> -> # *U &U _buttons `i `x ]
-"46
-[; ;buttons.c: 46:         if ((*(btn->port) & (1 << (btn->pin))) == 0) {
+"48
+[; ;buttons.c: 48:         if ((*(btn->port) & (1 << (btn->pin))) == 0) {
 [e $ ! == & -> *U . *U _btn 0 `i << -> 1 `i -> . *U _btn 1 `i -> 0 `i 1521  ]
 {
-"47
-[; ;buttons.c: 47:             btn->state = STATE_PRESSED;
-[e = . *U _btn 2 . `E10869 1 ]
-"48
-[; ;buttons.c: 48:         } else {
+"49
+[; ;buttons.c: 49:             btn->state = STATE_PRESSED;
+[e = . *U _btn 2 . `E10870 1 ]
+"50
+[; ;buttons.c: 50:         } else {
 }
 [e $U 1522  ]
 [e :U 1521 ]
 {
-"49
-[; ;buttons.c: 49:             btn->state = STATE_UNPRESSED;
-[e = . *U _btn 2 . `E10869 0 ]
-"50
-[; ;buttons.c: 50:         }
+"51
+[; ;buttons.c: 51:             btn->state = STATE_UNPRESSED;
+[e = . *U _btn 2 . `E10870 0 ]
+"52
+[; ;buttons.c: 52:         }
 }
 [e :U 1522 ]
-"52
-[; ;buttons.c: 52:         if (btn->state == STATE_UNPRESSED && btn->lastState == STATE_PRESSED) {
-[e $ ! && == -> . *U _btn 2 `ui -> . `E10869 0 `ui == -> . *U _btn 3 `ui -> . `E10869 1 `ui 1523  ]
-{
 "54
-[; ;buttons.c: 54:             btn->event = EVENT_PRESSED;
+[; ;buttons.c: 54:         if (btn->state == STATE_UNPRESSED && btn->lastState == STATE_PRESSED) {
+[e $ ! && == -> . *U _btn 2 `ui -> . `E10870 0 `ui == -> . *U _btn 3 `ui -> . `E10870 1 `ui 1523  ]
+{
+"56
+[; ;buttons.c: 56:             btn->event = EVENT_PRESSED;
 [e = . *U _btn 4 . `E10865 1 ]
-"55
-[; ;buttons.c: 55:         }
-}
-[e :U 1523 ]
 "57
-[; ;buttons.c: 57:         btn->lastState = btn->state;
+[; ;buttons.c: 57:         } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_PRESSED){
+}
+[e $U 1524  ]
+[e :U 1523 ]
+[e $ ! && == -> . *U _btn 2 `ui -> . `E10870 1 `ui == -> . *U _btn 3 `ui -> . `E10870 1 `ui 1525  ]
+{
+"59
+[; ;buttons.c: 59:             volatile dif = time - btn->pressTime;
+[v _dif `Vi ~T0 @X0 1 a ]
+[e = _dif -> - -> _time `ui -> . *U _btn 5 `ui `i ]
+"60
+[; ;buttons.c: 60:             if(dif > 500) {
+[e $ ! > _dif -> 500 `i 1526  ]
+{
+"61
+[; ;buttons.c: 61:                 btn->event = EVENT_HELD;
+[e = . *U _btn 4 . `E10865 2 ]
+"62
+[; ;buttons.c: 62:             }
+}
+[e :U 1526 ]
+"63
+[; ;buttons.c: 63:         } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_UNPRESSED){
+}
+[e $U 1527  ]
+[e :U 1525 ]
+[e $ ! && == -> . *U _btn 2 `ui -> . `E10870 1 `ui == -> . *U _btn 3 `ui -> . `E10870 0 `ui 1528  ]
+{
+"64
+[; ;buttons.c: 64:             btn->pressTime = time;
+[e = . *U _btn 5 _time ]
+"65
+[; ;buttons.c: 65:         }
+}
+[e :U 1528 ]
+[e :U 1527 ]
+[e :U 1524 ]
+"67
+[; ;buttons.c: 67:         btn->lastState = btn->state;
 [e = . *U _btn 3 . *U _btn 2 ]
-"58
-[; ;buttons.c: 58:     }
+"68
+[; ;buttons.c: 68:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 4 `i 1518  ]
 [e :U 1519 ]
 }
-"59
-[; ;buttons.c: 59: }
+"69
+[; ;buttons.c: 69: }
 [e :UE 1516 ]
 }
-"61
-[; ;buttons.c: 61: int BUTTONS_isClicked(button_t* button) {
+"71
+[; ;buttons.c: 71: int BUTTONS_isClicked(button_t* button) {
 [v _BUTTONS_isClicked `(i ~T0 @X0 1 ef1`*S1513 ]
 {
 [e :U _BUTTONS_isClicked ]
 [v _button `*S1513 ~T0 @X0 1 r1 ]
 [f ]
-"62
-[; ;buttons.c: 62:     if (button->event == EVENT_PRESSED) {
-[e $ ! == -> . *U _button 4 `ui -> . `E10865 1 `ui 1525  ]
+"72
+[; ;buttons.c: 72:     if (button->event == EVENT_PRESSED) {
+[e $ ! == -> . *U _button 4 `ui -> . `E10865 1 `ui 1530  ]
 {
-"63
-[; ;buttons.c: 63:         button->event = EVENT_IDLE;
+"73
+[; ;buttons.c: 73:         button->event = EVENT_IDLE;
 [e = . *U _button 4 . `E10865 0 ]
-"64
-[; ;buttons.c: 64:         return 1;
+"74
+[; ;buttons.c: 74:         return 1;
 [e ) -> 1 `i ]
-[e $UE 1524  ]
-"65
-[; ;buttons.c: 65:     }
+[e $UE 1529  ]
+"75
+[; ;buttons.c: 75:     }
 }
-[e :U 1525 ]
-"67
-[; ;buttons.c: 67:     return 0;
+[e :U 1530 ]
+"76
+[; ;buttons.c: 76:     return 0;
 [e ) -> 0 `i ]
-[e $UE 1524  ]
-"68
-[; ;buttons.c: 68: }
-[e :UE 1524 ]
+[e $UE 1529  ]
+"77
+[; ;buttons.c: 77: }
+[e :UE 1529 ]
+}
+"79
+[; ;buttons.c: 79: int BUTTONS_isHeld(button_t* button) {
+[v _BUTTONS_isHeld `(i ~T0 @X0 1 ef1`*S1513 ]
+{
+[e :U _BUTTONS_isHeld ]
+[v _button `*S1513 ~T0 @X0 1 r1 ]
+[f ]
+"80
+[; ;buttons.c: 80:     if (button->event == EVENT_HELD) {
+[e $ ! == -> . *U _button 4 `ui -> . `E10865 2 `ui 1532  ]
+{
+"81
+[; ;buttons.c: 81:         return 1;
+[e ) -> 1 `i ]
+[e $UE 1531  ]
+"82
+[; ;buttons.c: 82:     }
+}
+[e :U 1532 ]
+"84
+[; ;buttons.c: 84:     return 0;
+[e ) -> 0 `i ]
+[e $UE 1531  ]
+"85
+[; ;buttons.c: 85: }
+[e :UE 1531 ]
 }

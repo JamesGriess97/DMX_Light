@@ -1,5 +1,7 @@
 #define BUTTON_SCAN_INTERVAL 50
 #define BUTTON_COUNT 4
+#define HOLD_TIME 500
+
 #include <stdint.h>
 #include <xc.h>
 
@@ -52,8 +54,16 @@ void BUTTONS_task() {
         if (btn->state == STATE_UNPRESSED && btn->lastState == STATE_PRESSED) {
             // we released the button
             btn->event = EVENT_PRESSED;
+        } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_PRESSED){
+            // button still pressed
+            volatile dif = time - btn->pressTime;
+            if(dif > HOLD_TIME) {
+                btn->event = EVENT_HELD;
+            }
+        } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_UNPRESSED){
+            btn->pressTime = time;
         }
-
+        
         btn->lastState = btn->state;
     }
 }
@@ -63,6 +73,14 @@ int BUTTONS_isClicked(button_t* button) {
         button->event = EVENT_IDLE;
         return 1;
     }
+    return 0;
+}
+
+int BUTTONS_isHeld(button_t* button) {
+    if (button->event == EVENT_HELD) {
+        return 1;
+    }
     
     return 0;
 }
+

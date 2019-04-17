@@ -1548,17 +1548,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! > -> _num `ui -> -> 9999 `i `ui 1521  ]
 {
 "33
-[; ;tm1650.c: 33:         TM1650_setDigit(0, 'e', 0);
-[e ( _TM1650_setDigit (3 , , -> -> 0 `i `uc -> -> 101 `ui `uc -> 0 `i ]
+[; ;tm1650.c: 33:         TM1650_setDigit(0, 'E', 0);
+[e ( _TM1650_setDigit (3 , , -> -> 0 `i `uc -> -> 69 `ui `uc -> 0 `i ]
 "34
-[; ;tm1650.c: 34:         TM1650_setDigit(1, 'e', 0);
-[e ( _TM1650_setDigit (3 , , -> -> 1 `i `uc -> -> 101 `ui `uc -> 0 `i ]
+[; ;tm1650.c: 34:         TM1650_setDigit(1, 'E', 0);
+[e ( _TM1650_setDigit (3 , , -> -> 1 `i `uc -> -> 69 `ui `uc -> 0 `i ]
 "35
-[; ;tm1650.c: 35:         TM1650_setDigit(2, 'e', 0);
-[e ( _TM1650_setDigit (3 , , -> -> 2 `i `uc -> -> 101 `ui `uc -> 0 `i ]
+[; ;tm1650.c: 35:         TM1650_setDigit(2, 'E', 0);
+[e ( _TM1650_setDigit (3 , , -> -> 2 `i `uc -> -> 69 `ui `uc -> 0 `i ]
 "36
-[; ;tm1650.c: 36:         TM1650_setDigit(3, 'e', 0);
-[e ( _TM1650_setDigit (3 , , -> -> 3 `i `uc -> -> 101 `ui `uc -> 0 `i ]
+[; ;tm1650.c: 36:         TM1650_setDigit(3, 'E', 0);
+[e ( _TM1650_setDigit (3 , , -> -> 3 `i `uc -> -> 69 `ui `uc -> 0 `i ]
 "37
 [; ;tm1650.c: 37:     } else {
 }

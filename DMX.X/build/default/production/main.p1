@@ -55,14 +55,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17 ./tm1650.h
 [; ;./tm1650.h: 17: void TM1650_init();
 [v _TM1650_init `(v ~T0 @X0 0 e? ]
-"37 ./buttons.h
-[; ;./buttons.h: 37:     void BUTTONS_init();
+"39 ./buttons.h
+[; ;./buttons.h: 39:     void BUTTONS_init();
 [v _BUTTONS_init `(v ~T0 @X0 0 e? ]
 "16 ./controller.h
 [; ;./controller.h: 16: void CONTROLLER_init();
 [v _CONTROLLER_init `(v ~T0 @X0 0 e? ]
-"38 ./buttons.h
-[; ;./buttons.h: 38:     void BUTTONS_task();
+"40 ./buttons.h
+[; ;./buttons.h: 40:     void BUTTONS_task();
 [v _BUTTONS_task `(v ~T0 @X0 0 e? ]
 "15 ./controller.h
 [; ;./controller.h: 15: void CONTROLLER_task();
@@ -1687,14 +1687,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "84
 [; ;main.c: 84:     static _Bool value = 0;
-[v F11022 `a ~T0 @X0 1 s value ]
-[i F11022
+[v F11024 `a ~T0 @X0 1 s value ]
+[i F11024
 -> -> 0 `i `a
 ]
 "85
 [; ;main.c: 85:     static time_t lastTime = 0;
-[v F11023 `us ~T0 @X0 1 s lastTime ]
-[i F11023
+[v F11025 `us ~T0 @X0 1 s lastTime ]
+[i F11025
 -> -> 0 `i `us
 ]
 "87
@@ -1703,20 +1703,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _time ( _CLOCK_getTime ..  ]
 "88
 [; ;main.c: 88:     if(time <= lastTime + 51)
-[e $ ! <= -> _time `ui + -> F11023 `ui -> -> 51 `i `ui 1522  ]
+[e $ ! <= -> _time `ui + -> F11025 `ui -> -> 51 `i `ui 1522  ]
 "89
 [; ;main.c: 89:         return;
 [e $UE 1521  ]
 [e :U 1522 ]
 "91
 [; ;main.c: 91:     lastTime = time;
-[e = F11023 _time ]
+[e = F11025 _time ]
 "92
 [; ;main.c: 92:     value = !value;
-[e = F11022 -> -> ! != -> F11022 `i -> 0 `i `i `a ]
+[e = F11024 -> -> ! != -> F11024 `i -> 0 `i `i `a ]
 "94
 [; ;main.c: 94:     if(value)
-[e $ ! != -> F11022 `i -> 0 `i 1523  ]
+[e $ ! != -> F11024 `i -> 0 `i 1523  ]
 "95
 [; ;main.c: 95:         TM1650_setDigit(1, '8', 0);
 [e ( _TM1650_setDigit (3 , , -> -> 1 `i `uc -> -> 56 `ui `uc -> 0 `i ]

@@ -38,40 +38,42 @@ I2C1_MESSAGE_ADDRESS_NO_ACK 4
 I2C1_DATA_NO_ACK 5
 I2C1_LOST_STATE 6
 ]
-"9 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
-[e E10869 . `uc
+"11 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[e E10870 . `uc
 STATE_UNPRESSED 0
 STATE_PRESSED 1
 ]
 [e E10865 . `uc
 EVENT_IDLE 0
 EVENT_PRESSED 1
+EVENT_HELD 2
 ]
 "43 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
-[e E40 . `uc
+[e E41 . `uc
 STATE_UNPRESSED 0
 STATE_PRESSED 1
 ]
 [e E36 . `uc
 EVENT_IDLE 0
 EVENT_PRESSED 1
+EVENT_HELD 2
 ]
-"12 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+"14 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
 [v _init init `(v  1 s 1 init ]
-"19
+"21
 [v _BUTTONS_init BUTTONS_init `(v  1 e 1 0 ]
-"32
+"34
 [v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
-"61
+"71
 [v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
+"79
+[v _BUTTONS_isHeld BUTTONS_isHeld `(i  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8.c
-[v ___bmul __bmul `(uc  1 e 1 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\pic\__eeprom.c
@@ -172,15 +174,15 @@ EVENT_PRESSED 1
 [v _EUSART1_TxDefaultInterruptHandler EUSART1_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
 "96
 [v _EUSART1_RxDefaultInterruptHandler EUSART1_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
-[s S1324 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10869 1 state 1 3 `E10869 1 lastState 1 4 `E10865 1 event 1 5 ]
-"9 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
-[v _buttons buttons `[4]S1324  1 e 24 0 ]
-"10
-[v _up up `*.4S1324  1 e 1 0 ]
-[v _down down `*.4S1324  1 e 1 0 ]
-[v _enter enter `*.4S1324  1 e 1 0 ]
-[v _menu menu `*.4S1324  1 e 1 0 ]
-"31
+[s S1325 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+"11 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[v _buttons buttons `[4]S1325  1 e 32 0 ]
+"12
+[v _up up `*.4S1325  1 e 1 0 ]
+[v _down down `*.4S1325  1 e 1 0 ]
+[v _enter enter `*.4S1325  1 e 1 0 ]
+[v _menu menu `*.4S1325  1 e 1 0 ]
+"33
 [v _lastTime lastTime `i  1 e 2 0 ]
 [s S339 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
@@ -733,7 +735,7 @@ EVENT_PRESSED 1
 "42 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
 [v _CONTROLLER_task CONTROLLER_task `(v  1 e 1 0 ]
 {
-"49
+"53
 } 0
 "15
 [v _address_inc address_inc `(v  1 e 1 0 ]
@@ -745,14 +747,23 @@ EVENT_PRESSED 1
 {
 "40
 } 0
-"61 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+"79 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[v _BUTTONS_isHeld BUTTONS_isHeld `(i  1 e 2 0 ]
+{
+[s S1325 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+[v BUTTONS_isHeld@button button `*.4S1325  1 a 1 wreg ]
+[v BUTTONS_isHeld@button button `*.4S1325  1 a 1 wreg ]
+[v BUTTONS_isHeld@button button `*.4S1325  1 a 1 3 ]
+"85
+} 0
+"71
 [v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
 {
-[s S1324 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10869 1 state 1 3 `E10869 1 lastState 1 4 `E10865 1 event 1 5 ]
-[v BUTTONS_isClicked@button button `*.4S1324  1 a 1 wreg ]
-[v BUTTONS_isClicked@button button `*.4S1324  1 a 1 wreg ]
-[v BUTTONS_isClicked@button button `*.4S1324  1 a 1 3 ]
-"68
+[s S1325 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+[v BUTTONS_isClicked@button button `*.4S1325  1 a 1 wreg ]
+[v BUTTONS_isClicked@button button `*.4S1325  1 a 1 wreg ]
+[v BUTTONS_isClicked@button button `*.4S1325  1 a 1 3 ]
+"77
 } 0
 "8 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
 [v _CONTROLLER_init CONTROLLER_init `(v  1 e 1 0 ]
@@ -885,51 +896,40 @@ EVENT_PRESSED 1
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "136
 } 0
-"32 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+"34 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
 [v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
 {
-[s S1324 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10869 1 state 1 3 `E10869 1 lastState 1 4 `E10865 1 event 1 5 ]
-"43
-[v BUTTONS_task@btn btn `*.4S1324  1 a 1 10 ]
-"42
-[v BUTTONS_task@i i `uc  1 a 1 9 ]
-"33
-[v BUTTONS_task@time time `us  1 a 2 7 ]
 "59
-} 0
-"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8.c
-[v ___bmul __bmul `(uc  1 e 1 0 ]
-{
-[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
-"6
-[v ___bmul@product product `uc  1 a 1 2 ]
-"4
-[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
-[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
-"6
-[v ___bmul@multiplier multiplier `uc  1 a 1 3 ]
-"51
+[v BUTTONS_task@dif dif `VEi  1 a 2 8 ]
+[s S1325 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+"45
+[v BUTTONS_task@btn btn `*.4S1325  1 a 1 10 ]
+"44
+[v BUTTONS_task@i i `uc  1 a 1 5 ]
+"35
+[v BUTTONS_task@time time `us  1 a 2 6 ]
+"69
 } 0
 "17 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
 [v _CLOCK_getTime CLOCK_getTime `(us  1 e 2 0 ]
 {
 "19
 } 0
-"19 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+"21 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
 [v _BUTTONS_init BUTTONS_init `(v  1 e 1 0 ]
 {
-"29
+"31
 } 0
-"12
+"14
 [v _init init `(v  1 s 1 init ]
 {
-[s S1324 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10869 1 state 1 3 `E10869 1 lastState 1 4 `E10865 1 event 1 5 ]
-[v init@btn btn `*.4S1324  1 a 1 wreg ]
-[v init@btn btn `*.4S1324  1 a 1 wreg ]
+[s S1325 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+[v init@btn btn `*.4S1325  1 a 1 wreg ]
+[v init@btn btn `*.4S1325  1 a 1 wreg ]
 [v init@port port `*.39VEuc  1 p 2 0 ]
 [v init@pin pin `uc  1 p 1 2 ]
-[v init@btn btn `*.4S1324  1 a 1 4 ]
-"17
+[v init@btn btn `*.4S1325  1 a 1 4 ]
+"19
 } 0
 "52 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
