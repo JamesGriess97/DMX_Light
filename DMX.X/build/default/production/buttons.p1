@@ -1532,3 +1532,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;buttons.c: 59: }
 [e :UE 1516 ]
 }
+"61
+[; ;buttons.c: 61: int BUTTONS_isClicked(button_t* button) {
+[v _BUTTONS_isClicked `(i ~T0 @X0 1 ef1`*S1513 ]
+{
+[e :U _BUTTONS_isClicked ]
+[v _button `*S1513 ~T0 @X0 1 r1 ]
+[f ]
+"62
+[; ;buttons.c: 62:     if (button->event == EVENT_PRESSED) {
+[e $ ! == -> . *U _button 4 `ui -> . `E10865 1 `ui 1525  ]
+{
+"63
+[; ;buttons.c: 63:         button->event = EVENT_IDLE;
+[e = . *U _button 4 . `E10865 0 ]
+"64
+[; ;buttons.c: 64:         return 1;
+[e ) -> 1 `i ]
+[e $UE 1524  ]
+"65
+[; ;buttons.c: 65:     }
+}
+[e :U 1525 ]
+"67
+[; ;buttons.c: 67:     return 0;
+[e ) -> 0 `i ]
+[e $UE 1524  ]
+"68
+[; ;buttons.c: 68: }
+[e :UE 1524 ]
+}

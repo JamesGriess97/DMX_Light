@@ -1537,36 +1537,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1519 ]
 }
 "31
-[; ;tm1650.c: 31: void putch(char c) {
-[v _putch `(v ~T0 @X0 1 ef1`uc ]
+[; ;tm1650.c: 31: void TM1650_fastPrintNum(uint16_t num) {
+[v _TM1650_fastPrintNum `(v ~T0 @X0 1 ef1`us ]
 {
-[e :U _putch ]
-[v _c `uc ~T0 @X0 1 r1 ]
+[e :U _TM1650_fastPrintNum ]
+[v _num `us ~T0 @X0 1 r1 ]
 [f ]
 "32
-[; ;tm1650.c: 32:     if(c == '\r') {
-[e $ ! == -> _c `ui -> 13 `ui 1521  ]
+[; ;tm1650.c: 32:     if(num > 9999) {
+[e $ ! > -> _num `ui -> -> 9999 `i `ui 1521  ]
 {
 "33
-[; ;tm1650.c: 33:         count = 0;
-[e = _count -> 0 `i ]
+[; ;tm1650.c: 33:         TM1650_setDigit(0, 'e', 0);
+[e ( _TM1650_setDigit (3 , , -> -> 0 `i `uc -> -> 101 `ui `uc -> 0 `i ]
 "34
-[; ;tm1650.c: 34:     } else {
+[; ;tm1650.c: 34:         TM1650_setDigit(1, 'e', 0);
+[e ( _TM1650_setDigit (3 , , -> -> 1 `i `uc -> -> 101 `ui `uc -> 0 `i ]
+"35
+[; ;tm1650.c: 35:         TM1650_setDigit(2, 'e', 0);
+[e ( _TM1650_setDigit (3 , , -> -> 2 `i `uc -> -> 101 `ui `uc -> 0 `i ]
+"36
+[; ;tm1650.c: 36:         TM1650_setDigit(3, 'e', 0);
+[e ( _TM1650_setDigit (3 , , -> -> 3 `i `uc -> -> 101 `ui `uc -> 0 `i ]
+"37
+[; ;tm1650.c: 37:     } else {
 }
 [e $U 1522  ]
 [e :U 1521 ]
 {
-"35
-[; ;tm1650.c: 35:         TM1650_setDigit(count, c, 0);
-[e ( _TM1650_setDigit (3 , , -> _count `uc _c -> 0 `i ]
-"36
-[; ;tm1650.c: 36:         count++;
-[e ++ _count -> 1 `i ]
-"37
-[; ;tm1650.c: 37:     }
+"38
+[; ;tm1650.c: 38:         int i=0;
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+"39
+[; ;tm1650.c: 39:         for(i=0; i<4; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 4 `i 1523  ]
+[e $U 1524  ]
+[e :U 1523 ]
+{
+"40
+[; ;tm1650.c: 40:             int numWrite = num %10;
+[v _numWrite `i ~T0 @X0 1 a ]
+[e = _numWrite -> % -> _num `ui -> -> 10 `i `ui `i ]
+"41
+[; ;tm1650.c: 41:             TM1650_setDigit(i, numWrite+48, 0);
+[e ( _TM1650_setDigit (3 , , -> _i `uc -> + _numWrite -> 48 `i `uc -> 0 `i ]
+"42
+[; ;tm1650.c: 42:             num = num/10;
+[e = _num -> / -> _num `ui -> -> 10 `i `ui `us ]
+"43
+[; ;tm1650.c: 43:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 4 `i 1523  ]
+[e :U 1524 ]
+}
+"44
+[; ;tm1650.c: 44:     }
 }
 [e :U 1522 ]
-"38
-[; ;tm1650.c: 38: }
+"45
+[; ;tm1650.c: 45: }
 [e :UE 1520 ]
 }

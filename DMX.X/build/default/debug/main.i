@@ -18317,17 +18317,43 @@ time_t CLOCK_getTime();
 
 # 1 "./tm1650.h" 1
 # 15 "./tm1650.h"
+void TM1650_fastPrintNum(uint16_t);
 void TM1650_setDigit(uint8_t, char, int);
 void TM1650_init();
 # 46 "main.c" 2
 
 # 1 "./buttons.h" 1
-# 17 "./buttons.h"
+# 16 "./buttons.h"
+    typedef enum {
+        EVENT_IDLE,
+        EVENT_PRESSED
+    } event_t;
+
+    typedef enum {
+        STATE_UNPRESSED,
+        STATE_PRESSED
+    } btnState_t;
+
+    typedef struct {
+        volatile uint8_t* port;
+        uint8_t pin;
+        btnState_t state;
+        btnState_t lastState;
+        event_t event;
+    } button_t;
+
+
+
+    extern button_t *up, *down, *enter, *menu;
     void BUTTONS_init();
     void BUTTONS_task();
+    int BUTTONS_isClicked(button_t*);
 # 47 "main.c" 2
 
 # 1 "./controller.h" 1
+# 15 "./controller.h"
+void CONTROLLER_task();
+void CONTROLLER_init();
 # 48 "main.c" 2
 
 
@@ -18407,10 +18433,13 @@ void main(void) {
 
     TM1650_init();
     BUTTONS_init();
+    CONTROLLER_init();
+
     while (1) {
 
 
         BUTTONS_task();
+        CONTROLLER_task();
 
 
     }

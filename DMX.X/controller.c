@@ -2,7 +2,7 @@
 #include "buttons.h"
 #include "clock.h"
 #include "tm1650.h"
-
+#include <stdio.h>
 uint16_t address = 1;
 
 void CONTROLLER_init() {
@@ -14,10 +14,11 @@ void CONTROLLER_init() {
  */
 void address_inc()
 {
-    if(address == 512)
+    if(address == 512) {
         address = 1;
-    else
+    } else {
         address++;
+    }
     
     // update the display
     TM1650_fastPrintNum(address);
@@ -28,10 +29,11 @@ void address_inc()
  */
 void address_dec() 
 {
-    if(address == 1)
+    if(address == 1) {
         address = 512;
-    else
+    } else {
         address--;  
+    }
     
     // update the display
     TM1650_fastPrintNum(address);

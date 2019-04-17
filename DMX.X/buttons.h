@@ -36,6 +36,8 @@ extern "C" {
     extern button_t *up, *down, *enter, *menu;
     void BUTTONS_init();
     void BUTTONS_task();
+    int BUTTONS_isClicked(button_t*);
+
 #ifdef	__cplusplus
 }
 #endif

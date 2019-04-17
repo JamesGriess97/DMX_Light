@@ -28,11 +28,18 @@ void TM1650_init() {
     writeData(0x24, 1);
 }
 
-void putch(char c) {
-    if(c == '\r') {
-        count = 0;
+void TM1650_fastPrintNum(uint16_t num) {
+    if(num > 9999) {
+        TM1650_setDigit(0, 'e', 0);
+        TM1650_setDigit(1, 'e', 0);
+        TM1650_setDigit(2, 'e', 0);
+        TM1650_setDigit(3, 'e', 0);
     } else {
-        TM1650_setDigit(count, c, 0);
-        count++;
+        int i=0;
+        for(i=0; i<4; i++) {
+            int numWrite = num %10;
+            TM1650_setDigit(3-i, numWrite+48, 0);
+            num = num/10;
+        }
     }
 }

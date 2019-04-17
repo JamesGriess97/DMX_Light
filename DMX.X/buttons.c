@@ -57,3 +57,12 @@ void BUTTONS_task() {
         btn->lastState = btn->state;
     }
 }
+
+int BUTTONS_isClicked(button_t* button) {
+    if (button->event == EVENT_PRESSED) {
+        button->event = EVENT_IDLE;
+        return 1;
+    }
+    
+    return 0;
+}

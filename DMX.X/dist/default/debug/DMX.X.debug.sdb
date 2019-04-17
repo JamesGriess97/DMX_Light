@@ -38,21 +38,36 @@ I2C1_MESSAGE_ADDRESS_NO_ACK 4
 I2C1_DATA_NO_ACK 5
 I2C1_LOST_STATE 6
 ]
-"27 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
-[e E10874 . `uc
+"9 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[e E10869 . `uc
 STATE_UNPRESSED 0
 STATE_PRESSED 1
 ]
-[e E10870 . `uc
+[e E10865 . `uc
 EVENT_IDLE 0
 EVENT_PRESSED 1
 ]
-"30
+"43 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
+[e E40 . `uc
+STATE_UNPRESSED 0
+STATE_PRESSED 1
+]
+[e E36 . `uc
+EVENT_IDLE 0
+EVENT_PRESSED 1
+]
+"12 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
 [v _init init `(v  1 s 1 init ]
-"37
+"19
 [v _BUTTONS_init BUTTONS_init `(v  1 e 1 0 ]
-"50
+"32
 [v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
+"61
+[v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8.c
@@ -69,11 +84,19 @@ EVENT_PRESSED 1
 [v _CLOCK_getTime CLOCK_getTime `(us  1 e 2 0 ]
 "21
 [v _CLOCK_timerCallback CLOCK_timerCallback `(v  1 s 1 CLOCK_timerCallback ]
+"8 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
+[v _CONTROLLER_init CONTROLLER_init `(v  1 e 1 0 ]
+"15
+[v _address_inc address_inc `(v  1 e 1 0 ]
+"30
+[v _address_dec address_dec `(v  1 e 1 0 ]
+"42
+[v _CONTROLLER_task CONTROLLER_task `(v  1 e 1 0 ]
 "60 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _DMX_ISR DMX_ISR `(v  1 e 1 0 ]
 "101
 [v _main main `(v  1 e 1 0 ]
-"136
+"139
 [v _initLED initLED `(v  1 e 1 0 ]
 "85 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
@@ -143,19 +166,21 @@ EVENT_PRESSED 1
 [v _TM1650_setDigit TM1650_setDigit `(v  1 e 1 0 ]
 "27
 [v _TM1650_init TM1650_init `(v  1 e 1 0 ]
+"31
+[v _TM1650_fastPrintNum TM1650_fastPrintNum `(v  1 e 1 0 ]
 "95 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X/mcc_generated_files/eusart1.h
 [v _EUSART1_TxDefaultInterruptHandler EUSART1_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
 "96
 [v _EUSART1_RxDefaultInterruptHandler EUSART1_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
-[s S1314 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10874 1 state 1 3 `E10874 1 lastState 1 4 `E10870 1 event 1 5 ]
-"27 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
-[v _buttons buttons `[4]S1314  1 e 24 0 ]
-"28
-[v _up up `*.4S1314  1 e 1 0 ]
-[v _down down `*.4S1314  1 e 1 0 ]
-[v _enter enter `*.4S1314  1 e 1 0 ]
-[v _menu menu `*.4S1314  1 e 1 0 ]
-"49
+[s S1324 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10869 1 state 1 3 `E10869 1 lastState 1 4 `E10865 1 event 1 5 ]
+"9 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[v _buttons buttons `[4]S1324  1 e 24 0 ]
+"10
+[v _up up `*.4S1324  1 e 1 0 ]
+[v _down down `*.4S1324  1 e 1 0 ]
+[v _enter enter `*.4S1324  1 e 1 0 ]
+[v _menu menu `*.4S1324  1 e 1 0 ]
+"31
 [v _lastTime lastTime `i  1 e 2 0 ]
 [s S339 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
@@ -290,12 +315,12 @@ EVENT_PRESSED 1
 [v _SSP1CON2bits SSP1CON2bits `VES659  1 e 1 @401 ]
 "6682
 [v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @402 ]
-[s S904 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S912 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "10529
-[s S908 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S916 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -303,11 +328,11 @@ EVENT_PRESSED 1
 `uc 1 CKPS1 1 0 :1:5 
 `uc 1 CKPS2 1 0 :1:6 
 ]
-[s S916 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S924 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S920 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S928 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -316,105 +341,105 @@ EVENT_PRESSED 1
 `uc 1 T2CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S929 . 1 `S904 1 . 1 0 `S908 1 . 1 0 `S916 1 . 1 0 `S920 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES929  1 e 1 @654 ]
+[u S937 . 1 `S912 1 . 1 0 `S916 1 . 1 0 `S924 1 . 1 0 `S928 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES937  1 e 1 @654 ]
 "10767
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @656 ]
 "12081
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @780 ]
 "12101
 [v _CCPR1H CCPR1H `VEuc  1 e 1 @781 ]
-[s S960 . 1 `uc 1 MODE 1 0 :4:0 
+[s S968 . 1 `uc 1 MODE 1 0 :4:0 
 `uc 1 FMT 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "12158
-[s S966 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S974 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 ]
-[s S971 . 1 `uc 1 CCP1MODE 1 0 :4:0 
+[s S979 . 1 `uc 1 CCP1MODE 1 0 :4:0 
 `uc 1 CCP1FMT 1 0 :1:4 
 `uc 1 CCP1OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP1EN 1 0 :1:7 
 ]
-[s S977 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
+[s S985 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
 `uc 1 CCP1MODE1 1 0 :1:1 
 `uc 1 CCP1MODE2 1 0 :1:2 
 `uc 1 CCP1MODE3 1 0 :1:3 
 ]
-[s S982 . 1 `uc 1 . 1 0 :7:0 
+[s S990 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P1M1 1 0 :1:7 
 ]
-[u S985 . 1 `S960 1 . 1 0 `S966 1 . 1 0 `S971 1 . 1 0 `S977 1 . 1 0 `S982 1 . 1 0 ]
-[v _CCP1CONbits CCP1CONbits `VES985  1 e 1 @782 ]
+[u S993 . 1 `S968 1 . 1 0 `S974 1 . 1 0 `S979 1 . 1 0 `S985 1 . 1 0 `S990 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES993  1 e 1 @782 ]
 "12323
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @784 ]
 "12343
 [v _CCPR2H CCPR2H `VEuc  1 e 1 @785 ]
 "12400
-[s S1028 . 1 `uc 1 CCP2MODE 1 0 :4:0 
+[s S1036 . 1 `uc 1 CCP2MODE 1 0 :4:0 
 `uc 1 CCP2FMT 1 0 :1:4 
 `uc 1 CCP2OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP2EN 1 0 :1:7 
 ]
-[s S1034 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
+[s S1042 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
 `uc 1 CCP2MODE1 1 0 :1:1 
 `uc 1 CCP2MODE2 1 0 :1:2 
 `uc 1 CCP2MODE3 1 0 :1:3 
 ]
-[s S1039 . 1 `uc 1 . 1 0 :7:0 
+[s S1047 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P2M1 1 0 :1:7 
 ]
-[u S1042 . 1 `S960 1 . 1 0 `S966 1 . 1 0 `S1028 1 . 1 0 `S1034 1 . 1 0 `S1039 1 . 1 0 ]
-[v _CCP2CONbits CCP2CONbits `VES1042  1 e 1 @786 ]
+[u S1050 . 1 `S968 1 . 1 0 `S974 1 . 1 0 `S1036 1 . 1 0 `S1042 1 . 1 0 `S1047 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES1050  1 e 1 @786 ]
 "12565
 [v _CCPR3L CCPR3L `VEuc  1 e 1 @788 ]
 "12585
 [v _CCPR3H CCPR3H `VEuc  1 e 1 @789 ]
 "12642
-[s S1085 . 1 `uc 1 CCP3MODE 1 0 :4:0 
+[s S1093 . 1 `uc 1 CCP3MODE 1 0 :4:0 
 `uc 1 CCP3FMT 1 0 :1:4 
 `uc 1 CCP3OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP3EN 1 0 :1:7 
 ]
-[s S1091 . 1 `uc 1 CCP3MODE0 1 0 :1:0 
+[s S1099 . 1 `uc 1 CCP3MODE0 1 0 :1:0 
 `uc 1 CCP3MODE1 1 0 :1:1 
 `uc 1 CCP3MODE2 1 0 :1:2 
 `uc 1 CCP3MODE3 1 0 :1:3 
 ]
-[s S1096 . 1 `uc 1 . 1 0 :7:0 
+[s S1104 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P3M1 1 0 :1:7 
 ]
-[u S1099 . 1 `S960 1 . 1 0 `S966 1 . 1 0 `S1085 1 . 1 0 `S1091 1 . 1 0 `S1096 1 . 1 0 ]
-[v _CCP3CONbits CCP3CONbits `VES1099  1 e 1 @790 ]
+[u S1107 . 1 `S968 1 . 1 0 `S974 1 . 1 0 `S1093 1 . 1 0 `S1099 1 . 1 0 `S1104 1 . 1 0 ]
+[v _CCP3CONbits CCP3CONbits `VES1107  1 e 1 @790 ]
 "12807
 [v _CCPR4L CCPR4L `VEuc  1 e 1 @792 ]
 "12827
 [v _CCPR4H CCPR4H `VEuc  1 e 1 @793 ]
 "12884
-[s S1142 . 1 `uc 1 CCP4MODE 1 0 :4:0 
+[s S1150 . 1 `uc 1 CCP4MODE 1 0 :4:0 
 `uc 1 CCP4FMT 1 0 :1:4 
 `uc 1 CCP4OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP4EN 1 0 :1:7 
 ]
-[s S1148 . 1 `uc 1 CCP4MODE0 1 0 :1:0 
+[s S1156 . 1 `uc 1 CCP4MODE0 1 0 :1:0 
 `uc 1 CCP4MODE1 1 0 :1:1 
 `uc 1 CCP4MODE2 1 0 :1:2 
 `uc 1 CCP4MODE3 1 0 :1:3 
 ]
-[s S1153 . 1 `uc 1 . 1 0 :7:0 
+[s S1161 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P4M1 1 0 :1:7 
 ]
-[u S1156 . 1 `S960 1 . 1 0 `S966 1 . 1 0 `S1142 1 . 1 0 `S1148 1 . 1 0 `S1153 1 . 1 0 ]
-[v _CCP4CONbits CCP4CONbits `VES1156  1 e 1 @794 ]
+[u S1164 . 1 `S968 1 . 1 0 `S974 1 . 1 0 `S1150 1 . 1 0 `S1156 1 . 1 0 `S1161 1 . 1 0 ]
+[v _CCP4CONbits CCP4CONbits `VES1164  1 e 1 @794 ]
 "16651
 [v _TMR0L TMR0L `VEuc  1 e 1 @1436 ]
 "16789
@@ -563,6 +588,8 @@ EVENT_PRESSED 1
 [v _TRISC7 TRISC7 `VEb  1 e 0 @167 ]
 "5 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
 [v _currentTime currentTime `us  1 s 2 currentTime ]
+"6 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
+[v _address address `us  1 e 2 0 ]
 "57 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _dmxData dmxData `VE[513]uc  1 e 513 @9711 ]
 "58
@@ -621,93 +648,22 @@ EVENT_PRESSED 1
 [v _p_i2c1_current p_i2c1_current `*.4VES525  1 s 1 p_i2c1_current ]
 "59 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/tmr0.c
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"4 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
-[v _count count `i  1 e 2 0 ]
-"6
+"6 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _charTable charTable `DC[96]uc  1 e 96 0 ]
 "101 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"133
-} 0
 "136
+} 0
+"139
 [v _initLED initLED `(v  1 e 1 0 ]
 {
-"161
+"164
 } 0
 "27 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _TM1650_init TM1650_init `(v  1 e 1 0 ]
 {
 "29
-} 0
-"16
-[v _writeData writeData `(v  1 e 1 0 ]
-{
-[v writeData@address address `uc  1 a 1 wreg ]
-"17
-[v writeData@status status `VEE10866  1 a 1 1 ]
-"16
-[v writeData@address address `uc  1 a 1 wreg ]
-[v writeData@data data `uc  1 p 1 14 ]
-[v writeData@address address `uc  1 a 1 0 ]
-"20
-} 0
-"600 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/i2c1.c
-[v _I2C1_MasterWrite I2C1_MasterWrite `(v  1 e 1 0 ]
-{
-"601
-[v I2C1_MasterWrite@pdata pdata `*.4uc  1 a 1 wreg ]
-[v I2C1_MasterWrite@pdata pdata `*.4uc  1 a 1 wreg ]
-"602
-[v I2C1_MasterWrite@length length `uc  1 p 1 7 ]
-"603
-[v I2C1_MasterWrite@address address `us  1 p 2 8 ]
-"604
-[v I2C1_MasterWrite@pflag pflag `*.4E10866  1 p 1 10 ]
-[s S513 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
-"606
-[v I2C1_MasterWrite@trBlock trBlock `S513  1 s 4 trBlock ]
-"609
-[v I2C1_MasterWrite@pdata pdata `*.4uc  1 a 1 13 ]
-"619
-} 0
-"721
-[v _I2C1_MasterWriteTRBBuild I2C1_MasterWriteTRBBuild `(v  1 e 1 0 ]
-{
-[s S513 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
-"722
-[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S513  1 a 1 wreg ]
-[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S513  1 a 1 wreg ]
-"723
-[v I2C1_MasterWriteTRBBuild@pdata pdata `*.4uc  1 p 1 0 ]
-"724
-[v I2C1_MasterWriteTRBBuild@length length `uc  1 p 1 1 ]
-"725
-[v I2C1_MasterWriteTRBBuild@address address `us  1 p 2 2 ]
-"727
-"722
-[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S513  1 a 1 6 ]
-"730
-} 0
-"654
-[v _I2C1_MasterTRBInsert I2C1_MasterTRBInsert `(v  1 e 1 0 ]
-{
-"655
-[v I2C1_MasterTRBInsert@count count `uc  1 a 1 wreg ]
-[v I2C1_MasterTRBInsert@count count `uc  1 a 1 wreg ]
-[s S513 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
-"656
-[v I2C1_MasterTRBInsert@ptrb_list ptrb_list `*.4S513  1 p 1 0 ]
-"657
-[v I2C1_MasterTRBInsert@pflag pflag `*.4E10866  1 p 1 1 ]
-"661
-[v I2C1_MasterTRBInsert@count count `uc  1 a 1 3 ]
-"706
-} 0
-"644
-[v _I2C1_WaitForLastPacketToComplete I2C1_WaitForLastPacketToComplete `T(v  1 e 1 0 ]
-{
-"652
 } 0
 "50 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -774,6 +730,150 @@ EVENT_PRESSED 1
 [v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "271
 } 0
+"42 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
+[v _CONTROLLER_task CONTROLLER_task `(v  1 e 1 0 ]
+{
+"49
+} 0
+"15
+[v _address_inc address_inc `(v  1 e 1 0 ]
+{
+"25
+} 0
+"30
+[v _address_dec address_dec `(v  1 e 1 0 ]
+{
+"40
+} 0
+"61 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
+{
+[s S1324 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10869 1 state 1 3 `E10869 1 lastState 1 4 `E10865 1 event 1 5 ]
+[v BUTTONS_isClicked@button button `*.4S1324  1 a 1 wreg ]
+[v BUTTONS_isClicked@button button `*.4S1324  1 a 1 wreg ]
+[v BUTTONS_isClicked@button button `*.4S1324  1 a 1 3 ]
+"68
+} 0
+"8 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
+[v _CONTROLLER_init CONTROLLER_init `(v  1 e 1 0 ]
+{
+"10
+} 0
+"31 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
+[v _TM1650_fastPrintNum TM1650_fastPrintNum `(v  1 e 1 0 ]
+{
+"40
+[v TM1650_fastPrintNum@numWrite numWrite `i  1 a 2 0 ]
+"38
+[v TM1650_fastPrintNum@i i `i  1 a 2 2 ]
+"31
+[v TM1650_fastPrintNum@num num `us  1 p 2 28 ]
+"45
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 0 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 2 ]
+"25
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 6 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"22 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
+[v _TM1650_setDigit TM1650_setDigit `(v  1 e 1 0 ]
+{
+[v TM1650_setDigit@digit digit `uc  1 a 1 wreg ]
+"23
+[v TM1650_setDigit@foo foo `VEuc  1 a 1 27 ]
+"22
+[v TM1650_setDigit@digit digit `uc  1 a 1 wreg ]
+[v TM1650_setDigit@data data `uc  1 p 1 20 ]
+[v TM1650_setDigit@dp dp `i  1 p 2 21 ]
+[v TM1650_setDigit@digit digit `uc  1 a 1 26 ]
+"25
+} 0
+"16
+[v _writeData writeData `(v  1 e 1 0 ]
+{
+[v writeData@address address `uc  1 a 1 wreg ]
+"17
+[v writeData@status status `VEE10866  1 a 1 19 ]
+"16
+[v writeData@address address `uc  1 a 1 wreg ]
+[v writeData@data data `uc  1 p 1 14 ]
+[v writeData@address address `uc  1 a 1 18 ]
+"20
+} 0
+"600 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/i2c1.c
+[v _I2C1_MasterWrite I2C1_MasterWrite `(v  1 e 1 0 ]
+{
+"601
+[v I2C1_MasterWrite@pdata pdata `*.4uc  1 a 1 wreg ]
+[v I2C1_MasterWrite@pdata pdata `*.4uc  1 a 1 wreg ]
+"602
+[v I2C1_MasterWrite@length length `uc  1 p 1 7 ]
+"603
+[v I2C1_MasterWrite@address address `us  1 p 2 8 ]
+"604
+[v I2C1_MasterWrite@pflag pflag `*.4E10866  1 p 1 10 ]
+[s S513 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
+"606
+[v I2C1_MasterWrite@trBlock trBlock `S513  1 s 4 trBlock ]
+"609
+[v I2C1_MasterWrite@pdata pdata `*.4uc  1 a 1 13 ]
+"619
+} 0
+"721
+[v _I2C1_MasterWriteTRBBuild I2C1_MasterWriteTRBBuild `(v  1 e 1 0 ]
+{
+[s S513 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
+"722
+[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S513  1 a 1 wreg ]
+[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S513  1 a 1 wreg ]
+"723
+[v I2C1_MasterWriteTRBBuild@pdata pdata `*.4uc  1 p 1 0 ]
+"724
+[v I2C1_MasterWriteTRBBuild@length length `uc  1 p 1 1 ]
+"725
+[v I2C1_MasterWriteTRBBuild@address address `us  1 p 2 2 ]
+"727
+"722
+[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S513  1 a 1 6 ]
+"730
+} 0
+"654
+[v _I2C1_MasterTRBInsert I2C1_MasterTRBInsert `(v  1 e 1 0 ]
+{
+"655
+[v I2C1_MasterTRBInsert@count count `uc  1 a 1 wreg ]
+[v I2C1_MasterTRBInsert@count count `uc  1 a 1 wreg ]
+[s S513 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
+"656
+[v I2C1_MasterTRBInsert@ptrb_list ptrb_list `*.4S513  1 p 1 0 ]
+"657
+[v I2C1_MasterTRBInsert@pflag pflag `*.4E10866  1 p 1 1 ]
+"661
+[v I2C1_MasterTRBInsert@count count `uc  1 a 1 3 ]
+"706
+} 0
+"644
+[v _I2C1_WaitForLastPacketToComplete I2C1_WaitForLastPacketToComplete `T(v  1 e 1 0 ]
+{
+"652
+} 0
 "9 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
 [v _CLOCK_init CLOCK_init `(v  1 e 1 0 ]
 {
@@ -785,17 +885,17 @@ EVENT_PRESSED 1
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "136
 } 0
-"50 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+"32 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
 [v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
 {
-[s S1314 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10874 1 state 1 3 `E10874 1 lastState 1 4 `E10870 1 event 1 5 ]
-"61
-[v BUTTONS_task@btn btn `*.4S1314  1 a 1 10 ]
-"60
+[s S1324 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10869 1 state 1 3 `E10869 1 lastState 1 4 `E10865 1 event 1 5 ]
+"43
+[v BUTTONS_task@btn btn `*.4S1324  1 a 1 10 ]
+"42
 [v BUTTONS_task@i i `uc  1 a 1 9 ]
-"51
+"33
 [v BUTTONS_task@time time `us  1 a 2 7 ]
-"77
+"59
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
@@ -815,21 +915,21 @@ EVENT_PRESSED 1
 {
 "19
 } 0
-"37 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+"19 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
 [v _BUTTONS_init BUTTONS_init `(v  1 e 1 0 ]
 {
-"47
+"29
 } 0
-"30
+"12
 [v _init init `(v  1 s 1 init ]
 {
-[s S1314 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10874 1 state 1 3 `E10874 1 lastState 1 4 `E10870 1 event 1 5 ]
-[v init@btn btn `*.4S1314  1 a 1 wreg ]
-[v init@btn btn `*.4S1314  1 a 1 wreg ]
+[s S1324 . 6 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10869 1 state 1 3 `E10869 1 lastState 1 4 `E10865 1 event 1 5 ]
+[v init@btn btn `*.4S1324  1 a 1 wreg ]
+[v init@btn btn `*.4S1324  1 a 1 wreg ]
 [v init@port port `*.39VEuc  1 p 2 0 ]
 [v init@pin pin `uc  1 p 1 2 ]
-[v init@btn btn `*.4S1314  1 a 1 4 ]
-"35
+[v init@btn btn `*.4S1324  1 a 1 4 ]
+"17
 } 0
 "52 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

@@ -18168,6 +18168,7 @@ extern __bank0 __bit __timeout;
     extern button_t *up, *down, *enter, *menu;
     void BUTTONS_init();
     void BUTTONS_task();
+    int BUTTONS_isClicked(button_t*);
 # 6 "buttons.c" 2
 
 # 1 "./clock.h" 1
@@ -18229,4 +18230,13 @@ void BUTTONS_task() {
 
         btn->lastState = btn->state;
     }
+}
+
+int BUTTONS_isClicked(button_t* button) {
+    if (button->event == EVENT_PRESSED) {
+        button->event = EVENT_IDLE;
+        return 1;
+    }
+
+    return 0;
 }

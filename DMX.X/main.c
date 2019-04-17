@@ -123,10 +123,13 @@ void main(void) {
     //INTERRUPT_PeripheralInterruptDisable();
     TM1650_init();
     BUTTONS_init();
+    CONTROLLER_init();
+
     while (1) {
         // Add your application code
         //LED_setColor(dmxData[2], dmxData[3], dmxData[4], dmxData[5]);
         BUTTONS_task();
+        CONTROLLER_task();
         //TM1650_setDigit(1, 'c', 0);
         
     }
