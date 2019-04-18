@@ -51,16 +51,17 @@ void BUTTONS_task() {
             btn->state = STATE_UNPRESSED;
         }
 
-        if (btn->state == STATE_UNPRESSED && btn->lastState == STATE_PRESSED) {
+        if (btn->state == STATE_PRESSED && btn->lastState == STATE_UNPRESSED) {
             // we released the button
             btn->event = EVENT_PRESSED;
+            btn->pressTime = time;
         } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_PRESSED){
             // button still pressed
             if(time - btn->pressTime > HOLD_TIME) {
                 btn->event = EVENT_HELD;
             }
-        } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_UNPRESSED){
-            btn->pressTime = time;
+        } else if (btn->state == STATE_UNPRESSED && btn->lastState == STATE_PRESSED){
+            btn->event = EVENT_IDLE;
         }
         
         btn->lastState = btn->state;
