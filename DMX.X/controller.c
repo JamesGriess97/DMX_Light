@@ -1,3 +1,5 @@
+#define SCROLL_SPEED 50
+
 #include "controller.h"
 #include "buttons.h"
 #include "clock.h"
@@ -39,15 +41,25 @@ void address_dec()
     TM1650_fastPrintNum(address);
 }
 
+int lastTime = 0;
 void CONTROLLER_task() {
+    time_t time = CLOCK_getTime();
+
     if (BUTTONS_isClicked(up)) {
         address_inc();
-        
     } else if (BUTTONS_isClicked(down)) {
         address_dec();
     } else if (BUTTONS_isHeld(up)) {
+        if (time - lastTime < SCROLL_SPEED) {
+            return;
+        }
+        lastTime = time;
         address_inc();
     } else if (BUTTONS_isHeld(down)) {
+        if (time - lastTime < SCROLL_SPEED) {
+            return;
+        }
+        lastTime = time;
         address_dec();
     }
 }

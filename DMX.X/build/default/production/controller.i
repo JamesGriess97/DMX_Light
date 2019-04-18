@@ -7,11 +7,13 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "controller.c" 2
+
+
 # 1 "./controller.h" 1
 # 15 "./controller.h"
 void CONTROLLER_task();
 void CONTROLLER_init();
-# 1 "controller.c" 2
+# 3 "controller.c" 2
 
 # 1 "./buttons.h" 1
 # 14 "./buttons.h"
@@ -148,7 +150,7 @@ typedef uint32_t uint_fast32_t;
     void BUTTONS_init();
     void BUTTONS_task();
     int BUTTONS_isClicked(button_t*);
-# 2 "controller.c" 2
+# 4 "controller.c" 2
 
 # 1 "./clock.h" 1
 # 11 "./clock.h"
@@ -156,14 +158,14 @@ typedef uint16_t time_t;
 
 void CLOCK_init();
 time_t CLOCK_getTime();
-# 3 "controller.c" 2
+# 5 "controller.c" 2
 
 # 1 "./tm1650.h" 1
 # 15 "./tm1650.h"
 void TM1650_fastPrintNum(uint16_t);
 void TM1650_setDigit(uint8_t, char, int);
 void TM1650_init();
-# 4 "controller.c" 2
+# 6 "controller.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 1 3
 # 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
@@ -306,7 +308,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 5 "controller.c" 2
+# 7 "controller.c" 2
 
 uint16_t address = 1;
 
@@ -344,15 +346,25 @@ void address_dec()
     TM1650_fastPrintNum(address);
 }
 
+int lastTime = 0;
 void CONTROLLER_task() {
+    time_t time = CLOCK_getTime();
+
     if (BUTTONS_isClicked(up)) {
         address_inc();
-
     } else if (BUTTONS_isClicked(down)) {
         address_dec();
     } else if (BUTTONS_isHeld(up)) {
+        if (time - lastTime < 50) {
+            return;
+        }
+        lastTime = time;
         address_inc();
     } else if (BUTTONS_isHeld(down)) {
+        if (time - lastTime < 50) {
+            return;
+        }
+        lastTime = time;
         address_dec();
     }
 }

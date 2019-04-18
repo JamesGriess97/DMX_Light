@@ -1522,104 +1522,100 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! && == -> . *U _btn 2 `ui -> . `E10870 1 `ui == -> . *U _btn 3 `ui -> . `E10870 1 `ui 1525  ]
 {
 "59
-[; ;buttons.c: 59:             volatile dif = time - btn->pressTime;
-[v _dif `Vi ~T0 @X0 1 a ]
-[e = _dif -> - -> _time `ui -> . *U _btn 5 `ui `i ]
-"60
-[; ;buttons.c: 60:             if(dif > 500) {
-[e $ ! > _dif -> 500 `i 1526  ]
+[; ;buttons.c: 59:             if(time - btn->pressTime > 500) {
+[e $ ! > - -> _time `ui -> . *U _btn 5 `ui -> -> 500 `i `ui 1526  ]
 {
-"61
-[; ;buttons.c: 61:                 btn->event = EVENT_HELD;
+"60
+[; ;buttons.c: 60:                 btn->event = EVENT_HELD;
 [e = . *U _btn 4 . `E10865 2 ]
-"62
-[; ;buttons.c: 62:             }
+"61
+[; ;buttons.c: 61:             }
 }
 [e :U 1526 ]
-"63
-[; ;buttons.c: 63:         } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_UNPRESSED){
+"62
+[; ;buttons.c: 62:         } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_UNPRESSED){
 }
 [e $U 1527  ]
 [e :U 1525 ]
 [e $ ! && == -> . *U _btn 2 `ui -> . `E10870 1 `ui == -> . *U _btn 3 `ui -> . `E10870 0 `ui 1528  ]
 {
-"64
-[; ;buttons.c: 64:             btn->pressTime = time;
+"63
+[; ;buttons.c: 63:             btn->pressTime = time;
 [e = . *U _btn 5 _time ]
-"65
-[; ;buttons.c: 65:         }
+"64
+[; ;buttons.c: 64:         }
 }
 [e :U 1528 ]
 [e :U 1527 ]
 [e :U 1524 ]
-"67
-[; ;buttons.c: 67:         btn->lastState = btn->state;
+"66
+[; ;buttons.c: 66:         btn->lastState = btn->state;
 [e = . *U _btn 3 . *U _btn 2 ]
-"68
-[; ;buttons.c: 68:     }
+"67
+[; ;buttons.c: 67:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 4 `i 1518  ]
 [e :U 1519 ]
 }
-"69
-[; ;buttons.c: 69: }
+"68
+[; ;buttons.c: 68: }
 [e :UE 1516 ]
 }
-"71
-[; ;buttons.c: 71: int BUTTONS_isClicked(button_t* button) {
+"70
+[; ;buttons.c: 70: int BUTTONS_isClicked(button_t* button) {
 [v _BUTTONS_isClicked `(i ~T0 @X0 1 ef1`*S1513 ]
 {
 [e :U _BUTTONS_isClicked ]
 [v _button `*S1513 ~T0 @X0 1 r1 ]
 [f ]
-"72
-[; ;buttons.c: 72:     if (button->event == EVENT_PRESSED) {
+"71
+[; ;buttons.c: 71:     if (button->event == EVENT_PRESSED) {
 [e $ ! == -> . *U _button 4 `ui -> . `E10865 1 `ui 1530  ]
 {
-"73
-[; ;buttons.c: 73:         button->event = EVENT_IDLE;
+"72
+[; ;buttons.c: 72:         button->event = EVENT_IDLE;
 [e = . *U _button 4 . `E10865 0 ]
-"74
-[; ;buttons.c: 74:         return 1;
+"73
+[; ;buttons.c: 73:         return 1;
 [e ) -> 1 `i ]
 [e $UE 1529  ]
-"75
-[; ;buttons.c: 75:     }
+"74
+[; ;buttons.c: 74:     }
 }
 [e :U 1530 ]
-"76
-[; ;buttons.c: 76:     return 0;
+"75
+[; ;buttons.c: 75:     return 0;
 [e ) -> 0 `i ]
 [e $UE 1529  ]
-"77
-[; ;buttons.c: 77: }
+"76
+[; ;buttons.c: 76: }
 [e :UE 1529 ]
 }
-"79
-[; ;buttons.c: 79: int BUTTONS_isHeld(button_t* button) {
+"78
+[; ;buttons.c: 78: int BUTTONS_isHeld(button_t* button) {
 [v _BUTTONS_isHeld `(i ~T0 @X0 1 ef1`*S1513 ]
 {
 [e :U _BUTTONS_isHeld ]
 [v _button `*S1513 ~T0 @X0 1 r1 ]
 [f ]
-"80
-[; ;buttons.c: 80:     if (button->event == EVENT_HELD) {
+"79
+[; ;buttons.c: 79:     if (button->event == EVENT_HELD) {
 [e $ ! == -> . *U _button 4 `ui -> . `E10865 2 `ui 1532  ]
 {
-"81
-[; ;buttons.c: 81:         return 1;
+"80
+[; ;buttons.c: 80:         return 1;
 [e ) -> 1 `i ]
 [e $UE 1531  ]
-"82
-[; ;buttons.c: 82:     }
+"81
+[; ;buttons.c: 81:     }
 }
 [e :U 1532 ]
-"84
-[; ;buttons.c: 84:     return 0;
+"82
+[; ;buttons.c: 82:     return 0;
 [e ) -> 0 `i ]
 [e $UE 1531  ]
-"85
-[; ;buttons.c: 85: }
+"83
+[; ;buttons.c: 83: }
 [e :UE 1531 ]
 }

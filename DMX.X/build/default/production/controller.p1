@@ -2,8 +2,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 ./tm1650.h
 [; ;./tm1650.h: 15: void TM1650_fastPrintNum(uint16_t);
 [v _TM1650_fastPrintNum `(v ~T0 @X0 0 ef1`us ]
-"43 controller.c
-[; ;controller.c: 43:     if (BUTTONS_isClicked(up)) {
+"14 ./clock.h
+[; ;./clock.h: 14: time_t CLOCK_getTime();
+[v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
+"48 controller.c
+[; ;controller.c: 48:     if (BUTTONS_isClicked(up)) {
 [c E41 0 1 .. ]
 [n E41 . STATE_UNPRESSED STATE_PRESSED  ]
 [c E36 0 1 2 .. ]
@@ -19,149 +22,187 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./buttons.h: 38:     extern button_t *up, *down, *enter, *menu;
 [v _up `*S1 ~T0 @X0 0 e ]
 [v _down `*S1 ~T0 @X0 0 e ]
-"48 controller.c
-[; ;controller.c: 48:     } else if (BUTTONS_isHeld(up)) {
+"52 controller.c
+[; ;controller.c: 52:     } else if (BUTTONS_isHeld(up)) {
 [v _BUTTONS_isHeld `(i ~T0 @X0 0 e? ]
-"6 controller.c
-[; ;controller.c: 6: uint16_t address = 1;
+"8 controller.c
+[; ;controller.c: 8: uint16_t address = 1;
 [v _address `us ~T0 @X0 1 e ]
 [i _address
 -> -> 1 `i `us
 ]
-"8
-[; ;controller.c: 8: void CONTROLLER_init() {
+"10
+[; ;controller.c: 10: void CONTROLLER_init() {
 [v _CONTROLLER_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _CONTROLLER_init ]
 [f ]
-"9
-[; ;controller.c: 9:     TM1650_fastPrintNum(address);
+"11
+[; ;controller.c: 11:     TM1650_fastPrintNum(address);
 [e ( _TM1650_fastPrintNum (1 _address ]
-"10
-[; ;controller.c: 10: }
+"12
+[; ;controller.c: 12: }
 [e :UE 4 ]
 }
-"15
-[; ;controller.c: 15: void address_inc()
+"17
+[; ;controller.c: 17: void address_inc()
 [v _address_inc `(v ~T0 @X0 1 ef ]
-"16
-[; ;controller.c: 16: {
+"18
+[; ;controller.c: 18: {
 {
 [e :U _address_inc ]
 [f ]
-"17
-[; ;controller.c: 17:     if(address == 512) {
+"19
+[; ;controller.c: 19:     if(address == 512) {
 [e $ ! == -> _address `ui -> -> 512 `i `ui 6  ]
 {
-"18
-[; ;controller.c: 18:         address = 1;
+"20
+[; ;controller.c: 20:         address = 1;
 [e = _address -> -> 1 `i `us ]
-"19
-[; ;controller.c: 19:     } else {
+"21
+[; ;controller.c: 21:     } else {
 }
 [e $U 7  ]
 [e :U 6 ]
 {
-"20
-[; ;controller.c: 20:         address++;
+"22
+[; ;controller.c: 22:         address++;
 [e ++ _address -> -> 1 `i `us ]
-"21
-[; ;controller.c: 21:     }
+"23
+[; ;controller.c: 23:     }
 }
 [e :U 7 ]
-"24
-[; ;controller.c: 24:     TM1650_fastPrintNum(address);
+"26
+[; ;controller.c: 26:     TM1650_fastPrintNum(address);
 [e ( _TM1650_fastPrintNum (1 _address ]
-"25
-[; ;controller.c: 25: }
+"27
+[; ;controller.c: 27: }
 [e :UE 5 ]
 }
-"30
-[; ;controller.c: 30: void address_dec()
+"32
+[; ;controller.c: 32: void address_dec()
 [v _address_dec `(v ~T0 @X0 1 ef ]
-"31
-[; ;controller.c: 31: {
+"33
+[; ;controller.c: 33: {
 {
 [e :U _address_dec ]
 [f ]
-"32
-[; ;controller.c: 32:     if(address == 1) {
+"34
+[; ;controller.c: 34:     if(address == 1) {
 [e $ ! == -> _address `ui -> -> 1 `i `ui 9  ]
 {
-"33
-[; ;controller.c: 33:         address = 512;
+"35
+[; ;controller.c: 35:         address = 512;
 [e = _address -> -> 512 `i `us ]
-"34
-[; ;controller.c: 34:     } else {
+"36
+[; ;controller.c: 36:     } else {
 }
 [e $U 10  ]
 [e :U 9 ]
 {
-"35
-[; ;controller.c: 35:         address--;
+"37
+[; ;controller.c: 37:         address--;
 [e -- _address -> -> 1 `i `us ]
-"36
-[; ;controller.c: 36:     }
+"38
+[; ;controller.c: 38:     }
 }
 [e :U 10 ]
-"39
-[; ;controller.c: 39:     TM1650_fastPrintNum(address);
+"41
+[; ;controller.c: 41:     TM1650_fastPrintNum(address);
 [e ( _TM1650_fastPrintNum (1 _address ]
-"40
-[; ;controller.c: 40: }
+"42
+[; ;controller.c: 42: }
 [e :UE 8 ]
 }
-"42
-[; ;controller.c: 42: void CONTROLLER_task() {
+"44
+[; ;controller.c: 44: int lastTime = 0;
+[v _lastTime `i ~T0 @X0 1 e ]
+[i _lastTime
+-> 0 `i
+]
+"45
+[; ;controller.c: 45: void CONTROLLER_task() {
 [v _CONTROLLER_task `(v ~T0 @X0 1 ef ]
 {
 [e :U _CONTROLLER_task ]
 [f ]
-"43
-[; ;controller.c: 43:     if (BUTTONS_isClicked(up)) {
-[e $ ! != ( _BUTTONS_isClicked (1 _up -> 0 `i 12  ]
-{
-"44
-[; ;controller.c: 44:         address_inc();
-[e ( _address_inc ..  ]
 "46
-[; ;controller.c: 46:     } else if (BUTTONS_isClicked(down)) {
-}
-[e $U 13  ]
-[e :U 12 ]
-[e $ ! != ( _BUTTONS_isClicked (1 _down -> 0 `i 14  ]
-{
-"47
-[; ;controller.c: 47:         address_dec();
-[e ( _address_dec ..  ]
+[; ;controller.c: 46:     time_t time = CLOCK_getTime();
+[v _time `us ~T0 @X0 1 a ]
+[e = _time ( _CLOCK_getTime ..  ]
 "48
-[; ;controller.c: 48:     } else if (BUTTONS_isHeld(up)) {
-}
-[e $U 15  ]
-[e :U 14 ]
-[e $ ! != ( _BUTTONS_isHeld _up -> 0 `i 16  ]
+[; ;controller.c: 48:     if (BUTTONS_isClicked(up)) {
+[e $ ! != ( _BUTTONS_isClicked (1 _up -> 0 `i 12  ]
 {
 "49
 [; ;controller.c: 49:         address_inc();
 [e ( _address_inc ..  ]
 "50
-[; ;controller.c: 50:     } else if (BUTTONS_isHeld(down)) {
+[; ;controller.c: 50:     } else if (BUTTONS_isClicked(down)) {
 }
-[e $U 17  ]
-[e :U 16 ]
-[e $ ! != ( _BUTTONS_isHeld _down -> 0 `i 18  ]
+[e $U 13  ]
+[e :U 12 ]
+[e $ ! != ( _BUTTONS_isClicked (1 _down -> 0 `i 14  ]
 {
 "51
 [; ;controller.c: 51:         address_dec();
 [e ( _address_dec ..  ]
 "52
-[; ;controller.c: 52:     }
+[; ;controller.c: 52:     } else if (BUTTONS_isHeld(up)) {
 }
-[e :U 18 ]
+[e $U 15  ]
+[e :U 14 ]
+[e $ ! != ( _BUTTONS_isHeld _up -> 0 `i 16  ]
+{
+"53
+[; ;controller.c: 53:         if (time - lastTime < 50) {
+[e $ ! < - -> _time `ui -> _lastTime `ui -> -> 50 `i `ui 17  ]
+{
+"54
+[; ;controller.c: 54:             return;
+[e $UE 11  ]
+"55
+[; ;controller.c: 55:         }
+}
 [e :U 17 ]
+"56
+[; ;controller.c: 56:         lastTime = time;
+[e = _lastTime -> _time `i ]
+"57
+[; ;controller.c: 57:         address_inc();
+[e ( _address_inc ..  ]
+"58
+[; ;controller.c: 58:     } else if (BUTTONS_isHeld(down)) {
+}
+[e $U 18  ]
+[e :U 16 ]
+[e $ ! != ( _BUTTONS_isHeld _down -> 0 `i 19  ]
+{
+"59
+[; ;controller.c: 59:         if (time - lastTime < 50) {
+[e $ ! < - -> _time `ui -> _lastTime `ui -> -> 50 `i `ui 20  ]
+{
+"60
+[; ;controller.c: 60:             return;
+[e $UE 11  ]
+"61
+[; ;controller.c: 61:         }
+}
+[e :U 20 ]
+"62
+[; ;controller.c: 62:         lastTime = time;
+[e = _lastTime -> _time `i ]
+"63
+[; ;controller.c: 63:         address_dec();
+[e ( _address_dec ..  ]
+"64
+[; ;controller.c: 64:     }
+}
+[e :U 19 ]
+[e :U 18 ]
 [e :U 15 ]
 [e :U 13 ]
-"53
-[; ;controller.c: 53: }
+"65
+[; ;controller.c: 65: }
 [e :UE 11 ]
 }

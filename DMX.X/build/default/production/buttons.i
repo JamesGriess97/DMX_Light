@@ -18232,8 +18232,7 @@ void BUTTONS_task() {
             btn->event = EVENT_PRESSED;
         } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_PRESSED){
 
-            volatile dif = time - btn->pressTime;
-            if(dif > 500) {
+            if(time - btn->pressTime > 500) {
                 btn->event = EVENT_HELD;
             }
         } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_UNPRESSED){
@@ -18256,6 +18255,5 @@ int BUTTONS_isHeld(button_t* button) {
     if (button->event == EVENT_HELD) {
         return 1;
     }
-
     return 0;
 }
