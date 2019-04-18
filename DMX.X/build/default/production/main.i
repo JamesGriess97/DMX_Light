@@ -18353,9 +18353,10 @@ void TM1650_init();
 # 47 "main.c" 2
 
 # 1 "./controller.h" 1
-# 15 "./controller.h"
+# 16 "./controller.h"
 void CONTROLLER_task();
 void CONTROLLER_init();
+extern uint16_t address;
 # 48 "main.c" 2
 
 
@@ -18439,7 +18440,7 @@ void main(void) {
 
     while (1) {
 
-
+        LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
         BUTTONS_task();
         CONTROLLER_task();
 

@@ -58,14 +58,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39 ./buttons.h
 [; ;./buttons.h: 39:     void BUTTONS_init();
 [v _BUTTONS_init `(v ~T0 @X0 0 e? ]
-"16 ./controller.h
-[; ;./controller.h: 16: void CONTROLLER_init();
+"17 ./controller.h
+[; ;./controller.h: 17: void CONTROLLER_init();
 [v _CONTROLLER_init `(v ~T0 @X0 0 e? ]
+"55 main.c
+[; ;main.c: 55: void LED_setColor(uint8_t, uint8_t, uint8_t, uint8_t);
+[v _LED_setColor `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
+"18 ./controller.h
+[; ;./controller.h: 18: extern uint16_t address;
+[v _address `us ~T0 @X0 0 e ]
 "40 ./buttons.h
 [; ;./buttons.h: 40:     void BUTTONS_task();
 [v _BUTTONS_task `(v ~T0 @X0 0 e? ]
-"15 ./controller.h
-[; ;./controller.h: 15: void CONTROLLER_task();
+"16 ./controller.h
+[; ;./controller.h: 16: void CONTROLLER_task();
 [v _CONTROLLER_task `(v ~T0 @X0 0 e? ]
 "39019 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 39019: extern volatile __bit TRISC7 __attribute__((address(0xA7)));
@@ -1687,14 +1693,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "84
 [; ;main.c: 84:     static _Bool value = 0;
-[v F11024 `a ~T0 @X0 1 s value ]
-[i F11024
+[v F11025 `a ~T0 @X0 1 s value ]
+[i F11025
 -> -> 0 `i `a
 ]
 "85
 [; ;main.c: 85:     static time_t lastTime = 0;
-[v F11025 `us ~T0 @X0 1 s lastTime ]
-[i F11025
+[v F11026 `us ~T0 @X0 1 s lastTime ]
+[i F11026
 -> -> 0 `i `us
 ]
 "87
@@ -1703,20 +1709,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _time ( _CLOCK_getTime ..  ]
 "88
 [; ;main.c: 88:     if(time <= lastTime + 51)
-[e $ ! <= -> _time `ui + -> F11025 `ui -> -> 51 `i `ui 1522  ]
+[e $ ! <= -> _time `ui + -> F11026 `ui -> -> 51 `i `ui 1522  ]
 "89
 [; ;main.c: 89:         return;
 [e $UE 1521  ]
 [e :U 1522 ]
 "91
 [; ;main.c: 91:     lastTime = time;
-[e = F11025 _time ]
+[e = F11026 _time ]
 "92
 [; ;main.c: 92:     value = !value;
-[e = F11024 -> -> ! != -> F11024 `i -> 0 `i `i `a ]
+[e = F11025 -> -> ! != -> F11025 `i -> 0 `i `i `a ]
 "94
 [; ;main.c: 94:     if(value)
-[e $ ! != -> F11024 `i -> 0 `i 1523  ]
+[e $ ! != -> F11025 `i -> 0 `i 1523  ]
 "95
 [; ;main.c: 95:         TM1650_setDigit(1, '8', 0);
 [e ( _TM1650_setDigit (3 , , -> -> 1 `i `uc -> -> 56 `ui `uc -> 0 `i ]
@@ -1776,6 +1782,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 128:     while (1) {
 [e :U 1527 ]
 {
+"130
+[; ;main.c: 130:         LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
+[e ( _LED_setColor (4 , , , -> *U + &U _dmxData * -> + -> _address `ui -> -> 1 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 2 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 3 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 4 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc ]
 "131
 [; ;main.c: 131:         BUTTONS_task();
 [e ( _BUTTONS_task ..  ]

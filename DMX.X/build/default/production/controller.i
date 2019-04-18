@@ -10,13 +10,7 @@
 
 
 # 1 "./controller.h" 1
-# 15 "./controller.h"
-void CONTROLLER_task();
-void CONTROLLER_init();
-# 3 "controller.c" 2
-
-# 1 "./buttons.h" 1
-# 14 "./buttons.h"
+# 14 "./controller.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -121,9 +115,16 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 14 "./buttons.h" 2
+# 14 "./controller.h" 2
 
 
+void CONTROLLER_task();
+void CONTROLLER_init();
+extern uint16_t address;
+# 3 "controller.c" 2
+
+# 1 "./buttons.h" 1
+# 16 "./buttons.h"
     typedef enum {
         EVENT_IDLE,
         EVENT_PRESSED,
@@ -352,7 +353,6 @@ void CONTROLLER_task() {
 
     if (time - lastTime < 50)
         return;
-
     lastTime = time;
 
     if (BUTTONS_isClicked(up)) {

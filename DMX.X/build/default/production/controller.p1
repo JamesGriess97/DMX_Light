@@ -5,15 +5,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14 ./clock.h
 [; ;./clock.h: 14: time_t CLOCK_getTime();
 [v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
-"53 controller.c
-[; ;controller.c: 53:     if (BUTTONS_isClicked(up)) {
-[c E41 0 1 .. ]
-[n E41 . STATE_UNPRESSED STATE_PRESSED  ]
-[c E36 0 1 2 .. ]
-[n E36 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
+"52 controller.c
+[; ;controller.c: 52:     if (BUTTONS_isClicked(up)) {
+[c E42 0 1 .. ]
+[n E42 . STATE_UNPRESSED STATE_PRESSED  ]
+[c E37 0 1 2 .. ]
+[n E37 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
 "27 ./buttons.h
 [; ;./buttons.h: 27:     typedef struct {
-[s S1 `*Vuc 1 `uc 1 `E41 1 `E41 1 `E36 1 `us 1 ]
+[s S1 `*Vuc 1 `uc 1 `E42 1 `E42 1 `E37 1 `us 1 ]
 [n S1 . port pin state lastState event pressTime ]
 "41
 [; ;./buttons.h: 41:     int BUTTONS_isClicked(button_t*);
@@ -134,32 +134,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;controller.c: 49:         return;
 [e $UE 11  ]
 [e :U 12 ]
-"51
-[; ;controller.c: 51:     lastTime = time;
+"50
+[; ;controller.c: 50:     lastTime = time;
 [e = _lastTime -> _time `i ]
-"53
-[; ;controller.c: 53:     if (BUTTONS_isClicked(up)) {
+"52
+[; ;controller.c: 52:     if (BUTTONS_isClicked(up)) {
 [e $ ! != ( _BUTTONS_isClicked (1 _up -> 0 `i 13  ]
 {
-"54
-[; ;controller.c: 54:         address_inc();
+"53
+[; ;controller.c: 53:         address_inc();
 [e ( _address_inc ..  ]
-"55
-[; ;controller.c: 55:     } else if (BUTTONS_isClicked(down)) {
+"54
+[; ;controller.c: 54:     } else if (BUTTONS_isClicked(down)) {
 }
 [e $U 14  ]
 [e :U 13 ]
 [e $ ! != ( _BUTTONS_isClicked (1 _down -> 0 `i 15  ]
 {
-"56
-[; ;controller.c: 56:         address_dec();
+"55
+[; ;controller.c: 55:         address_dec();
 [e ( _address_dec ..  ]
-"57
-[; ;controller.c: 57:     }
+"56
+[; ;controller.c: 56:     }
 }
 [e :U 15 ]
 [e :U 14 ]
-"58
-[; ;controller.c: 58: }
+"57
+[; ;controller.c: 57: }
 [e :UE 11 ]
 }

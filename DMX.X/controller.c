@@ -47,7 +47,6 @@ void CONTROLLER_task() {
 
     if (time - lastTime < SCROLL_SPEED)
         return;
-
     lastTime = time;
     
     if (BUTTONS_isClicked(up)) {
