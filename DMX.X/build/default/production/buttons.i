@@ -18247,12 +18247,7 @@ int BUTTONS_isClicked(button_t* button) {
     if (button->event == EVENT_PRESSED) {
         button->event = EVENT_IDLE;
         return 1;
-    }
-    return 0;
-}
-
-int BUTTONS_isHeld(button_t* button) {
-    if (button->event == EVENT_HELD) {
+    } else if(button->event == EVENT_HELD) {
         return 1;
     }
     return 0;

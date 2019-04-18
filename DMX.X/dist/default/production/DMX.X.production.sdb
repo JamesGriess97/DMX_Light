@@ -48,7 +48,7 @@ EVENT_IDLE 0
 EVENT_PRESSED 1
 EVENT_HELD 2
 ]
-"48 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
+"53 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
 [e E41 . `uc
 STATE_UNPRESSED 0
 STATE_PRESSED 1
@@ -66,8 +66,6 @@ EVENT_HELD 2
 [v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
 "70
 [v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
-"78
-[v _BUTTONS_isHeld BUTTONS_isHeld `(i  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
@@ -737,7 +735,7 @@ EVENT_HELD 2
 {
 "46
 [v CONTROLLER_task@time time `us  1 a 2 0 ]
-"65
+"58
 } 0
 "17
 [v _address_inc address_inc `(v  1 e 1 0 ]
@@ -749,23 +747,14 @@ EVENT_HELD 2
 {
 "42
 } 0
-"78 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
-[v _BUTTONS_isHeld BUTTONS_isHeld `(i  1 e 2 0 ]
-{
-[s S1325 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
-[v BUTTONS_isHeld@button button `*.4S1325  1 a 1 wreg ]
-[v BUTTONS_isHeld@button button `*.4S1325  1 a 1 wreg ]
-[v BUTTONS_isHeld@button button `*.4S1325  1 a 1 3 ]
-"83
-} 0
-"70
+"70 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
 [v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
 {
 [s S1325 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
 [v BUTTONS_isClicked@button button `*.4S1325  1 a 1 wreg ]
 [v BUTTONS_isClicked@button button `*.4S1325  1 a 1 wreg ]
 [v BUTTONS_isClicked@button button `*.4S1325  1 a 1 3 ]
-"76
+"78
 } 0
 "10 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
 [v _CONTROLLER_init CONTROLLER_init `(v  1 e 1 0 ]
