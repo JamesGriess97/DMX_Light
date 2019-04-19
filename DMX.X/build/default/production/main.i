@@ -18414,7 +18414,6 @@ void Blink2() {
 void main(void) {
 
     SYSTEM_Initialize();
-    initLED();
     CLOCK_init();
     TRISB6 = 0;
     LATB6 = 0;
@@ -18437,10 +18436,11 @@ void main(void) {
     TM1650_init();
     BUTTONS_init();
     CONTROLLER_init();
+    initLED();
 
     while (1) {
 
-        LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
+
         BUTTONS_task();
         CONTROLLER_task();
 

@@ -28,9 +28,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "72 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"54 main.c
-[; ;main.c: 54: void initLED();
-[v _initLED `(v ~T0 @X0 0 e? ]
 "13 ./clock.h
 [; ;./clock.h: 13: void CLOCK_init();
 [v _CLOCK_init `(v ~T0 @X0 0 e? ]
@@ -61,12 +58,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17 ./controller.h
 [; ;./controller.h: 17: void CONTROLLER_init();
 [v _CONTROLLER_init `(v ~T0 @X0 0 e? ]
-"55 main.c
-[; ;main.c: 55: void LED_setColor(uint8_t, uint8_t, uint8_t, uint8_t);
-[v _LED_setColor `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
-"18 ./controller.h
-[; ;./controller.h: 18: extern uint16_t address;
-[v _address `us ~T0 @X0 0 e ]
+"54 main.c
+[; ;main.c: 54: void initLED();
+[v _initLED `(v ~T0 @X0 0 e? ]
 "40 ./buttons.h
 [; ;./buttons.h: 40:     void BUTTONS_task();
 [v _BUTTONS_task `(v ~T0 @X0 0 e? ]
@@ -1749,42 +1743,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 103:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
 "104
-[; ;main.c: 104:     initLED();
-[e ( _initLED ..  ]
-"105
-[; ;main.c: 105:     CLOCK_init();
+[; ;main.c: 104:     CLOCK_init();
 [e ( _CLOCK_init ..  ]
-"106
-[; ;main.c: 106:     TRISB6 = 0;
+"105
+[; ;main.c: 105:     TRISB6 = 0;
 [e = _TRISB6 -> -> 0 `i `b ]
-"107
-[; ;main.c: 107:     LATB6 = 0;
+"106
+[; ;main.c: 106:     LATB6 = 0;
 [e = _LATB6 -> -> 0 `i `b ]
-"108
-[; ;main.c: 108:     EUSART1_SetRxInterruptHandler(DMX_ISR);
+"107
+[; ;main.c: 107:     EUSART1_SetRxInterruptHandler(DMX_ISR);
 [e ( _EUSART1_SetRxInterruptHandler (1 &U _DMX_ISR ]
-"114
-[; ;main.c: 114:     (INTCONbits.GIE = 1);
+"113
+[; ;main.c: 113:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"117
-[; ;main.c: 117:     (INTCONbits.PEIE = 1);
+"116
+[; ;main.c: 116:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"124
-[; ;main.c: 124:     TM1650_init();
+"123
+[; ;main.c: 123:     TM1650_init();
 [e ( _TM1650_init ..  ]
-"125
-[; ;main.c: 125:     BUTTONS_init();
+"124
+[; ;main.c: 124:     BUTTONS_init();
 [e ( _BUTTONS_init ..  ]
-"126
-[; ;main.c: 126:     CONTROLLER_init();
+"125
+[; ;main.c: 125:     CONTROLLER_init();
 [e ( _CONTROLLER_init ..  ]
+"126
+[; ;main.c: 126:     initLED();
+[e ( _initLED ..  ]
 "128
 [; ;main.c: 128:     while (1) {
 [e :U 1527 ]
 {
-"130
-[; ;main.c: 130:         LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
-[e ( _LED_setColor (4 , , , -> *U + &U _dmxData * -> + -> _address `ui -> -> 1 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 2 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 3 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 4 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc ]
 "131
 [; ;main.c: 131:         BUTTONS_task();
 [e ( _BUTTONS_task ..  ]
