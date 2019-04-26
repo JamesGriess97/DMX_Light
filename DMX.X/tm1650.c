@@ -1,7 +1,9 @@
 #include "mcc_generated_files/i2c1.h"
+#include "tm1650.h"
 #include <stdint.h>
 
 int count = 0;
+static bool isOn = false;
 
 const uint8_t charTable[] = 
 {
@@ -24,9 +26,13 @@ void TM1650_setDigit(uint8_t digit, char data, int dp) {
 }
 
 void TM1650_init() {
-    writeData(0x24, 1);
+    TM1650_enable(true);
 }
 
+/**
+ * displays a number on the 7 seg display
+ * @param num
+ */
 void TM1650_fastPrintNum(uint16_t num) {
     if(num > 9999) {
         TM1650_setDigit(0, 'E', 0);
@@ -41,4 +47,26 @@ void TM1650_fastPrintNum(uint16_t num) {
             num = num/10;
         }
     }
+}
+
+/**
+ * turns on and off the display
+ * @param enable
+ */
+void TM1650_enable(bool enable) {
+    if(enable) {
+        writeData(0x24, 1);
+        isOn = true;
+    } else {
+        writeData(0x24, 0);
+        isOn = false;
+    }
+}
+
+/**
+ * returns if the delay is on or off?
+ * @return
+ */
+bool TM1650_isEnabled() {
+    return isOn;
 }

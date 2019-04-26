@@ -12,6 +12,10 @@
 extern "C" {
 #endif
 
+#include <stdbool.h>
+    
+bool TM1650_isEnabled();
+void TM1650_enable(bool);
 void TM1650_fastPrintNum(uint16_t);
 void TM1650_setDigit(uint8_t, char, int);
 void TM1650_init();

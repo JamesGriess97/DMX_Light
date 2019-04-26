@@ -18212,9 +18212,19 @@ void I2C1_BusCollisionISR( void );
 void I2C1_ISR ( void );
 # 1 "tm1650.c" 2
 
+# 1 "./tm1650.h" 1
+# 17 "./tm1650.h"
+_Bool TM1650_isEnabled();
+void TM1650_enable(_Bool);
+void TM1650_fastPrintNum(uint16_t);
+void TM1650_setDigit(uint8_t, char, int);
+void TM1650_init();
+# 2 "tm1650.c" 2
+
 
 
 int count = 0;
+static _Bool isOn = 0;
 
 const uint8_t charTable[] =
 {
@@ -18237,8 +18247,12 @@ void TM1650_setDigit(uint8_t digit, char data, int dp) {
 }
 
 void TM1650_init() {
-    writeData(0x24, 1);
+    TM1650_enable(1);
 }
+
+
+
+
 
 void TM1650_fastPrintNum(uint16_t num) {
     if(num > 9999) {
@@ -18254,4 +18268,26 @@ void TM1650_fastPrintNum(uint16_t num) {
             num = num/10;
         }
     }
+}
+
+
+
+
+
+void TM1650_enable(_Bool enable) {
+    if(enable) {
+        writeData(0x24, 1);
+        isOn = 1;
+    } else {
+        writeData(0x24, 0);
+        isOn = 0;
+    }
+}
+
+
+
+
+
+_Bool TM1650_isEnabled() {
+    return isOn;
 }

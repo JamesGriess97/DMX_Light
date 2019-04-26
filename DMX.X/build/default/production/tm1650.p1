@@ -1,11 +1,14 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"17 tm1650.c
-[; ;tm1650.c: 17:     volatile I2C1_MESSAGE_STATUS status = I2C1_MESSAGE_PENDING;
+"19 tm1650.c
+[; ;tm1650.c: 19:     volatile I2C1_MESSAGE_STATUS status = I2C1_MESSAGE_PENDING;
 [c E10866 0 1 2 3 4 5 6 .. ]
 [n E10866 . I2C1_MESSAGE_COMPLETE I2C1_MESSAGE_FAIL I2C1_MESSAGE_PENDING I2C1_STUCK_START I2C1_MESSAGE_ADDRESS_NO_ACK I2C1_DATA_NO_ACK I2C1_LOST_STATE  ]
 "262 ./mcc_generated_files/i2c1.h
 [; ;./mcc_generated_files/i2c1.h: 262: void I2C1_MasterWrite(
 [v _I2C1_MasterWrite `(v ~T0 @X0 0 ef4`*uc`uc`us`*E10866 ]
+"18 ./tm1650.h
+[; ;./tm1650.h: 18: void TM1650_enable(_Bool);
+[v _TM1650_enable `(v ~T0 @X0 0 ef1`a ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1368,14 +1371,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"4 tm1650.c
-[; ;tm1650.c: 4: int count = 0;
+"5 tm1650.c
+[; ;tm1650.c: 5: int count = 0;
 [v _count `i ~T0 @X0 1 e ]
 [i _count
 -> 0 `i
 ]
 "6
-[; ;tm1650.c: 6: const uint8_t charTable[] =
+[; ;tm1650.c: 6: static _Bool isOn = 0;
+[v _isOn `a ~T0 @X0 1 s ]
+[i _isOn
+-> -> 0 `i `a
+]
+"8
+[; ;tm1650.c: 8: const uint8_t charTable[] =
 [v _charTable `Cuc ~T0 @X0 -> 96 `i e ]
 [i _charTable
 :U ..
@@ -1477,34 +1486,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"16
-[; ;tm1650.c: 16: void writeData(uint8_t address, uint8_t data) {
+"18
+[; ;tm1650.c: 18: void writeData(uint8_t address, uint8_t data) {
 [v _writeData `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _writeData ]
 [v _address `uc ~T0 @X0 1 r1 ]
 [v _data `uc ~T0 @X0 1 r2 ]
 [f ]
-"17
-[; ;tm1650.c: 17:     volatile I2C1_MESSAGE_STATUS status = I2C1_MESSAGE_PENDING;
+"19
+[; ;tm1650.c: 19:     volatile I2C1_MESSAGE_STATUS status = I2C1_MESSAGE_PENDING;
 [v _status `VE10866 ~T0 @X0 1 a ]
 [e = _status . `E10866 2 ]
-"18
-[; ;tm1650.c: 18:     I2C1_MasterWrite(&data, 1, address, &status);
+"20
+[; ;tm1650.c: 20:     I2C1_MasterWrite(&data, 1, address, &status);
 [e ( _I2C1_MasterWrite (4 , , , &U _data -> -> 1 `i `uc -> _address `us -> &U _status `*E10866 ]
-"19
-[; ;tm1650.c: 19:     while( status == I2C1_MESSAGE_PENDING );
+"21
+[; ;tm1650.c: 21:     while( status == I2C1_MESSAGE_PENDING );
 [e $U 1515  ]
 [e :U 1516 ]
 [e :U 1515 ]
 [e $ == -> _status `ui -> . `E10866 2 `ui 1516  ]
 [e :U 1517 ]
-"20
-[; ;tm1650.c: 20: }
+"22
+[; ;tm1650.c: 22: }
 [e :UE 1514 ]
 }
-"22
-[; ;tm1650.c: 22: void TM1650_setDigit(uint8_t digit, char data, int dp) {
+"24
+[; ;tm1650.c: 24: void TM1650_setDigit(uint8_t digit, char data, int dp) {
 [v _TM1650_setDigit `(v ~T0 @X0 1 ef3`uc`uc`i ]
 {
 [e :U _TM1650_setDigit ]
@@ -1512,89 +1521,140 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _data `uc ~T0 @X0 1 r2 ]
 [v _dp `i ~T0 @X0 1 r3 ]
 [f ]
-"23
-[; ;tm1650.c: 23:     writeData(0x34+digit, (charTable[data-32] | dp <<7));
+"25
+[; ;tm1650.c: 25:     writeData(0x34+digit, (charTable[data-32] | dp <<7));
 [e ( _writeData (2 , -> + -> 52 `i -> _digit `i `uc -> | -> *U + &U _charTable * -> -> - -> _data `i -> 32 `i `ui `ux -> -> # *U &U _charTable `ui `ux `i << _dp -> 7 `i `uc ]
-"24
-[; ;tm1650.c: 24: }
+"26
+[; ;tm1650.c: 26: }
 [e :UE 1518 ]
 }
-"26
-[; ;tm1650.c: 26: void TM1650_init() {
+"28
+[; ;tm1650.c: 28: void TM1650_init() {
 [v _TM1650_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _TM1650_init ]
 [f ]
-"27
-[; ;tm1650.c: 27:     writeData(0x24, 1);
-[e ( _writeData (2 , -> -> 36 `i `uc -> -> 1 `i `uc ]
-"28
-[; ;tm1650.c: 28: }
+"29
+[; ;tm1650.c: 29:     TM1650_enable(1);
+[e ( _TM1650_enable (1 -> -> 1 `i `a ]
+"30
+[; ;tm1650.c: 30: }
 [e :UE 1519 ]
 }
-"30
-[; ;tm1650.c: 30: void TM1650_fastPrintNum(uint16_t num) {
+"36
+[; ;tm1650.c: 36: void TM1650_fastPrintNum(uint16_t num) {
 [v _TM1650_fastPrintNum `(v ~T0 @X0 1 ef1`us ]
 {
 [e :U _TM1650_fastPrintNum ]
 [v _num `us ~T0 @X0 1 r1 ]
 [f ]
-"31
-[; ;tm1650.c: 31:     if(num > 9999) {
+"37
+[; ;tm1650.c: 37:     if(num > 9999) {
 [e $ ! > -> _num `ui -> -> 9999 `i `ui 1521  ]
 {
-"32
-[; ;tm1650.c: 32:         TM1650_setDigit(0, 'E', 0);
+"38
+[; ;tm1650.c: 38:         TM1650_setDigit(0, 'E', 0);
 [e ( _TM1650_setDigit (3 , , -> -> 0 `i `uc -> -> 69 `ui `uc -> 0 `i ]
-"33
-[; ;tm1650.c: 33:         TM1650_setDigit(1, 'E', 0);
+"39
+[; ;tm1650.c: 39:         TM1650_setDigit(1, 'E', 0);
 [e ( _TM1650_setDigit (3 , , -> -> 1 `i `uc -> -> 69 `ui `uc -> 0 `i ]
-"34
-[; ;tm1650.c: 34:         TM1650_setDigit(2, 'E', 0);
+"40
+[; ;tm1650.c: 40:         TM1650_setDigit(2, 'E', 0);
 [e ( _TM1650_setDigit (3 , , -> -> 2 `i `uc -> -> 69 `ui `uc -> 0 `i ]
-"35
-[; ;tm1650.c: 35:         TM1650_setDigit(3, 'E', 0);
+"41
+[; ;tm1650.c: 41:         TM1650_setDigit(3, 'E', 0);
 [e ( _TM1650_setDigit (3 , , -> -> 3 `i `uc -> -> 69 `ui `uc -> 0 `i ]
-"36
-[; ;tm1650.c: 36:     } else {
+"42
+[; ;tm1650.c: 42:     } else {
 }
 [e $U 1522  ]
 [e :U 1521 ]
 {
-"37
-[; ;tm1650.c: 37:         int i=0;
+"43
+[; ;tm1650.c: 43:         int i=0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"38
-[; ;tm1650.c: 38:         for(i=0; i<4; i++) {
+"44
+[; ;tm1650.c: 44:         for(i=0; i<4; i++) {
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 4 `i 1523  ]
 [e $U 1524  ]
 [e :U 1523 ]
 {
-"39
-[; ;tm1650.c: 39:             int numWrite = num %10;
+"45
+[; ;tm1650.c: 45:             int numWrite = num %10;
 [v _numWrite `i ~T0 @X0 1 a ]
 [e = _numWrite -> % -> _num `ui -> -> 10 `i `ui `i ]
-"40
-[; ;tm1650.c: 40:             TM1650_setDigit(3-i, numWrite+48, 0);
+"46
+[; ;tm1650.c: 46:             TM1650_setDigit(3-i, numWrite+48, 0);
 [e ( _TM1650_setDigit (3 , , -> - -> 3 `i _i `uc -> + _numWrite -> 48 `i `uc -> 0 `i ]
-"41
-[; ;tm1650.c: 41:             num = num/10;
+"47
+[; ;tm1650.c: 47:             num = num/10;
 [e = _num -> / -> _num `ui -> -> 10 `i `ui `us ]
-"42
-[; ;tm1650.c: 42:         }
+"48
+[; ;tm1650.c: 48:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 4 `i 1523  ]
 [e :U 1524 ]
 }
-"43
-[; ;tm1650.c: 43:     }
+"49
+[; ;tm1650.c: 49:     }
 }
 [e :U 1522 ]
-"44
-[; ;tm1650.c: 44: }
+"50
+[; ;tm1650.c: 50: }
 [e :UE 1520 ]
+}
+"56
+[; ;tm1650.c: 56: void TM1650_enable(_Bool enable) {
+[v _TM1650_enable `(v ~T0 @X0 1 ef1`a ]
+{
+[e :U _TM1650_enable ]
+[v _enable `a ~T0 @X0 1 r1 ]
+[f ]
+"57
+[; ;tm1650.c: 57:     if(enable) {
+[e $ ! != -> _enable `i -> 0 `i 1527  ]
+{
+"58
+[; ;tm1650.c: 58:         writeData(0x24, 1);
+[e ( _writeData (2 , -> -> 36 `i `uc -> -> 1 `i `uc ]
+"59
+[; ;tm1650.c: 59:         isOn = 1;
+[e = _isOn -> -> 1 `i `a ]
+"60
+[; ;tm1650.c: 60:     } else {
+}
+[e $U 1528  ]
+[e :U 1527 ]
+{
+"61
+[; ;tm1650.c: 61:         writeData(0x24, 0);
+[e ( _writeData (2 , -> -> 36 `i `uc -> -> 0 `i `uc ]
+"62
+[; ;tm1650.c: 62:         isOn = 0;
+[e = _isOn -> -> 0 `i `a ]
+"63
+[; ;tm1650.c: 63:     }
+}
+[e :U 1528 ]
+"64
+[; ;tm1650.c: 64: }
+[e :UE 1526 ]
+}
+"70
+[; ;tm1650.c: 70: _Bool TM1650_isEnabled() {
+[v _TM1650_isEnabled `(a ~T0 @X0 1 ef ]
+{
+[e :U _TM1650_isEnabled ]
+[f ]
+"71
+[; ;tm1650.c: 71:     return isOn;
+[e ) _isOn ]
+[e $UE 1529  ]
+"72
+[; ;tm1650.c: 72: }
+[e :UE 1529 ]
 }

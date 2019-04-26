@@ -5,6 +5,8 @@
 #include "clock.h"
 #include "tm1650.h"
 #include <stdio.h>
+#include <stdbool.h>
+
 uint16_t address = 1;
 
 void CONTROLLER_init() {
@@ -42,6 +44,7 @@ void address_dec()
 }
 
 static time_t lastTime = 0;
+time_t lastActiveTime;
 void CONTROLLER_task() {
     time_t time = CLOCK_getTime();
 
@@ -51,7 +54,16 @@ void CONTROLLER_task() {
     
     if (BUTTONS_isClicked(up)) {
         address_inc();
+        lastActiveTime = time;
+        TM1650_enable(true);
     } else if (BUTTONS_isClicked(down)) {
         address_dec();
+        lastActiveTime = time;
+        TM1650_enable(true);
+    } else {
+        if (CLOCK_getTime() - lastActiveTime >= 5000) {
+            TM1650_enable(false);
+            lastActiveTime = CLOCK_getTime() - 5001;
+        }
     }
 }

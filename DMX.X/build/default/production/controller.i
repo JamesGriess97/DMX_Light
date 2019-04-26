@@ -163,6 +163,12 @@ time_t CLOCK_getTime();
 
 # 1 "./tm1650.h" 1
 # 15 "./tm1650.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
+# 15 "./tm1650.h" 2
+
+
+_Bool TM1650_isEnabled();
+void TM1650_enable(_Bool);
 void TM1650_fastPrintNum(uint16_t);
 void TM1650_setDigit(uint8_t, char, int);
 void TM1650_init();
@@ -311,6 +317,8 @@ char *ctermid(char *);
 char *tempnam(const char *, const char *);
 # 7 "controller.c" 2
 
+
+
 uint16_t address = 1;
 
 void CONTROLLER_init() {
@@ -348,6 +356,7 @@ void address_dec()
 }
 
 static time_t lastTime = 0;
+time_t lastActiveTime;
 void CONTROLLER_task() {
     time_t time = CLOCK_getTime();
 
@@ -357,7 +366,16 @@ void CONTROLLER_task() {
 
     if (BUTTONS_isClicked(up)) {
         address_inc();
+        lastActiveTime = time;
+        TM1650_enable(1);
     } else if (BUTTONS_isClicked(down)) {
         address_dec();
+        lastActiveTime = time;
+        TM1650_enable(1);
+    } else {
+        if (CLOCK_getTime() - lastActiveTime >= 5000) {
+            TM1650_enable(0);
+            lastActiveTime = CLOCK_getTime() - 5001;
+        }
     }
 }

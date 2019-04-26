@@ -21,8 +21,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14 ./clock.h
 [; ;./clock.h: 14: time_t CLOCK_getTime();
 [v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
-"16 ./tm1650.h
-[; ;./tm1650.h: 16: void TM1650_setDigit(uint8_t, char, int);
+"20 ./tm1650.h
+[; ;./tm1650.h: 20: void TM1650_setDigit(uint8_t, char, int);
 [v _TM1650_setDigit `(v ~T0 @X0 0 ef3`uc`uc`i ]
 [p mainexit ]
 "72 ./mcc_generated_files/mcc.h
@@ -49,8 +49,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "426
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"17 ./tm1650.h
-[; ;./tm1650.h: 17: void TM1650_init();
+[v F10824 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic.h
+[v __delay `JF10824 ~T0 @X0 0 e ]
+[p i __delay ]
+"21 ./tm1650.h
+[; ;./tm1650.h: 21: void TM1650_init();
 [v _TM1650_init `(v ~T0 @X0 0 e? ]
 "39 ./buttons.h
 [; ;./buttons.h: 39:     void BUTTONS_init();
@@ -1693,14 +1697,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "84
 [; ;main.c: 84:     static _Bool value = 0;
-[v F11025 `a ~T0 @X0 1 s value ]
-[i F11025
+[v F11028 `a ~T0 @X0 1 s value ]
+[i F11028
 -> -> 0 `i `a
 ]
 "85
 [; ;main.c: 85:     static time_t lastTime = 0;
-[v F11026 `us ~T0 @X0 1 s lastTime ]
-[i F11026
+[v F11029 `us ~T0 @X0 1 s lastTime ]
+[i F11029
 -> -> 0 `i `us
 ]
 "87
@@ -1709,20 +1713,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _time ( _CLOCK_getTime ..  ]
 "88
 [; ;main.c: 88:     if(time <= lastTime + 51)
-[e $ ! <= -> _time `ui + -> F11026 `ui -> -> 51 `i `ui 1522  ]
+[e $ ! <= -> _time `ui + -> F11029 `ui -> -> 51 `i `ui 1522  ]
 "89
 [; ;main.c: 89:         return;
 [e $UE 1521  ]
 [e :U 1522 ]
 "91
 [; ;main.c: 91:     lastTime = time;
-[e = F11026 _time ]
+[e = F11029 _time ]
 "92
 [; ;main.c: 92:     value = !value;
-[e = F11025 -> -> ! != -> F11025 `i -> 0 `i `i `a ]
+[e = F11028 -> -> ! != -> F11028 `i -> 0 `i `i `a ]
 "94
 [; ;main.c: 94:     if(value)
-[e $ ! != -> F11025 `i -> 0 `i 1523  ]
+[e $ ! != -> F11028 `i -> 0 `i 1523  ]
 "95
 [; ;main.c: 95:         TM1650_setDigit(1, '8', 0);
 [e ( _TM1650_setDigit (3 , , -> -> 1 `i `uc -> -> 56 `ui `uc -> 0 `i ]
@@ -1767,106 +1771,109 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 116:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
 "123
-[; ;main.c: 123:     TM1650_init();
-[e ( _TM1650_init ..  ]
+[; ;main.c: 123:      _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "124
-[; ;main.c: 124:     BUTTONS_init();
-[e ( _BUTTONS_init ..  ]
+[; ;main.c: 124:     TM1650_init();
+[e ( _TM1650_init ..  ]
 "125
-[; ;main.c: 125:     CONTROLLER_init();
-[e ( _CONTROLLER_init ..  ]
+[; ;main.c: 125:     BUTTONS_init();
+[e ( _BUTTONS_init ..  ]
 "126
-[; ;main.c: 126:     initLED();
+[; ;main.c: 126:     CONTROLLER_init();
+[e ( _CONTROLLER_init ..  ]
+"127
+[; ;main.c: 127:     initLED();
 [e ( _initLED ..  ]
-"128
-[; ;main.c: 128:     while (1) {
+"129
+[; ;main.c: 129:     while (1) {
 [e :U 1527 ]
 {
-"130
-[; ;main.c: 130:         LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
-[e ( _LED_setColor (4 , , , -> *U + &U _dmxData * -> + -> _address `ui -> -> 1 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 2 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 3 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 4 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc ]
 "131
-[; ;main.c: 131:         BUTTONS_task();
-[e ( _BUTTONS_task ..  ]
+[; ;main.c: 131:         LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
+[e ( _LED_setColor (4 , , , -> *U + &U _dmxData * -> + -> _address `ui -> -> 1 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 2 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 3 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 4 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc ]
 "132
-[; ;main.c: 132:         CONTROLLER_task();
+[; ;main.c: 132:         BUTTONS_task();
+[e ( _BUTTONS_task ..  ]
+"133
+[; ;main.c: 133:         CONTROLLER_task();
 [e ( _CONTROLLER_task ..  ]
-"135
-[; ;main.c: 135:     }
+"134
+[; ;main.c: 134:     }
 }
 [e :U 1526 ]
 [e $U 1527  ]
 [e :U 1528 ]
-"136
-[; ;main.c: 136: }
+"135
+[; ;main.c: 135: }
 [e :UE 1525 ]
 }
-"139
-[; ;main.c: 139: void initLED() {
+"138
+[; ;main.c: 138: void initLED() {
 [v _initLED `(v ~T0 @X0 1 ef ]
 {
 [e :U _initLED ]
 [f ]
-"142
-[; ;main.c: 142:     TRISC7 = 0;
+"141
+[; ;main.c: 141:     TRISC7 = 0;
 [e = _TRISC7 -> -> 0 `i `b ]
-"143
-[; ;main.c: 143:     TRISC6 = 0;
+"142
+[; ;main.c: 142:     TRISC6 = 0;
 [e = _TRISC6 -> -> 0 `i `b ]
-"144
-[; ;main.c: 144:     TRISC4 = 0;
+"143
+[; ;main.c: 143:     TRISC4 = 0;
 [e = _TRISC4 -> -> 0 `i `b ]
-"145
-[; ;main.c: 145:     TRISC3 = 0;
+"144
+[; ;main.c: 144:     TRISC3 = 0;
 [e = _TRISC3 -> -> 0 `i `b ]
-"147
-[; ;main.c: 147:     T2CLKCON = 0x01;
+"146
+[; ;main.c: 146:     T2CLKCON = 0x01;
 [e = _T2CLKCON -> -> 1 `i `uc ]
-"148
-[; ;main.c: 148:     T2CONbits.ON = 1;
+"147
+[; ;main.c: 147:     T2CONbits.ON = 1;
 [e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
-"150
-[; ;main.c: 150:     CCP1CONbits.CCP1EN = 1;
+"149
+[; ;main.c: 149:     CCP1CONbits.CCP1EN = 1;
 [e = . . _CCP1CONbits 2 4 -> -> 1 `i `uc ]
-"151
-[; ;main.c: 151:     CCP1CONbits.MODE = 0b1100;
+"150
+[; ;main.c: 150:     CCP1CONbits.MODE = 0b1100;
 [e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
-"152
-[; ;main.c: 152:     CCP2CONbits.CCP2EN = 1;
+"151
+[; ;main.c: 151:     CCP2CONbits.CCP2EN = 1;
 [e = . . _CCP2CONbits 2 4 -> -> 1 `i `uc ]
-"153
-[; ;main.c: 153:     CCP2CONbits.MODE = 0b1100;
+"152
+[; ;main.c: 152:     CCP2CONbits.MODE = 0b1100;
 [e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
-"154
-[; ;main.c: 154:     CCP3CONbits.CCP3EN = 1;
+"153
+[; ;main.c: 153:     CCP3CONbits.CCP3EN = 1;
 [e = . . _CCP3CONbits 2 4 -> -> 1 `i `uc ]
-"155
-[; ;main.c: 155:     CCP3CONbits.MODE = 0b1100;
+"154
+[; ;main.c: 154:     CCP3CONbits.MODE = 0b1100;
 [e = . . _CCP3CONbits 0 0 -> -> 12 `i `uc ]
-"156
-[; ;main.c: 156:     CCP4CONbits.CCP4EN = 1;
+"155
+[; ;main.c: 155:     CCP4CONbits.CCP4EN = 1;
 [e = . . _CCP4CONbits 2 4 -> -> 1 `i `uc ]
-"157
-[; ;main.c: 157:     CCP4CONbits.MODE = 0b1100;
+"156
+[; ;main.c: 156:     CCP4CONbits.MODE = 0b1100;
 [e = . . _CCP4CONbits 0 0 -> -> 12 `i `uc ]
-"160
-[; ;main.c: 160:     RC7PPS = 0x09;
+"159
+[; ;main.c: 159:     RC7PPS = 0x09;
 [e = _RC7PPS -> -> 9 `i `uc ]
-"161
-[; ;main.c: 161:     RC6PPS = 0x0A;
+"160
+[; ;main.c: 160:     RC6PPS = 0x0A;
 [e = _RC6PPS -> -> 10 `i `uc ]
-"162
-[; ;main.c: 162:     RC4PPS = 0x0B;
+"161
+[; ;main.c: 161:     RC4PPS = 0x0B;
 [e = _RC4PPS -> -> 11 `i `uc ]
-"163
-[; ;main.c: 163:     RC3PPS = 0x0C;
+"162
+[; ;main.c: 162:     RC3PPS = 0x0C;
 [e = _RC3PPS -> -> 12 `i `uc ]
-"164
-[; ;main.c: 164: }
+"163
+[; ;main.c: 163: }
 [e :UE 1529 ]
 }
-"167
-[; ;main.c: 167: void LED_setColor(uint8_t red, uint8_t green, uint8_t white, uint8_t blue) {
+"166
+[; ;main.c: 166: void LED_setColor(uint8_t red, uint8_t green, uint8_t white, uint8_t blue) {
 [v _LED_setColor `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
 {
 [e :U _LED_setColor ]
@@ -1875,75 +1882,75 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _white `uc ~T0 @X0 1 r3 ]
 [v _blue `uc ~T0 @X0 1 r4 ]
 [f ]
-"168
-[; ;main.c: 168:     red/=2;
+"167
+[; ;main.c: 167:     red/=2;
 [e =/ _red -> 2 `i ]
-"169
-[; ;main.c: 169:     green/=2;
+"168
+[; ;main.c: 168:     green/=2;
 [e =/ _green -> 2 `i ]
-"170
-[; ;main.c: 170:     blue/=2;
+"169
+[; ;main.c: 169:     blue/=2;
 [e =/ _blue -> 2 `i ]
-"171
-[; ;main.c: 171:     white/=2;
+"170
+[; ;main.c: 170:     white/=2;
 [e =/ _white -> 2 `i ]
-"172
-[; ;main.c: 172:     int hi1 = (red & 0xFF00) >> 8;
+"171
+[; ;main.c: 171:     int hi1 = (red & 0xFF00) >> 8;
 [v _hi1 `i ~T0 @X0 1 a ]
 [e = _hi1 -> >> & -> _red `ui -> 65280 `ui -> 8 `i `i ]
-"173
-[; ;main.c: 173:     int lo1 = red & 0x00FF;
+"172
+[; ;main.c: 172:     int lo1 = red & 0x00FF;
 [v _lo1 `i ~T0 @X0 1 a ]
 [e = _lo1 & -> _red `i -> 255 `i ]
-"174
-[; ;main.c: 174:     int hi2 = (green & 0xFF00) >> 8;
+"173
+[; ;main.c: 173:     int hi2 = (green & 0xFF00) >> 8;
 [v _hi2 `i ~T0 @X0 1 a ]
 [e = _hi2 -> >> & -> _green `ui -> 65280 `ui -> 8 `i `i ]
-"175
-[; ;main.c: 175:     int lo2 = green & 0x00FF;
+"174
+[; ;main.c: 174:     int lo2 = green & 0x00FF;
 [v _lo2 `i ~T0 @X0 1 a ]
 [e = _lo2 & -> _green `i -> 255 `i ]
-"176
-[; ;main.c: 176:     int hi3 = (blue & 0xFF00) >> 8;
+"175
+[; ;main.c: 175:     int hi3 = (blue & 0xFF00) >> 8;
 [v _hi3 `i ~T0 @X0 1 a ]
 [e = _hi3 -> >> & -> _blue `ui -> 65280 `ui -> 8 `i `i ]
-"177
-[; ;main.c: 177:     int lo3 = blue & 0x00FF;
+"176
+[; ;main.c: 176:     int lo3 = blue & 0x00FF;
 [v _lo3 `i ~T0 @X0 1 a ]
 [e = _lo3 & -> _blue `i -> 255 `i ]
-"178
-[; ;main.c: 178:     int hi4 = (white & 0xFF00) >> 8;
+"177
+[; ;main.c: 177:     int hi4 = (white & 0xFF00) >> 8;
 [v _hi4 `i ~T0 @X0 1 a ]
 [e = _hi4 -> >> & -> _white `ui -> 65280 `ui -> 8 `i `i ]
-"179
-[; ;main.c: 179:     int lo4 = white & 0x00FF;
+"178
+[; ;main.c: 178:     int lo4 = white & 0x00FF;
 [v _lo4 `i ~T0 @X0 1 a ]
 [e = _lo4 & -> _white `i -> 255 `i ]
-"181
-[; ;main.c: 181:     CCPR1H = hi1;
+"180
+[; ;main.c: 180:     CCPR1H = hi1;
 [e = _CCPR1H -> _hi1 `uc ]
-"182
-[; ;main.c: 182:     CCPR1L = lo1;
+"181
+[; ;main.c: 181:     CCPR1L = lo1;
 [e = _CCPR1L -> _lo1 `uc ]
-"184
-[; ;main.c: 184:     CCPR2H = hi2;
+"183
+[; ;main.c: 183:     CCPR2H = hi2;
 [e = _CCPR2H -> _hi2 `uc ]
-"185
-[; ;main.c: 185:     CCPR2L = lo2;
+"184
+[; ;main.c: 184:     CCPR2L = lo2;
 [e = _CCPR2L -> _lo2 `uc ]
-"187
-[; ;main.c: 187:     CCPR3H = hi3;
+"186
+[; ;main.c: 186:     CCPR3H = hi3;
 [e = _CCPR3H -> _hi3 `uc ]
-"188
-[; ;main.c: 188:     CCPR3L = lo3;
+"187
+[; ;main.c: 187:     CCPR3L = lo3;
 [e = _CCPR3L -> _lo3 `uc ]
-"190
-[; ;main.c: 190:     CCPR4H = hi4;
+"189
+[; ;main.c: 189:     CCPR4H = hi4;
 [e = _CCPR4H -> _hi4 `uc ]
-"191
-[; ;main.c: 191:     CCPR4L = lo4;
+"190
+[; ;main.c: 190:     CCPR4L = lo4;
 [e = _CCPR4L -> _lo4 `uc ]
-"192
-[; ;main.c: 192: }
+"191
+[; ;main.c: 191: }
 [e :UE 1530 ]
 }

@@ -18316,7 +18316,9 @@ time_t CLOCK_getTime();
 # 45 "main.c" 2
 
 # 1 "./tm1650.h" 1
-# 15 "./tm1650.h"
+# 17 "./tm1650.h"
+_Bool TM1650_isEnabled();
+void TM1650_enable(_Bool);
 void TM1650_fastPrintNum(uint16_t);
 void TM1650_setDigit(uint8_t, char, int);
 void TM1650_init();
@@ -18433,6 +18435,7 @@ void main(void) {
 
 
 
+     _delay((unsigned long)((500)*(32000000/4000.0)));
     TM1650_init();
     BUTTONS_init();
     CONTROLLER_init();
@@ -18443,8 +18446,6 @@ void main(void) {
         LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
         BUTTONS_task();
         CONTROLLER_task();
-
-
     }
 }
 

@@ -120,6 +120,7 @@ void main(void) {
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
+     __delay_ms(500);
     TM1650_init();
     BUTTONS_init();
     CONTROLLER_init();

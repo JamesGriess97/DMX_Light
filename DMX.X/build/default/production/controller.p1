@@ -1,12 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"15 ./tm1650.h
-[; ;./tm1650.h: 15: void TM1650_fastPrintNum(uint16_t);
+"19 ./tm1650.h
+[; ;./tm1650.h: 19: void TM1650_fastPrintNum(uint16_t);
 [v _TM1650_fastPrintNum `(v ~T0 @X0 0 ef1`us ]
 "14 ./clock.h
 [; ;./clock.h: 14: time_t CLOCK_getTime();
 [v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
-"52 controller.c
-[; ;controller.c: 52:     if (BUTTONS_isClicked(up)) {
+"55 controller.c
+[; ;controller.c: 55:     if (BUTTONS_isClicked(up)) {
 [c E42 0 1 .. ]
 [n E42 . STATE_UNPRESSED STATE_PRESSED  ]
 [c E37 0 1 2 .. ]
@@ -21,145 +21,185 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;./buttons.h: 38:     extern button_t *up, *down, *enter, *menu;
 [v _up `*S1 ~T0 @X0 0 e ]
+"18 ./tm1650.h
+[; ;./tm1650.h: 18: void TM1650_enable(_Bool);
+[v _TM1650_enable `(v ~T0 @X0 0 ef1`a ]
+"38 ./buttons.h
+[; ;./buttons.h: 38:     extern button_t *up, *down, *enter, *menu;
 [v _down `*S1 ~T0 @X0 0 e ]
-"8 controller.c
-[; ;controller.c: 8: uint16_t address = 1;
+"10 controller.c
+[; ;controller.c: 10: uint16_t address = 1;
 [v _address `us ~T0 @X0 1 e ]
 [i _address
 -> -> 1 `i `us
 ]
-"10
-[; ;controller.c: 10: void CONTROLLER_init() {
+"12
+[; ;controller.c: 12: void CONTROLLER_init() {
 [v _CONTROLLER_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _CONTROLLER_init ]
 [f ]
-"11
-[; ;controller.c: 11:     TM1650_fastPrintNum(address);
+"13
+[; ;controller.c: 13:     TM1650_fastPrintNum(address);
 [e ( _TM1650_fastPrintNum (1 _address ]
-"12
-[; ;controller.c: 12: }
+"14
+[; ;controller.c: 14: }
 [e :UE 4 ]
 }
-"17
-[; ;controller.c: 17: void address_inc()
+"19
+[; ;controller.c: 19: void address_inc()
 [v _address_inc `(v ~T0 @X0 1 ef ]
-"18
-[; ;controller.c: 18: {
+"20
+[; ;controller.c: 20: {
 {
 [e :U _address_inc ]
 [f ]
-"19
-[; ;controller.c: 19:     if(address == 512) {
+"21
+[; ;controller.c: 21:     if(address == 512) {
 [e $ ! == -> _address `ui -> -> 512 `i `ui 6  ]
 {
-"20
-[; ;controller.c: 20:         address = 1;
+"22
+[; ;controller.c: 22:         address = 1;
 [e = _address -> -> 1 `i `us ]
-"21
-[; ;controller.c: 21:     } else {
+"23
+[; ;controller.c: 23:     } else {
 }
 [e $U 7  ]
 [e :U 6 ]
 {
-"22
-[; ;controller.c: 22:         address++;
+"24
+[; ;controller.c: 24:         address++;
 [e ++ _address -> -> 1 `i `us ]
-"23
-[; ;controller.c: 23:     }
+"25
+[; ;controller.c: 25:     }
 }
 [e :U 7 ]
-"26
-[; ;controller.c: 26:     TM1650_fastPrintNum(address);
+"28
+[; ;controller.c: 28:     TM1650_fastPrintNum(address);
 [e ( _TM1650_fastPrintNum (1 _address ]
-"27
-[; ;controller.c: 27: }
+"29
+[; ;controller.c: 29: }
 [e :UE 5 ]
 }
-"32
-[; ;controller.c: 32: void address_dec()
+"34
+[; ;controller.c: 34: void address_dec()
 [v _address_dec `(v ~T0 @X0 1 ef ]
-"33
-[; ;controller.c: 33: {
+"35
+[; ;controller.c: 35: {
 {
 [e :U _address_dec ]
 [f ]
-"34
-[; ;controller.c: 34:     if(address == 1) {
+"36
+[; ;controller.c: 36:     if(address == 1) {
 [e $ ! == -> _address `ui -> -> 1 `i `ui 9  ]
 {
-"35
-[; ;controller.c: 35:         address = 512;
+"37
+[; ;controller.c: 37:         address = 512;
 [e = _address -> -> 512 `i `us ]
-"36
-[; ;controller.c: 36:     } else {
+"38
+[; ;controller.c: 38:     } else {
 }
 [e $U 10  ]
 [e :U 9 ]
 {
-"37
-[; ;controller.c: 37:         address--;
+"39
+[; ;controller.c: 39:         address--;
 [e -- _address -> -> 1 `i `us ]
-"38
-[; ;controller.c: 38:     }
+"40
+[; ;controller.c: 40:     }
 }
 [e :U 10 ]
-"41
-[; ;controller.c: 41:     TM1650_fastPrintNum(address);
+"43
+[; ;controller.c: 43:     TM1650_fastPrintNum(address);
 [e ( _TM1650_fastPrintNum (1 _address ]
-"42
-[; ;controller.c: 42: }
+"44
+[; ;controller.c: 44: }
 [e :UE 8 ]
 }
-"44
-[; ;controller.c: 44: static time_t lastTime = 0;
+"46
+[; ;controller.c: 46: static time_t lastTime = 0;
 [v _lastTime `us ~T0 @X0 1 s ]
 [i _lastTime
 -> -> 0 `i `us
 ]
-"45
-[; ;controller.c: 45: void CONTROLLER_task() {
+"47
+[; ;controller.c: 47: time_t lastActiveTime;
+[v _lastActiveTime `us ~T0 @X0 1 e ]
+"48
+[; ;controller.c: 48: void CONTROLLER_task() {
 [v _CONTROLLER_task `(v ~T0 @X0 1 ef ]
 {
 [e :U _CONTROLLER_task ]
 [f ]
-"46
-[; ;controller.c: 46:     time_t time = CLOCK_getTime();
+"49
+[; ;controller.c: 49:     time_t time = CLOCK_getTime();
 [v _time `us ~T0 @X0 1 a ]
 [e = _time ( _CLOCK_getTime ..  ]
-"48
-[; ;controller.c: 48:     if (time - lastTime < 35)
+"51
+[; ;controller.c: 51:     if (time - lastTime < 35)
 [e $ ! < - -> _time `ui -> _lastTime `ui -> -> 35 `i `ui 12  ]
-"49
-[; ;controller.c: 49:         return;
+"52
+[; ;controller.c: 52:         return;
 [e $UE 11  ]
 [e :U 12 ]
-"50
-[; ;controller.c: 50:     lastTime = time;
+"53
+[; ;controller.c: 53:     lastTime = time;
 [e = _lastTime _time ]
-"52
-[; ;controller.c: 52:     if (BUTTONS_isClicked(up)) {
+"55
+[; ;controller.c: 55:     if (BUTTONS_isClicked(up)) {
 [e $ ! != ( _BUTTONS_isClicked (1 _up -> 0 `i 13  ]
 {
-"53
-[; ;controller.c: 53:         address_inc();
+"56
+[; ;controller.c: 56:         address_inc();
 [e ( _address_inc ..  ]
-"54
-[; ;controller.c: 54:     } else if (BUTTONS_isClicked(down)) {
+"57
+[; ;controller.c: 57:         lastActiveTime = time;
+[e = _lastActiveTime _time ]
+"58
+[; ;controller.c: 58:         TM1650_enable(1);
+[e ( _TM1650_enable (1 -> -> 1 `i `a ]
+"59
+[; ;controller.c: 59:     } else if (BUTTONS_isClicked(down)) {
 }
 [e $U 14  ]
 [e :U 13 ]
 [e $ ! != ( _BUTTONS_isClicked (1 _down -> 0 `i 15  ]
 {
-"55
-[; ;controller.c: 55:         address_dec();
+"60
+[; ;controller.c: 60:         address_dec();
 [e ( _address_dec ..  ]
-"56
-[; ;controller.c: 56:     }
+"61
+[; ;controller.c: 61:         lastActiveTime = time;
+[e = _lastActiveTime _time ]
+"62
+[; ;controller.c: 62:         TM1650_enable(1);
+[e ( _TM1650_enable (1 -> -> 1 `i `a ]
+"63
+[; ;controller.c: 63:     } else {
 }
+[e $U 16  ]
 [e :U 15 ]
+{
+"64
+[; ;controller.c: 64:         if (CLOCK_getTime() - lastActiveTime >= 5000) {
+[e $ ! >= - -> ( _CLOCK_getTime ..  `ui -> _lastActiveTime `ui -> -> 5000 `i `ui 17  ]
+{
+"65
+[; ;controller.c: 65:             TM1650_enable(0);
+[e ( _TM1650_enable (1 -> -> 0 `i `a ]
+"66
+[; ;controller.c: 66:             lastActiveTime = CLOCK_getTime() - 5001;
+[e = _lastActiveTime -> - -> ( _CLOCK_getTime ..  `ui -> -> 5001 `i `ui `us ]
+"67
+[; ;controller.c: 67:         }
+}
+[e :U 17 ]
+"68
+[; ;controller.c: 68:     }
+}
+[e :U 16 ]
 [e :U 14 ]
-"57
-[; ;controller.c: 57: }
+"69
+[; ;controller.c: 69: }
 [e :UE 11 ]
 }
