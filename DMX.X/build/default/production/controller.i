@@ -351,7 +351,7 @@ static time_t lastTime = 0;
 void CONTROLLER_task() {
     time_t time = CLOCK_getTime();
 
-    if (time - lastTime < 50)
+    if (time - lastTime < 35)
         return;
     lastTime = time;
 

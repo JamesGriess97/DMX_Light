@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.05 build -831301201 
-                                                                                               Fri Apr 26 16:06:02 2019
+                                                                                               Fri Apr 26 16:19:22 2019
 
 Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
      1                           	processor	16F18446
@@ -7030,7 +7030,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   6921  0515  0820               	movf	?_CLOCK_getTime,w
   6922  0516  00C4               	movwf	CONTROLLER_task@time
   6923                           
-  6924                           ;controller.c: 48:     if (time - lastTime < 50)
+  6924                           ;controller.c: 48:     if (time - lastTime < 35)
   6925  0517  084B               	movf	controller@lastTime,w
   6926  0518  0244               	subwf	CONTROLLER_task@time,w
   6927  0519  00C2               	movwf	??_CONTROLLER_task
@@ -7039,7 +7039,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   6930  051C  00C3               	movwf	??_CONTROLLER_task+1
   6931  051D  3000               	movlw	0
   6932  051E  0243               	subwf	??_CONTROLLER_task+1,w
-  6933  051F  3032               	movlw	50
+  6933  051F  3023               	movlw	35
   6934  0520  1903               	skipnz
   6935  0521  0242               	subwf	??_CONTROLLER_task,w
   6936  0522  1C03               	btfss	3,0
@@ -11633,7 +11633,7 @@ SFR63                0      0       0      64        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.05 build -831301201 
-Symbol Table                                                                                   Fri Apr 26 16:06:02 2019
+Symbol Table                                                                                   Fri Apr 26 16:19:22 2019
 
                       _eusart1TxBufferRemaining 006E                                     __CFG_CP$OFF 0000  
                                   ?_TM1650_init 0070                                              _up 005A  

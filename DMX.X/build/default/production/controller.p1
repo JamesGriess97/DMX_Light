@@ -128,8 +128,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _time `us ~T0 @X0 1 a ]
 [e = _time ( _CLOCK_getTime ..  ]
 "48
-[; ;controller.c: 48:     if (time - lastTime < 50)
-[e $ ! < - -> _time `ui -> _lastTime `ui -> -> 50 `i `ui 12  ]
+[; ;controller.c: 48:     if (time - lastTime < 35)
+[e $ ! < - -> _time `ui -> _lastTime `ui -> -> 35 `i `ui 12  ]
 "49
 [; ;controller.c: 49:         return;
 [e $UE 11  ]

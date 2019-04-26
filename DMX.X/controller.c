@@ -1,4 +1,4 @@
-#define SCROLL_SPEED 50
+#define SCROLL_SPEED 35
 
 #include "controller.h"
 #include "buttons.h"
