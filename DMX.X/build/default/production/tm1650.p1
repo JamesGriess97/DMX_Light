@@ -1513,92 +1513,88 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _dp `i ~T0 @X0 1 r3 ]
 [f ]
 "23
-[; ;tm1650.c: 23:     volatile uint8_t foo = charTable[data-32];
-[v _foo `Vuc ~T0 @X0 1 a ]
-[e = _foo *U + &U _charTable * -> -> - -> _data `i -> 32 `i `ui `ux -> -> # *U &U _charTable `ui `ux ]
-"24
-[; ;tm1650.c: 24:     writeData(0x34+digit, (charTable[data-32] | dp <<7));
+[; ;tm1650.c: 23:     writeData(0x34+digit, (charTable[data-32] | dp <<7));
 [e ( _writeData (2 , -> + -> 52 `i -> _digit `i `uc -> | -> *U + &U _charTable * -> -> - -> _data `i -> 32 `i `ui `ux -> -> # *U &U _charTable `ui `ux `i << _dp -> 7 `i `uc ]
-"25
-[; ;tm1650.c: 25: }
+"24
+[; ;tm1650.c: 24: }
 [e :UE 1518 ]
 }
-"27
-[; ;tm1650.c: 27: void TM1650_init() {
+"26
+[; ;tm1650.c: 26: void TM1650_init() {
 [v _TM1650_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _TM1650_init ]
 [f ]
-"28
-[; ;tm1650.c: 28:     writeData(0x24, 1);
+"27
+[; ;tm1650.c: 27:     writeData(0x24, 1);
 [e ( _writeData (2 , -> -> 36 `i `uc -> -> 1 `i `uc ]
-"29
-[; ;tm1650.c: 29: }
+"28
+[; ;tm1650.c: 28: }
 [e :UE 1519 ]
 }
-"31
-[; ;tm1650.c: 31: void TM1650_fastPrintNum(uint16_t num) {
+"30
+[; ;tm1650.c: 30: void TM1650_fastPrintNum(uint16_t num) {
 [v _TM1650_fastPrintNum `(v ~T0 @X0 1 ef1`us ]
 {
 [e :U _TM1650_fastPrintNum ]
 [v _num `us ~T0 @X0 1 r1 ]
 [f ]
-"32
-[; ;tm1650.c: 32:     if(num > 9999) {
+"31
+[; ;tm1650.c: 31:     if(num > 9999) {
 [e $ ! > -> _num `ui -> -> 9999 `i `ui 1521  ]
 {
-"33
-[; ;tm1650.c: 33:         TM1650_setDigit(0, 'E', 0);
+"32
+[; ;tm1650.c: 32:         TM1650_setDigit(0, 'E', 0);
 [e ( _TM1650_setDigit (3 , , -> -> 0 `i `uc -> -> 69 `ui `uc -> 0 `i ]
-"34
-[; ;tm1650.c: 34:         TM1650_setDigit(1, 'E', 0);
+"33
+[; ;tm1650.c: 33:         TM1650_setDigit(1, 'E', 0);
 [e ( _TM1650_setDigit (3 , , -> -> 1 `i `uc -> -> 69 `ui `uc -> 0 `i ]
-"35
-[; ;tm1650.c: 35:         TM1650_setDigit(2, 'E', 0);
+"34
+[; ;tm1650.c: 34:         TM1650_setDigit(2, 'E', 0);
 [e ( _TM1650_setDigit (3 , , -> -> 2 `i `uc -> -> 69 `ui `uc -> 0 `i ]
-"36
-[; ;tm1650.c: 36:         TM1650_setDigit(3, 'E', 0);
+"35
+[; ;tm1650.c: 35:         TM1650_setDigit(3, 'E', 0);
 [e ( _TM1650_setDigit (3 , , -> -> 3 `i `uc -> -> 69 `ui `uc -> 0 `i ]
-"37
-[; ;tm1650.c: 37:     } else {
+"36
+[; ;tm1650.c: 36:     } else {
 }
 [e $U 1522  ]
 [e :U 1521 ]
 {
-"38
-[; ;tm1650.c: 38:         int i=0;
+"37
+[; ;tm1650.c: 37:         int i=0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"39
-[; ;tm1650.c: 39:         for(i=0; i<4; i++) {
+"38
+[; ;tm1650.c: 38:         for(i=0; i<4; i++) {
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 4 `i 1523  ]
 [e $U 1524  ]
 [e :U 1523 ]
 {
-"40
-[; ;tm1650.c: 40:             int numWrite = num %10;
+"39
+[; ;tm1650.c: 39:             int numWrite = num %10;
 [v _numWrite `i ~T0 @X0 1 a ]
 [e = _numWrite -> % -> _num `ui -> -> 10 `i `ui `i ]
-"41
-[; ;tm1650.c: 41:             TM1650_setDigit(3-i, numWrite+48, 0);
+"40
+[; ;tm1650.c: 40:             TM1650_setDigit(3-i, numWrite+48, 0);
 [e ( _TM1650_setDigit (3 , , -> - -> 3 `i _i `uc -> + _numWrite -> 48 `i `uc -> 0 `i ]
-"42
-[; ;tm1650.c: 42:             num = num/10;
+"41
+[; ;tm1650.c: 41:             num = num/10;
 [e = _num -> / -> _num `ui -> -> 10 `i `ui `us ]
-"43
-[; ;tm1650.c: 43:         }
+"42
+[; ;tm1650.c: 42:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 4 `i 1523  ]
 [e :U 1524 ]
 }
-"44
-[; ;tm1650.c: 44:     }
+"43
+[; ;tm1650.c: 43:     }
 }
 [e :U 1522 ]
-"45
-[; ;tm1650.c: 45: }
+"44
+[; ;tm1650.c: 44: }
 [e :UE 1520 ]
 }

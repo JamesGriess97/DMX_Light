@@ -41,7 +41,7 @@ void address_dec()
     TM1650_fastPrintNum(address);
 }
 
-int lastTime = 0;
+static time_t lastTime = 0;
 void CONTROLLER_task() {
     time_t time = CLOCK_getTime();
 

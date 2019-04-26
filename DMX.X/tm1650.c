@@ -20,7 +20,6 @@ void writeData(uint8_t address, uint8_t data) {
 }
 
 void TM1650_setDigit(uint8_t digit, char data, int dp) {
-    volatile uint8_t foo = charTable[data-32];
     writeData(0x34+digit, (charTable[data-32] | dp <<7));
 }
 

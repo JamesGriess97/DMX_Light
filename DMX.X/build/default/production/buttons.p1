@@ -1449,10 +1449,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1515 ]
 }
 "33
-[; ;buttons.c: 33: int lastTime = 0;
-[v _lastTime `i ~T0 @X0 1 e ]
+[; ;buttons.c: 33: static time_t lastTime = 0;
+[v _lastTime `us ~T0 @X0 1 s ]
 [i _lastTime
--> 0 `i
+-> -> 0 `i `us
 ]
 "34
 [; ;buttons.c: 34: void BUTTONS_task() {
@@ -1473,7 +1473,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1517 ]
 "41
 [; ;buttons.c: 41:     lastTime = time;
-[e = _lastTime -> _time `i ]
+[e = _lastTime _time ]
 "44
 [; ;buttons.c: 44:     for (uint8_t i = 0; i < 4; i++) {
 {

@@ -30,7 +30,7 @@ void BUTTONS_init() {
     init(up, &PORTC, 1);
 }
 
-int lastTime = 0;
+static time_t lastTime = 0;
 void BUTTONS_task() {
     time_t time = CLOCK_getTime();
 

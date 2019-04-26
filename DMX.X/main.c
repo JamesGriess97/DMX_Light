@@ -127,11 +127,9 @@ void main(void) {
 
     while (1) {
         // Add your application code
-        //LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
+        LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
         BUTTONS_task();
-        CONTROLLER_task();
-        //TM1650_setDigit(1, 'c', 0);
-        
+        CONTROLLER_task();        
     }
 }
 

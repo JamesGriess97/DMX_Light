@@ -18440,7 +18440,7 @@ void main(void) {
 
     while (1) {
 
-
+        LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
         BUTTONS_task();
         CONTROLLER_task();
 

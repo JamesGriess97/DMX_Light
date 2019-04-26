@@ -61,6 +61,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54 main.c
 [; ;main.c: 54: void initLED();
 [v _initLED `(v ~T0 @X0 0 e? ]
+"55
+[; ;main.c: 55: void LED_setColor(uint8_t, uint8_t, uint8_t, uint8_t);
+[v _LED_setColor `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
+"18 ./controller.h
+[; ;./controller.h: 18: extern uint16_t address;
+[v _address `us ~T0 @X0 0 e ]
 "40 ./buttons.h
 [; ;./buttons.h: 40:     void BUTTONS_task();
 [v _BUTTONS_task `(v ~T0 @X0 0 e? ]
@@ -1776,6 +1782,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 128:     while (1) {
 [e :U 1527 ]
 {
+"130
+[; ;main.c: 130:         LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
+[e ( _LED_setColor (4 , , , -> *U + &U _dmxData * -> + -> _address `ui -> -> 1 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 2 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 3 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc -> *U + &U _dmxData * -> + -> _address `ui -> -> 4 `i `ui `ux -> -> # *U &U _dmxData `ui `ux `uc ]
 "131
 [; ;main.c: 131:         BUTTONS_task();
 [e ( _BUTTONS_task ..  ]
