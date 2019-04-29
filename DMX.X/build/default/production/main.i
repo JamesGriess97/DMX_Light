@@ -7,7 +7,8 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 45 "main.c"
+
+
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
@@ -18381,7 +18382,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 99 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
-# 45 "main.c" 2
+# 3 "main.c" 2
 
 # 1 "./clock.h" 1
 # 11 "./clock.h"
@@ -18389,7 +18390,7 @@ typedef uint16_t time_t;
 
 void CLOCK_init();
 time_t CLOCK_getTime();
-# 46 "main.c" 2
+# 4 "main.c" 2
 
 # 1 "./tm1650.h" 1
 # 17 "./tm1650.h"
@@ -18398,7 +18399,7 @@ void TM1650_enable(_Bool);
 void TM1650_fastPrintNum(uint16_t);
 void TM1650_setDigit(uint8_t, char, int);
 void TM1650_init();
-# 47 "main.c" 2
+# 5 "main.c" 2
 
 # 1 "./buttons.h" 1
 # 16 "./buttons.h"
@@ -18428,73 +18429,36 @@ void TM1650_init();
     void BUTTONS_init();
     void BUTTONS_task();
     int BUTTONS_isClicked(button_t*);
-# 48 "main.c" 2
+# 6 "main.c" 2
 
 # 1 "./controller.h" 1
 # 16 "./controller.h"
 void CONTROLLER_task();
 void CONTROLLER_init();
 extern uint16_t address;
-# 49 "main.c" 2
+# 7 "main.c" 2
 
 # 1 "./beat.h" 1
 # 13 "./beat.h"
 void BEAT_init();
 _Bool BEAT_detected();
 void BEAT_task();
-# 50 "main.c" 2
+# 8 "main.c" 2
 
-
-
-
+# 1 "./dmx.h" 1
+# 15 "./dmx.h"
 void DMX_ISR();
+# 9 "main.c" 2
+
+
+
+
+
 void initLED();
 void LED_setColor(uint8_t, uint8_t, uint8_t, uint8_t);
 void LED_task();
 
-volatile char dmxData[513];
-int dmxPointer = 0;
-
-void DMX_ISR(void) {
-        LATB6 = 1;
-        LATB6 = 0;
-    if (RC1STAbits.FERR) {
-
-        dmxPointer = 0;
-    } else {
-        dmxPointer++;
-    }
-    dmxData[dmxPointer] = RC1REG;
-
-    if (RC1STAbits.OERR) {
-        RC1STAbits.CREN = 0;
-        RC1STAbits.CREN = 1;
-    }
-
-
-
-
-
-}
-
-
-void Blink2() {
-    static _Bool value = 0;
-    static time_t lastTime = 0;
-
-    time_t time = CLOCK_getTime();
-    if(time <= lastTime + 51)
-        return;
-
-    lastTime = time;
-    value = !value;
-
-    if(value)
-        TM1650_setDigit(1, '8', 0);
-    else
-        TM1650_setDigit(1, ' ', 0);
-
-}
+extern char dmxData[513];
 
 void main(void) {
 
@@ -18544,11 +18508,11 @@ void LED_task() {
 
     lastTime = time;
 
+    LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
     if(BEAT_detected()) {
 
-        LED_setColor(255, 255, 255, 255);
     } else {
-        LED_setColor(0,0,0,0);
+
     }
 }
 

@@ -1,45 +1,3 @@
-/**
-  Generated Main Source File
-
-  Company:
-    Microchip Technology Inc.
-
-  File Name:
-    main.c
-
-  Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
-  Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC16F18446
-        Driver Version    :  2.00
- */
-
-/*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
-    
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
-    
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
-    
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
- */
 #define FADE_TIME 100
 
 #include "mcc_generated_files/mcc.h"
@@ -48,57 +6,16 @@
 #include "buttons.h"
 #include "controller.h"
 #include "beat.h"
+#include "dmx.h"
+
 /*
                          Main application
  */
-void DMX_ISR();
 void initLED();
 void LED_setColor(uint8_t, uint8_t, uint8_t, uint8_t);
 void LED_task();
 
-volatile char dmxData[513];
-int dmxPointer = 0;
-
-void DMX_ISR(void) {
-        LATB6 = 1;
-        LATB6 = 0;
-    if (RC1STAbits.FERR) {
-        // set the pointer back to zero
-        dmxPointer = 0;
-    } else { 
-        dmxPointer++;
-    }
-    dmxData[dmxPointer] = RC1REG;
-
-    if (RC1STAbits.OERR) {
-        RC1STAbits.CREN = 0;
-        RC1STAbits.CREN = 1;
-    }
-
-
-    
-
-    // or set custom function using EUSART1_SetRxInterruptHandler()
-}
-
-
-void Blink2() {
-    static bool value = 0;
-    static time_t lastTime = 0;
-    
-    time_t time = CLOCK_getTime();
-    if(time <= lastTime + 51)
-        return;
-    
-    lastTime = time;
-    value = !value;
-    
-    if(value)
-        TM1650_setDigit(1, '8', 0);
-    else
-        TM1650_setDigit(1, ' ', 0);
-    
-}
+extern char dmxData[513];
 
 void main(void) {
     // initialize the device
@@ -148,11 +65,11 @@ void LED_task() {
 
     lastTime = time;
 
+    LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
     if(BEAT_detected()) {
-        //LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
-        LED_setColor(255, 255, 255, 255);
+        //LED_setColor(255, 255, 255, 255);
     } else {
-        LED_setColor(0,0,0,0);
+        //LED_setColor(0,0,0,0);
     }
 }
 

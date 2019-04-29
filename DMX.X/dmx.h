@@ -12,6 +12,7 @@
 extern "C" {
 #endif
 
+void DMX_ISR();
 
 
 
