@@ -18222,6 +18222,82 @@ void I2C1_BusCollisionISR( void );
 void I2C1_ISR ( void );
 # 55 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/adcc.h" 1
+# 72 "mcc_generated_files/adcc.h"
+typedef uint16_t adc_result_t;
+
+typedef __uint24 uint24_t;
+# 89 "mcc_generated_files/adcc.h"
+typedef enum
+{
+    channel_Vss = 0x3B,
+    channel_Temp_Sensor = 0x3C,
+    channel_DAC1_Output = 0x3D,
+    channel_FVR_Buffer1 = 0x3E,
+    channel_FVR_Buffer2 = 0x3F
+} adcc_channel_t;
+# 130 "mcc_generated_files/adcc.h"
+void ADCC_Initialize(void);
+# 159 "mcc_generated_files/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 189 "mcc_generated_files/adcc.h"
+_Bool ADCC_IsConversionDone();
+# 221 "mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 252 "mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 277 "mcc_generated_files/adcc.h"
+void ADCC_StopConversion(void);
+# 304 "mcc_generated_files/adcc.h"
+void ADCC_SetStopOnInterrupt(void);
+# 329 "mcc_generated_files/adcc.h"
+void ADCC_DischargeSampleCapacitor(void);
+# 355 "mcc_generated_files/adcc.h"
+void ADCC_LoadAcquisitionRegister(uint16_t);
+# 381 "mcc_generated_files/adcc.h"
+void ADCC_SetPrechargeTime(uint16_t);
+# 406 "mcc_generated_files/adcc.h"
+void ADCC_SetRepeatCount(uint8_t);
+# 434 "mcc_generated_files/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+# 458 "mcc_generated_files/adcc.h"
+void ADCC_ClearAccumulator(void);
+# 483 "mcc_generated_files/adcc.h"
+uint24_t ADCC_GetAccumulatorValue(void);
+# 511 "mcc_generated_files/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+# 536 "mcc_generated_files/adcc.h"
+uint16_t ADCC_GetFilterValue(void);
+# 564 "mcc_generated_files/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+# 590 "mcc_generated_files/adcc.h"
+void ADCC_DefineSetPoint(uint16_t);
+# 616 "mcc_generated_files/adcc.h"
+void ADCC_SetUpperThreshold(uint16_t);
+# 642 "mcc_generated_files/adcc.h"
+void ADCC_SetLowerThreshold(uint16_t);
+# 669 "mcc_generated_files/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+# 696 "mcc_generated_files/adcc.h"
+void ADCC_EnableDoubleSampling(void);
+# 720 "mcc_generated_files/adcc.h"
+void ADCC_EnableContinuousConversion(void);
+# 744 "mcc_generated_files/adcc.h"
+void ADCC_DisableContinuousConversion(void);
+# 772 "mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 800 "mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 827 "mcc_generated_files/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
+# 844 "mcc_generated_files/adcc.h"
+void ADCC_SetADTIInterruptHandler(void (* InterruptHandler)(void));
+# 860 "mcc_generated_files/adcc.h"
+void ADCC_ThresholdISR(void);
+# 878 "mcc_generated_files/adcc.h"
+void ADCC_DefaultInterruptHandler(void);
+# 56 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/tmr0.h" 1
 # 100 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
@@ -18243,7 +18319,7 @@ void TMR0_ISR(void);
 extern void (*TMR0_InterruptHandler)(void);
 # 346 "mcc_generated_files/tmr0.h"
 void TMR0_DefaultInterruptHandler(void);
-# 56 "mcc_generated_files/mcc.h" 2
+# 57 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart1.h" 1
 # 75 "mcc_generated_files/eusart1.h"
@@ -18299,12 +18375,12 @@ void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
 # 515 "mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 57 "mcc_generated_files/mcc.h" 2
-# 72 "mcc_generated_files/mcc.h"
+# 58 "mcc_generated_files/mcc.h" 2
+# 73 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 85 "mcc_generated_files/mcc.h"
+# 86 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 98 "mcc_generated_files/mcc.h"
+# 99 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 50 "mcc_generated_files/interrupt_manager.c" 2
 
@@ -18333,6 +18409,10 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
         else if(PIE3bits.RC1IE == 1 && PIR3bits.RC1IF == 1)
         {
             EUSART1_RxDefaultInterruptHandler();
+        }
+        else if(PIE1bits.ADTIE == 1 && PIR1bits.ADTIF == 1)
+        {
+            ADCC_ThresholdISR();
         }
         else
         {

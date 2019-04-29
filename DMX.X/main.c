@@ -40,19 +40,21 @@
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
  */
+#define FADE_TIME 100
 
 #include "mcc_generated_files/mcc.h"
 #include "clock.h"
 #include "tm1650.h"
 #include "buttons.h"
 #include "controller.h"
-
+#include "beat.h"
 /*
                          Main application
  */
 void DMX_ISR();
 void initLED();
 void LED_setColor(uint8_t, uint8_t, uint8_t, uint8_t);
+void LED_task();
 
 volatile char dmxData[513];
 int dmxPointer = 0;
@@ -125,15 +127,34 @@ void main(void) {
     BUTTONS_init();
     CONTROLLER_init();
     initLED();
+    BEAT_init();
 
     while (1) {
         // Add your application code
-        LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
+        BEAT_task();
+        LED_task();
         BUTTONS_task();
         CONTROLLER_task();        
     }
 }
 
+
+static time_t lastTime = 0;
+void LED_task() {
+    time_t time = CLOCK_getTime();
+
+    if (time - lastTime < FADE_TIME)
+        return;
+
+    lastTime = time;
+
+    if(BEAT_detected()) {
+        //LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
+        LED_setColor(255, 255, 255, 255);
+    } else {
+        LED_setColor(0,0,0,0);
+    }
+}
 
 void initLED() {
     //WPUB7 = 1;

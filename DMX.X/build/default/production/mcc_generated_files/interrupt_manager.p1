@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F10939 `(v ~T0 @X0 0 tf ]
-[v F10941 `(v ~T0 @X0 0 tf ]
+[v F10989 `(v ~T0 @X0 0 tf ]
+[v F10991 `(v ~T0 @X0 0 tf ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "19298 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
@@ -67,6 +67,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "691
 [; ;mcc_generated_files/i2c1.h: 691: void I2C1_ISR ( void );
 [v _I2C1_ISR `(v ~T0 @X0 0 ef ]
+"19331 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 19331:     struct {
+[s S901 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S901 . ADIE ADTIE . CSWIE OSFIE ]
+"19330
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 19330: typedef union {
+[u S900 `S901 1 ]
+[n S900 . . ]
+"19339
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 19339: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x717)));
+[v _PIE1bits `VS900 ~T0 @X0 0 e@1815 ]
+"18960
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 18960:     struct {
+[s S883 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S883 . ADIF ADTIF . CSWIF OSFIF ]
+"18959
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 18959: typedef union {
+[u S882 `S883 1 ]
+[n S882 . . ]
+"18968
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 18968: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x70D)));
+[v _PIR1bits `VS882 ~T0 @X0 0 e@1805 ]
+"860 mcc_generated_files/adcc.h
+[; ;mcc_generated_files/adcc.h: 860: void ADCC_ThresholdISR(void);
+[v _ADCC_ThresholdISR `(v ~T0 @X0 0 ef ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1431,10 +1456,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 01FEFh ;# ">
 "95 mcc_generated_files/eusart1.h
 [; ;mcc_generated_files/eusart1.h: 95: void (*EUSART1_TxDefaultInterruptHandler)(void);
-[v _EUSART1_TxDefaultInterruptHandler `*F10939 ~T0 @X0 1 e ]
+[v _EUSART1_TxDefaultInterruptHandler `*F10989 ~T0 @X0 1 e ]
 "96
 [; ;mcc_generated_files/eusart1.h: 96: void (*EUSART1_RxDefaultInterruptHandler)(void);
-[v _EUSART1_RxDefaultInterruptHandler `*F10941 ~T0 @X0 1 e ]
+[v _EUSART1_RxDefaultInterruptHandler `*F10991 ~T0 @X0 1 e ]
 [v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
 "52 mcc_generated_files/interrupt_manager.c
 [; ;mcc_generated_files/interrupt_manager.c: 52: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
@@ -1520,34 +1545,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 1527  ]
 "77
-[; ;mcc_generated_files/interrupt_manager.c: 77:         else
+[; ;mcc_generated_files/interrupt_manager.c: 77:         else if(PIE1bits.ADTIE == 1 && PIR1bits.ADTIF == 1)
 [e :U 1526 ]
+[e $ ! && == -> . . _PIE1bits 0 1 `i -> 1 `i == -> . . _PIR1bits 0 1 `i -> 1 `i 1528  ]
 "78
 [; ;mcc_generated_files/interrupt_manager.c: 78:         {
 {
+"79
+[; ;mcc_generated_files/interrupt_manager.c: 79:             ADCC_ThresholdISR();
+[e ( _ADCC_ThresholdISR ..  ]
 "80
 [; ;mcc_generated_files/interrupt_manager.c: 80:         }
 }
+[e $U 1529  ]
+"81
+[; ;mcc_generated_files/interrupt_manager.c: 81:         else
+[e :U 1528 ]
+"82
+[; ;mcc_generated_files/interrupt_manager.c: 82:         {
+{
+"84
+[; ;mcc_generated_files/interrupt_manager.c: 84:         }
+}
+[e :U 1529 ]
 [e :U 1527 ]
 [e :U 1525 ]
 [e :U 1523 ]
 [e :U 1521 ]
-"81
-[; ;mcc_generated_files/interrupt_manager.c: 81:     }
-}
-[e $U 1528  ]
-"82
-[; ;mcc_generated_files/interrupt_manager.c: 82:     else
-[e :U 1519 ]
-"83
-[; ;mcc_generated_files/interrupt_manager.c: 83:     {
-{
 "85
 [; ;mcc_generated_files/interrupt_manager.c: 85:     }
 }
-[e :U 1528 ]
-[e :U 1518 ]
+[e $U 1530  ]
 "86
-[; ;mcc_generated_files/interrupt_manager.c: 86: }
+[; ;mcc_generated_files/interrupt_manager.c: 86:     else
+[e :U 1519 ]
+"87
+[; ;mcc_generated_files/interrupt_manager.c: 87:     {
+{
+"89
+[; ;mcc_generated_files/interrupt_manager.c: 89:     }
+}
+[e :U 1530 ]
+[e :U 1518 ]
+"90
+[; ;mcc_generated_files/interrupt_manager.c: 90: }
 [e :UE 1516 ]
 }
