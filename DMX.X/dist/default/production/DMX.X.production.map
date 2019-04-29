@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.05\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\DMX.X.production.sym \
   --cmf=dist/default/production\DMX.X.production.cmf -z -Q16F18446 \
-  -oC:\Users\User\AppData\Local\Temp\se34.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\User\AppData\Local\Temp\sd9k.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/DMX.X.production.map -E1 -ver=XC8 --acfsm=1493 \
   -ASTACK=020C0h-025EEh -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
@@ -46,7 +46,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=08007h-0800Bh -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\User\AppData\Local\Temp\se34.o \
+  -DENTRY=2 -k C:\Users\User\AppData\Local\Temp\sd9k.o \
   dist/default/production\DMX.X.production.o 
 
 Object code version is 3.11
@@ -56,90 +56,91 @@ Machine type is 16F18446
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\User\AppData\Local\Temp\se34.o
+C:\Users\User\AppData\Local\Temp\sd9k.o
                 end_init                             39       39        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5    1000E       0
 dist/default/production\DMX.X.production.o
                 cinit                                3B       3B       4E        8       0
                 intentry                              4        4       35        8       0
-                text63                              E1C      E1C        4     1C38       0
-                text62                              E10      E10        1     1C20       0
-                text61                              EBA      EBA        D     1D74       0
-                text60                              F62      F62       17     1EC4       0
-                text59                              E13      E13        3     1C26       0
-                text58                              E11      E11        1     1C22       0
-                text57                              E20      E20        4     1C40       0
-                text56                              66D      66D       32      94C       0
-                text55                              76E      76E       25      94C       0
+                text63                              E27      E27        4     1C4E       0
+                text62                              E1B      E1B        1     1C36       0
+                text61                              ED1      ED1        D     1DA2       0
+                text60                              7E9      7E9       17      926       0
+                text59                              E1E      E1E        3     1C3C       0
+                text58                              E1C      E1C        1     1C38       0
+                text57                              E2B      E2B        4     1C56       0
+                text56                              662      662       32      926       0
+                text55                              763      763       25      926       0
                 text54                              FC6      FC6       1D     1F8C       0
-                text53                              E16      E16        3     1C2C       0
-                text52                              ED4      ED4       11     1DA8       0
+                text53                              E21      E21        3     1C42       0
+                text52                              EEB      EEB       11     1DD6       0
                 text51                              F79      F79       18     1EF2       0
                 text50                               89       89      149        8       0
-                text49                              E12      E12        1     1C24       0
-                text48                              E31      E31        6     1C62       0
-                text47                              EC7      EC7        D     1D8E       0
-                text45                              E4D      E4D        9     1C9A       0
-                text44                              E56      E56        9     1CAC       0
-                text43                              E5F      E5F        9     1CBE       0
-                text42                              EE5      EE5       14     1DCA       0
-                text41                              E37      E37        6     1C6E       0
-                text40                              E19      E19        3     1C32       0
-                text39                              638      638       35      94C       0
-                text38                              29C      29C       C2        8       0
-                text37                              7D4      7D4       20      94C       0
-                text36                              582      582       3F      94C       0
+                text49                              E1D      E1D        1     1C3A       0
+                text48                              E3C      E3C        6     1C78       0
+                text47                              EDE      EDE        D     1DBC       0
+                text45                              E58      E58        9     1CB0       0
+                text44                              E61      E61        9     1CC2       0
+                text43                              E6A      E6A        9     1CD4       0
+                text42                              EFC      EFC       14     1DF8       0
+                text41                              E42      E42        6     1C84       0
+                text40                              E24      E24        3     1C48       0
+                text39                              62D      62D       35      926       0
+                text38                              29C      29C       BB        8       0
+                text37                              7C9      7C9       20      926       0
+                text36                              577      577       3F      926       0
                 text35                              1D2      1D2       CA        8       0
-                text34                              E68      E68        9     1CD0       0
-                text33                              E3D      E3D        8     1C7A       0
-                text32                              E2C      E2C        5     1C58       0
-                text31                              4FA      4FA       45      94C       0
-                text30                              7B4      7B4       20      94C       0
-                text29                              721      721       27      94C       0
+                text34                              E73      E73        9     1CE6       0
+                text33                              E48      E48        8     1C90       0
+                text32                              E37      E37        5     1C6E       0
+                text31                              4EF      4EF       45      926       0
+                text30                              7A9      7A9       20      926       0
+                text29                              716      716       27      926       0
                 text28                              FE3      FE3       1D     1FC6       0
                 text27                              FAA      FAA       1C     1F54       0
-                text26                              6CC      6CC       2D      94C       0
-                text25                              35E      35E       7A        8       0
-                text24                              E45      E45        8     1C8A       0
-                text23                              793      793       21      94C       0
-                text22                              F0D      F0D       15     1E1A       0
-                text21                              F22      F22       15     1E44       0
-                text20                              F4C      F4C       16     1E98       0
-                text19                              3D8      3D8       6E        8       0
-                text18                              E71      E71        9     1CE2       0
-                text17                              5C1      5C1       3C      94C       0
-                text16                              4A6      4A6       54      94C       0
-                text15                              748      748       26      94C       0
-                text14                              E7A      E7A        9     1CF4       0
-                text13                              E83      E83        9     1D06       0
-                text12                              E8C      E8C        9     1D18       0
-                text11                              E95      E95        9     1D2A       0
-                text10                              E9E      E9E        9     1D3C       0
-                text9                               53F      53F       43      94C       0
+                text26                              6C1      6C1       2D      926       0
+                text25                              357      357       7A        8       0
+                text24                              E50      E50        8     1CA0       0
+                text23                              788      788       21      926       0
+                text22                              F24      F24       15     1E48       0
+                text21                              F39      F39       15     1E72       0
+                text20                              F63      F63       16     1EC6       0
+                text19                              3D1      3D1       62        8       0
+                text18                              E7C      E7C        9     1CF8       0
+                text17                              5B6      5B6       3C      926       0
+                text16                              493      493       5C      926       0
+                text15                              73D      73D       26      926       0
+                text14                              E85      E85        9     1D0A       0
+                text13                              E8E      E8E        9     1D1C       0
+                text12                              E97      E97        9     1D2E       0
+                text11                              EA0      EA0        9     1D40       0
+                text10                              EA9      EA9        9     1D52       0
+                text9                               534      534       43      926       0
                 text8                               F91      F91       19     1F22       0
-                text7                               EA7      EA7        9     1D4E       0
-                text6                               69F      69F       2D      94C       0
-                text5                               EB0      EB0        A     1D60       0
-                text4                               EF9      EF9       14     1DF2       0
-                text3                               F37      F37       15     1E6E       0
-                text2                               E24      E24        4     1C48       0
-                text1                               6F9      6F9       28      94C       0
-                maintext                            5FD      5FD       3B      94C       0
-                cstackBANK0                          20       20       28       20       1
+                text7                               EB2      EB2        9     1D64       0
+                text6                               694      694       2D      926       0
+                text5                               EBB      EBB        A     1D76       0
+                text4                               F10      F10       14     1E20       0
+                text3                               F4E      F4E       15     1E9C       0
+                text2                               E2F      E2F        4     1C5E       0
+                text1                               6EE      6EE       28      926       0
+                maintext                            5F2      5F2       3B      926       0
+                cstackBANK0                          20       20       26       20       1
                 cstackCOMMON                         76       76        6       70       1
-                clrtext                             7F4      7F4        C      94C       0
+                cstackBANK1                          DA       DA        2       A0       1
+                clrtext                             EC5      EC5        C     1D8A       0
                 bssBANK2                            120      120       20      120       1
-                dataBANK1                            DA       DA        2       A0       1
-                bssBANK1                             A0       A0       2C       A0       1
+                dataBANK1                            D8       D8        2       A0       1
+                bssBANK1                             A0       A0       2A       A0       1
                 dataBANK0                            6B       6B        4       20       1
-                bssBANK0                             48       48       23       20       1
+                bssBANK0                             46       46       25       20       1
                 bssCOMMON                            70       70        6       70       1
-                nvBANK1                              CC       CC        E       A0       1
+                nvBANK1                              CA       CA        E       A0       1
                 nvBANK0                              6F       6F        1       20       1
-                stringtext1                         446      446       60      88C       0
+                stringtext1                         433      433       60      866       0
                 idataBANK1                            2        2        2        0       0
-                idataBANK0                          E28      E28        4     1C50       0
+                idataBANK0                          E33      E33        4     1C66       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -149,75 +150,75 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                3B       3B       4E         0
                 intentry                              4        4       35         0
                 reset_vec                             0        0        2         0
-                text63                              E1C      E1C        4         0
-                text62                              E10      E10        1         0
-                text61                              EBA      EBA        D         0
-                text60                              F62      F62       17         0
-                text59                              E13      E13        3         0
-                text58                              E11      E11        1         0
-                text57                              E20      E20        4         0
-                text56                              66D      66D       32         0
-                text55                              76E      76E       25         0
+                text63                              E27      E27        4         0
+                text62                              E1B      E1B        1         0
+                text61                              ED1      ED1        D         0
+                text60                              7E9      7E9       17         0
+                text59                              E1E      E1E        3         0
+                text58                              E1C      E1C        1         0
+                text57                              E2B      E2B        4         0
+                text56                              662      662       32         0
+                text55                              763      763       25         0
                 text54                              FC6      FC6       1D         0
-                text53                              E16      E16        3         0
-                text52                              ED4      ED4       11         0
+                text53                              E21      E21        3         0
+                text52                              EEB      EEB       11         0
                 text51                              F79      F79       18         0
                 text50                               89       89      149         0
-                text49                              E12      E12        1         0
-                text48                              E31      E31        6         0
-                text47                              EC7      EC7        D         0
-                text45                              E4D      E4D        9         0
-                text44                              E56      E56        9         0
-                text43                              E5F      E5F        9         0
-                text42                              EE5      EE5       14         0
-                text41                              E37      E37        6         0
-                text40                              E19      E19        3         0
-                text39                              638      638       35         0
-                text38                              29C      29C       C2         0
-                text37                              7D4      7D4       20         0
-                text36                              582      582       3F         0
+                text49                              E1D      E1D        1         0
+                text48                              E3C      E3C        6         0
+                text47                              EDE      EDE        D         0
+                text45                              E58      E58        9         0
+                text44                              E61      E61        9         0
+                text43                              E6A      E6A        9         0
+                text42                              EFC      EFC       14         0
+                text41                              E42      E42        6         0
+                text40                              E24      E24        3         0
+                text39                              62D      62D       35         0
+                text38                              29C      29C       BB         0
+                text37                              7C9      7C9       20         0
+                text36                              577      577       3F         0
                 text35                              1D2      1D2       CA         0
-                text34                              E68      E68        9         0
-                text33                              E3D      E3D        8         0
-                text32                              E2C      E2C        5         0
-                text31                              4FA      4FA       45         0
-                text30                              7B4      7B4       20         0
-                text29                              721      721       27         0
+                text34                              E73      E73        9         0
+                text33                              E48      E48        8         0
+                text32                              E37      E37        5         0
+                text31                              4EF      4EF       45         0
+                text30                              7A9      7A9       20         0
+                text29                              716      716       27         0
                 text28                              FE3      FE3       1D         0
                 text27                              FAA      FAA       1C         0
-                text26                              6CC      6CC       2D         0
-                text25                              35E      35E       7A         0
-                text24                              E45      E45        8         0
-                text23                              793      793       21         0
-                text22                              F0D      F0D       15         0
-                text21                              F22      F22       15         0
-                text20                              F4C      F4C       16         0
-                text19                              3D8      3D8       6E         0
-                text18                              E71      E71        9         0
-                text17                              5C1      5C1       3C         0
-                text16                              4A6      4A6       54         0
-                text15                              748      748       26         0
-                text14                              E7A      E7A        9         0
-                text13                              E83      E83        9         0
-                text12                              E8C      E8C        9         0
-                text11                              E95      E95        9         0
-                text10                              E9E      E9E        9         0
-                text9                               53F      53F       43         0
+                text26                              6C1      6C1       2D         0
+                text25                              357      357       7A         0
+                text24                              E50      E50        8         0
+                text23                              788      788       21         0
+                text22                              F24      F24       15         0
+                text21                              F39      F39       15         0
+                text20                              F63      F63       16         0
+                text19                              3D1      3D1       62         0
+                text18                              E7C      E7C        9         0
+                text17                              5B6      5B6       3C         0
+                text16                              493      493       5C         0
+                text15                              73D      73D       26         0
+                text14                              E85      E85        9         0
+                text13                              E8E      E8E        9         0
+                text12                              E97      E97        9         0
+                text11                              EA0      EA0        9         0
+                text10                              EA9      EA9        9         0
+                text9                               534      534       43         0
                 text8                               F91      F91       19         0
-                text7                               EA7      EA7        9         0
-                text6                               69F      69F       2D         0
-                text5                               EB0      EB0        A         0
-                text4                               EF9      EF9       14         0
-                text3                               F37      F37       15         0
-                text2                               E24      E24        4         0
-                text1                               6F9      6F9       28         0
-                maintext                            5FD      5FD       3B         0
-                clrtext                             7F4      7F4        C         0
+                text7                               EB2      EB2        9         0
+                text6                               694      694       2D         0
+                text5                               EBB      EBB        A         0
+                text4                               F10      F10       14         0
+                text3                               F4E      F4E       15         0
+                text2                               E2F      E2F        4         0
+                text1                               6EE      6EE       28         0
+                maintext                            5F2      5F2       3B         0
+                clrtext                             EC5      EC5        C         0
                 idataBANK1                            2        2        2         0
-                idataBANK0                          E28      E28        4         0
+                idataBANK0                          E33      E33        4         0
 
         CLASS   STRCODE        
-                stringtext1                         446      446       60         0
+                stringtext1                         433      433       60         0
 
         CLASS   STRING         
 
@@ -230,15 +231,16 @@ TOTAL           Name                               Link     Load   Length     Sp
                 bssCOMMON                            70       70        6         1
 
         CLASS   BANK0          
-                cstackBANK0                          20       20       28         1
+                cstackBANK0                          20       20       26         1
                 dataBANK0                            6B       6B        4         1
-                bssBANK0                             48       48       23         1
+                bssBANK0                             46       46       25         1
                 nvBANK0                              6F       6F        1         1
 
         CLASS   BANK1          
-                dataBANK1                            DA       DA        2         1
-                bssBANK1                             A0       A0       2C         1
-                nvBANK1                              CC       CC        E         1
+                cstackBANK1                          DA       DA        2         1
+                dataBANK1                            D8       D8        2         1
+                bssBANK1                             A0       A0       2A         1
+                nvBANK1                              CA       CA        E         1
 
         CLASS   BANK2          
                 bssBANK2                            120      120       20         1
@@ -521,50 +523,50 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000004  000004         0       0  CODE        2
-                intentry                       000004  000442  000446         8       0  CODE        2
+                intentry                       000004  00042F  000433         8       0  CODE        2
                 cstackBANK0                    000020  000050  000070        20       1  BANK0       1
                 bssCOMMON                      000070  00000C  00007C        70       1  COMMON      1
                 bssBANK1                       0000A0  00003C  0000DC        A0       1  BANK1       1
                 bssBANK2                       000120  000020  000140       120       1  BANK2       1
-                stringtext1                    000446  000060  0004A6       88C       0  STRCODE     2
-                text16                         0004A6  00035A  000800       94C       0  CODE        2
-                text62                         000E10  000001  000E11      1C20       0  CODE        2
-                text58                         000E11  000001  000E12      1C22       0  CODE        2
-                text49                         000E12  000001  000E13      1C24       0  CODE        2
-                text59                         000E13  000003  000E16      1C26       0  CODE        2
-                text53                         000E16  000003  000E19      1C2C       0  CODE        2
-                text40                         000E19  000003  000E1C      1C32       0  CODE        2
-                text63                         000E1C  000004  000E20      1C38       0  CODE        2
-                text57                         000E20  000004  000E24      1C40       0  CODE        2
-                text2                          000E24  000004  000E28      1C48       0  CODE        2
-                idataBANK0                     000E28  000004  000E2C      1C50       0  CODE        2
-                text32                         000E2C  000005  000E31      1C58       0  CODE        2
-                text48                         000E31  000006  000E37      1C62       0  CODE        2
-                text41                         000E37  000006  000E3D      1C6E       0  CODE        2
-                text33                         000E3D  000008  000E45      1C7A       0  CODE        2
-                text24                         000E45  000008  000E4D      1C8A       0  CODE        2
-                text45                         000E4D  000009  000E56      1C9A       0  CODE        2
-                text44                         000E56  000009  000E5F      1CAC       0  CODE        2
-                text43                         000E5F  000009  000E68      1CBE       0  CODE        2
-                text34                         000E68  000009  000E71      1CD0       0  CODE        2
-                text18                         000E71  000009  000E7A      1CE2       0  CODE        2
-                text14                         000E7A  000009  000E83      1CF4       0  CODE        2
-                text13                         000E83  000009  000E8C      1D06       0  CODE        2
-                text12                         000E8C  000009  000E95      1D18       0  CODE        2
-                text11                         000E95  000009  000E9E      1D2A       0  CODE        2
-                text10                         000E9E  000009  000EA7      1D3C       0  CODE        2
-                text7                          000EA7  000009  000EB0      1D4E       0  CODE        2
-                text5                          000EB0  00000A  000EBA      1D60       0  CODE        2
-                text61                         000EBA  00000D  000EC7      1D74       0  CODE        2
-                text47                         000EC7  00000D  000ED4      1D8E       0  CODE        2
-                text52                         000ED4  000011  000EE5      1DA8       0  CODE        2
-                text42                         000EE5  000014  000EF9      1DCA       0  CODE        2
-                text4                          000EF9  000014  000F0D      1DF2       0  CODE        2
-                text22                         000F0D  000015  000F22      1E1A       0  CODE        2
-                text21                         000F22  000015  000F37      1E44       0  CODE        2
-                text3                          000F37  000015  000F4C      1E6E       0  CODE        2
-                text20                         000F4C  000016  000F62      1E98       0  CODE        2
-                text60                         000F62  000017  000F79      1EC4       0  CODE        2
+                stringtext1                    000433  000060  000493       866       0  STRCODE     2
+                text16                         000493  00036D  000800       926       0  CODE        2
+                text62                         000E1B  000001  000E1C      1C36       0  CODE        2
+                text58                         000E1C  000001  000E1D      1C38       0  CODE        2
+                text49                         000E1D  000001  000E1E      1C3A       0  CODE        2
+                text59                         000E1E  000003  000E21      1C3C       0  CODE        2
+                text53                         000E21  000003  000E24      1C42       0  CODE        2
+                text40                         000E24  000003  000E27      1C48       0  CODE        2
+                text63                         000E27  000004  000E2B      1C4E       0  CODE        2
+                text57                         000E2B  000004  000E2F      1C56       0  CODE        2
+                text2                          000E2F  000004  000E33      1C5E       0  CODE        2
+                idataBANK0                     000E33  000004  000E37      1C66       0  CODE        2
+                text32                         000E37  000005  000E3C      1C6E       0  CODE        2
+                text48                         000E3C  000006  000E42      1C78       0  CODE        2
+                text41                         000E42  000006  000E48      1C84       0  CODE        2
+                text33                         000E48  000008  000E50      1C90       0  CODE        2
+                text24                         000E50  000008  000E58      1CA0       0  CODE        2
+                text45                         000E58  000009  000E61      1CB0       0  CODE        2
+                text44                         000E61  000009  000E6A      1CC2       0  CODE        2
+                text43                         000E6A  000009  000E73      1CD4       0  CODE        2
+                text34                         000E73  000009  000E7C      1CE6       0  CODE        2
+                text18                         000E7C  000009  000E85      1CF8       0  CODE        2
+                text14                         000E85  000009  000E8E      1D0A       0  CODE        2
+                text13                         000E8E  000009  000E97      1D1C       0  CODE        2
+                text12                         000E97  000009  000EA0      1D2E       0  CODE        2
+                text11                         000EA0  000009  000EA9      1D40       0  CODE        2
+                text10                         000EA9  000009  000EB2      1D52       0  CODE        2
+                text7                          000EB2  000009  000EBB      1D64       0  CODE        2
+                text5                          000EBB  00000A  000EC5      1D76       0  CODE        2
+                clrtext                        000EC5  00000C  000ED1      1D8A       0  CODE        2
+                text61                         000ED1  00000D  000EDE      1DA2       0  CODE        2
+                text47                         000EDE  00000D  000EEB      1DBC       0  CODE        2
+                text52                         000EEB  000011  000EFC      1DD6       0  CODE        2
+                text42                         000EFC  000014  000F10      1DF8       0  CODE        2
+                text4                          000F10  000014  000F24      1E20       0  CODE        2
+                text22                         000F24  000015  000F39      1E48       0  CODE        2
+                text21                         000F39  000015  000F4E      1E72       0  CODE        2
+                text3                          000F4E  000015  000F63      1E9C       0  CODE        2
+                text20                         000F63  000016  000F79      1EC6       0  CODE        2
                 text51                         000F79  000018  000F91      1EF2       0  CODE        2
                 text8                          000F91  000019  000FAA      1F22       0  CODE        2
                 text27                         000FAA  00001C  000FC6      1F54       0  CODE        2
@@ -595,13 +597,13 @@ UNUSED ADDRESS RANGES
         BANK8            00420-0046F              50           1
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-027EF             7F0           1
-        CODE             00800-00E0F             610           2
+        CODE             00800-00E1A             61B           2
                          01000-03FFF             800
         COMMON           0007C-0007D               2           1
-        CONST            00800-00E0F             100           2
+        CONST            00800-00E1A             100           2
                          01000-03FFF             100
         EEDATA           0F000-0F0FF             100           2
-        ENTRY            00800-00E0F             100           2
+        ENTRY            00800-00E1A             100           2
                          01000-03FFF             100
         IDLOC            08000-08003               4           2
         RAM              000DC-000EF              14           1
@@ -687,9 +689,9 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0041F              20           1
         SFR9             00480-0049F              20           1
         STACK            020C0-025EE             52F           1
-        STRCODE          00800-00E0F             610           2
+        STRCODE          00800-00E1A             61B           2
                          01000-03FFF            3000
-        STRING           00800-00E0F             100           2
+        STRING           00800-00E1A             100           2
                          01000-03FFF             100
 
                                   Symbol Table
@@ -716,7 +718,7 @@ I2C1_ISR@i2c_10bit_address_restart              bssBANK0     0005F
 I2C1_ISR@i2c_address                            bssCOMMON    00074
 I2C1_ISR@i2c_bytes_left                         bssBANK0     00060
 I2C1_ISR@pi2c_buf_ptr                           bssBANK0     00061
-I2C1_MasterRead@trBlock                         bssBANK1     000C4
+I2C1_MasterRead@trBlock                         bssBANK1     000C2
 I2C1_MasterTRBInsert@count                      cstackBANK0  00023
 I2C1_MasterTRBInsert@pflag                      cstackBANK0  00021
 I2C1_MasterTRBInsert@ptrb_list                  cstackBANK0  00020
@@ -724,7 +726,7 @@ I2C1_MasterWrite@address                        cstackBANK0  00028
 I2C1_MasterWrite@length                         cstackBANK0  00027
 I2C1_MasterWrite@pdata                          cstackBANK0  0002D
 I2C1_MasterWrite@pflag                          cstackBANK0  0002A
-I2C1_MasterWrite@trBlock                        bssBANK1     000C8
+I2C1_MasterWrite@trBlock                        bssBANK1     000C6
 I2C1_MasterWriteTRBBuild@address                cstackBANK0  00022
 I2C1_MasterWriteTRBBuild@length                 cstackBANK0  00021
 I2C1_MasterWriteTRBBuild@pdata                  cstackBANK0  00020
@@ -754,13 +756,13 @@ _ADACQH                                         (abs)        0010D
 _ADACQL                                         (abs)        0010C
 _ADACT                                          (abs)        00117
 _ADCAP                                          (abs)        0010E
-_ADCC_ADTI_InterruptHandler                     nvBANK1      000CC
-_ADCC_DefaultInterruptHandler                   text62       00E10
-_ADCC_Initialize                                text15       00748
-_ADCC_SetADTIInterruptHandler                   text45       00E4D
-_ADCC_SetUpperThreshold                         text44       00E56
-_ADCC_StartConversion                           text43       00E5F
-_ADCC_ThresholdISR                              text61       00EBA
+_ADCC_ADTI_InterruptHandler                     nvBANK1      000CA
+_ADCC_DefaultInterruptHandler                   text62       00E1B
+_ADCC_Initialize                                text15       0073D
+_ADCC_SetADTIInterruptHandler                   text45       00E58
+_ADCC_SetUpperThreshold                         text44       00E61
+_ADCC_StartConversion                           text43       00E6A
+_ADCC_ThresholdISR                              text61       00ED1
 _ADCLK                                          (abs)        00118
 _ADCNT                                          (abs)        00099
 _ADCON0                                         (abs)        00111
@@ -796,11 +798,11 @@ _ANSELA                                         (abs)        01F38
 _ANSELB                                         (abs)        01F43
 _ANSELC                                         (abs)        01F4E
 _BAUD1CON                                       (abs)        0011F
-_BEAT_detected                                  text18       00E71
-_BEAT_init                                      text42       00EE5
+_BEAT_detected                                  text18       00E7C
+_BEAT_init                                      text42       00EFC
 _BEAT_task                                      text38       0029C
-_BUTTONS_init                                   text36       00582
-_BUTTONS_isClicked                              text23       00793
+_BUTTONS_init                                   text36       00577
+_BUTTONS_isClicked                              text23       00788
 _BUTTONS_task                                   text35       001D2
 _CCP1CONbits                                    (abs)        0030E
 _CCP2CONbits                                    (abs)        00312
@@ -814,46 +816,46 @@ _CCPR3H                                         (abs)        00315
 _CCPR3L                                         (abs)        00314
 _CCPR4H                                         (abs)        00319
 _CCPR4L                                         (abs)        00318
-_CLOCK_getTime                                  text41       00E37
-_CLOCK_init                                     text33       00E3D
-_CLOCK_timerCallback                            text48       00E31
-_CONTROLLER_init                                text24       00E45
-_CONTROLLER_task                                text19       003D8
-_DMX_ISR                                        text55       0076E
-_EUSART1_DefaultErrorHandler                    text59       00E13
-_EUSART1_DefaultFramingErrorHandler             text58       00E11
-_EUSART1_DefaultOverrunErrorHandler             text57       00E20
-_EUSART1_ErrorHandler                           nvBANK1      000D0
-_EUSART1_FramingErrorHandler                    nvBANK1      000D4
-_EUSART1_Initialize                             text9        0053F
-_EUSART1_OverrunErrorHandler                    nvBANK1      000D2
-_EUSART1_Receive_ISR                            text56       0066D
-_EUSART1_RxDataHandler                          text60       00F62
-_EUSART1_RxDefaultInterruptHandler              nvBANK1      000D6
-_EUSART1_SetErrorHandler                        text14       00E7A
-_EUSART1_SetFramingErrorHandler                 text13       00E83
-_EUSART1_SetOverrunErrorHandler                 text12       00E8C
-_EUSART1_SetRxInterruptHandler                  text11       00E95
-_EUSART1_SetTxInterruptHandler                  text10       00E9E
+_CLOCK_getTime                                  text41       00E42
+_CLOCK_init                                     text33       00E48
+_CLOCK_timerCallback                            text48       00E3C
+_CONTROLLER_init                                text24       00E50
+_CONTROLLER_task                                text19       003D1
+_DMX_ISR                                        text55       00763
+_EUSART1_DefaultErrorHandler                    text59       00E1E
+_EUSART1_DefaultFramingErrorHandler             text58       00E1C
+_EUSART1_DefaultOverrunErrorHandler             text57       00E2B
+_EUSART1_ErrorHandler                           nvBANK1      000CE
+_EUSART1_FramingErrorHandler                    nvBANK1      000D2
+_EUSART1_Initialize                             text9        00534
+_EUSART1_OverrunErrorHandler                    nvBANK1      000D0
+_EUSART1_Receive_ISR                            text56       00662
+_EUSART1_RxDataHandler                          text60       007E9
+_EUSART1_RxDefaultInterruptHandler              nvBANK1      000D4
+_EUSART1_SetErrorHandler                        text14       00E85
+_EUSART1_SetFramingErrorHandler                 text13       00E8E
+_EUSART1_SetOverrunErrorHandler                 text12       00E97
+_EUSART1_SetRxInterruptHandler                  text11       00EA0
+_EUSART1_SetTxInterruptHandler                  text10       00EA9
 _EUSART1_Transmit_ISR                           text54       00FC6
-_EUSART1_TxDefaultInterruptHandler              nvBANK1      000D8
-_I2C1_BusCollisionISR                           text53       00E16
-_I2C1_FunctionComplete                          text52       00ED4
+_EUSART1_TxDefaultInterruptHandler              nvBANK1      000D6
+_I2C1_BusCollisionISR                           text53       00E21
+_I2C1_FunctionComplete                          text52       00EEB
 _I2C1_ISR                                       text50       00089
 _I2C1_Initialize                                text8        00F91
-_I2C1_MasterTRBInsert                           text31       004FA
-_I2C1_MasterWrite                               text29       00721
-_I2C1_MasterWriteTRBBuild                       text30       007B4
+_I2C1_MasterTRBInsert                           text31       004EF
+_I2C1_MasterWrite                               text29       00716
+_I2C1_MasterWriteTRBBuild                       text30       007A9
 _I2C1_Stop                                      text51       00F79
-_I2C1_WaitForLastPacketToComplete               text32       00E2C
+_I2C1_WaitForLastPacketToComplete               text32       00E37
 _INTCONbits                                     (abs)        0000B
 _INTERRUPT_InterruptManager                     intentry     00004
 _LATA                                           (abs)        00018
 _LATB                                           (abs)        00019
 _LATB6                                          (abs)        000CE
 _LATC                                           (abs)        0001A
-_LED_setColor                                   text17       005C1
-_LED_task                                       text16       004A6
+_LED_setColor                                   text17       005B6
+_LED_task                                       text16       00493
 _ODCONA                                         (abs)        01F3A
 _ODCONB                                         (abs)        01F45
 _ODCONC                                         (abs)        01F50
@@ -861,12 +863,12 @@ _OSCCON1                                        (abs)        0088D
 _OSCCON3                                        (abs)        0088F
 _OSCEN                                          (abs)        00891
 _OSCFRQ                                         (abs)        00893
-_OSCILLATOR_Initialize                          text7        00EA7
+_OSCILLATOR_Initialize                          text7        00EB2
 _OSCTUNE                                        (abs)        00892
 _PIE0bits                                       (abs)        00716
 _PIE1bits                                       (abs)        00717
 _PIE3bits                                       (abs)        00719
-_PIN_MANAGER_Initialize                         text6        0069F
+_PIN_MANAGER_Initialize                         text6        00694
 _PIR0bits                                       (abs)        0070C
 _PIR1bits                                       (abs)        0070D
 _PIR3bits                                       (abs)        0070F
@@ -878,7 +880,7 @@ _PMD4                                           (abs)        0079A
 _PMD5                                           (abs)        0079B
 _PMD6                                           (abs)        0079C
 _PMD7                                           (abs)        0079D
-_PMD_Initialize                                 text5        00EB0
+_PMD_Initialize                                 text5        00EBB
 _PORTA                                          (abs)        0000C
 _PORTC                                          (abs)        0000E
 _RA4PPS                                         (abs)        01F14
@@ -905,24 +907,24 @@ _SSP1CON2bits                                   (abs)        00191
 _SSP1CON3                                       (abs)        00192
 _SSP1DATPPS                                     (abs)        01EC6
 _SSP1STAT                                       (abs)        0018F
-_SYSTEM_Initialize                              text3        00F37
+_SYSTEM_Initialize                              text3        00F4E
 _T0CON0                                         (abs)        0059E
 _T0CON0bits                                     (abs)        0059E
 _T0CON1                                         (abs)        0059F
 _T2CLKCON                                       (abs)        00290
 _T2CONbits                                      (abs)        0028E
-_TM1650_enable                                  text22       00F0D
-_TM1650_fastPrintNum                            text25       0035E
-_TM1650_init                                    text2        00E24
-_TM1650_isEnabled                               text40       00E19
+_TM1650_enable                                  text22       00F24
+_TM1650_fastPrintNum                            text25       00357
+_TM1650_init                                    text2        00E2F
+_TM1650_isEnabled                               text40       00E24
 _TM1650_setDigit                                text27       00FAA
 _TMR0H                                          (abs)        0059D
 _TMR0L                                          (abs)        0059C
-_TMR0_DefaultInterruptHandler                   text49       00E12
-_TMR0_ISR                                       text47       00EC7
-_TMR0_Initialize                                text4        00EF9
-_TMR0_InterruptHandler                          nvBANK1      000CE
-_TMR0_SetInterruptHandler                       text34       00E68
+_TMR0_DefaultInterruptHandler                   text49       00E1D
+_TMR0_ISR                                       text47       00EDE
+_TMR0_Initialize                                text4        00F10
+_TMR0_InterruptHandler                          nvBANK1      000CC
+_TMR0_SetInterruptHandler                       text34       00E73
 _TRISA                                          (abs)        00012
 _TRISB                                          (abs)        00013
 _TRISB6                                         (abs)        0009E
@@ -1041,6 +1043,7 @@ __Hcode                                         code         00000
 __Hcommon                                       common       00000
 __Hconfig                                       config       0800C
 __HcstackBANK0                                  cstackBANK0  00000
+__HcstackBANK1                                  cstackBANK1  00000
 __HcstackCOMMON                                 cstackCOMMON 00000
 __HdataBANK0                                    dataBANK0    00000
 __HdataBANK1                                    dataBANK1    00000
@@ -1206,6 +1209,7 @@ __Lcode                                         code         00000
 __Lcommon                                       common       00000
 __Lconfig                                       config       08007
 __LcstackBANK0                                  cstackBANK0  00000
+__LcstackBANK1                                  cstackBANK1  00000
 __LcstackCOMMON                                 cstackCOMMON 00000
 __LdataBANK0                                    dataBANK0    00000
 __LdataBANK1                                    dataBANK1    00000
@@ -1301,163 +1305,164 @@ __S2                                            (abs)        00000
 __S3                                            (abs)        00000
 ___int_sp                                       stack        00000
 ___latbits                                      (abs)        00003
-___lwdiv                                        text39       00638
+___lwdiv                                        text39       0062D
 ___lwdiv@counter                                cstackBANK0  00025
 ___lwdiv@dividend                               cstackBANK0  00022
 ___lwdiv@divisor                                cstackBANK0  00020
 ___lwdiv@quotient                               cstackBANK0  00026
-___lwmod                                        text26       006CC
+___lwmod                                        text26       006C1
 ___lwmod@counter                                cstackBANK0  00025
 ___lwmod@dividend                               cstackBANK0  00022
 ___lwmod@divisor                                cstackBANK0  00020
 ___sp                                           stack        00000
 ___stackhi                                      (abs)        025EE
 ___stacklo                                      (abs)        020C0
-__end_of_ADCC_DefaultInterruptHandler           text62       00E11
-__end_of_ADCC_Initialize                        text15       0076E
-__end_of_ADCC_SetADTIInterruptHandler           text45       00E56
-__end_of_ADCC_SetUpperThreshold                 text44       00E5F
-__end_of_ADCC_StartConversion                   text43       00E68
-__end_of_ADCC_ThresholdISR                      text61       00EC7
-__end_of_BEAT_detected                          text18       00E7A
-__end_of_BEAT_init                              text42       00EF9
-__end_of_BEAT_task                              text38       0035E
-__end_of_BUTTONS_init                           text36       005C1
-__end_of_BUTTONS_isClicked                      text23       007B4
+__end_of_ADCC_DefaultInterruptHandler           text62       00E1C
+__end_of_ADCC_Initialize                        text15       00763
+__end_of_ADCC_SetADTIInterruptHandler           text45       00E61
+__end_of_ADCC_SetUpperThreshold                 text44       00E6A
+__end_of_ADCC_StartConversion                   text43       00E73
+__end_of_ADCC_ThresholdISR                      text61       00EDE
+__end_of_BEAT_detected                          text18       00E85
+__end_of_BEAT_init                              text42       00F10
+__end_of_BEAT_task                              text38       00357
+__end_of_BUTTONS_init                           text36       005B6
+__end_of_BUTTONS_isClicked                      text23       007A9
 __end_of_BUTTONS_task                           text35       0029C
-__end_of_CLOCK_getTime                          text41       00E3D
-__end_of_CLOCK_init                             text33       00E45
-__end_of_CLOCK_timerCallback                    text48       00E37
-__end_of_CONTROLLER_init                        text24       00E4D
-__end_of_CONTROLLER_task                        text19       00446
-__end_of_DMX_ISR                                text55       00793
-__end_of_EUSART1_DefaultErrorHandler            text59       00E16
-__end_of_EUSART1_DefaultFramingErrorHandler     text58       00E12
-__end_of_EUSART1_DefaultOverrunErrorHandler     text57       00E24
-__end_of_EUSART1_Initialize                     text9        00582
-__end_of_EUSART1_Receive_ISR                    text56       0069F
-__end_of_EUSART1_RxDataHandler                  text60       00F79
-__end_of_EUSART1_SetErrorHandler                text14       00E83
-__end_of_EUSART1_SetFramingErrorHandler         text13       00E8C
-__end_of_EUSART1_SetOverrunErrorHandler         text12       00E95
-__end_of_EUSART1_SetRxInterruptHandler          text11       00E9E
-__end_of_EUSART1_SetTxInterruptHandler          text10       00EA7
+__end_of_CLOCK_getTime                          text41       00E48
+__end_of_CLOCK_init                             text33       00E50
+__end_of_CLOCK_timerCallback                    text48       00E42
+__end_of_CONTROLLER_init                        text24       00E58
+__end_of_CONTROLLER_task                        text19       00433
+__end_of_DMX_ISR                                text55       00788
+__end_of_EUSART1_DefaultErrorHandler            text59       00E21
+__end_of_EUSART1_DefaultFramingErrorHandler     text58       00E1D
+__end_of_EUSART1_DefaultOverrunErrorHandler     text57       00E2F
+__end_of_EUSART1_Initialize                     text9        00577
+__end_of_EUSART1_Receive_ISR                    text56       00694
+__end_of_EUSART1_RxDataHandler                  text60       00800
+__end_of_EUSART1_SetErrorHandler                text14       00E8E
+__end_of_EUSART1_SetFramingErrorHandler         text13       00E97
+__end_of_EUSART1_SetOverrunErrorHandler         text12       00EA0
+__end_of_EUSART1_SetRxInterruptHandler          text11       00EA9
+__end_of_EUSART1_SetTxInterruptHandler          text10       00EB2
 __end_of_EUSART1_Transmit_ISR                   text54       00FE3
-__end_of_I2C1_BusCollisionISR                   text53       00E19
-__end_of_I2C1_FunctionComplete                  text52       00EE5
+__end_of_I2C1_BusCollisionISR                   text53       00E24
+__end_of_I2C1_FunctionComplete                  text52       00EFC
 __end_of_I2C1_ISR                               text50       001D2
 __end_of_I2C1_Initialize                        text8        00FAA
-__end_of_I2C1_MasterTRBInsert                   text31       0053F
-__end_of_I2C1_MasterWrite                       text29       00748
-__end_of_I2C1_MasterWriteTRBBuild               text30       007D4
+__end_of_I2C1_MasterTRBInsert                   text31       00534
+__end_of_I2C1_MasterWrite                       text29       0073D
+__end_of_I2C1_MasterWriteTRBBuild               text30       007C9
 __end_of_I2C1_Stop                              text51       00F91
-__end_of_I2C1_WaitForLastPacketToComplete       text32       00E31
+__end_of_I2C1_WaitForLastPacketToComplete       text32       00E3C
 __end_of_INTERRUPT_InterruptManager             intentry     00039
-__end_of_LED_setColor                           text17       005FD
-__end_of_LED_task                               text16       004FA
-__end_of_OSCILLATOR_Initialize                  text7        00EB0
-__end_of_PIN_MANAGER_Initialize                 text6        006CC
-__end_of_PMD_Initialize                         text5        00EBA
-__end_of_SYSTEM_Initialize                      text3        00F4C
-__end_of_TM1650_enable                          text22       00F22
-__end_of_TM1650_fastPrintNum                    text25       003D8
-__end_of_TM1650_init                            text2        00E28
-__end_of_TM1650_isEnabled                       text40       00E1C
+__end_of_LED_setColor                           text17       005F2
+__end_of_LED_task                               text16       004EF
+__end_of_OSCILLATOR_Initialize                  text7        00EBB
+__end_of_PIN_MANAGER_Initialize                 text6        006C1
+__end_of_PMD_Initialize                         text5        00EC5
+__end_of_SYSTEM_Initialize                      text3        00F63
+__end_of_TM1650_enable                          text22       00F39
+__end_of_TM1650_fastPrintNum                    text25       003D1
+__end_of_TM1650_init                            text2        00E33
+__end_of_TM1650_isEnabled                       text40       00E27
 __end_of_TM1650_setDigit                        text27       00FC6
-__end_of_TMR0_DefaultInterruptHandler           text49       00E13
-__end_of_TMR0_ISR                               text47       00ED4
-__end_of_TMR0_Initialize                        text4        00F0D
-__end_of_TMR0_SetInterruptHandler               text34       00E71
-__end_of___lwdiv                                text39       0066D
-__end_of___lwmod                                text26       006F9
+__end_of_TMR0_DefaultInterruptHandler           text49       00E1E
+__end_of_TMR0_ISR                               text47       00EEB
+__end_of_TMR0_Initialize                        text4        00F24
+__end_of_TMR0_SetInterruptHandler               text34       00E7C
+__end_of___lwdiv                                text39       00662
+__end_of___lwmod                                text26       006EE
 __end_of__initialization                        cinit        00085
-__end_of_adcThresholdHandler                    text63       00E20
-__end_of_address_dec                            text21       00F37
-__end_of_address_inc                            text20       00F62
-__end_of_charTable                              stringtext1  004A6
-__end_of_init                                   text37       007F4
-__end_of_initLED                                text1        00721
-__end_of_main                                   maintext     00638
+__end_of_adcThresholdHandler                    text63       00E2B
+__end_of_address_dec                            text21       00F4E
+__end_of_address_inc                            text20       00F79
+__end_of_charTable                              stringtext1  00493
+__end_of_init                                   text37       007E9
+__end_of_initLED                                text1        00716
+__end_of_main                                   maintext     0062D
 __end_of_writeData                              text28       01000
 __initialization                                cinit        0003B
-__pbssBANK0                                     bssBANK0     00048
+__pbssBANK0                                     bssBANK0     00046
 __pbssBANK1                                     bssBANK1     000A0
 __pbssBANK2                                     bssBANK2     00120
 __pbssBIGRAM                                    (abs)        025EF
 __pbssCOMMON                                    bssCOMMON    00070
 __pcstackBANK0                                  cstackBANK0  00020
+__pcstackBANK1                                  cstackBANK1  000DA
 __pcstackCOMMON                                 cstackCOMMON 00076
 __pdataBANK0                                    dataBANK0    0006B
-__pdataBANK1                                    dataBANK1    000DA
-__pidataBANK0                                   idataBANK0   00E28
+__pdataBANK1                                    dataBANK1    000D8
+__pidataBANK0                                   idataBANK0   00E33
 __pidataBANK1                                   idataBANK1   00002
 __pintentry                                     intentry     00004
-__pmaintext                                     maintext     005FD
+__pmaintext                                     maintext     005F2
 __pnvBANK0                                      nvBANK0      0006F
-__pnvBANK1                                      nvBANK1      000CC
-__pstringtext1                                  stringtext1  00446
-__ptext1                                        text1        006F9
-__ptext10                                       text10       00E9E
-__ptext11                                       text11       00E95
-__ptext12                                       text12       00E8C
-__ptext13                                       text13       00E83
-__ptext14                                       text14       00E7A
-__ptext15                                       text15       00748
-__ptext16                                       text16       004A6
-__ptext17                                       text17       005C1
-__ptext18                                       text18       00E71
-__ptext19                                       text19       003D8
-__ptext2                                        text2        00E24
-__ptext20                                       text20       00F4C
-__ptext21                                       text21       00F22
-__ptext22                                       text22       00F0D
-__ptext23                                       text23       00793
-__ptext24                                       text24       00E45
-__ptext25                                       text25       0035E
-__ptext26                                       text26       006CC
+__pnvBANK1                                      nvBANK1      000CA
+__pstringtext1                                  stringtext1  00433
+__ptext1                                        text1        006EE
+__ptext10                                       text10       00EA9
+__ptext11                                       text11       00EA0
+__ptext12                                       text12       00E97
+__ptext13                                       text13       00E8E
+__ptext14                                       text14       00E85
+__ptext15                                       text15       0073D
+__ptext16                                       text16       00493
+__ptext17                                       text17       005B6
+__ptext18                                       text18       00E7C
+__ptext19                                       text19       003D1
+__ptext2                                        text2        00E2F
+__ptext20                                       text20       00F63
+__ptext21                                       text21       00F39
+__ptext22                                       text22       00F24
+__ptext23                                       text23       00788
+__ptext24                                       text24       00E50
+__ptext25                                       text25       00357
+__ptext26                                       text26       006C1
 __ptext27                                       text27       00FAA
 __ptext28                                       text28       00FE3
-__ptext29                                       text29       00721
-__ptext3                                        text3        00F37
-__ptext30                                       text30       007B4
-__ptext31                                       text31       004FA
-__ptext32                                       text32       00E2C
-__ptext33                                       text33       00E3D
-__ptext34                                       text34       00E68
+__ptext29                                       text29       00716
+__ptext3                                        text3        00F4E
+__ptext30                                       text30       007A9
+__ptext31                                       text31       004EF
+__ptext32                                       text32       00E37
+__ptext33                                       text33       00E48
+__ptext34                                       text34       00E73
 __ptext35                                       text35       001D2
-__ptext36                                       text36       00582
-__ptext37                                       text37       007D4
+__ptext36                                       text36       00577
+__ptext37                                       text37       007C9
 __ptext38                                       text38       0029C
-__ptext39                                       text39       00638
-__ptext4                                        text4        00EF9
-__ptext40                                       text40       00E19
-__ptext41                                       text41       00E37
-__ptext42                                       text42       00EE5
-__ptext43                                       text43       00E5F
-__ptext44                                       text44       00E56
-__ptext45                                       text45       00E4D
-__ptext47                                       text47       00EC7
-__ptext48                                       text48       00E31
-__ptext49                                       text49       00E12
-__ptext5                                        text5        00EB0
+__ptext39                                       text39       0062D
+__ptext4                                        text4        00F10
+__ptext40                                       text40       00E24
+__ptext41                                       text41       00E42
+__ptext42                                       text42       00EFC
+__ptext43                                       text43       00E6A
+__ptext44                                       text44       00E61
+__ptext45                                       text45       00E58
+__ptext47                                       text47       00EDE
+__ptext48                                       text48       00E3C
+__ptext49                                       text49       00E1D
+__ptext5                                        text5        00EBB
 __ptext50                                       text50       00089
 __ptext51                                       text51       00F79
-__ptext52                                       text52       00ED4
-__ptext53                                       text53       00E16
+__ptext52                                       text52       00EEB
+__ptext53                                       text53       00E21
 __ptext54                                       text54       00FC6
-__ptext55                                       text55       0076E
-__ptext56                                       text56       0066D
-__ptext57                                       text57       00E20
-__ptext58                                       text58       00E11
-__ptext59                                       text59       00E13
-__ptext6                                        text6        0069F
-__ptext60                                       text60       00F62
-__ptext61                                       text61       00EBA
-__ptext62                                       text62       00E10
-__ptext63                                       text63       00E1C
-__ptext7                                        text7        00EA7
+__ptext55                                       text55       00763
+__ptext56                                       text56       00662
+__ptext57                                       text57       00E2B
+__ptext58                                       text58       00E1C
+__ptext59                                       text59       00E1E
+__ptext6                                        text6        00694
+__ptext60                                       text60       007E9
+__ptext61                                       text61       00ED1
+__ptext62                                       text62       00E1B
+__ptext63                                       text63       00E27
+__ptext7                                        text7        00EB2
 __ptext8                                        text8        00F91
-__ptext9                                        text9        0053F
+__ptext9                                        text9        00534
 __size_of_ADCC_DefaultInterruptHandler          (abs)        00000
 __size_of_ADCC_Initialize                       (abs)        00000
 __size_of_ADCC_SetADTIInterruptHandler          (abs)        00000
@@ -1522,18 +1527,18 @@ __size_of_init                                  (abs)        00000
 __size_of_initLED                               (abs)        00000
 __size_of_main                                  (abs)        00000
 __size_of_writeData                             (abs)        00000
-_adcThresholdHandler                            text63       00E1C
+_adcThresholdHandler                            text63       00E27
 _address                                        dataBANK0    0006D
-_address_dec                                    text21       00F22
-_address_inc                                    text20       00F4C
+_address_dec                                    text21       00F39
+_address_inc                                    text20       00F63
 _bpm                                            bssBANK1     000BE
 _buttons                                        bssBANK2     00120
-_charTable                                      stringtext1  00446
-_currentTime                                    bssBANK0     00053
-_delay                                          dataBANK1    000DA
+_charTable                                      stringtext1  00433
+_currentTime                                    bssBANK0     00055
+_delay                                          dataBANK1    000D8
 _detected                                       bssBANK0     00059
 _dmxData                                        (abs)        025EF
-_dmxPointer                                     bssBANK1     000B8
+_dmxPointer                                     bssBANK1     000BA
 _down                                           bssBANK0     0005C
 _enter                                          bssBANK0     0005B
 _eusart1RxBuffer                                bssBANK1     000A8
@@ -1546,31 +1551,30 @@ _eusart1TxBuffer                                bssBANK1     000B0
 _eusart1TxBufferRemaining                       nvBANK0      0006F
 _eusart1TxHead                                  bssCOMMON    00073
 _eusart1TxTail                                  bssCOMMON    00072
-_i2c1_object                                    bssBANK0     00048
+_i2c1_object                                    bssBANK0     00046
 _i2c1_state                                     bssBANK0     00065
 _i2c1_tr_queue                                  bssBANK0     00068
 _i2c1_trb_count                                 bssBANK0     00064
-_init                                           text37       007D4
-_initLED                                        text1        006F9
+_init                                           text37       007C9
+_initLED                                        text1        006EE
 _isOn                                           bssBANK0     0005E
-_lastActiveTime                                 bssBANK1     000C0
+_lastActiveTime                                 bssBANK0     0004F
 _lastBeat                                       bssBANK0     0004D
 _lastDetected                                   bssBANK0     00057
-_lastRun                                        bssBANK1     000BC
-_lastTime                                       bssBANK0     00055
-_main                                           maintext     005FD
+_lastRun                                        bssBANK0     0004B
+_lastTime                                       bssBANK0     00053
+_main                                           maintext     005F2
 _menu                                           bssBANK0     0005A
 _p_i2c1_current                                 bssBANK0     00062
 _p_i2c1_trb_current                             bssBANK0     00063
 _threshold                                      dataBANK0    0006B
-_thresholdCount                                 bssBANK1     000BA
+_thresholdCount                                 bssBANK1     000BC
 _thresholdExceeded                              bssBANK0     00058
 _up                                             bssBANK0     0005D
 _writeData                                      text28       00FE3
 btemp                                           (abs)        0007E
-buttons@lastTime                                bssBANK0     00051
-clear_ram0                                      clrtext      007F4
-controller@lastTime                             bssBANK0     0004F
+clear_ram0                                      clrtext      00EC5
+controller@lastTime                             bssBANK0     00051
 end_of_initialization                           cinit        00085
 init@btn                                        cstackBANK0  00024
 init@pin                                        cstackBANK0  00022
@@ -1582,6 +1586,7 @@ intlevel2                                       functab      00000
 intlevel3                                       functab      00000
 intlevel4                                       functab      00000
 intlevel5                                       functab      00000
+led@lastTime                                    bssBANK1     000B8
 reset_vec                                       reset_vec    00000
 start                                           init         00039
 start_initialization                            cinit        0003B
@@ -1595,7 +1600,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 20 in file "main.c"
+		line 15 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1611,8 +1616,8 @@ FUNCTION INFORMATION:
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        2 bytes
  Hardware stack levels required when called:   12
  This function calls:
@@ -1635,7 +1640,7 @@ Total ram usage:        2 bytes
 
  *************** function _initLED *****************
  Defined at:
-		line 76 in file "main.c"
+		line 9 in file "led.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2101,7 +2106,7 @@ Total ram usage:        0 bytes
 
  *************** function _LED_task *****************
  Defined at:
-		line 60 in file "main.c"
+		line 66 in file "led.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2133,7 +2138,7 @@ Total ram usage:       13 bytes
 
  *************** function _LED_setColor *****************
  Defined at:
-		line 104 in file "main.c"
+		line 37 in file "led.c"
  Parameters:    Size  Location     Type
   red             1    wreg     unsigned char 
   green           1    0[BANK0 ] unsigned char 
@@ -2940,10 +2945,10 @@ Total ram usage:        2 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_LED_task
 		_BUTTONS_task
 		_CONTROLLER_task
 		_BEAT_task
+		_LED_task
  This function uses a non-reentrant model
 
 
@@ -3632,14 +3637,14 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
-		___lwmod       		CODE           	06CC	0000	46
+		___lwmod       		CODE           	06C1	0000	46
 
 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c estimated size: 46
 
 clock.c
-		_CLOCK_getTime 		CODE           	0E37	0000	7
-		_CLOCK_init    		CODE           	0E3D	0000	9
-		_CLOCK_timerCallback		CODE           	0E31	0000	7
+		_CLOCK_getTime 		CODE           	0E42	0000	7
+		_CLOCK_init    		CODE           	0E48	0000	9
+		_CLOCK_timerCallback		CODE           	0E3C	0000	7
 
 clock.c estimated size: 23
 
@@ -3649,119 +3654,123 @@ mcc_generated_files/interrupt_manager.c
 mcc_generated_files/interrupt_manager.c estimated size: 54
 
 mcc_generated_files/tmr0.c
-		_TMR0_SetInterruptHandler		CODE           	0E68	0000	10
-		_TMR0_DefaultInterruptHandler		CODE           	0E12	0000	2
-		_TMR0_ISR      		CODE           	0EC7	0000	14
-		_TMR0_Initialize		CODE           	0EF9	0000	21
+		_TMR0_SetInterruptHandler		CODE           	0E73	0000	10
+		_TMR0_DefaultInterruptHandler		CODE           	0E1D	0000	2
+		_TMR0_ISR      		CODE           	0EDE	0000	14
+		_TMR0_Initialize		CODE           	0F10	0000	21
 
 mcc_generated_files/tmr0.c estimated size: 47
 
 mcc_generated_files/i2c1.c
-		_I2C1_BusCollisionISR		CODE           	0E16	0000	4
-		_I2C1_FunctionComplete		CODE           	0ED4	0000	18
-		_I2C1_MasterWriteTRBBuild		CODE           	07B4	0000	33
+		_I2C1_BusCollisionISR		CODE           	0E21	0000	4
+		_I2C1_FunctionComplete		CODE           	0EEB	0000	18
+		_I2C1_MasterWriteTRBBuild		CODE           	07A9	0000	33
 		_I2C1_ISR      		CODE           	0089	0000	330
-		_I2C1_MasterWrite		CODE           	0721	0000	40
+		_I2C1_MasterWrite		CODE           	0716	0000	40
 		_I2C1_Initialize		CODE           	0F91	0000	26
 		_I2C1_Stop     		CODE           	0F79	0000	25
-		_I2C1_WaitForLastPacketToComplete		CODE           	0E2C	0000	6
-		_I2C1_MasterTRBInsert		CODE           	04FA	0000	70
+		_I2C1_WaitForLastPacketToComplete		CODE           	0E37	0000	6
+		_I2C1_MasterTRBInsert		CODE           	04EF	0000	70
 
 mcc_generated_files/i2c1.c estimated size: 552
 
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	069F	0000	46
+		_PIN_MANAGER_Initialize		CODE           	0694	0000	46
 
 mcc_generated_files/pin_manager.c estimated size: 46
 
 buttons.c
 		_BUTTONS_task  		CODE           	01D2	0000	203
-		_BUTTONS_init  		CODE           	0582	0000	64
-		_init          		CODE           	07D4	0000	33
-		_BUTTONS_isClicked		CODE           	0793	0000	34
+		_BUTTONS_init  		CODE           	0577	0000	64
+		_init          		CODE           	07C9	0000	33
+		_BUTTONS_isClicked		CODE           	0788	0000	34
 
 buttons.c estimated size: 334
 
 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwdiv.c
-		___lwdiv       		CODE           	0638	0000	54
+		___lwdiv       		CODE           	062D	0000	54
 
 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwdiv.c estimated size: 54
 
 shared
 		__initialization		CODE           	003B	0000	75
-		_charTable     		STRCODE        	0446	0000	97
+		_charTable     		STRCODE        	0433	0000	97
 
 shared estimated size: 172
 
 mcc_generated_files/eusart1.c
-		_EUSART1_SetRxInterruptHandler		CODE           	0E95	0000	10
-		_EUSART1_SetTxInterruptHandler		CODE           	0E9E	0000	10
-		_EUSART1_Initialize		CODE           	053F	0000	68
-		_EUSART1_DefaultErrorHandler		CODE           	0E13	0000	4
-		_EUSART1_SetFramingErrorHandler		CODE           	0E83	0000	10
-		_EUSART1_SetOverrunErrorHandler		CODE           	0E8C	0000	10
-		_EUSART1_SetErrorHandler		CODE           	0E7A	0000	10
-		_EUSART1_Receive_ISR		CODE           	066D	0000	51
-		_EUSART1_RxDataHandler		CODE           	0F62	0000	24
-		_EUSART1_DefaultOverrunErrorHandler		CODE           	0E20	0000	5
+		_EUSART1_SetRxInterruptHandler		CODE           	0EA0	0000	10
+		_EUSART1_SetTxInterruptHandler		CODE           	0EA9	0000	10
+		_EUSART1_Initialize		CODE           	0534	0000	68
+		_EUSART1_DefaultErrorHandler		CODE           	0E1E	0000	4
+		_EUSART1_SetFramingErrorHandler		CODE           	0E8E	0000	10
+		_EUSART1_SetOverrunErrorHandler		CODE           	0E97	0000	10
+		_EUSART1_SetErrorHandler		CODE           	0E85	0000	10
+		_EUSART1_Receive_ISR		CODE           	0662	0000	51
+		_EUSART1_RxDataHandler		CODE           	07E9	0000	24
+		_EUSART1_DefaultOverrunErrorHandler		CODE           	0E2B	0000	5
 		_EUSART1_Transmit_ISR		CODE           	0FC6	0000	30
-		_EUSART1_DefaultFramingErrorHandler		CODE           	0E11	0000	2
+		_EUSART1_DefaultFramingErrorHandler		CODE           	0E1C	0000	2
 
 mcc_generated_files/eusart1.c estimated size: 234
 
 mcc_generated_files/mcc.c
-		_PMD_Initialize		CODE           	0EB0	0000	11
-		_OSCILLATOR_Initialize		CODE           	0EA7	0000	10
-		_SYSTEM_Initialize		CODE           	0F37	0000	22
+		_PMD_Initialize		CODE           	0EBB	0000	11
+		_OSCILLATOR_Initialize		CODE           	0EB2	0000	10
+		_SYSTEM_Initialize		CODE           	0F4E	0000	22
 
 mcc_generated_files/mcc.c estimated size: 43
 
 controller.c
-		_CONTROLLER_task		CODE           	03D8	0000	111
-		_CONTROLLER_init		CODE           	0E45	0000	9
-		_address_dec   		CODE           	0F22	0000	22
-		_address_inc   		CODE           	0F4C	0000	23
+		_CONTROLLER_task		CODE           	03D1	0000	99
+		_CONTROLLER_init		CODE           	0E50	0000	9
+		_address_dec   		CODE           	0F39	0000	22
+		_address_inc   		CODE           	0F63	0000	23
 
-controller.c estimated size: 165
+controller.c estimated size: 153
 
 tm1650.c
-		_TM1650_init   		CODE           	0E24	0000	5
-		_TM1650_isEnabled		CODE           	0E19	0000	4
-		_TM1650_enable 		CODE           	0F0D	0000	22
-		_TM1650_fastPrintNum		CODE           	035E	0000	123
+		_TM1650_init   		CODE           	0E2F	0000	5
+		_TM1650_isEnabled		CODE           	0E24	0000	4
+		_TM1650_enable 		CODE           	0F24	0000	22
+		_TM1650_fastPrintNum		CODE           	0357	0000	123
 		_writeData     		CODE           	0FE3	0000	30
 		_TM1650_setDigit		CODE           	0FAA	0000	29
 
 tm1650.c estimated size: 213
 
 mcc_generated_files/adcc.c
-		_ADCC_DefaultInterruptHandler		CODE           	0E10	0000	2
-		_ADCC_SetADTIInterruptHandler		CODE           	0E4D	0000	10
-		_ADCC_ThresholdISR		CODE           	0EBA	0000	14
-		_ADCC_StartConversion		CODE           	0E5F	0000	10
-		_ADCC_Initialize		CODE           	0748	0000	39
-		_ADCC_SetUpperThreshold		CODE           	0E56	0000	10
+		_ADCC_DefaultInterruptHandler		CODE           	0E1B	0000	2
+		_ADCC_SetADTIInterruptHandler		CODE           	0E58	0000	10
+		_ADCC_ThresholdISR		CODE           	0ED1	0000	14
+		_ADCC_StartConversion		CODE           	0E6A	0000	10
+		_ADCC_Initialize		CODE           	073D	0000	39
+		_ADCC_SetUpperThreshold		CODE           	0E61	0000	10
 
 mcc_generated_files/adcc.c estimated size: 85
 
 dmx.c
-		_DMX_ISR       		CODE           	076E	0000	38
+		_DMX_ISR       		CODE           	0763	0000	38
 
 dmx.c estimated size: 38
 
 main.c
-		_main          		CODE           	05FD	0000	60
-		_initLED       		CODE           	06F9	0000	41
-		_LED_setColor  		CODE           	05C1	0000	61
-		_LED_task      		CODE           	04A6	0000	85
+		_main          		CODE           	05F2	0000	60
 
-main.c estimated size: 247
+main.c estimated size: 60
 
 beat.c
-		_BEAT_task     		CODE           	029C	0000	195
-		_BEAT_init     		CODE           	0EE5	0000	21
-		_BEAT_detected 		CODE           	0E71	0000	10
-		_adcThresholdHandler		CODE           	0E1C	0000	5
+		_BEAT_task     		CODE           	029C	0000	188
+		_BEAT_init     		CODE           	0EFC	0000	21
+		_BEAT_detected 		CODE           	0E7C	0000	10
+		_adcThresholdHandler		CODE           	0E27	0000	5
 
-beat.c estimated size: 231
+beat.c estimated size: 224
+
+led.c
+		_initLED       		CODE           	06EE	0000	41
+		_LED_setColor  		CODE           	05B6	0000	61
+		_LED_task      		CODE           	0493	0000	93
+
+led.c estimated size: 195
 

@@ -1,7 +1,9 @@
 #include <xc.h>
+#include <stdbool.h>
 
 int dmxPointer = 0;
 char dmxData[513];
+//bool hasData = false;
 
 void DMX_ISR(void) {
         LATB6 = 1;

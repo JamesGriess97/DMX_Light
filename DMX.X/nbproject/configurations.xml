@@ -49,6 +49,8 @@
       <itemPath>beat.h</itemPath>
       <itemPath>dmx.h</itemPath>
       <itemPath>dmx.c</itemPath>
+      <itemPath>led.c</itemPath>
+      <itemPath>led.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

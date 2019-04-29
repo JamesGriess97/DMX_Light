@@ -7,8 +7,6 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-
-
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
@@ -18382,7 +18380,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 99 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
-# 3 "main.c" 2
+# 1 "main.c" 2
 
 # 1 "./clock.h" 1
 # 11 "./clock.h"
@@ -18390,7 +18388,7 @@ typedef uint16_t time_t;
 
 void CLOCK_init();
 time_t CLOCK_getTime();
-# 4 "main.c" 2
+# 2 "main.c" 2
 
 # 1 "./tm1650.h" 1
 # 17 "./tm1650.h"
@@ -18399,7 +18397,7 @@ void TM1650_enable(_Bool);
 void TM1650_fastPrintNum(uint16_t);
 void TM1650_setDigit(uint8_t, char, int);
 void TM1650_init();
-# 5 "main.c" 2
+# 3 "main.c" 2
 
 # 1 "./buttons.h" 1
 # 16 "./buttons.h"
@@ -18429,36 +18427,38 @@ void TM1650_init();
     void BUTTONS_init();
     void BUTTONS_task();
     int BUTTONS_isClicked(button_t*);
-# 6 "main.c" 2
+# 4 "main.c" 2
 
 # 1 "./controller.h" 1
 # 16 "./controller.h"
 void CONTROLLER_task();
 void CONTROLLER_init();
 extern uint16_t address;
-# 7 "main.c" 2
+# 5 "main.c" 2
 
 # 1 "./beat.h" 1
 # 13 "./beat.h"
 void BEAT_init();
 _Bool BEAT_detected();
 void BEAT_task();
-# 8 "main.c" 2
+# 6 "main.c" 2
 
 # 1 "./dmx.h" 1
 # 15 "./dmx.h"
 void DMX_ISR();
-# 9 "main.c" 2
+# 7 "main.c" 2
 
-
-
-
-
+# 1 "./led.h" 1
+# 16 "./led.h"
 void initLED();
-void LED_setColor(uint8_t, uint8_t, uint8_t, uint8_t);
 void LED_task();
+# 8 "main.c" 2
 
-extern char dmxData[513];
+
+
+
+
+
 
 void main(void) {
 
@@ -18496,77 +18496,4 @@ void main(void) {
         BUTTONS_task();
         CONTROLLER_task();
     }
-}
-
-
-static time_t lastTime = 0;
-void LED_task() {
-    time_t time = CLOCK_getTime();
-
-    if (time - lastTime < 100)
-        return;
-
-    lastTime = time;
-
-    LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
-    if(BEAT_detected()) {
-
-    } else {
-
-    }
-}
-
-void initLED() {
-
-
-    TRISC7 = 0;
-    TRISC6 = 0;
-    TRISC4 = 0;
-    TRISC3 = 0;
-
-    T2CLKCON = 0x01;
-    T2CONbits.ON = 1;
-
-    CCP1CONbits.CCP1EN = 1;
-    CCP1CONbits.MODE = 0b1100;
-    CCP2CONbits.CCP2EN = 1;
-    CCP2CONbits.MODE = 0b1100;
-    CCP3CONbits.CCP3EN = 1;
-    CCP3CONbits.MODE = 0b1100;
-    CCP4CONbits.CCP4EN = 1;
-    CCP4CONbits.MODE = 0b1100;
-
-
-    RC7PPS = 0x09;
-    RC6PPS = 0x0A;
-    RC4PPS = 0x0B;
-    RC3PPS = 0x0C;
-}
-
-
-void LED_setColor(uint8_t red, uint8_t green, uint8_t white, uint8_t blue) {
-    red/=2;
-    green/=2;
-    blue/=2;
-    white/=2;
-    int hi1 = (red & 0xFF00) >> 8;
-    int lo1 = red & 0x00FF;
-    int hi2 = (green & 0xFF00) >> 8;
-    int lo2 = green & 0x00FF;
-    int hi3 = (blue & 0xFF00) >> 8;
-    int lo3 = blue & 0x00FF;
-    int hi4 = (white & 0xFF00) >> 8;
-    int lo4 = white & 0x00FF;
-
-    CCPR1H = hi1;
-    CCPR1L = lo1;
-
-    CCPR2H = hi2;
-    CCPR2L = lo2;
-
-    CCPR3H = hi3;
-    CCPR3L = lo3;
-
-    CCPR4H = hi4;
-    CCPR4L = lo4;
 }
