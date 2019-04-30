@@ -1,4 +1,5 @@
-#include "DMX_Light.h"
+/*
+ #include "DMX_Light.h"
 
 void DMX_Init() {
     TRISC7 = 0; // red
@@ -108,3 +109,4 @@ struct RGB HSLToRGB(struct HSL hsl) {
 
 	return rgb;
 }
+*/

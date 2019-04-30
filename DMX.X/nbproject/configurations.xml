@@ -51,6 +51,8 @@
       <itemPath>dmx.c</itemPath>
       <itemPath>led.c</itemPath>
       <itemPath>led.h</itemPath>
+      <itemPath>DMX_Light.h</itemPath>
+      <itemPath>DMX_Light.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -59,6 +61,9 @@
       <itemPath>MyConfig.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">

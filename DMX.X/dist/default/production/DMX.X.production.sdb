@@ -90,14 +90,28 @@ channel_FVR_Buffer2 63
 [v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
 "71
 [v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"242
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
@@ -122,11 +136,17 @@ channel_FVR_Buffer2 63
 [v _DMX_task DMX_task `(v  1 e 1 0 ]
 "57
 [v _isDMXOn isDMXOn `(a  1 e 1 0 ]
-"11 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"24 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _initLED initLED `(v  1 e 1 0 ]
-"39
+"51
+[v _HueToRGB HueToRGB `(f  1 e 4 0 ]
+"70
 [v _LED_setColor LED_setColor `(v  1 e 1 0 ]
-"69
+"97
+[v _LED_setHSL LED_setHSL `(v  1 e 1 0 ]
+"126
+[v _fadeColor fadeColor `(v  1 e 1 0 ]
+"148
 [v _LED_task LED_task `(v  1 e 1 0 ]
 "15 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -873,7 +893,6 @@ channel_FVR_Buffer2 63
 "31446
 [v _SLRCONC SLRCONC `VEuc  1 e 1 @8017 ]
 "34795
-"34795
 [v _LATB6 LATB6 `VEb  1 e 0 @206 ]
 "38992
 [v _TRISB6 TRISB6 `VEb  1 e 0 @158 ]
@@ -905,8 +924,15 @@ channel_FVR_Buffer2 63
 [v dmx@lastTime lastTime `us  1 s 2 lastTime ]
 "33
 [v _toggleCheck toggleCheck `a  1 e 1 0 ]
-"67 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"121 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v led@lastTime lastTime `us  1 s 2 lastTime ]
+"123
+[v _fadeAmmount fadeAmmount `i  1 e 2 0 ]
+[s S1923 HSL 10 `i 1 H 2 0 `f 1 S 4 2 `f 1 L 4 6 ]
+"124
+[v _color color `S1923  1 e 10 0 ]
+"125
+[v _changeColor changeColor `a  1 e 1 0 ]
 "58 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/adcc.c
 [v _ADCC_ADTI_InterruptHandler ADCC_ADTI_InterruptHandler `*.37(v  1 e 2 0 ]
 "62 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/eusart1.c
@@ -943,7 +969,7 @@ channel_FVR_Buffer2 63
 [v _EUSART1_ErrorHandler EUSART1_ErrorHandler `*.37(v  1 e 2 0 ]
 [s S561 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
 "185 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/i2c1.c
-[s S573 . 3 `uc 1 count 1 0 `*.4S561 1 ptrb_list 1 1 `*.4E10866 1 pTrFlag 1 2 ]
+[s S573 . 3 `uc 1 count 1 0 `*.5S561 1 ptrb_list 1 1 `*.4E10866 1 pTrFlag 1 2 ]
 [v _i2c1_tr_queue i2c1_tr_queue `[1]S573  1 s 3 i2c1_tr_queue ]
 "186
 [s S577 . 1 `uc 1 full 1 0 :1:0 
@@ -951,16 +977,16 @@ channel_FVR_Buffer2 63
 `uc 1 reserved 1 0 :6:2 
 ]
 [u S581 . 1 `S577 1 s 1 0 `uc 1 status 1 0 ]
-[s S584 . 5 `*.4S573 1 pTrTail 1 0 `*.4S573 1 pTrHead 1 1 `S581 1 trStatus 1 2 `uc 1 i2cDoneFlag 1 3 `uc 1 i2cErrors 1 4 ]
+[s S584 . 5 `*.5S573 1 pTrTail 1 0 `*.5S573 1 pTrHead 1 1 `S581 1 trStatus 1 2 `uc 1 i2cDoneFlag 1 3 `uc 1 i2cErrors 1 4 ]
 [v _i2c1_object i2c1_object `S584  1 s 5 i2c1_object ]
 "187
 [v _i2c1_state i2c1_state `E10929  1 s 1 i2c1_state ]
 "188
 [v _i2c1_trb_count i2c1_trb_count `uc  1 s 1 i2c1_trb_count ]
 "190
-[v _p_i2c1_trb_current p_i2c1_trb_current `*.4S561  1 s 1 p_i2c1_trb_current ]
+[v _p_i2c1_trb_current p_i2c1_trb_current `*.5S561  1 s 1 p_i2c1_trb_current ]
 "191
-[v _p_i2c1_current p_i2c1_current `*.4VES573  1 s 1 p_i2c1_current ]
+[v _p_i2c1_current p_i2c1_current `*.5VES573  1 s 1 p_i2c1_current ]
 "59 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/tmr0.c
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
 "6 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
@@ -972,10 +998,10 @@ channel_FVR_Buffer2 63
 {
 "52
 } 0
-"11 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"24 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _initLED initLED `(v  1 e 1 0 ]
 {
-"36
+"49
 } 0
 "28 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _TM1650_init TM1650_init `(v  1 e 1 0 ]
@@ -1052,37 +1078,188 @@ channel_FVR_Buffer2 63
 {
 "119
 } 0
-"69 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"148 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _LED_task LED_task `(v  1 e 1 0 ]
 {
-"73
-[v LED_task@time time `us  1 a 2 33 ]
-"85
+"160
 } 0
 "57 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
 [v _isDMXOn isDMXOn `(a  1 e 1 0 ]
 {
 "59
 } 0
-"39 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"126 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+[v _fadeColor fadeColor `(v  1 e 1 0 ]
+{
+"127
+[v fadeColor@time time `us  1 a 2 60 ]
+"145
+} 0
+"97
+[v _LED_setHSL LED_setHSL `(v  1 e 1 0 ]
+{
+"106
+[v LED_setHSL@v2 v2 `f  1 a 4 51 ]
+"107
+[v LED_setHSL@hue hue `f  1 a 4 47 ]
+"106
+[v LED_setHSL@v1 v1 `f  1 a 4 43 ]
+[s S1927 RGB 3 `uc 1 R 1 0 `uc 1 G 1 1 `uc 1 B 1 2 ]
+"98
+[v LED_setHSL@rgb rgb `S1927  1 a 3 55 ]
+[s S1923 HSL 10 `i 1 H 2 0 `f 1 S 4 2 `f 1 L 4 6 ]
+"97
+[v LED_setHSL@hsl hsl `S1923  1 p 10 15 ]
+"118
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"43 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 14 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 13 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 4 ]
+"70
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+{
+[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
+"12
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 34 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 27 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 32 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 39 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 38 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 31 ]
+"8
+[v ___fldiv@a a `d  1 p 4 14 ]
+[v ___fldiv@b b `d  1 p 4 18 ]
+"185
+} 0
+"70 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _LED_setColor LED_setColor `(v  1 e 1 0 ]
 {
 [v LED_setColor@red red `uc  1 a 1 wreg ]
-"51
+"82
 [v LED_setColor@lo4 lo4 `i  1 a 2 19 ]
-"49
+"80
 [v LED_setColor@lo3 lo3 `i  1 a 2 15 ]
-"47
+"78
 [v LED_setColor@lo2 lo2 `i  1 a 2 11 ]
-"45
+"76
 [v LED_setColor@lo1 lo1 `i  1 a 2 7 ]
-"39
+"70
 [v LED_setColor@red red `uc  1 a 1 wreg ]
 [v LED_setColor@green green `uc  1 p 1 0 ]
 [v LED_setColor@white white `uc  1 p 1 1 ]
 [v LED_setColor@blue blue `uc  1 p 1 2 ]
 [v LED_setColor@red red `uc  1 a 1 21 ]
-"64
+"95
+} 0
+"51
+[v _HueToRGB HueToRGB `(f  1 e 4 0 ]
+{
+[v HueToRGB@v1 v1 `f  1 p 4 67 ]
+[v HueToRGB@v2 v2 `f  1 p 4 71 ]
+[v HueToRGB@vH vH `f  1 p 4 75 ]
+"68
+} 0
+"242 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@a a `d  1 p 4 55 ]
+[v ___flsub@b b `d  1 p 4 59 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 28 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 27 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 26 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 25 ]
+"10
+[v ___fladd@b b `d  1 p 4 9 ]
+[v ___fladd@a a `d  1 p 4 13 ]
+"237
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S2310 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S2315 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S2318 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2310 1 fAsBytes 4 0 `S2315 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2318  1 a 4 49 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 44 ]
+[s S2387 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S2390 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2387 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2390  1 a 2 53 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 48 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 43 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 42 ]
+"8
+[v ___flmul@b b `d  1 p 4 29 ]
+[v ___flmul@a a `d  1 p 4 33 ]
+"205
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 4 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
+"60
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 55 ]
+[v ___flge@ff2 ff2 `d  1 p 4 59 ]
+"19
 } 0
 "41 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\beat.c
 [v _BEAT_detected BEAT_detected `(a  1 e 1 0 ]
@@ -1202,8 +1379,8 @@ channel_FVR_Buffer2 63
 {
 [s S561 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
 "722
-[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S561  1 a 1 wreg ]
-[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S561  1 a 1 wreg ]
+[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.5S561  1 a 1 wreg ]
+[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.5S561  1 a 1 wreg ]
 "723
 [v I2C1_MasterWriteTRBBuild@pdata pdata `*.4uc  1 p 1 0 ]
 "724
@@ -1212,7 +1389,7 @@ channel_FVR_Buffer2 63
 [v I2C1_MasterWriteTRBBuild@address address `us  1 p 2 2 ]
 "727
 "722
-[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.4S561  1 a 1 6 ]
+[v I2C1_MasterWriteTRBBuild@ptrb ptrb `*.5S561  1 a 1 6 ]
 "730
 } 0
 "654
@@ -1223,7 +1400,7 @@ channel_FVR_Buffer2 63
 [v I2C1_MasterTRBInsert@count count `uc  1 a 1 wreg ]
 [s S561 . 4 `us 1 address 2 0 `uc 1 length 1 2 `*.4uc 1 pbuffer 1 3 ]
 "656
-[v I2C1_MasterTRBInsert@ptrb_list ptrb_list `*.4S561  1 p 1 0 ]
+[v I2C1_MasterTRBInsert@ptrb_list ptrb_list `*.5S561  1 p 1 0 ]
 "657
 [v I2C1_MasterTRBInsert@pflag pflag `*.4E10866  1 p 1 1 ]
 "661

@@ -3,7 +3,6 @@
  * Author: Owner
  *
  * Created on March 3, 2019, 12:40 AM
- */
 
 #ifndef COLORCONV_H
 #define	COLORCONV_H
@@ -19,5 +18,6 @@ void DMX_Init();
 }
 #endif
 
-#endif	/* COLORCONV_H */
+#endif
+ */
 
