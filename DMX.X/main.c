@@ -46,6 +46,7 @@ void main(void) {
         BEAT_task();
         LED_task();
         BUTTONS_task();
-        CONTROLLER_task();        
+        CONTROLLER_task();    
+        DMX_task();
     }
 }

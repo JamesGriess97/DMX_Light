@@ -1,10 +1,12 @@
 #define FADE_TIME 100
 
 #include <xc.h>
+#include <stdbool.h>
 #include "led.h"
 #include "beat.h"
 #include "controller.h"
 #include "clock.h"
+#include "dmx.h"
 
 void initLED() {
     //WPUB7 = 1;
@@ -63,19 +65,22 @@ void LED_setColor(uint8_t red, uint8_t green, uint8_t white, uint8_t blue) {
 
 extern char dmxData[513];
 static time_t lastTime = 0;
+
 void LED_task() {
-    time_t time = CLOCK_getTime();
-
-    if (time - lastTime < FADE_TIME)
-        return;
-
-    lastTime = time;
-
-    LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
-    if(BEAT_detected()) {
-        //LED_setColor(255, 255, 255, 255);
+    if(isDMXOn()) {
+        LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
     } else {
-        //LED_setColor(0,0,0,0);
+        time_t time = CLOCK_getTime();
+
+        if (time - lastTime < FADE_TIME)
+            return;
+
+        lastTime = time;
+        if(BEAT_detected()) {
+            LED_setColor(255, 255, 255, 255);
+        } else {
+            LED_setColor(0,0,0,0);
+        }
     }
 }
 

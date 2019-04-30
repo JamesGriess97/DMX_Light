@@ -18446,6 +18446,8 @@ void BEAT_task();
 # 1 "./dmx.h" 1
 # 15 "./dmx.h"
 void DMX_ISR();
+_Bool isDMXOn();
+void DMX_task();
 # 7 "main.c" 2
 
 # 1 "./led.h" 1
@@ -18495,5 +18497,6 @@ void main(void) {
         LED_task();
         BUTTONS_task();
         CONTROLLER_task();
+        DMX_task();
     }
 }

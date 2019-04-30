@@ -13,7 +13,8 @@ extern "C" {
 #endif
 
 void DMX_ISR();
-
+bool isDMXOn();
+void DMX_task();
 
 
 #ifdef	__cplusplus

@@ -116,13 +116,17 @@ channel_FVR_Buffer2 63
 [v _address_dec address_dec `(v  1 e 1 0 ]
 "48
 [v _CONTROLLER_task CONTROLLER_task `(v  1 e 1 0 ]
-"6 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
+"13 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
 [v _DMX_ISR DMX_ISR `(v  1 e 1 0 ]
-"9 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"35
+[v _DMX_task DMX_task `(v  1 e 1 0 ]
+"57
+[v _isDMXOn isDMXOn `(a  1 e 1 0 ]
+"11 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _initLED initLED `(v  1 e 1 0 ]
-"37
+"39
 [v _LED_setColor LED_setColor `(v  1 e 1 0 ]
-"66
+"69
 [v _LED_task LED_task `(v  1 e 1 0 ]
 "15 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -234,14 +238,14 @@ channel_FVR_Buffer2 63
 [v _thresholdCount thresholdCount `i  1 s 2 thresholdCount ]
 "25
 [v _lastDetected lastDetected `a  1 s 1 lastDetected ]
-[s S1469 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+[s S1473 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
 "11 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
-[v _buttons buttons `[4]S1469  1 e 32 0 ]
+[v _buttons buttons `[4]S1473  1 e 32 0 ]
 "12
-[v _up up `*.5S1469  1 e 1 0 ]
-[v _down down `*.5S1469  1 e 1 0 ]
-[v _enter enter `*.5S1469  1 e 1 0 ]
-[v _menu menu `*.5S1469  1 e 1 0 ]
+[v _up up `*.5S1473  1 e 1 0 ]
+[v _down down `*.5S1473  1 e 1 0 ]
+[v _enter enter `*.5S1473  1 e 1 0 ]
+[v _menu menu `*.5S1473  1 e 1 0 ]
 "33
 [v _lastTime lastTime `us  1 s 2 lastTime ]
 [s S343 . 1 `uc 1 INTEDG 1 0 :1:0 
@@ -592,12 +596,12 @@ channel_FVR_Buffer2 63
 [v _SSP1CON2bits SSP1CON2bits `VES707  1 e 1 @401 ]
 "6682
 [v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @402 ]
-[s S1615 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S1627 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "10529
-[s S1619 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S1631 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -605,11 +609,11 @@ channel_FVR_Buffer2 63
 `uc 1 CKPS1 1 0 :1:5 
 `uc 1 CKPS2 1 0 :1:6 
 ]
-[s S1627 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S1639 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S1631 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S1643 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -618,105 +622,105 @@ channel_FVR_Buffer2 63
 `uc 1 T2CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S1640 . 1 `S1615 1 . 1 0 `S1619 1 . 1 0 `S1627 1 . 1 0 `S1631 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES1640  1 e 1 @654 ]
+[u S1652 . 1 `S1627 1 . 1 0 `S1631 1 . 1 0 `S1639 1 . 1 0 `S1643 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES1652  1 e 1 @654 ]
 "10767
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @656 ]
 "12081
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @780 ]
 "12101
 [v _CCPR1H CCPR1H `VEuc  1 e 1 @781 ]
-[s S1671 . 1 `uc 1 MODE 1 0 :4:0 
+[s S1683 . 1 `uc 1 MODE 1 0 :4:0 
 `uc 1 FMT 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "12158
-[s S1677 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S1689 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 ]
-[s S1682 . 1 `uc 1 CCP1MODE 1 0 :4:0 
+[s S1694 . 1 `uc 1 CCP1MODE 1 0 :4:0 
 `uc 1 CCP1FMT 1 0 :1:4 
 `uc 1 CCP1OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP1EN 1 0 :1:7 
 ]
-[s S1688 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
+[s S1700 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
 `uc 1 CCP1MODE1 1 0 :1:1 
 `uc 1 CCP1MODE2 1 0 :1:2 
 `uc 1 CCP1MODE3 1 0 :1:3 
 ]
-[s S1693 . 1 `uc 1 . 1 0 :7:0 
+[s S1705 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P1M1 1 0 :1:7 
 ]
-[u S1696 . 1 `S1671 1 . 1 0 `S1677 1 . 1 0 `S1682 1 . 1 0 `S1688 1 . 1 0 `S1693 1 . 1 0 ]
-[v _CCP1CONbits CCP1CONbits `VES1696  1 e 1 @782 ]
+[u S1708 . 1 `S1683 1 . 1 0 `S1689 1 . 1 0 `S1694 1 . 1 0 `S1700 1 . 1 0 `S1705 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES1708  1 e 1 @782 ]
 "12323
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @784 ]
 "12343
 [v _CCPR2H CCPR2H `VEuc  1 e 1 @785 ]
 "12400
-[s S1739 . 1 `uc 1 CCP2MODE 1 0 :4:0 
+[s S1751 . 1 `uc 1 CCP2MODE 1 0 :4:0 
 `uc 1 CCP2FMT 1 0 :1:4 
 `uc 1 CCP2OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP2EN 1 0 :1:7 
 ]
-[s S1745 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
+[s S1757 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
 `uc 1 CCP2MODE1 1 0 :1:1 
 `uc 1 CCP2MODE2 1 0 :1:2 
 `uc 1 CCP2MODE3 1 0 :1:3 
 ]
-[s S1750 . 1 `uc 1 . 1 0 :7:0 
+[s S1762 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P2M1 1 0 :1:7 
 ]
-[u S1753 . 1 `S1671 1 . 1 0 `S1677 1 . 1 0 `S1739 1 . 1 0 `S1745 1 . 1 0 `S1750 1 . 1 0 ]
-[v _CCP2CONbits CCP2CONbits `VES1753  1 e 1 @786 ]
+[u S1765 . 1 `S1683 1 . 1 0 `S1689 1 . 1 0 `S1751 1 . 1 0 `S1757 1 . 1 0 `S1762 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES1765  1 e 1 @786 ]
 "12565
 [v _CCPR3L CCPR3L `VEuc  1 e 1 @788 ]
 "12585
 [v _CCPR3H CCPR3H `VEuc  1 e 1 @789 ]
 "12642
-[s S1796 . 1 `uc 1 CCP3MODE 1 0 :4:0 
+[s S1808 . 1 `uc 1 CCP3MODE 1 0 :4:0 
 `uc 1 CCP3FMT 1 0 :1:4 
 `uc 1 CCP3OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP3EN 1 0 :1:7 
 ]
-[s S1802 . 1 `uc 1 CCP3MODE0 1 0 :1:0 
+[s S1814 . 1 `uc 1 CCP3MODE0 1 0 :1:0 
 `uc 1 CCP3MODE1 1 0 :1:1 
 `uc 1 CCP3MODE2 1 0 :1:2 
 `uc 1 CCP3MODE3 1 0 :1:3 
 ]
-[s S1807 . 1 `uc 1 . 1 0 :7:0 
+[s S1819 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P3M1 1 0 :1:7 
 ]
-[u S1810 . 1 `S1671 1 . 1 0 `S1677 1 . 1 0 `S1796 1 . 1 0 `S1802 1 . 1 0 `S1807 1 . 1 0 ]
-[v _CCP3CONbits CCP3CONbits `VES1810  1 e 1 @790 ]
+[u S1822 . 1 `S1683 1 . 1 0 `S1689 1 . 1 0 `S1808 1 . 1 0 `S1814 1 . 1 0 `S1819 1 . 1 0 ]
+[v _CCP3CONbits CCP3CONbits `VES1822  1 e 1 @790 ]
 "12807
 [v _CCPR4L CCPR4L `VEuc  1 e 1 @792 ]
 "12827
 [v _CCPR4H CCPR4H `VEuc  1 e 1 @793 ]
 "12884
-[s S1853 . 1 `uc 1 CCP4MODE 1 0 :4:0 
+[s S1865 . 1 `uc 1 CCP4MODE 1 0 :4:0 
 `uc 1 CCP4FMT 1 0 :1:4 
 `uc 1 CCP4OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP4EN 1 0 :1:7 
 ]
-[s S1859 . 1 `uc 1 CCP4MODE0 1 0 :1:0 
+[s S1871 . 1 `uc 1 CCP4MODE0 1 0 :1:0 
 `uc 1 CCP4MODE1 1 0 :1:1 
 `uc 1 CCP4MODE2 1 0 :1:2 
 `uc 1 CCP4MODE3 1 0 :1:3 
 ]
-[s S1864 . 1 `uc 1 . 1 0 :7:0 
+[s S1876 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P4M1 1 0 :1:7 
 ]
-[u S1867 . 1 `S1671 1 . 1 0 `S1677 1 . 1 0 `S1853 1 . 1 0 `S1859 1 . 1 0 `S1864 1 . 1 0 ]
-[v _CCP4CONbits CCP4CONbits `VES1867  1 e 1 @794 ]
+[u S1879 . 1 `S1683 1 . 1 0 `S1689 1 . 1 0 `S1865 1 . 1 0 `S1871 1 . 1 0 `S1876 1 . 1 0 ]
+[v _CCP4CONbits CCP4CONbits `VES1879  1 e 1 @794 ]
 "16651
 [v _TMR0L TMR0L `VEuc  1 e 1 @1436 ]
 "16789
@@ -889,11 +893,19 @@ channel_FVR_Buffer2 63
 [v controller@lastTime lastTime `us  1 s 2 lastTime ]
 "47
 [v _lastActiveTime lastActiveTime `us  1 e 2 0 ]
-"3 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
+"7 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
 [v _dmxPointer dmxPointer `i  1 e 2 0 ]
-"4
+"8
 [v _dmxData dmxData `[513]uc  1 e 513 @9711 ]
-"65 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"9
+[v _offCheck offCheck `a  1 e 1 0 ]
+"10
+[v _dmxOn dmxOn `a  1 e 1 0 ]
+"32
+[v dmx@lastTime lastTime `us  1 s 2 lastTime ]
+"33
+[v _toggleCheck toggleCheck `a  1 e 1 0 ]
+"67 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v led@lastTime lastTime `us  1 s 2 lastTime ]
 "58 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/adcc.c
 [v _ADCC_ADTI_InterruptHandler ADCC_ADTI_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -958,12 +970,12 @@ channel_FVR_Buffer2 63
 "15 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"51
+"52
 } 0
-"9 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"11 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _initLED initLED `(v  1 e 1 0 ]
 {
-"34
+"36
 } 0
 "28 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _TM1650_init TM1650_init `(v  1 e 1 0 ]
@@ -1040,37 +1052,49 @@ channel_FVR_Buffer2 63
 {
 "119
 } 0
-"66 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"69 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _LED_task LED_task `(v  1 e 1 0 ]
 {
-"67
+"73
 [v LED_task@time time `us  1 a 2 33 ]
-"80
+"85
 } 0
-"37
+"57 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
+[v _isDMXOn isDMXOn `(a  1 e 1 0 ]
+{
+"59
+} 0
+"39 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _LED_setColor LED_setColor `(v  1 e 1 0 ]
 {
 [v LED_setColor@red red `uc  1 a 1 wreg ]
-"49
+"51
 [v LED_setColor@lo4 lo4 `i  1 a 2 19 ]
-"47
+"49
 [v LED_setColor@lo3 lo3 `i  1 a 2 15 ]
-"45
+"47
 [v LED_setColor@lo2 lo2 `i  1 a 2 11 ]
-"43
+"45
 [v LED_setColor@lo1 lo1 `i  1 a 2 7 ]
-"37
+"39
 [v LED_setColor@red red `uc  1 a 1 wreg ]
 [v LED_setColor@green green `uc  1 p 1 0 ]
 [v LED_setColor@white white `uc  1 p 1 1 ]
 [v LED_setColor@blue blue `uc  1 p 1 2 ]
 [v LED_setColor@red red `uc  1 a 1 21 ]
-"62
+"64
 } 0
 "41 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\beat.c
 [v _BEAT_detected BEAT_detected `(a  1 e 1 0 ]
 {
 "47
+} 0
+"35 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
+[v _DMX_task DMX_task `(v  1 e 1 0 ]
+{
+"36
+[v DMX_task@time time `us  1 a 2 4 ]
+"55
 } 0
 "48 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
 [v _CONTROLLER_task CONTROLLER_task `(v  1 e 1 0 ]
@@ -1100,10 +1124,10 @@ channel_FVR_Buffer2 63
 "71 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
 [v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
 {
-[s S1469 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
-[v BUTTONS_isClicked@button button `*.5S1469  1 a 1 wreg ]
-[v BUTTONS_isClicked@button button `*.5S1469  1 a 1 wreg ]
-[v BUTTONS_isClicked@button button `*.5S1469  1 a 1 3 ]
+[s S1473 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+[v BUTTONS_isClicked@button button `*.5S1473  1 a 1 wreg ]
+[v BUTTONS_isClicked@button button `*.5S1473  1 a 1 wreg ]
+[v BUTTONS_isClicked@button button `*.5S1473  1 a 1 3 ]
 "79
 } 0
 "12 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
@@ -1225,9 +1249,9 @@ channel_FVR_Buffer2 63
 "34 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
 [v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
 {
-[s S1469 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+[s S1473 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
 "45
-[v BUTTONS_task@btn btn `*.5S1469  1 a 1 8 ]
+[v BUTTONS_task@btn btn `*.5S1473  1 a 1 8 ]
 "44
 [v BUTTONS_task@i i `uc  1 a 1 5 ]
 "35
@@ -1242,12 +1266,12 @@ channel_FVR_Buffer2 63
 "14
 [v _init init `(v  1 s 1 init ]
 {
-[s S1469 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
-[v init@btn btn `*.5S1469  1 a 1 wreg ]
-[v init@btn btn `*.5S1469  1 a 1 wreg ]
+[s S1473 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+[v init@btn btn `*.5S1473  1 a 1 wreg ]
+[v init@btn btn `*.5S1473  1 a 1 wreg ]
 [v init@port port `*.39VEuc  1 p 2 0 ]
 [v init@pin pin `uc  1 p 1 2 ]
-[v init@btn btn `*.5S1469  1 a 1 4 ]
+[v init@btn btn `*.5S1473  1 a 1 4 ]
 "19
 } 0
 "57 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\beat.c
@@ -1362,10 +1386,10 @@ channel_FVR_Buffer2 63
 {
 "211
 } 0
-"6 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
+"13 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
 [v _DMX_ISR DMX_ISR `(v  1 e 1 0 ]
 {
-"22
+"30
 } 0
 "213 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Receive_ISR EUSART1_Receive_ISR `(v  1 e 1 0 ]

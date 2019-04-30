@@ -21,7 +21,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 ./dmx.h
 [; ;./dmx.h: 15: void DMX_ISR();
 [v _DMX_ISR `(v ~T0 @X0 0 e? ]
-[v F11074 `(v ~T0 @X0 0 tf ]
+[v F11076 `(v ~T0 @X0 0 tf ]
 "419 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 419:     struct {
 [s S31 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -64,6 +64,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16 ./controller.h
 [; ;./controller.h: 16: void CONTROLLER_task();
 [v _CONTROLLER_task `(v ~T0 @X0 0 e? ]
+"17 ./dmx.h
+[; ;./dmx.h: 17: void DMX_task();
+[v _DMX_task `(v ~T0 @X0 0 e? ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1453,7 +1456,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _LATB6 -> -> 0 `i `b ]
 "21
 [; ;main.c: 21:     EUSART1_SetRxInterruptHandler(DMX_ISR);
-[e ( _EUSART1_SetRxInterruptHandler (1 -> &U _DMX_ISR `*F11074 ]
+[e ( _EUSART1_SetRxInterruptHandler (1 -> &U _DMX_ISR `*F11076 ]
 "27
 [; ;main.c: 27:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
@@ -1495,12 +1498,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 49:         CONTROLLER_task();
 [e ( _CONTROLLER_task ..  ]
 "50
-[; ;main.c: 50:     }
+[; ;main.c: 50:         DMX_task();
+[e ( _DMX_task ..  ]
+"51
+[; ;main.c: 51:     }
 }
 [e :U 1518 ]
 [e $U 1519  ]
 [e :U 1520 ]
-"51
-[; ;main.c: 51: }
+"52
+[; ;main.c: 52: }
 [e :UE 1517 ]
 }
