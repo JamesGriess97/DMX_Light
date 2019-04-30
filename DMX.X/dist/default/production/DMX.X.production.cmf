@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\User\AppData\Local\Temp\s2tk.o
+$C:\Users\User\AppData\Local\Temp\sbm4.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 39 39 2 2
 config CONFIG 0 8007 8007 5 2
@@ -246,80 +246,80 @@ STRING 1860-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\DMX.X.production.o
-3B cinit CODE >13479:C:\Users\User\AppData\Local\Temp\s2tk.
-3B cinit CODE >13482:C:\Users\User\AppData\Local\Temp\s2tk.
-3B cinit CODE >13694:C:\Users\User\AppData\Local\Temp\s2tk.
-3E cinit CODE >13695:C:\Users\User\AppData\Local\Temp\s2tk.
-3F cinit CODE >13696:C:\Users\User\AppData\Local\Temp\s2tk.
-42 cinit CODE >13697:C:\Users\User\AppData\Local\Temp\s2tk.
-43 cinit CODE >13701:C:\Users\User\AppData\Local\Temp\s2tk.
-44 cinit CODE >13702:C:\Users\User\AppData\Local\Temp\s2tk.
-45 cinit CODE >13703:C:\Users\User\AppData\Local\Temp\s2tk.
-46 cinit CODE >13704:C:\Users\User\AppData\Local\Temp\s2tk.
-47 cinit CODE >13705:C:\Users\User\AppData\Local\Temp\s2tk.
-48 cinit CODE >13706:C:\Users\User\AppData\Local\Temp\s2tk.
-49 cinit CODE >13707:C:\Users\User\AppData\Local\Temp\s2tk.
-4A cinit CODE >13708:C:\Users\User\AppData\Local\Temp\s2tk.
-4B cinit CODE >13709:C:\Users\User\AppData\Local\Temp\s2tk.
-4C cinit CODE >13710:C:\Users\User\AppData\Local\Temp\s2tk.
-4D cinit CODE >13711:C:\Users\User\AppData\Local\Temp\s2tk.
-4E cinit CODE >13712:C:\Users\User\AppData\Local\Temp\s2tk.
-51 cinit CODE >13716:C:\Users\User\AppData\Local\Temp\s2tk.
-52 cinit CODE >13717:C:\Users\User\AppData\Local\Temp\s2tk.
-53 cinit CODE >13718:C:\Users\User\AppData\Local\Temp\s2tk.
-54 cinit CODE >13719:C:\Users\User\AppData\Local\Temp\s2tk.
-55 cinit CODE >13720:C:\Users\User\AppData\Local\Temp\s2tk.
-56 cinit CODE >13721:C:\Users\User\AppData\Local\Temp\s2tk.
-57 cinit CODE >13722:C:\Users\User\AppData\Local\Temp\s2tk.
-58 cinit CODE >13723:C:\Users\User\AppData\Local\Temp\s2tk.
-59 cinit CODE >13724:C:\Users\User\AppData\Local\Temp\s2tk.
-5A cinit CODE >13725:C:\Users\User\AppData\Local\Temp\s2tk.
-5B cinit CODE >13726:C:\Users\User\AppData\Local\Temp\s2tk.
-5C cinit CODE >13727:C:\Users\User\AppData\Local\Temp\s2tk.
-5F cinit CODE >13750:C:\Users\User\AppData\Local\Temp\s2tk.
-60 cinit CODE >13751:C:\Users\User\AppData\Local\Temp\s2tk.
-61 cinit CODE >13752:C:\Users\User\AppData\Local\Temp\s2tk.
-62 cinit CODE >13753:C:\Users\User\AppData\Local\Temp\s2tk.
-63 cinit CODE >13754:C:\Users\User\AppData\Local\Temp\s2tk.
-64 cinit CODE >13755:C:\Users\User\AppData\Local\Temp\s2tk.
-65 cinit CODE >13756:C:\Users\User\AppData\Local\Temp\s2tk.
-66 cinit CODE >13757:C:\Users\User\AppData\Local\Temp\s2tk.
-67 cinit CODE >13758:C:\Users\User\AppData\Local\Temp\s2tk.
-6A cinit CODE >13762:C:\Users\User\AppData\Local\Temp\s2tk.
-6B cinit CODE >13763:C:\Users\User\AppData\Local\Temp\s2tk.
-6C cinit CODE >13764:C:\Users\User\AppData\Local\Temp\s2tk.
-6D cinit CODE >13765:C:\Users\User\AppData\Local\Temp\s2tk.
-6E cinit CODE >13769:C:\Users\User\AppData\Local\Temp\s2tk.
-6F cinit CODE >13773:C:\Users\User\AppData\Local\Temp\s2tk.
-70 cinit CODE >13774:C:\Users\User\AppData\Local\Temp\s2tk.
-71 cinit CODE >13775:C:\Users\User\AppData\Local\Temp\s2tk.
-72 cinit CODE >13776:C:\Users\User\AppData\Local\Temp\s2tk.
-73 cinit CODE >13777:C:\Users\User\AppData\Local\Temp\s2tk.
-74 cinit CODE >13778:C:\Users\User\AppData\Local\Temp\s2tk.
-75 cinit CODE >13779:C:\Users\User\AppData\Local\Temp\s2tk.
-76 cinit CODE >13780:C:\Users\User\AppData\Local\Temp\s2tk.
-77 cinit CODE >13784:C:\Users\User\AppData\Local\Temp\s2tk.
-78 cinit CODE >13785:C:\Users\User\AppData\Local\Temp\s2tk.
-79 cinit CODE >13786:C:\Users\User\AppData\Local\Temp\s2tk.
-7A cinit CODE >13787:C:\Users\User\AppData\Local\Temp\s2tk.
-7B cinit CODE >13788:C:\Users\User\AppData\Local\Temp\s2tk.
-7C cinit CODE >13789:C:\Users\User\AppData\Local\Temp\s2tk.
-7D cinit CODE >13790:C:\Users\User\AppData\Local\Temp\s2tk.
-7E cinit CODE >13791:C:\Users\User\AppData\Local\Temp\s2tk.
-7F cinit CODE >13792:C:\Users\User\AppData\Local\Temp\s2tk.
-82 cinit CODE >13796:C:\Users\User\AppData\Local\Temp\s2tk.
-83 cinit CODE >13797:C:\Users\User\AppData\Local\Temp\s2tk.
-84 cinit CODE >13798:C:\Users\User\AppData\Local\Temp\s2tk.
-85 cinit CODE >13799:C:\Users\User\AppData\Local\Temp\s2tk.
-86 cinit CODE >13800:C:\Users\User\AppData\Local\Temp\s2tk.
-87 cinit CODE >13801:C:\Users\User\AppData\Local\Temp\s2tk.
-88 cinit CODE >13802:C:\Users\User\AppData\Local\Temp\s2tk.
-89 cinit CODE >13803:C:\Users\User\AppData\Local\Temp\s2tk.
-8A cinit CODE >13804:C:\Users\User\AppData\Local\Temp\s2tk.
-8C cinit CODE >13810:C:\Users\User\AppData\Local\Temp\s2tk.
-8C cinit CODE >13812:C:\Users\User\AppData\Local\Temp\s2tk.
-8D cinit CODE >13813:C:\Users\User\AppData\Local\Temp\s2tk.
-8E cinit CODE >13814:C:\Users\User\AppData\Local\Temp\s2tk.
+3B cinit CODE >13479:C:\Users\User\AppData\Local\Temp\sbm4.
+3B cinit CODE >13482:C:\Users\User\AppData\Local\Temp\sbm4.
+3B cinit CODE >13694:C:\Users\User\AppData\Local\Temp\sbm4.
+3E cinit CODE >13695:C:\Users\User\AppData\Local\Temp\sbm4.
+3F cinit CODE >13696:C:\Users\User\AppData\Local\Temp\sbm4.
+42 cinit CODE >13697:C:\Users\User\AppData\Local\Temp\sbm4.
+43 cinit CODE >13701:C:\Users\User\AppData\Local\Temp\sbm4.
+44 cinit CODE >13702:C:\Users\User\AppData\Local\Temp\sbm4.
+45 cinit CODE >13703:C:\Users\User\AppData\Local\Temp\sbm4.
+46 cinit CODE >13704:C:\Users\User\AppData\Local\Temp\sbm4.
+47 cinit CODE >13705:C:\Users\User\AppData\Local\Temp\sbm4.
+48 cinit CODE >13706:C:\Users\User\AppData\Local\Temp\sbm4.
+49 cinit CODE >13707:C:\Users\User\AppData\Local\Temp\sbm4.
+4A cinit CODE >13708:C:\Users\User\AppData\Local\Temp\sbm4.
+4B cinit CODE >13709:C:\Users\User\AppData\Local\Temp\sbm4.
+4C cinit CODE >13710:C:\Users\User\AppData\Local\Temp\sbm4.
+4D cinit CODE >13711:C:\Users\User\AppData\Local\Temp\sbm4.
+4E cinit CODE >13712:C:\Users\User\AppData\Local\Temp\sbm4.
+51 cinit CODE >13716:C:\Users\User\AppData\Local\Temp\sbm4.
+52 cinit CODE >13717:C:\Users\User\AppData\Local\Temp\sbm4.
+53 cinit CODE >13718:C:\Users\User\AppData\Local\Temp\sbm4.
+54 cinit CODE >13719:C:\Users\User\AppData\Local\Temp\sbm4.
+55 cinit CODE >13720:C:\Users\User\AppData\Local\Temp\sbm4.
+56 cinit CODE >13721:C:\Users\User\AppData\Local\Temp\sbm4.
+57 cinit CODE >13722:C:\Users\User\AppData\Local\Temp\sbm4.
+58 cinit CODE >13723:C:\Users\User\AppData\Local\Temp\sbm4.
+59 cinit CODE >13724:C:\Users\User\AppData\Local\Temp\sbm4.
+5A cinit CODE >13725:C:\Users\User\AppData\Local\Temp\sbm4.
+5B cinit CODE >13726:C:\Users\User\AppData\Local\Temp\sbm4.
+5C cinit CODE >13727:C:\Users\User\AppData\Local\Temp\sbm4.
+5F cinit CODE >13750:C:\Users\User\AppData\Local\Temp\sbm4.
+60 cinit CODE >13751:C:\Users\User\AppData\Local\Temp\sbm4.
+61 cinit CODE >13752:C:\Users\User\AppData\Local\Temp\sbm4.
+62 cinit CODE >13753:C:\Users\User\AppData\Local\Temp\sbm4.
+63 cinit CODE >13754:C:\Users\User\AppData\Local\Temp\sbm4.
+64 cinit CODE >13755:C:\Users\User\AppData\Local\Temp\sbm4.
+65 cinit CODE >13756:C:\Users\User\AppData\Local\Temp\sbm4.
+66 cinit CODE >13757:C:\Users\User\AppData\Local\Temp\sbm4.
+67 cinit CODE >13758:C:\Users\User\AppData\Local\Temp\sbm4.
+6A cinit CODE >13762:C:\Users\User\AppData\Local\Temp\sbm4.
+6B cinit CODE >13763:C:\Users\User\AppData\Local\Temp\sbm4.
+6C cinit CODE >13764:C:\Users\User\AppData\Local\Temp\sbm4.
+6D cinit CODE >13765:C:\Users\User\AppData\Local\Temp\sbm4.
+6E cinit CODE >13769:C:\Users\User\AppData\Local\Temp\sbm4.
+6F cinit CODE >13773:C:\Users\User\AppData\Local\Temp\sbm4.
+70 cinit CODE >13774:C:\Users\User\AppData\Local\Temp\sbm4.
+71 cinit CODE >13775:C:\Users\User\AppData\Local\Temp\sbm4.
+72 cinit CODE >13776:C:\Users\User\AppData\Local\Temp\sbm4.
+73 cinit CODE >13777:C:\Users\User\AppData\Local\Temp\sbm4.
+74 cinit CODE >13778:C:\Users\User\AppData\Local\Temp\sbm4.
+75 cinit CODE >13779:C:\Users\User\AppData\Local\Temp\sbm4.
+76 cinit CODE >13780:C:\Users\User\AppData\Local\Temp\sbm4.
+77 cinit CODE >13784:C:\Users\User\AppData\Local\Temp\sbm4.
+78 cinit CODE >13785:C:\Users\User\AppData\Local\Temp\sbm4.
+79 cinit CODE >13786:C:\Users\User\AppData\Local\Temp\sbm4.
+7A cinit CODE >13787:C:\Users\User\AppData\Local\Temp\sbm4.
+7B cinit CODE >13788:C:\Users\User\AppData\Local\Temp\sbm4.
+7C cinit CODE >13789:C:\Users\User\AppData\Local\Temp\sbm4.
+7D cinit CODE >13790:C:\Users\User\AppData\Local\Temp\sbm4.
+7E cinit CODE >13791:C:\Users\User\AppData\Local\Temp\sbm4.
+7F cinit CODE >13792:C:\Users\User\AppData\Local\Temp\sbm4.
+82 cinit CODE >13796:C:\Users\User\AppData\Local\Temp\sbm4.
+83 cinit CODE >13797:C:\Users\User\AppData\Local\Temp\sbm4.
+84 cinit CODE >13798:C:\Users\User\AppData\Local\Temp\sbm4.
+85 cinit CODE >13799:C:\Users\User\AppData\Local\Temp\sbm4.
+86 cinit CODE >13800:C:\Users\User\AppData\Local\Temp\sbm4.
+87 cinit CODE >13801:C:\Users\User\AppData\Local\Temp\sbm4.
+88 cinit CODE >13802:C:\Users\User\AppData\Local\Temp\sbm4.
+89 cinit CODE >13803:C:\Users\User\AppData\Local\Temp\sbm4.
+8A cinit CODE >13804:C:\Users\User\AppData\Local\Temp\sbm4.
+8C cinit CODE >13810:C:\Users\User\AppData\Local\Temp\sbm4.
+8C cinit CODE >13812:C:\Users\User\AppData\Local\Temp\sbm4.
+8D cinit CODE >13813:C:\Users\User\AppData\Local\Temp\sbm4.
+8E cinit CODE >13814:C:\Users\User\AppData\Local\Temp\sbm4.
 4 intentry CODE >52:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/interrupt_manager.c
 6 intentry CODE >55:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/interrupt_manager.c
 A intentry CODE >57:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/interrupt_manager.c
@@ -1381,34 +1381,34 @@ E8 text19 CODE >107:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 1542 maintext CODE >48:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 1545 maintext CODE >49:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 1548 maintext CODE >50:C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
-113B clrtext CODE >13733:C:\Users\User\AppData\Local\Temp\s2tk.
-113B clrtext CODE >13734:C:\Users\User\AppData\Local\Temp\s2tk.
-113C clrtext CODE >13735:C:\Users\User\AppData\Local\Temp\s2tk.
-113C clrtext CODE >13736:C:\Users\User\AppData\Local\Temp\s2tk.
-113D clrtext CODE >13737:C:\Users\User\AppData\Local\Temp\s2tk.
-113E clrtext CODE >13738:C:\Users\User\AppData\Local\Temp\s2tk.
-113F clrtext CODE >13739:C:\Users\User\AppData\Local\Temp\s2tk.
-1140 clrtext CODE >13740:C:\Users\User\AppData\Local\Temp\s2tk.
-1141 clrtext CODE >13741:C:\Users\User\AppData\Local\Temp\s2tk.
-1142 clrtext CODE >13742:C:\Users\User\AppData\Local\Temp\s2tk.
-1143 clrtext CODE >13743:C:\Users\User\AppData\Local\Temp\s2tk.
-1144 clrtext CODE >13744:C:\Users\User\AppData\Local\Temp\s2tk.
-1145 clrtext CODE >13746:C:\Users\User\AppData\Local\Temp\s2tk.
-1146 clrtext CODE >13745:C:\Users\User\AppData\Local\Temp\s2tk.
-1147 inittext CODE >13677:C:\Users\User\AppData\Local\Temp\s2tk.
-1147 inittext CODE >13678:C:\Users\User\AppData\Local\Temp\s2tk.
-1148 inittext CODE >13679:C:\Users\User\AppData\Local\Temp\s2tk.
-1148 inittext CODE >13680:C:\Users\User\AppData\Local\Temp\s2tk.
-1149 inittext CODE >13681:C:\Users\User\AppData\Local\Temp\s2tk.
-114A inittext CODE >13682:C:\Users\User\AppData\Local\Temp\s2tk.
-114B inittext CODE >13683:C:\Users\User\AppData\Local\Temp\s2tk.
-114C inittext CODE >13684:C:\Users\User\AppData\Local\Temp\s2tk.
-114D inittext CODE >13685:C:\Users\User\AppData\Local\Temp\s2tk.
-114E inittext CODE >13686:C:\Users\User\AppData\Local\Temp\s2tk.
-114F inittext CODE >13687:C:\Users\User\AppData\Local\Temp\s2tk.
-1150 inittext CODE >13688:C:\Users\User\AppData\Local\Temp\s2tk.
-1151 inittext CODE >13690:C:\Users\User\AppData\Local\Temp\s2tk.
-1152 inittext CODE >13689:C:\Users\User\AppData\Local\Temp\s2tk.
+113B clrtext CODE >13733:C:\Users\User\AppData\Local\Temp\sbm4.
+113B clrtext CODE >13734:C:\Users\User\AppData\Local\Temp\sbm4.
+113C clrtext CODE >13735:C:\Users\User\AppData\Local\Temp\sbm4.
+113C clrtext CODE >13736:C:\Users\User\AppData\Local\Temp\sbm4.
+113D clrtext CODE >13737:C:\Users\User\AppData\Local\Temp\sbm4.
+113E clrtext CODE >13738:C:\Users\User\AppData\Local\Temp\sbm4.
+113F clrtext CODE >13739:C:\Users\User\AppData\Local\Temp\sbm4.
+1140 clrtext CODE >13740:C:\Users\User\AppData\Local\Temp\sbm4.
+1141 clrtext CODE >13741:C:\Users\User\AppData\Local\Temp\sbm4.
+1142 clrtext CODE >13742:C:\Users\User\AppData\Local\Temp\sbm4.
+1143 clrtext CODE >13743:C:\Users\User\AppData\Local\Temp\sbm4.
+1144 clrtext CODE >13744:C:\Users\User\AppData\Local\Temp\sbm4.
+1145 clrtext CODE >13746:C:\Users\User\AppData\Local\Temp\sbm4.
+1146 clrtext CODE >13745:C:\Users\User\AppData\Local\Temp\sbm4.
+1147 inittext CODE >13677:C:\Users\User\AppData\Local\Temp\sbm4.
+1147 inittext CODE >13678:C:\Users\User\AppData\Local\Temp\sbm4.
+1148 inittext CODE >13679:C:\Users\User\AppData\Local\Temp\sbm4.
+1148 inittext CODE >13680:C:\Users\User\AppData\Local\Temp\sbm4.
+1149 inittext CODE >13681:C:\Users\User\AppData\Local\Temp\sbm4.
+114A inittext CODE >13682:C:\Users\User\AppData\Local\Temp\sbm4.
+114B inittext CODE >13683:C:\Users\User\AppData\Local\Temp\sbm4.
+114C inittext CODE >13684:C:\Users\User\AppData\Local\Temp\sbm4.
+114D inittext CODE >13685:C:\Users\User\AppData\Local\Temp\sbm4.
+114E inittext CODE >13686:C:\Users\User\AppData\Local\Temp\sbm4.
+114F inittext CODE >13687:C:\Users\User\AppData\Local\Temp\sbm4.
+1150 inittext CODE >13688:C:\Users\User\AppData\Local\Temp\sbm4.
+1151 inittext CODE >13690:C:\Users\User\AppData\Local\Temp\sbm4.
+1152 inittext CODE >13689:C:\Users\User\AppData\Local\Temp\sbm4.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1468,7 +1468,7 @@ _PMD7 79D 0 ABS 0 - dist/default/production\DMX.X.production.o
 _WPUA 1F39 0 ABS 0 - dist/default/production\DMX.X.production.o
 _WPUB 1F44 0 ABS 0 - dist/default/production\DMX.X.production.o
 _WPUC 1F4F 0 ABS 0 - dist/default/production\DMX.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s2tk.o
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\sbm4.o
 _down 14D 0 BANK2 1 bssBANK2 dist/default/production\DMX.X.production.o
 _init 256E 0 CODE 0 text51 dist/default/production\DMX.X.production.o
 _isOn 14F 0 BANK2 1 bssBANK2 dist/default/production\DMX.X.production.o
@@ -1476,7 +1476,7 @@ _main 2A1C 0 CODE 0 maintext dist/default/production\DMX.X.production.o
 _menu 14B 0 BANK2 1 bssBANK2 dist/default/production\DMX.X.production.o
 __size_of_adcThresholdHandler 0 0 ABS 0 - dist/default/production\DMX.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\DMX.X.production.o
-start 72 0 CODE 0 init C:\Users\User\AppData\Local\Temp\s2tk.o
+start 72 0 CODE 0 init C:\Users\User\AppData\Local\Temp\sbm4.o
 ___flmul@aexp 4B 0 BANK0 1 cstackBANK0 dist/default/production\DMX.X.production.o
 ___flmul@bexp 50 0 BANK0 1 cstackBANK0 dist/default/production\DMX.X.production.o
 ___flmul@prod 51 0 BANK0 1 cstackBANK0 dist/default/production\DMX.X.production.o
@@ -1516,12 +1516,12 @@ __HdataCOMMON 0 0 ABS 0 dataCOMMON -
 TMR0_SetInterruptHandler@InterruptHandler 20 0 BANK0 1 cstackBANK0 dist/default/production\DMX.X.production.o
 __end_of_BEAT_detected 21E2 0 CODE 0 text31 dist/default/production\DMX.X.production.o
 I2C1_MasterWriteTRBBuild@ptrb 26 0 BANK0 1 cstackBANK0 dist/default/production\DMX.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2tk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2tk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2tk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2tk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2tk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2tk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbm4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbm4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbm4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbm4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbm4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbm4.o
 __size_of_EUSART1_SetErrorHandler 0 0 ABS 0 - dist/default/production\DMX.X.production.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 fadeColor@time DC 0 BANK1 1 cstackBANK1 dist/default/production\DMX.X.production.o
@@ -1625,8 +1625,8 @@ __size_of_CLOCK_init 0 0 ABS 0 - dist/default/production\DMX.X.production.o
 _address 7A 0 COMMON 1 dataCOMMON dist/default/production\DMX.X.production.o
 I2C1_MasterWriteTRBBuild@pdata 20 0 BANK0 1 cstackBANK0 dist/default/production\DMX.X.production.o
 __Umul8_16@multiplicand 20 0 BANK0 1 cstackBANK0 dist/default/production\DMX.X.production.o
-___stackhi 25EE 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s2tk.o
-___stacklo 2130 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s2tk.o
+___stackhi 25EE 0 ABS 0 - C:\Users\User\AppData\Local\Temp\sbm4.o
+___stacklo 2130 0 ABS 0 - C:\Users\User\AppData\Local\Temp\sbm4.o
 __CFG_SAFEN$OFF 0 0 ABS 0 - dist/default/production\DMX.X.production.o
 _CLOCK_getTime 21AC 0 CODE 0 text55 dist/default/production\DMX.X.production.o
 _ADCC_SetUpperThreshold 2188 0 CODE 0 text58 dist/default/production\DMX.X.production.o
@@ -1704,7 +1704,7 @@ __size_of_EUSART1_Initialize 0 0 ABS 0 - dist/default/production\DMX.X.productio
 __end_of_LED_setColor 2A1C 0 CODE 0 text24 dist/default/production\DMX.X.production.o
 __end_of_ADCC_Initialize 270A 0 CODE 0 text15 dist/default/production\DMX.X.production.o
 __end_of_initLED 275A 0 CODE 0 text1 dist/default/production\DMX.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s2tk.o
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\sbm4.o
 _LED_setHSL 120 0 CODE 0 text19 dist/default/production\DMX.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -2019,7 +2019,7 @@ __HnvBANK3 0 0 ABS 0 nvBANK3 -
 __end_of_CLOCK_getTime 21BE 0 CODE 0 text55 dist/default/production\DMX.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 TM1650_fastPrintNum@numWrite 3E 0 BANK0 1 cstackBANK0 dist/default/production\DMX.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\s2tk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\sbm4.o
 __end_of___xxtofl 1332 0 CODE 0 text20 dist/default/production\DMX.X.production.o
 __size_of_BUTTONS_init 0 0 ABS 0 - dist/default/production\DMX.X.production.o
 __size_of_BUTTONS_task 0 0 ABS 0 - dist/default/production\DMX.X.production.o
