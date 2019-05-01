@@ -35,8 +35,8 @@ void cycleColors() {
     if (time - lastTimeCycle < cycleSpeed)
         return;
     lastTimeCycle = time;
-    volatile int adr = &cycleSpeed;
-    dispInc(adr);
+    volatile int* foo = &cycleSpeed;
+    numControl_Set(foo);
     if(hueValCycle == 360) {
         hueValCycle = 0;
     } else {
@@ -74,7 +74,7 @@ void pulseColors() {
 void MENU_task() {
     if(isDMXOn()) {
         LED_DMX();
-        adrControl_DMX();
+        numControl_Set(&address);
     } else {
         menuButtons();
         if(currentState == 0) {

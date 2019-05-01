@@ -65,31 +65,21 @@ channel_FVR_Buffer1 62
 channel_FVR_Buffer2 63
 ]
 "19 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
-[e E74 . `uc
+[e E76 . `uc
 STATE_UNPRESSED 0
 STATE_PRESSED 1
 ]
-[e E69 . `uc
+[e E71 . `uc
 EVENT_IDLE 0
 EVENT_PRESSED 1
 EVENT_HELD 2
 ]
-"58 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
-[e E42 . `uc
+"52 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
+[e E44 . `uc
 STATE_UNPRESSED 0
 STATE_PRESSED 1
 ]
-[e E37 . `uc
-EVENT_IDLE 0
-EVENT_PRESSED 1
-EVENT_HELD 2
-]
-"57 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dispIncrement.c
-[e E42 . `uc
-STATE_UNPRESSED 0
-STATE_PRESSED 1
-]
-[e E37 . `uc
+[e E39 . `uc
 EVENT_IDLE 0
 EVENT_PRESSED 1
 EVENT_HELD 2
@@ -142,37 +132,31 @@ EVENT_HELD 2
 [v _CLOCK_getTime CLOCK_getTime `(us  1 e 2 0 ]
 "21
 [v _CLOCK_timerCallback CLOCK_timerCallback `(v  1 s 1 CLOCK_timerCallback ]
-"19 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
-[v _address_inc address_inc `(v  1 e 1 0 ]
-"34
-[v _address_dec address_dec `(v  1 e 1 0 ]
-"51
-[v _adrControl_DMX adrControl_DMX `(v  1 e 1 0 ]
-"17 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dispIncrement.c
+"17 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
 [v _increment increment `(v  1 e 1 0 ]
-"31
+"30
 [v _decrement decrement `(v  1 e 1 0 ]
-"48
-[v _dispInc dispInc `(v  1 e 1 0 ]
+"45
+[v _numControl_Set numControl_Set `(v  1 e 1 0 ]
 "13 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
 [v _DMX_ISR DMX_ISR `(v  1 e 1 0 ]
 "38
 [v _DMX_task DMX_task `(v  1 e 1 0 ]
 "60
 [v _isDMXOn isDMXOn `(a  1 e 1 0 ]
-"13 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"14 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _initLED initLED `(v  1 e 1 0 ]
-"40
+"41
 [v _HueToRGB HueToRGB `(f  1 e 4 0 ]
-"59
+"60
 [v _LED_setColor LED_setColor `(v  1 e 1 0 ]
-"86
+"87
 [v _LED_setHSL LED_setHSL `(v  1 e 1 0 ]
-"115
+"116
 [v _fadeColor fadeColor `(v  1 e 1 0 ]
-"139
+"140
 [v _LED_DMX LED_DMX `(v  1 e 1 0 ]
-"143
+"144
 [v _LED_Beat LED_Beat `(v  1 e 1 0 ]
 "16 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -940,13 +924,9 @@ EVENT_HELD 2
 [v _TRISC7 TRISC7 `VEb  1 e 0 @167 ]
 "5 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
 [v _currentTime currentTime `us  1 s 2 currentTime ]
-"10 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
-[v _address address `us  1 e 2 0 ]
-"46
+"40 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
 [v controller@lastTime lastTime `us  1 s 2 lastTime ]
-"43 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dispIncrement.c
-[v dispIncrement@lastTime lastTime `us  1 s 2 lastTime ]
-"44
+"41
 [v _lastActiveTime lastActiveTime `us  1 e 2 0 ]
 "7 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
 [v _dmxPointer dmxPointer `i  1 e 2 0 ]
@@ -960,14 +940,16 @@ EVENT_HELD 2
 [v dmx@lastTime lastTime `us  1 s 2 lastTime ]
 "33
 [v _toggleCheck toggleCheck `a  1 e 1 0 ]
-"110 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"12 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+[v _address address `us  1 e 2 0 ]
+"111
 [v led@lastTime lastTime `us  1 s 2 lastTime ]
-"112
+"113
 [v _fadeAmmount fadeAmmount `i  1 e 2 0 ]
 [s S1879 HSL 10 `i 1 H 2 0 `f 1 S 4 2 `f 1 L 4 6 ]
-"113
-[v _color color `S1879  1 e 10 0 ]
 "114
+[v _color color `S1879  1 e 10 0 ]
+"115
 [v _changeColor changeColor `a  1 e 1 0 ]
 "58 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/adcc.c
 [v _ADCC_ADTI_InterruptHandler ADCC_ADTI_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -1048,10 +1030,10 @@ EVENT_HELD 2
 {
 "50
 } 0
-"13 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"14 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _initLED initLED `(v  1 e 1 0 ]
 {
-"38
+"39
 } 0
 "28 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _TM1650_init TM1650_init `(v  1 e 1 0 ]
@@ -1153,56 +1135,35 @@ EVENT_HELD 2
 {
 [s S1879 HSL 10 `i 1 H 2 0 `f 1 S 4 2 `f 1 L 4 6 ]
 "45
-[v cycleColors@color color `S1879  1 a 10 62 ]
+[v cycleColors@color color `S1879  1 a 10 63 ]
 "33
-[v cycleColors@time time `us  1 a 2 60 ]
+[v cycleColors@time time `us  1 a 2 61 ]
 "38
-[v cycleColors@adr adr `VEi  1 a 2 72 ]
+[v cycleColors@foo foo `*.5VEi  1 a 1 60 ]
 "44
 [v cycleColors@F108 F108 `S1879  1 s 10 F108 ]
 "47
 } 0
-"48 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dispIncrement.c
-[v _dispInc dispInc `(v  1 e 1 0 ]
+"45 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
+[v _numControl_Set numControl_Set `(v  1 e 1 0 ]
 {
-"51
-[v dispInc@time time `us  1 a 2 46 ]
-"49
-[v dispInc@foo foo `*.39VEi  1 a 2 44 ]
-"50
-[v dispInc@doo doo `VEi  1 a 2 42 ]
-"48
-[v dispInc@val val `*.39i  1 p 2 38 ]
-"71
+"46
+[v numControl_Set@time time `us  1 a 2 42 ]
+"45
+[v numControl_Set@val val `*.39i  1 p 2 38 ]
+"66
 } 0
 "17
 [v _increment increment `(v  1 e 1 0 ]
 {
 [v increment@val val `*.39i  1 p 2 34 ]
-"26
+"25
 } 0
-"31
+"30
 [v _decrement decrement `(v  1 e 1 0 ]
 {
 [v decrement@val val `*.39i  1 p 2 34 ]
-"41
-} 0
-"51 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
-[v _adrControl_DMX adrControl_DMX `(v  1 e 1 0 ]
-{
-"52
-[v adrControl_DMX@time time `us  1 a 2 36 ]
-"72
-} 0
-"19
-[v _address_inc address_inc `(v  1 e 1 0 ]
-{
-"29
-} 0
-"34
-[v _address_dec address_dec `(v  1 e 1 0 ]
-{
-"44
+"38
 } 0
 "36 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _TM1650_fastPrintNum TM1650_fastPrintNum `(v  1 e 1 0 ]
@@ -1321,39 +1282,39 @@ EVENT_HELD 2
 [v BUTTONS_isClicked@button button `*.6S1461  1 a 1 3 ]
 "82
 } 0
-"139 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"140 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _LED_DMX LED_DMX `(v  1 e 1 0 ]
 {
-"141
+"142
 } 0
-"143
+"144
 [v _LED_Beat LED_Beat `(v  1 e 1 0 ]
 {
-"150
+"151
 } 0
-"115
+"116
 [v _fadeColor fadeColor `(v  1 e 1 0 ]
 {
-"116
+"117
 [v fadeColor@time time `us  1 a 2 60 ]
-"134
+"135
 } 0
-"86
+"87
 [v _LED_setHSL LED_setHSL `(v  1 e 1 0 ]
 {
-"95
-[v LED_setHSL@v2 v2 `f  1 a 4 51 ]
 "96
+[v LED_setHSL@v2 v2 `f  1 a 4 51 ]
+"97
 [v LED_setHSL@hue hue `f  1 a 4 47 ]
-"95
+"96
 [v LED_setHSL@v1 v1 `f  1 a 4 43 ]
 [s S1883 RGB 3 `uc 1 R 1 0 `uc 1 G 1 1 `uc 1 B 1 2 ]
-"87
+"88
 [v LED_setHSL@rgb rgb `S1883  1 a 3 55 ]
 [s S1879 HSL 10 `i 1 H 2 0 `f 1 S 4 2 `f 1 L 4 6 ]
-"86
+"87
 [v LED_setHSL@hsl hsl `S1879  1 p 10 15 ]
-"107
+"108
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -1407,33 +1368,33 @@ EVENT_HELD 2
 [v ___fldiv@b b `d  1 p 4 18 ]
 "185
 } 0
-"59 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"60 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _LED_setColor LED_setColor `(v  1 e 1 0 ]
 {
 [v LED_setColor@red red `uc  1 a 1 wreg ]
-"71
+"72
 [v LED_setColor@lo4 lo4 `i  1 a 2 19 ]
-"69
+"70
 [v LED_setColor@lo3 lo3 `i  1 a 2 15 ]
-"67
+"68
 [v LED_setColor@lo2 lo2 `i  1 a 2 11 ]
-"65
+"66
 [v LED_setColor@lo1 lo1 `i  1 a 2 7 ]
-"59
+"60
 [v LED_setColor@red red `uc  1 a 1 wreg ]
 [v LED_setColor@green green `uc  1 p 1 0 ]
 [v LED_setColor@white white `uc  1 p 1 1 ]
 [v LED_setColor@blue blue `uc  1 p 1 2 ]
 [v LED_setColor@red red `uc  1 a 1 21 ]
-"84
+"85
 } 0
-"40
+"41
 [v _HueToRGB HueToRGB `(f  1 e 4 0 ]
 {
 [v HueToRGB@v1 v1 `f  1 p 4 67 ]
 [v HueToRGB@v2 v2 `f  1 p 4 71 ]
 [v HueToRGB@vH vH `f  1 p 4 75 ]
-"57
+"58
 } 0
 "242 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
 [v ___flsub __flsub `(d  1 e 4 0 ]
@@ -1461,17 +1422,17 @@ EVENT_HELD 2
 "8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S2400 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2366 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2405 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S2408 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2400 1 fAsBytes 4 0 `S2405 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S2408  1 a 4 49 ]
+[s S2371 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S2374 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2366 1 fAsBytes 4 0 `S2371 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2374  1 a 4 49 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 44 ]
-[s S2477 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2443 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2480 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2477 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S2480  1 a 2 53 ]
+[u S2446 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2443 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2446  1 a 2 53 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 48 ]
 "11

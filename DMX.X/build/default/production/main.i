@@ -18431,8 +18431,8 @@ void TM1650_init();
 
 # 1 "./controller.h" 1
 # 16 "./controller.h"
-void adrControl_DMX();
-void adrControl_init();
+void numControl_Set(int*);
+void numControl_init(int *);
 extern uint16_t address;
 # 5 "main.c" 2
 

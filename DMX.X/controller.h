@@ -13,8 +13,8 @@ extern "C" {
 #endif
 #include <stdint.h>
 
-void adrControl_DMX();
-void adrControl_init();
+void numControl_Set(int*);
+void numControl_init(int *);
 extern uint16_t address;
 #ifdef	__cplusplus
 }

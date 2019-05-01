@@ -5,15 +5,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14 ./clock.h
 [; ;./clock.h: 14: time_t CLOCK_getTime();
 [v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
-"58 controller.c
-[; ;controller.c: 58:     if (BUTTONS_isClicked(up)) {
-[c E42 0 1 .. ]
-[n E42 . STATE_UNPRESSED STATE_PRESSED  ]
-[c E37 0 1 2 .. ]
-[n E37 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
+"52 controller.c
+[; ;controller.c: 52:     if (BUTTONS_isClicked(up)) {
+[c E44 0 1 .. ]
+[n E44 . STATE_UNPRESSED STATE_PRESSED  ]
+[c E39 0 1 2 .. ]
+[n E39 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
 "27 ./buttons.h
 [; ;./buttons.h: 27:     typedef struct {
-[s S1 `*Vuc 1 `uc 1 `E42 1 `E42 1 `E37 1 `us 1 ]
+[s S1 `*Vuc 1 `uc 1 `E44 1 `E44 1 `E39 1 `us 1 ]
 [n S1 . port pin state lastState event pressTime ]
 "41
 [; ;./buttons.h: 41:     int BUTTONS_isClicked(button_t*);
@@ -28,178 +28,184 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./buttons.h: 38:     extern button_t *up, *down, *enter, *menu;
 [v _down `*S1 ~T0 @X0 0 e ]
 "10 controller.c
-[; ;controller.c: 10: uint16_t address = 1;
-[v _address `us ~T0 @X0 1 e ]
-[i _address
--> -> 1 `i `us
-]
-"12
-[; ;controller.c: 12: void adrControl_init() {
-[v _adrControl_init `(v ~T0 @X0 1 ef ]
+[; ;controller.c: 10: void numControl_init(int *val) {
+[v _numControl_init `(v ~T0 @X0 1 ef1`*i ]
 {
-[e :U _adrControl_init ]
+[e :U _numControl_init ]
+[v _val `*i ~T0 @X0 1 r1 ]
 [f ]
-"13
-[; ;controller.c: 13:     TM1650_fastPrintNum(address);
-[e ( _TM1650_fastPrintNum (1 _address ]
-"14
-[; ;controller.c: 14: }
+"11
+[; ;controller.c: 11:     TM1650_fastPrintNum(*val);
+[e ( _TM1650_fastPrintNum (1 -> *U _val `us ]
+"12
+[; ;controller.c: 12: }
 [e :UE 4 ]
 }
-"19
-[; ;controller.c: 19: void address_inc()
-[v _address_inc `(v ~T0 @X0 1 ef ]
-"20
-[; ;controller.c: 20: {
+"17
+[; ;controller.c: 17: void increment(int *val)
+[v _increment `(v ~T0 @X0 1 ef1`*i ]
+"18
+[; ;controller.c: 18: {
 {
-[e :U _address_inc ]
+[e :U _increment ]
+"17
+[; ;controller.c: 17: void increment(int *val)
+[v _val `*i ~T0 @X0 1 r1 ]
+"18
+[; ;controller.c: 18: {
 [f ]
-"21
-[; ;controller.c: 21:     if(address == 512) {
-[e $ ! == -> _address `ui -> -> 512 `i `ui 6  ]
+"19
+[; ;controller.c: 19:     if(*val == 512) {
+[e $ ! == *U _val -> 512 `i 6  ]
 {
-"22
-[; ;controller.c: 22:         address = 1;
-[e = _address -> -> 1 `i `us ]
-"23
-[; ;controller.c: 23:     } else {
+"20
+[; ;controller.c: 20:         *val = 1;
+[e = *U _val -> 1 `i ]
+"21
+[; ;controller.c: 21:     } else {
 }
 [e $U 7  ]
 [e :U 6 ]
 {
-"24
-[; ;controller.c: 24:         address++;
-[e ++ _address -> -> 1 `i `us ]
-"25
-[; ;controller.c: 25:     }
+"22
+[; ;controller.c: 22:         (*val)++;
+[e ++ *U _val -> 1 `i ]
+"23
+[; ;controller.c: 23:     }
 }
 [e :U 7 ]
-"28
-[; ;controller.c: 28:     TM1650_fastPrintNum(address);
-[e ( _TM1650_fastPrintNum (1 _address ]
-"29
-[; ;controller.c: 29: }
+"24
+[; ;controller.c: 24:     TM1650_fastPrintNum(*val);
+[e ( _TM1650_fastPrintNum (1 -> *U _val `us ]
+"25
+[; ;controller.c: 25: }
 [e :UE 5 ]
 }
-"34
-[; ;controller.c: 34: void address_dec()
-[v _address_dec `(v ~T0 @X0 1 ef ]
-"35
-[; ;controller.c: 35: {
+"30
+[; ;controller.c: 30: void decrement(int *val)
+[v _decrement `(v ~T0 @X0 1 ef1`*i ]
+"31
+[; ;controller.c: 31: {
 {
-[e :U _address_dec ]
+[e :U _decrement ]
+"30
+[; ;controller.c: 30: void decrement(int *val)
+[v _val `*i ~T0 @X0 1 r1 ]
+"31
+[; ;controller.c: 31: {
 [f ]
-"36
-[; ;controller.c: 36:     if(address == 1) {
-[e $ ! == -> _address `ui -> -> 1 `i `ui 9  ]
+"32
+[; ;controller.c: 32:     if(*val == 1) {
+[e $ ! == *U _val -> 1 `i 9  ]
 {
-"37
-[; ;controller.c: 37:         address = 512;
-[e = _address -> -> 512 `i `us ]
-"38
-[; ;controller.c: 38:     } else {
+"33
+[; ;controller.c: 33:         *val = 512;
+[e = *U _val -> 512 `i ]
+"34
+[; ;controller.c: 34:     } else {
 }
 [e $U 10  ]
 [e :U 9 ]
 {
-"39
-[; ;controller.c: 39:         address--;
-[e -- _address -> -> 1 `i `us ]
-"40
-[; ;controller.c: 40:     }
+"35
+[; ;controller.c: 35:         (*val)--;
+[e -- *U _val -> 1 `i ]
+"36
+[; ;controller.c: 36:     }
 }
 [e :U 10 ]
-"43
-[; ;controller.c: 43:     TM1650_fastPrintNum(address);
-[e ( _TM1650_fastPrintNum (1 _address ]
-"44
-[; ;controller.c: 44: }
+"37
+[; ;controller.c: 37:     TM1650_fastPrintNum(*val);
+[e ( _TM1650_fastPrintNum (1 -> *U _val `us ]
+"38
+[; ;controller.c: 38: }
 [e :UE 8 ]
 }
-"46
-[; ;controller.c: 46: static time_t lastTime = 0;
+"40
+[; ;controller.c: 40: static time_t lastTime = 0;
 [v _lastTime `us ~T0 @X0 1 s ]
 [i _lastTime
 -> -> 0 `i `us
 ]
-"47
-[; ;controller.c: 47: time_t lastActiveTime;
+"41
+[; ;controller.c: 41: time_t lastActiveTime;
 [v _lastActiveTime `us ~T0 @X0 1 e ]
-"51
-[; ;controller.c: 51:  void adrControl_DMX() {
-[v _adrControl_DMX `(v ~T0 @X0 1 ef ]
+"45
+[; ;controller.c: 45:  void numControl_Set(int *val) {
+[v _numControl_Set `(v ~T0 @X0 1 ef1`*i ]
 {
-[e :U _adrControl_DMX ]
+[e :U _numControl_Set ]
+[v _val `*i ~T0 @X0 1 r1 ]
 [f ]
-"52
-[; ;controller.c: 52:     time_t time = CLOCK_getTime();
+"46
+[; ;controller.c: 46:     time_t time = CLOCK_getTime();
 [v _time `us ~T0 @X0 1 a ]
 [e = _time ( _CLOCK_getTime ..  ]
-"54
-[; ;controller.c: 54:     if (time - lastTime < 35)
+"48
+[; ;controller.c: 48:     if (time - lastTime < 35)
 [e $ ! < - -> _time `ui -> _lastTime `ui -> -> 35 `i `ui 12  ]
-"55
-[; ;controller.c: 55:         return;
+"49
+[; ;controller.c: 49:         return;
 [e $UE 11  ]
 [e :U 12 ]
-"56
-[; ;controller.c: 56:     lastTime = time;
+"50
+[; ;controller.c: 50:     lastTime = time;
 [e = _lastTime _time ]
-"58
-[; ;controller.c: 58:     if (BUTTONS_isClicked(up)) {
+"52
+[; ;controller.c: 52:     if (BUTTONS_isClicked(up)) {
 [e $ ! != ( _BUTTONS_isClicked (1 _up -> 0 `i 13  ]
 {
-"59
-[; ;controller.c: 59:         address_inc();
-[e ( _address_inc ..  ]
-"60
-[; ;controller.c: 60:         lastActiveTime = time;
+"53
+[; ;controller.c: 53:         increment(val);
+[e ( _increment (1 _val ]
+"54
+[; ;controller.c: 54:         lastActiveTime = time;
 [e = _lastActiveTime _time ]
-"61
-[; ;controller.c: 61:         TM1650_enable(1);
+"55
+[; ;controller.c: 55:         TM1650_enable(1);
 [e ( _TM1650_enable (1 -> -> 1 `i `a ]
-"62
-[; ;controller.c: 62:     } else if (BUTTONS_isClicked(down)) {
+"56
+[; ;controller.c: 56:     } else if (BUTTONS_isClicked(down)) {
 }
 [e $U 14  ]
 [e :U 13 ]
 [e $ ! != ( _BUTTONS_isClicked (1 _down -> 0 `i 15  ]
 {
-"63
-[; ;controller.c: 63:         address_dec();
-[e ( _address_dec ..  ]
-"64
-[; ;controller.c: 64:         lastActiveTime = time;
+"57
+[; ;controller.c: 57:         decrement(val);
+[e ( _decrement (1 _val ]
+"58
+[; ;controller.c: 58:         lastActiveTime = time;
 [e = _lastActiveTime _time ]
-"65
-[; ;controller.c: 65:         TM1650_enable(1);
+"59
+[; ;controller.c: 59:         TM1650_enable(1);
 [e ( _TM1650_enable (1 -> -> 1 `i `a ]
-"66
-[; ;controller.c: 66:     } else {
+"60
+[; ;controller.c: 60:     } else {
 }
 [e $U 16  ]
 [e :U 15 ]
 {
-"67
-[; ;controller.c: 67:         if (CLOCK_getTime() - lastActiveTime >= 5000) {
+"61
+[; ;controller.c: 61:         if (CLOCK_getTime() - lastActiveTime >= 5000) {
 [e $ ! >= - -> ( _CLOCK_getTime ..  `ui -> _lastActiveTime `ui -> -> 5000 `i `ui 17  ]
 {
-"68
-[; ;controller.c: 68:             TM1650_enable(0);
+"62
+[; ;controller.c: 62:             TM1650_enable(0);
 [e ( _TM1650_enable (1 -> -> 0 `i `a ]
-"69
-[; ;controller.c: 69:             lastActiveTime = CLOCK_getTime() - 5001;
+"63
+[; ;controller.c: 63:             lastActiveTime = CLOCK_getTime() - 5001;
 [e = _lastActiveTime -> - -> ( _CLOCK_getTime ..  `ui -> -> 5001 `i `ui `us ]
-"70
-[; ;controller.c: 70:         }
+"64
+[; ;controller.c: 64:         }
 }
 [e :U 17 ]
-"71
-[; ;controller.c: 71:     }
+"65
+[; ;controller.c: 65:     }
 }
 [e :U 16 ]
 [e :U 14 ]
-"72
-[; ;controller.c: 72: }
+"66
+[; ;controller.c: 66: }
 [e :UE 11 ]
 }

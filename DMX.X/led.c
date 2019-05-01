@@ -9,6 +9,7 @@
 #include "clock.h"
 #include "dmx.h"
 
+uint16_t address = 1;
 
 void initLED() {
     //WPUB7 = 1;

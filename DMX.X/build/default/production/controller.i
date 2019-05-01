@@ -118,8 +118,8 @@ typedef uint32_t uint_fast32_t;
 # 14 "./controller.h" 2
 
 
-void adrControl_DMX();
-void adrControl_init();
+void numControl_Set(int*);
+void numControl_init(int *);
 extern uint16_t address;
 # 3 "controller.c" 2
 
@@ -319,40 +319,34 @@ char *tempnam(const char *, const char *);
 
 
 
-uint16_t address = 1;
-
-void adrControl_init() {
-    TM1650_fastPrintNum(address);
+void numControl_init(int *val) {
+    TM1650_fastPrintNum(*val);
 }
 
 
 
 
-void address_inc()
+void increment(int *val)
 {
-    if(address == 512) {
-        address = 1;
+    if(*val == 512) {
+        *val = 1;
     } else {
-        address++;
+        (*val)++;
     }
-
-
-    TM1650_fastPrintNum(address);
+    TM1650_fastPrintNum(*val);
 }
 
 
 
 
-void address_dec()
+void decrement(int *val)
 {
-    if(address == 1) {
-        address = 512;
+    if(*val == 1) {
+        *val = 512;
     } else {
-        address--;
+        (*val)--;
     }
-
-
-    TM1650_fastPrintNum(address);
+    TM1650_fastPrintNum(*val);
 }
 
 static time_t lastTime = 0;
@@ -360,7 +354,7 @@ time_t lastActiveTime;
 
 
 
- void adrControl_DMX() {
+ void numControl_Set(int *val) {
     time_t time = CLOCK_getTime();
 
     if (time - lastTime < 35)
@@ -368,11 +362,11 @@ time_t lastActiveTime;
     lastTime = time;
 
     if (BUTTONS_isClicked(up)) {
-        address_inc();
+        increment(val);
         lastActiveTime = time;
         TM1650_enable(1);
     } else if (BUTTONS_isClicked(down)) {
-        address_dec();
+        decrement(val);
         lastActiveTime = time;
         TM1650_enable(1);
     } else {

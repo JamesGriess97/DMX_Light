@@ -1,3 +1,4 @@
+/**
 #define SCROLL_SPEED 35
 
 #include "controller.h"
@@ -7,13 +8,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-void adrControl_init(uint16_t val) {
-    TM1650_fastPrintNum(val);
-}
 
-/**
  * Increments the address and updates the display
- */
 void increment(int *val)
 {
     if(*val == 512) {
@@ -25,9 +21,9 @@ void increment(int *val)
     TM1650_fastPrintNum(*val);
 }
 
+ */
 /**
  * Decrements the address and updates the display
- */
 void decrement(int *val) 
 {
     if(*val == 1) {
@@ -39,12 +35,12 @@ void decrement(int *val)
     // update the display
     TM1650_fastPrintNum(*val);
 }
+ */
 
+/**
 static time_t lastTime = 0;
 time_t lastActiveTime;
-/**
  * handles number scrolling for DMX input
- */
  void dispInc(int *val) {
      volatile int *foo = val;
      volatile int doo = *foo;
@@ -70,3 +66,4 @@ time_t lastActiveTime;
     }
 }
 
+ */

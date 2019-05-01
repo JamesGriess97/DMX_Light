@@ -7,40 +7,34 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-uint16_t address = 1;
-
-void adrControl_init() {
-    TM1650_fastPrintNum(address);
+void numControl_init(int *val) {
+    TM1650_fastPrintNum(*val);
 }
 
 /**
  * Increments the address and updates the display
  */
-void address_inc()
+void increment(int *val)
 {
-    if(address == 512) {
-        address = 1;
+    if(*val == 512) {
+        *val = 1;
     } else {
-        address++;
+        (*val)++;
     }
-    
-    // update the display
-    TM1650_fastPrintNum(address);
+    TM1650_fastPrintNum(*val);
 }
 
 /**
  * Decrements the address and updates the display
  */
-void address_dec() 
+void decrement(int *val) 
 {
-    if(address == 1) {
-        address = 512;
+    if(*val == 1) {
+        *val = 512;
     } else {
-        address--;  
+        (*val)--;  
     }
-    
-    // update the display
-    TM1650_fastPrintNum(address);
+    TM1650_fastPrintNum(*val);
 }
 
 static time_t lastTime = 0;
@@ -48,7 +42,7 @@ time_t lastActiveTime;
 /**
  * handles number scrolling for DMX input
  */
- void adrControl_DMX() {
+ void numControl_Set(int *val) {
     time_t time = CLOCK_getTime();
 
     if (time - lastTime < SCROLL_SPEED)
@@ -56,11 +50,11 @@ time_t lastActiveTime;
     lastTime = time;
     
     if (BUTTONS_isClicked(up)) {
-        address_inc();
+        increment(val);
         lastActiveTime = time;
         TM1650_enable(true);
     } else if (BUTTONS_isClicked(down)) {
-        address_dec();
+        decrement(val);
         lastActiveTime = time;
         TM1650_enable(true);
     } else {

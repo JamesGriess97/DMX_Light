@@ -3,7 +3,6 @@
  * Author: User
  *
  * Created on April 30, 2019, 10:27 PM
- */
 
 #ifndef DISPINCREMENT_H
 #define	DISPINCREMENT_H
@@ -19,5 +18,7 @@ void dispInc(int*);
 }
 #endif
 
-#endif	/* DISPINCREMENT_H */
 
+#endif	
+ */
+/* DISPINCREMENT_H */
