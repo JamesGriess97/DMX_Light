@@ -7,13 +7,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
 "52 controller.c
 [; ;controller.c: 52:     if (BUTTONS_isClicked(up)) {
-[c E47 0 1 .. ]
-[n E47 . STATE_UNPRESSED STATE_PRESSED  ]
-[c E42 0 1 2 .. ]
-[n E42 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
+[c E48 0 1 .. ]
+[n E48 . STATE_UNPRESSED STATE_PRESSED  ]
+[c E43 0 1 2 .. ]
+[n E43 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
 "27 ./buttons.h
 [; ;./buttons.h: 27:     typedef struct {
-[s S1 `*Vuc 1 `uc 1 `E47 1 `E47 1 `E42 1 `us 1 ]
+[s S1 `*Vuc 1 `uc 1 `E48 1 `E48 1 `E43 1 `us 1 ]
 [n S1 . port pin state lastState event pressTime ]
 "41
 [; ;./buttons.h: 41:     int BUTTONS_isClicked(button_t*);
@@ -42,23 +42,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 4 ]
 }
 "17
-[; ;controller.c: 17: void increment(int *val, int max, int min)
-[v _increment `(v ~T0 @X0 1 ef3`*i`i`i ]
+[; ;controller.c: 17: void increment(int *val, int max, int min, int increm)
+[v _increment `(v ~T0 @X0 1 ef4`*i`i`i`i ]
 "18
 [; ;controller.c: 18: {
 {
 [e :U _increment ]
 "17
-[; ;controller.c: 17: void increment(int *val, int max, int min)
+[; ;controller.c: 17: void increment(int *val, int max, int min, int increm)
 [v _val `*i ~T0 @X0 1 r1 ]
 [v _max `i ~T0 @X0 1 r2 ]
 [v _min `i ~T0 @X0 1 r3 ]
+[v _increm `i ~T0 @X0 1 r4 ]
 "18
 [; ;controller.c: 18: {
 [f ]
 "19
-[; ;controller.c: 19:     if(*val == max) {
-[e $ ! == *U _val _max 6  ]
+[; ;controller.c: 19:     if(*val >= max) {
+[e $ ! >= *U _val _max 6  ]
 {
 "20
 [; ;controller.c: 20:         *val = min;
@@ -70,8 +71,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 6 ]
 {
 "22
-[; ;controller.c: 22:         (*val)++;
-[e ++ *U _val -> 1 `i ]
+[; ;controller.c: 22:         (*val)+=increm;
+[e =+ *U _val _increm ]
 "23
 [; ;controller.c: 23:     }
 }
@@ -84,23 +85,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 5 ]
 }
 "30
-[; ;controller.c: 30: void decrement(int *val, int max, int min)
-[v _decrement `(v ~T0 @X0 1 ef3`*i`i`i ]
+[; ;controller.c: 30: void decrement(int *val, int max, int min, int increm)
+[v _decrement `(v ~T0 @X0 1 ef4`*i`i`i`i ]
 "31
 [; ;controller.c: 31: {
 {
 [e :U _decrement ]
 "30
-[; ;controller.c: 30: void decrement(int *val, int max, int min)
+[; ;controller.c: 30: void decrement(int *val, int max, int min, int increm)
 [v _val `*i ~T0 @X0 1 r1 ]
 [v _max `i ~T0 @X0 1 r2 ]
 [v _min `i ~T0 @X0 1 r3 ]
+[v _increm `i ~T0 @X0 1 r4 ]
 "31
 [; ;controller.c: 31: {
 [f ]
 "32
-[; ;controller.c: 32:     if(*val == min) {
-[e $ ! == *U _val _min 9  ]
+[; ;controller.c: 32:     if(*val <= min) {
+[e $ ! <= *U _val _min 9  ]
 {
 "33
 [; ;controller.c: 33:         *val = max;
@@ -112,8 +114,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 9 ]
 {
 "35
-[; ;controller.c: 35:         (*val)--;
-[e -- *U _val -> 1 `i ]
+[; ;controller.c: 35:         (*val)-=increm;
+[e =- *U _val _increm ]
 "36
 [; ;controller.c: 36:     }
 }
@@ -135,13 +137,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;controller.c: 41: time_t lastActiveTime;
 [v _lastActiveTime `us ~T0 @X0 1 e ]
 "45
-[; ;controller.c: 45:  void numControl_Set(int *val, int max, int min) {
-[v _numControl_Set `(v ~T0 @X0 1 ef3`*i`i`i ]
+[; ;controller.c: 45:  void numControl_Set(int *val, int max, int min, int increm) {
+[v _numControl_Set `(v ~T0 @X0 1 ef4`*i`i`i`i ]
 {
 [e :U _numControl_Set ]
 [v _val `*i ~T0 @X0 1 r1 ]
 [v _max `i ~T0 @X0 1 r2 ]
 [v _min `i ~T0 @X0 1 r3 ]
+[v _increm `i ~T0 @X0 1 r4 ]
 [f ]
 "46
 [; ;controller.c: 46:     time_t time = CLOCK_getTime();
@@ -162,8 +165,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != ( _BUTTONS_isClicked (1 _up -> 0 `i 13  ]
 {
 "53
-[; ;controller.c: 53:         increment(val, max, min);
-[e ( _increment (3 , , _val _max _min ]
+[; ;controller.c: 53:         increment(val, max, min, increm);
+[e ( _increment (4 , , , _val _max _min _increm ]
 "54
 [; ;controller.c: 54:         lastActiveTime = time;
 [e = _lastActiveTime _time ]
@@ -178,8 +181,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != ( _BUTTONS_isClicked (1 _down -> 0 `i 15  ]
 {
 "57
-[; ;controller.c: 57:         decrement(val, max, min);
-[e ( _decrement (3 , , _val _max _min ]
+[; ;controller.c: 57:         decrement(val, max, min, increm);
+[e ( _decrement (4 , , , _val _max _min _increm ]
 "58
 [; ;controller.c: 58:         lastActiveTime = time;
 [e = _lastActiveTime _time ]

@@ -14,12 +14,12 @@ void numControl_init(int *val) {
 /**
  * Increments the address and updates the display
  */
-void increment(int *val, int max, int min)
+void increment(int *val, int max, int min, int increm)
 {
-    if(*val == max) {
+    if(*val >= max) {
         *val = min;
     } else {
-        (*val)++;
+        (*val)+=increm;
     }
     TM1650_fastPrintNum(*val);
 }
@@ -27,12 +27,12 @@ void increment(int *val, int max, int min)
 /**
  * Decrements the address and updates the display
  */
-void decrement(int *val, int max, int min) 
+void decrement(int *val, int max, int min, int increm) 
 {
-    if(*val == min) {
+    if(*val <= min) {
         *val = max;
     } else {
-        (*val)--;  
+        (*val)-=increm;  
     }
     TM1650_fastPrintNum(*val);
 }
@@ -42,7 +42,7 @@ time_t lastActiveTime;
 /**
  * handles number scrolling for DMX input
  */
- void numControl_Set(int *val, int max, int min) {
+ void numControl_Set(int *val, int max, int min, int increm) {
     time_t time = CLOCK_getTime();
 
     if (time - lastTime < SCROLL_SPEED)
@@ -50,11 +50,11 @@ time_t lastActiveTime;
     lastTime = time;
     
     if (BUTTONS_isClicked(up)) {
-        increment(val, max, min);
+        increment(val, max, min, increm);
         lastActiveTime = time;
         TM1650_enable(true);
     } else if (BUTTONS_isClicked(down)) {
-        decrement(val, max, min);
+        decrement(val, max, min, increm);
         lastActiveTime = time;
         TM1650_enable(true);
     } else {

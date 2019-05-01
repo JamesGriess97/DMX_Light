@@ -65,21 +65,21 @@ channel_FVR_Buffer1 62
 channel_FVR_Buffer2 63
 ]
 "18 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
-[e E79 . `uc
+[e E80 . `uc
 STATE_UNPRESSED 0
 STATE_PRESSED 1
 ]
-[e E74 . `uc
+[e E75 . `uc
 EVENT_IDLE 0
 EVENT_PRESSED 1
 EVENT_HELD 2
 ]
 "52 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
-[e E47 . `uc
+[e E48 . `uc
 STATE_UNPRESSED 0
 STATE_PRESSED 1
 ]
-[e E42 . `uc
+[e E43 . `uc
 EVENT_IDLE 0
 EVENT_PRESSED 1
 EVENT_HELD 2
@@ -100,6 +100,8 @@ EVENT_HELD 2
 [v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
 "74
 [v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\flge.c
@@ -240,9 +242,9 @@ EVENT_HELD 2
 [v _menuButtons menuButtons `(v  1 e 1 0 ]
 "32
 [v _cycleColors cycleColors `(v  1 e 1 0 ]
-"53
+"54
 [v _pulseColors pulseColors `(v  1 e 1 0 ]
-"75
+"78
 [v _MENU_task MENU_task `(v  1 e 1 0 ]
 "18 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _writeData writeData `(v  1 e 1 0 ]
@@ -1022,8 +1024,10 @@ EVENT_HELD 2
 "50
 [v _fadeTime fadeTime `f  1 e 4 0 ]
 "51
-[v _hueValPulse hueValPulse `i  1 e 2 0 ]
+[v _pulseSpeed pulseSpeed `i  1 e 2 0 ]
 "52
+[v _hueValPulse hueValPulse `i  1 e 2 0 ]
+"53
 [v _pulseColor pulseColor `S1879  1 e 10 0 ]
 "6 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _isOn isOn `a  1 s 1 isOn ]
@@ -1114,17 +1118,30 @@ EVENT_HELD 2
 {
 "119
 } 0
-"75 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
+"78 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
 [v _MENU_task MENU_task `(v  1 e 1 0 ]
 {
-"108
+"111
 } 0
-"53
+"54
 [v _pulseColors pulseColors `(v  1 e 1 0 ]
 {
-"72
+"75
 } 0
-"17
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"17 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
 [v _menuButtons menuButtons `(v  1 e 1 0 ]
 {
 "27
@@ -1148,18 +1165,19 @@ EVENT_HELD 2
 "33
 [v cycleColors@time time `us  1 a 2 60 ]
 "43
-[v cycleColors@F111 F111 `S1879  1 s 10 F111 ]
+[v cycleColors@F112 F112 `S1879  1 s 10 F112 ]
 "46
 } 0
 "45 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
 [v _numControl_Set numControl_Set `(v  1 e 1 0 ]
 {
 "46
-[v numControl_Set@time time `us  1 a 2 50 ]
+[v numControl_Set@time time `us  1 a 2 55 ]
 "45
-[v numControl_Set@val val `*.39i  1 p 2 42 ]
-[v numControl_Set@max max `i  1 p 2 44 ]
-[v numControl_Set@min min `i  1 p 2 46 ]
+[v numControl_Set@val val `*.39i  1 p 2 45 ]
+[v numControl_Set@max max `i  1 p 2 47 ]
+[v numControl_Set@min min `i  1 p 2 49 ]
+[v numControl_Set@increm increm `i  1 p 2 51 ]
 "66
 } 0
 "17
@@ -1168,6 +1186,7 @@ EVENT_HELD 2
 [v increment@val val `*.39i  1 p 2 34 ]
 [v increment@max max `i  1 p 2 36 ]
 [v increment@min min `i  1 p 2 38 ]
+[v increment@increm increm `i  1 p 2 40 ]
 "25
 } 0
 "30
@@ -1176,6 +1195,7 @@ EVENT_HELD 2
 [v decrement@val val `*.39i  1 p 2 34 ]
 [v decrement@max max `i  1 p 2 36 ]
 [v decrement@min min `i  1 p 2 38 ]
+[v decrement@increm increm `i  1 p 2 40 ]
 "38
 } 0
 "36 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
@@ -1334,14 +1354,14 @@ EVENT_HELD 2
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
 "13
-[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+[v ___xxtofl@arg arg `ul  1 a 4 19 ]
 "12
-[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+[v ___xxtofl@exp exp `uc  1 a 1 18 ]
 "10
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 0 ]
+[v ___xxtofl@val val `l  1 p 4 9 ]
 "15
-[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+[v ___xxtofl@sign sign `uc  1 a 1 17 ]
 "44
 } 0
 "43 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fltol.c
@@ -1357,28 +1377,28 @@ EVENT_HELD 2
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 {
-[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
-[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
+[v ___fleq@ff1 ff1 `d  1 p 4 23 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 27 ]
 "12
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
-[v ___fldiv@grs grs `ul  1 a 4 34 ]
+[v ___fldiv@grs grs `ul  1 a 4 43 ]
 "22
-[v ___fldiv@rem rem `ul  1 a 4 27 ]
+[v ___fldiv@rem rem `ul  1 a 4 36 ]
 "20
-[v ___fldiv@new_exp new_exp `i  1 a 2 32 ]
+[v ___fldiv@new_exp new_exp `i  1 a 2 41 ]
 "19
-[v ___fldiv@aexp aexp `uc  1 a 1 39 ]
+[v ___fldiv@aexp aexp `uc  1 a 1 48 ]
 "18
-[v ___fldiv@bexp bexp `uc  1 a 1 38 ]
+[v ___fldiv@bexp bexp `uc  1 a 1 47 ]
 "16
-[v ___fldiv@sign sign `uc  1 a 1 31 ]
+[v ___fldiv@sign sign `uc  1 a 1 40 ]
 "8
-[v ___fldiv@a a `d  1 p 4 14 ]
-[v ___fldiv@b b `d  1 p 4 18 ]
+[v ___fldiv@a a `d  1 p 4 23 ]
+[v ___fldiv@b b `d  1 p 4 27 ]
 "185
 } 0
 "60 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
@@ -1435,17 +1455,17 @@ EVENT_HELD 2
 "8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S2379 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2384 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2384 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S2387 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2379 1 fAsBytes 4 0 `S2384 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S2387  1 a 4 49 ]
+[s S2389 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S2392 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2384 1 fAsBytes 4 0 `S2389 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2392  1 a 4 49 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 44 ]
-[s S2456 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2461 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2459 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2456 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S2459  1 a 2 53 ]
+[u S2464 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2461 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2464  1 a 2 53 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 48 ]
 "11

@@ -11,7 +11,7 @@
 #include "buttons.h"
 
 enum menu{DMXADR, BEAT, PATTERN}; 
-int currentState = 2;
+int currentState = 0;
 bool firstMsg = true;
 
 void menuButtons() {
@@ -35,7 +35,7 @@ void cycleColors() {
     if (time - lastTimeCycle < cycleSpeed)
         return;
     lastTimeCycle = time;
-    numControl_Set(&cycleSpeed, 100, 1);
+    numControl_Set(&cycleSpeed, 100, 1, 1);
     if(hueValCycle == 360) {
         hueValCycle = 0;
     } else {
@@ -48,10 +48,13 @@ void cycleColors() {
 
 static time_t lastTimePulse = 0;
 float fadeTime = 0;
+int pulseSpeed = 400;
 int hueValPulse = 0;
 struct HSL pulseColor = {0, 1, .5};
 void pulseColors() {
-    if(fadeTime == -PULSE_SPEED/10) {
+    numControl_Set(&pulseSpeed, 600, 100, 10);
+
+    if(fadeTime == -pulseSpeed/10) {
         //make a new pulse
         if(hueValPulse == 360) {
             hueValPulse = 0;
@@ -60,9 +63,9 @@ void pulseColors() {
         }
         pulseColor.H = hueValPulse;
         pulseColor.L = 1;
-        fadeTime = PULSE_SPEED/2;
+        fadeTime = pulseSpeed/2;
     } else if(fadeTime > 0) {
-        pulseColor.L = fadeTime/(PULSE_SPEED);
+        pulseColor.L = fadeTime/(pulseSpeed);
         fadeTime -= 1;
     } else {
         fadeTime -= 1;
@@ -75,10 +78,10 @@ void pulseColors() {
 void MENU_task() {
     if(isDMXOn()) {
         LED_DMX();
-        numControl_Set(&address, 512, 1);
+        numControl_Set(&address, 512, 1, 1);
     } else {
         menuButtons();
-        if(currentState == 0) {
+        if(currentState == 2) {
             TM1650_enable(false);
             LED_Beat();
             BEAT_task();
@@ -92,7 +95,7 @@ void MENU_task() {
                 firstMsg = false;
             }
             pulseColors();
-        } else if (currentState == 2) {
+        } else if (currentState == 0) {
             if(firstMsg) {
                 TM1650_enable(true);
                 TM1650_setDigit(0, 'C', 0);
