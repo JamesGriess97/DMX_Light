@@ -64,7 +64,7 @@ channel_DAC1_Output 61
 channel_FVR_Buffer1 62
 channel_FVR_Buffer2 63
 ]
-"16 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
+"19 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
 [e E74 . `uc
 STATE_UNPRESSED 0
 STATE_PRESSED 1
@@ -75,6 +75,16 @@ EVENT_PRESSED 1
 EVENT_HELD 2
 ]
 "58 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
+[e E42 . `uc
+STATE_UNPRESSED 0
+STATE_PRESSED 1
+]
+[e E37 . `uc
+EVENT_IDLE 0
+EVENT_PRESSED 1
+EVENT_HELD 2
+]
+"57 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dispIncrement.c
 [e E42 . `uc
 STATE_UNPRESSED 0
 STATE_PRESSED 1
@@ -138,6 +148,12 @@ EVENT_HELD 2
 [v _address_dec address_dec `(v  1 e 1 0 ]
 "51
 [v _adrControl_DMX adrControl_DMX `(v  1 e 1 0 ]
+"17 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dispIncrement.c
+[v _increment increment `(v  1 e 1 0 ]
+"31
+[v _decrement decrement `(v  1 e 1 0 ]
+"48
+[v _dispInc dispInc `(v  1 e 1 0 ]
 "13 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
 [v _DMX_ISR DMX_ISR `(v  1 e 1 0 ]
 "38
@@ -234,13 +250,13 @@ EVENT_HELD 2
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 "138
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
-"15 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
+"18 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
 [v _menuButtons menuButtons `(v  1 e 1 0 ]
-"27
+"31
 [v _cycleColors cycleColors `(v  1 e 1 0 ]
-"47
+"53
 [v _pulseColors pulseColors `(v  1 e 1 0 ]
-"71
+"74
 [v _MENU_task MENU_task `(v  1 e 1 0 ]
 "18 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _writeData writeData `(v  1 e 1 0 ]
@@ -928,7 +944,9 @@ EVENT_HELD 2
 [v _address address `us  1 e 2 0 ]
 "46
 [v controller@lastTime lastTime `us  1 s 2 lastTime ]
-"47
+"43 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dispIncrement.c
+[v dispIncrement@lastTime lastTime `us  1 s 2 lastTime ]
+"44
 [v _lastActiveTime lastActiveTime `us  1 e 2 0 ]
 "7 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
 [v _dmxPointer dmxPointer `i  1 e 2 0 ]
@@ -1007,17 +1025,19 @@ EVENT_HELD 2
 [v _p_i2c1_current p_i2c1_current `*.5VES573  1 s 1 p_i2c1_current ]
 "59 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/tmr0.c
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"13 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
+"15 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
 [v _currentState currentState `i  1 e 2 0 ]
-"25
+"28
 [v _lastTimeCycle lastTimeCycle `us  1 s 2 lastTimeCycle ]
-"26
+"29
 [v _hueValCycle hueValCycle `i  1 e 2 0 ]
-"44
+"30
+[v _cycleSpeed cycleSpeed `i  1 e 2 0 ]
+"50
 [v _fadeTime fadeTime `f  1 e 4 0 ]
-"45
+"51
 [v _hueValPulse hueValPulse `i  1 e 2 0 ]
-"46
+"52
 [v _pulseColor pulseColor `S1879  1 e 10 0 ]
 "6 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _isOn isOn `a  1 s 1 isOn ]
@@ -1108,36 +1128,63 @@ EVENT_HELD 2
 {
 "119
 } 0
-"71 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
+"74 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
 [v _MENU_task MENU_task `(v  1 e 1 0 ]
 {
-"98
+"101
 } 0
-"47
+"53
 [v _pulseColors pulseColors `(v  1 e 1 0 ]
 {
-"66
+"72
 } 0
-"15
+"18
 [v _menuButtons menuButtons `(v  1 e 1 0 ]
 {
-"23
+"26
 } 0
 "60 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
 [v _isDMXOn isDMXOn `(a  1 e 1 0 ]
 {
 "62
 } 0
-"27 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
+"31 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
 [v _cycleColors cycleColors `(v  1 e 1 0 ]
 {
 [s S1879 HSL 10 `i 1 H 2 0 `f 1 S 4 2 `f 1 L 4 6 ]
-"39
+"45
 [v cycleColors@color color `S1879  1 a 10 62 ]
-"28
+"33
 [v cycleColors@time time `us  1 a 2 60 ]
 "38
-[v cycleColors@F104 F104 `S1879  1 s 10 F104 ]
+[v cycleColors@adr adr `VEi  1 a 2 72 ]
+"44
+[v cycleColors@F108 F108 `S1879  1 s 10 F108 ]
+"47
+} 0
+"48 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dispIncrement.c
+[v _dispInc dispInc `(v  1 e 1 0 ]
+{
+"51
+[v dispInc@time time `us  1 a 2 46 ]
+"49
+[v dispInc@foo foo `*.39VEi  1 a 2 44 ]
+"50
+[v dispInc@doo doo `VEi  1 a 2 42 ]
+"48
+[v dispInc@val val `*.39i  1 p 2 38 ]
+"71
+} 0
+"17
+[v _increment increment `(v  1 e 1 0 ]
+{
+[v increment@val val `*.39i  1 p 2 34 ]
+"26
+} 0
+"31
+[v _decrement decrement `(v  1 e 1 0 ]
+{
+[v decrement@val val `*.39i  1 p 2 34 ]
 "41
 } 0
 "51 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
@@ -1414,17 +1461,17 @@ EVENT_HELD 2
 "8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S2361 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2400 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2366 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S2369 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2361 1 fAsBytes 4 0 `S2366 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S2369  1 a 4 49 ]
+[s S2405 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S2408 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2400 1 fAsBytes 4 0 `S2405 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2408  1 a 4 49 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 44 ]
-[s S2438 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2477 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2441 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2438 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S2441  1 a 2 53 ]
+[u S2480 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2477 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2480  1 a 2 53 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 48 ]
 "11

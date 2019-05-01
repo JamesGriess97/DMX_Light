@@ -1,5 +1,6 @@
 #define CYCLE_SPEED 20
 #define PULSE_SPEED 400
+#define SCROLL_SPEED 35
 
 #include "led.h"
 #include "beat.h"
@@ -8,10 +9,12 @@
 #include "clock.h"
 #include "tm1650.h"
 #include "buttons.h"
+#include "dispIncrement.h"
 
 enum menu{DMXADR, BEAT, PATTERN}; 
-int currentState = 0;
+int currentState = 2;
   
+
 void menuButtons() {
     if (BUTTONS_isClicked(menu)) {
         if(currentState == 2) {
@@ -24,13 +27,16 @@ void menuButtons() {
 
 static time_t lastTimeCycle = 0;
 int hueValCycle = 0;
+int cycleSpeed = 20;
 void cycleColors() {
+    
     time_t time = CLOCK_getTime();
 
-    if (time - lastTimeCycle < CYCLE_SPEED)
+    if (time - lastTimeCycle < cycleSpeed)
         return;
     lastTimeCycle = time;
-    
+    volatile int adr = &cycleSpeed;
+    dispInc(adr);
     if(hueValCycle == 360) {
         hueValCycle = 0;
     } else {
@@ -65,9 +71,6 @@ void pulseColors() {
     LED_setHSL(pulseColor);
 }
 
-static time_t lastTime = 0;
-time_t lastActiveTime;
-
 void MENU_task() {
     if(isDMXOn()) {
         LED_DMX();
@@ -86,11 +89,11 @@ void MENU_task() {
             TM1650_setDigit(3, 'E', 0);
             pulseColors();
         } else if (currentState == 2) {
-            TM1650_enable(true);
-            TM1650_setDigit(0, 'C', 0);
-            TM1650_setDigit(1, 'Y', 0);
-            TM1650_setDigit(2, 'C', 0);
-            TM1650_setDigit(3, 'L', 0);
+            //TM1650_enable(true);
+            //TM1650_setDigit(0, 'C', 0);
+            //TM1650_setDigit(1, 'Y', 0);
+            //TM1650_setDigit(2, 'C', 0);
+            //TM1650_setDigit(3, 'L', 0);
             cycleColors();
         }
 
