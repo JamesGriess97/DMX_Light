@@ -14,10 +14,10 @@ void numControl_init(int *val) {
 /**
  * Increments the address and updates the display
  */
-void increment(int *val)
+void increment(int *val, int max, int min)
 {
-    if(*val == 512) {
-        *val = 1;
+    if(*val == max) {
+        *val = min;
     } else {
         (*val)++;
     }
@@ -27,10 +27,10 @@ void increment(int *val)
 /**
  * Decrements the address and updates the display
  */
-void decrement(int *val) 
+void decrement(int *val, int max, int min) 
 {
-    if(*val == 1) {
-        *val = 512;
+    if(*val == min) {
+        *val = max;
     } else {
         (*val)--;  
     }
@@ -42,7 +42,7 @@ time_t lastActiveTime;
 /**
  * handles number scrolling for DMX input
  */
- void numControl_Set(int *val) {
+ void numControl_Set(int *val, int max, int min) {
     time_t time = CLOCK_getTime();
 
     if (time - lastTime < SCROLL_SPEED)
@@ -50,11 +50,11 @@ time_t lastActiveTime;
     lastTime = time;
     
     if (BUTTONS_isClicked(up)) {
-        increment(val);
+        increment(val, max, min);
         lastActiveTime = time;
         TM1650_enable(true);
     } else if (BUTTONS_isClicked(down)) {
-        decrement(val);
+        decrement(val, max, min);
         lastActiveTime = time;
         TM1650_enable(true);
     } else {
@@ -64,3 +64,7 @@ time_t lastActiveTime;
         }
     }
 }
+ 
+ void numControl_resetTimer() {
+     lastActiveTime = CLOCK_getTime();
+ }

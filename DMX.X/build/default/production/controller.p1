@@ -7,13 +7,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
 "52 controller.c
 [; ;controller.c: 52:     if (BUTTONS_isClicked(up)) {
-[c E44 0 1 .. ]
-[n E44 . STATE_UNPRESSED STATE_PRESSED  ]
-[c E39 0 1 2 .. ]
-[n E39 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
+[c E47 0 1 .. ]
+[n E47 . STATE_UNPRESSED STATE_PRESSED  ]
+[c E42 0 1 2 .. ]
+[n E42 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
 "27 ./buttons.h
 [; ;./buttons.h: 27:     typedef struct {
-[s S1 `*Vuc 1 `uc 1 `E44 1 `E44 1 `E39 1 `us 1 ]
+[s S1 `*Vuc 1 `uc 1 `E47 1 `E47 1 `E42 1 `us 1 ]
 [n S1 . port pin state lastState event pressTime ]
 "41
 [; ;./buttons.h: 41:     int BUTTONS_isClicked(button_t*);
@@ -42,25 +42,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 4 ]
 }
 "17
-[; ;controller.c: 17: void increment(int *val)
-[v _increment `(v ~T0 @X0 1 ef1`*i ]
+[; ;controller.c: 17: void increment(int *val, int max, int min)
+[v _increment `(v ~T0 @X0 1 ef3`*i`i`i ]
 "18
 [; ;controller.c: 18: {
 {
 [e :U _increment ]
 "17
-[; ;controller.c: 17: void increment(int *val)
+[; ;controller.c: 17: void increment(int *val, int max, int min)
 [v _val `*i ~T0 @X0 1 r1 ]
+[v _max `i ~T0 @X0 1 r2 ]
+[v _min `i ~T0 @X0 1 r3 ]
 "18
 [; ;controller.c: 18: {
 [f ]
 "19
-[; ;controller.c: 19:     if(*val == 512) {
-[e $ ! == *U _val -> 512 `i 6  ]
+[; ;controller.c: 19:     if(*val == max) {
+[e $ ! == *U _val _max 6  ]
 {
 "20
-[; ;controller.c: 20:         *val = 1;
-[e = *U _val -> 1 `i ]
+[; ;controller.c: 20:         *val = min;
+[e = *U _val _min ]
 "21
 [; ;controller.c: 21:     } else {
 }
@@ -82,25 +84,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 5 ]
 }
 "30
-[; ;controller.c: 30: void decrement(int *val)
-[v _decrement `(v ~T0 @X0 1 ef1`*i ]
+[; ;controller.c: 30: void decrement(int *val, int max, int min)
+[v _decrement `(v ~T0 @X0 1 ef3`*i`i`i ]
 "31
 [; ;controller.c: 31: {
 {
 [e :U _decrement ]
 "30
-[; ;controller.c: 30: void decrement(int *val)
+[; ;controller.c: 30: void decrement(int *val, int max, int min)
 [v _val `*i ~T0 @X0 1 r1 ]
+[v _max `i ~T0 @X0 1 r2 ]
+[v _min `i ~T0 @X0 1 r3 ]
 "31
 [; ;controller.c: 31: {
 [f ]
 "32
-[; ;controller.c: 32:     if(*val == 1) {
-[e $ ! == *U _val -> 1 `i 9  ]
+[; ;controller.c: 32:     if(*val == min) {
+[e $ ! == *U _val _min 9  ]
 {
 "33
-[; ;controller.c: 33:         *val = 512;
-[e = *U _val -> 512 `i ]
+[; ;controller.c: 33:         *val = max;
+[e = *U _val _max ]
 "34
 [; ;controller.c: 34:     } else {
 }
@@ -131,11 +135,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;controller.c: 41: time_t lastActiveTime;
 [v _lastActiveTime `us ~T0 @X0 1 e ]
 "45
-[; ;controller.c: 45:  void numControl_Set(int *val) {
-[v _numControl_Set `(v ~T0 @X0 1 ef1`*i ]
+[; ;controller.c: 45:  void numControl_Set(int *val, int max, int min) {
+[v _numControl_Set `(v ~T0 @X0 1 ef3`*i`i`i ]
 {
 [e :U _numControl_Set ]
 [v _val `*i ~T0 @X0 1 r1 ]
+[v _max `i ~T0 @X0 1 r2 ]
+[v _min `i ~T0 @X0 1 r3 ]
 [f ]
 "46
 [; ;controller.c: 46:     time_t time = CLOCK_getTime();
@@ -156,8 +162,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != ( _BUTTONS_isClicked (1 _up -> 0 `i 13  ]
 {
 "53
-[; ;controller.c: 53:         increment(val);
-[e ( _increment (1 _val ]
+[; ;controller.c: 53:         increment(val, max, min);
+[e ( _increment (3 , , _val _max _min ]
 "54
 [; ;controller.c: 54:         lastActiveTime = time;
 [e = _lastActiveTime _time ]
@@ -172,8 +178,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != ( _BUTTONS_isClicked (1 _down -> 0 `i 15  ]
 {
 "57
-[; ;controller.c: 57:         decrement(val);
-[e ( _decrement (1 _val ]
+[; ;controller.c: 57:         decrement(val, max, min);
+[e ( _decrement (3 , , _val _max _min ]
 "58
 [; ;controller.c: 58:         lastActiveTime = time;
 [e = _lastActiveTime _time ]
@@ -208,4 +214,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "66
 [; ;controller.c: 66: }
 [e :UE 11 ]
+}
+"68
+[; ;controller.c: 68:  void numControl_resetTimer() {
+[v _numControl_resetTimer `(v ~T0 @X0 1 ef ]
+{
+[e :U _numControl_resetTimer ]
+[f ]
+"69
+[; ;controller.c: 69:      lastActiveTime = CLOCK_getTime();
+[e = _lastActiveTime ( _CLOCK_getTime ..  ]
+"70
+[; ;controller.c: 70:  }
+[e :UE 18 ]
 }

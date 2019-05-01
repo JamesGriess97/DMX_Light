@@ -13,8 +13,9 @@ extern "C" {
 #endif
 #include <stdint.h>
 
-void numControl_Set(int*);
+void numControl_Set(int*, int, int);
 void numControl_init(int *);
+ void numControl_resetTimer();
 extern uint16_t address;
 #ifdef	__cplusplus
 }

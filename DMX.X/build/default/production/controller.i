@@ -118,8 +118,9 @@ typedef uint32_t uint_fast32_t;
 # 14 "./controller.h" 2
 
 
-void numControl_Set(int*);
+void numControl_Set(int*, int, int);
 void numControl_init(int *);
+ void numControl_resetTimer();
 extern uint16_t address;
 # 3 "controller.c" 2
 
@@ -326,10 +327,10 @@ void numControl_init(int *val) {
 
 
 
-void increment(int *val)
+void increment(int *val, int max, int min)
 {
-    if(*val == 512) {
-        *val = 1;
+    if(*val == max) {
+        *val = min;
     } else {
         (*val)++;
     }
@@ -339,10 +340,10 @@ void increment(int *val)
 
 
 
-void decrement(int *val)
+void decrement(int *val, int max, int min)
 {
-    if(*val == 1) {
-        *val = 512;
+    if(*val == min) {
+        *val = max;
     } else {
         (*val)--;
     }
@@ -354,7 +355,7 @@ time_t lastActiveTime;
 
 
 
- void numControl_Set(int *val) {
+ void numControl_Set(int *val, int max, int min) {
     time_t time = CLOCK_getTime();
 
     if (time - lastTime < 35)
@@ -362,11 +363,11 @@ time_t lastActiveTime;
     lastTime = time;
 
     if (BUTTONS_isClicked(up)) {
-        increment(val);
+        increment(val, max, min);
         lastActiveTime = time;
         TM1650_enable(1);
     } else if (BUTTONS_isClicked(down)) {
-        decrement(val);
+        decrement(val, max, min);
         lastActiveTime = time;
         TM1650_enable(1);
     } else {
@@ -376,3 +377,7 @@ time_t lastActiveTime;
         }
     }
 }
+
+ void numControl_resetTimer() {
+     lastActiveTime = CLOCK_getTime();
+ }

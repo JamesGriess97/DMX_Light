@@ -18431,8 +18431,9 @@ void TM1650_init();
 
 # 1 "./controller.h" 1
 # 16 "./controller.h"
-void numControl_Set(int*);
+void numControl_Set(int*, int, int);
 void numControl_init(int *);
+ void numControl_resetTimer();
 extern uint16_t address;
 # 5 "main.c" 2
 

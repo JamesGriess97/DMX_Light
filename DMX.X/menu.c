@@ -9,14 +9,15 @@
 #include "clock.h"
 #include "tm1650.h"
 #include "buttons.h"
-#include "dispIncrement.h"
 
 enum menu{DMXADR, BEAT, PATTERN}; 
 int currentState = 2;
-  
+bool firstMsg = true;
 
 void menuButtons() {
     if (BUTTONS_isClicked(menu)) {
+        numControl_resetTimer();
+        firstMsg = true;
         if(currentState == 2) {
             currentState = 0;
         } else {
@@ -29,14 +30,12 @@ static time_t lastTimeCycle = 0;
 int hueValCycle = 0;
 int cycleSpeed = 20;
 void cycleColors() {
-    
     time_t time = CLOCK_getTime();
 
     if (time - lastTimeCycle < cycleSpeed)
         return;
     lastTimeCycle = time;
-    volatile int* foo = &cycleSpeed;
-    numControl_Set(foo);
+    numControl_Set(&cycleSpeed, 100, 1);
     if(hueValCycle == 360) {
         hueValCycle = 0;
     } else {
@@ -45,6 +44,7 @@ void cycleColors() {
     struct HSL color = {hueValCycle, 1, .5};
     LED_setHSL(color);
 }
+
 
 static time_t lastTimePulse = 0;
 float fadeTime = 0;
@@ -71,10 +71,11 @@ void pulseColors() {
     LED_setHSL(pulseColor);
 }
 
+
 void MENU_task() {
     if(isDMXOn()) {
         LED_DMX();
-        numControl_Set(&address);
+        numControl_Set(&address, 512, 1);
     } else {
         menuButtons();
         if(currentState == 0) {
@@ -82,18 +83,24 @@ void MENU_task() {
             LED_Beat();
             BEAT_task();
         } else if(currentState == 1) {
-            TM1650_enable(true);
-            TM1650_setDigit(0, 'P', 0);
-            TM1650_setDigit(1, 'L', 0);
-            TM1650_setDigit(2, 'S', 0);
-            TM1650_setDigit(3, 'E', 0);
+            if(firstMsg) {
+                TM1650_enable(true);
+                TM1650_setDigit(0, 'P', 0);
+                TM1650_setDigit(1, 'L', 0);
+                TM1650_setDigit(2, 'S', 0);
+                TM1650_setDigit(3, 'E', 0);
+                firstMsg = false;
+            }
             pulseColors();
         } else if (currentState == 2) {
-            //TM1650_enable(true);
-            //TM1650_setDigit(0, 'C', 0);
-            //TM1650_setDigit(1, 'Y', 0);
-            //TM1650_setDigit(2, 'C', 0);
-            //TM1650_setDigit(3, 'L', 0);
+            if(firstMsg) {
+                TM1650_enable(true);
+                TM1650_setDigit(0, 'C', 0);
+                TM1650_setDigit(1, 'Y', 0);
+                TM1650_setDigit(2, 'C', 0);
+                TM1650_setDigit(3, 'L', 0);
+                firstMsg = false;
+            }
             cycleColors();
         }
 
