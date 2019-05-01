@@ -56,7 +56,25 @@ EVENT_IDLE 0
 EVENT_PRESSED 1
 EVENT_HELD 2
 ]
-"55 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
+"34 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\beat.c
+[e E10870 . `uc
+channel_Vss 59
+channel_Temp_Sensor 60
+channel_DAC1_Output 61
+channel_FVR_Buffer1 62
+channel_FVR_Buffer2 63
+]
+"16 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
+[e E74 . `uc
+STATE_UNPRESSED 0
+STATE_PRESSED 1
+]
+[e E69 . `uc
+EVENT_IDLE 0
+EVENT_PRESSED 1
+EVENT_HELD 2
+]
+"58 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
 [e E42 . `uc
 STATE_UNPRESSED 0
 STATE_PRESSED 1
@@ -66,29 +84,21 @@ EVENT_IDLE 0
 EVENT_PRESSED 1
 EVENT_HELD 2
 ]
-"34 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\beat.c
-[e E10870 . `uc
-channel_Vss 59
-channel_Temp_Sensor 60
-channel_DAC1_Output 61
-channel_FVR_Buffer1 62
-channel_FVR_Buffer2 63
-]
-"27
+"27 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\beat.c
 [v _adcThresholdHandler adcThresholdHandler `(v  1 s 1 adcThresholdHandler ]
 "31
 [v _BEAT_init BEAT_init `(v  1 e 1 0 ]
 "41
 [v _BEAT_detected BEAT_detected `(a  1 e 1 0 ]
-"57
+"59
 [v _BEAT_task BEAT_task `(v  1 e 1 0 ]
 "14 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
 [v _init init `(v  1 s 1 init ]
 "21
 [v _BUTTONS_init BUTTONS_init `(v  1 e 1 0 ]
-"34
+"37
 [v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
-"71
+"74
 [v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -122,33 +132,33 @@ channel_FVR_Buffer2 63
 [v _CLOCK_getTime CLOCK_getTime `(us  1 e 2 0 ]
 "21
 [v _CLOCK_timerCallback CLOCK_timerCallback `(v  1 s 1 CLOCK_timerCallback ]
-"12 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
-[v _CONTROLLER_init CONTROLLER_init `(v  1 e 1 0 ]
-"19
+"19 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
 [v _address_inc address_inc `(v  1 e 1 0 ]
 "34
 [v _address_dec address_dec `(v  1 e 1 0 ]
-"48
-[v _CONTROLLER_task CONTROLLER_task `(v  1 e 1 0 ]
+"51
+[v _adrControl_DMX adrControl_DMX `(v  1 e 1 0 ]
 "13 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
 [v _DMX_ISR DMX_ISR `(v  1 e 1 0 ]
-"35
+"38
 [v _DMX_task DMX_task `(v  1 e 1 0 ]
-"57
+"60
 [v _isDMXOn isDMXOn `(a  1 e 1 0 ]
-"24 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"13 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _initLED initLED `(v  1 e 1 0 ]
-"51
+"40
 [v _HueToRGB HueToRGB `(f  1 e 4 0 ]
-"70
+"59
 [v _LED_setColor LED_setColor `(v  1 e 1 0 ]
-"97
+"86
 [v _LED_setHSL LED_setHSL `(v  1 e 1 0 ]
-"126
+"115
 [v _fadeColor fadeColor `(v  1 e 1 0 ]
-"148
-[v _LED_task LED_task `(v  1 e 1 0 ]
-"15 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
+"139
+[v _LED_DMX LED_DMX `(v  1 e 1 0 ]
+"143
+[v _LED_Beat LED_Beat `(v  1 e 1 0 ]
+"16 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "64 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/adcc.c
 [v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
@@ -224,6 +234,14 @@ channel_FVR_Buffer2 63
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 "138
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"15 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
+[v _menuButtons menuButtons `(v  1 e 1 0 ]
+"27
+[v _cycleColors cycleColors `(v  1 e 1 0 ]
+"47
+[v _pulseColors pulseColors `(v  1 e 1 0 ]
+"71
+[v _MENU_task MENU_task `(v  1 e 1 0 ]
 "18 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _writeData writeData `(v  1 e 1 0 ]
 "24
@@ -258,14 +276,14 @@ channel_FVR_Buffer2 63
 [v _thresholdCount thresholdCount `i  1 s 2 thresholdCount ]
 "25
 [v _lastDetected lastDetected `a  1 s 1 lastDetected ]
-[s S1473 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+[s S1461 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
 "11 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
-[v _buttons buttons `[4]S1473  1 e 32 0 ]
+[v _buttons buttons `[4]S1461  1 e 32 0 ]
 "12
-[v _up up `*.5S1473  1 e 1 0 ]
-[v _down down `*.5S1473  1 e 1 0 ]
-[v _enter enter `*.5S1473  1 e 1 0 ]
-[v _menu menu `*.5S1473  1 e 1 0 ]
+[v _up up `*.6S1461  1 e 1 0 ]
+[v _down down `*.6S1461  1 e 1 0 ]
+[v _enter enter `*.6S1461  1 e 1 0 ]
+[v _menu menu `*.6S1461  1 e 1 0 ]
 "33
 [v _lastTime lastTime `us  1 s 2 lastTime ]
 [s S343 . 1 `uc 1 INTEDG 1 0 :1:0 
@@ -616,12 +634,12 @@ channel_FVR_Buffer2 63
 [v _SSP1CON2bits SSP1CON2bits `VES707  1 e 1 @401 ]
 "6682
 [v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @402 ]
-[s S1627 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S1583 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "10529
-[s S1631 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S1587 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -629,11 +647,11 @@ channel_FVR_Buffer2 63
 `uc 1 CKPS1 1 0 :1:5 
 `uc 1 CKPS2 1 0 :1:6 
 ]
-[s S1639 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S1595 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S1643 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S1599 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -642,105 +660,105 @@ channel_FVR_Buffer2 63
 `uc 1 T2CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S1652 . 1 `S1627 1 . 1 0 `S1631 1 . 1 0 `S1639 1 . 1 0 `S1643 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES1652  1 e 1 @654 ]
+[u S1608 . 1 `S1583 1 . 1 0 `S1587 1 . 1 0 `S1595 1 . 1 0 `S1599 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES1608  1 e 1 @654 ]
 "10767
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @656 ]
 "12081
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @780 ]
 "12101
 [v _CCPR1H CCPR1H `VEuc  1 e 1 @781 ]
-[s S1683 . 1 `uc 1 MODE 1 0 :4:0 
+[s S1639 . 1 `uc 1 MODE 1 0 :4:0 
 `uc 1 FMT 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "12158
-[s S1689 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S1645 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 ]
-[s S1694 . 1 `uc 1 CCP1MODE 1 0 :4:0 
+[s S1650 . 1 `uc 1 CCP1MODE 1 0 :4:0 
 `uc 1 CCP1FMT 1 0 :1:4 
 `uc 1 CCP1OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP1EN 1 0 :1:7 
 ]
-[s S1700 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
+[s S1656 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
 `uc 1 CCP1MODE1 1 0 :1:1 
 `uc 1 CCP1MODE2 1 0 :1:2 
 `uc 1 CCP1MODE3 1 0 :1:3 
 ]
-[s S1705 . 1 `uc 1 . 1 0 :7:0 
+[s S1661 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P1M1 1 0 :1:7 
 ]
-[u S1708 . 1 `S1683 1 . 1 0 `S1689 1 . 1 0 `S1694 1 . 1 0 `S1700 1 . 1 0 `S1705 1 . 1 0 ]
-[v _CCP1CONbits CCP1CONbits `VES1708  1 e 1 @782 ]
+[u S1664 . 1 `S1639 1 . 1 0 `S1645 1 . 1 0 `S1650 1 . 1 0 `S1656 1 . 1 0 `S1661 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES1664  1 e 1 @782 ]
 "12323
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @784 ]
 "12343
 [v _CCPR2H CCPR2H `VEuc  1 e 1 @785 ]
 "12400
-[s S1751 . 1 `uc 1 CCP2MODE 1 0 :4:0 
+[s S1707 . 1 `uc 1 CCP2MODE 1 0 :4:0 
 `uc 1 CCP2FMT 1 0 :1:4 
 `uc 1 CCP2OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP2EN 1 0 :1:7 
 ]
-[s S1757 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
+[s S1713 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
 `uc 1 CCP2MODE1 1 0 :1:1 
 `uc 1 CCP2MODE2 1 0 :1:2 
 `uc 1 CCP2MODE3 1 0 :1:3 
 ]
-[s S1762 . 1 `uc 1 . 1 0 :7:0 
+[s S1718 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P2M1 1 0 :1:7 
 ]
-[u S1765 . 1 `S1683 1 . 1 0 `S1689 1 . 1 0 `S1751 1 . 1 0 `S1757 1 . 1 0 `S1762 1 . 1 0 ]
-[v _CCP2CONbits CCP2CONbits `VES1765  1 e 1 @786 ]
+[u S1721 . 1 `S1639 1 . 1 0 `S1645 1 . 1 0 `S1707 1 . 1 0 `S1713 1 . 1 0 `S1718 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES1721  1 e 1 @786 ]
 "12565
 [v _CCPR3L CCPR3L `VEuc  1 e 1 @788 ]
 "12585
 [v _CCPR3H CCPR3H `VEuc  1 e 1 @789 ]
 "12642
-[s S1808 . 1 `uc 1 CCP3MODE 1 0 :4:0 
+[s S1764 . 1 `uc 1 CCP3MODE 1 0 :4:0 
 `uc 1 CCP3FMT 1 0 :1:4 
 `uc 1 CCP3OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP3EN 1 0 :1:7 
 ]
-[s S1814 . 1 `uc 1 CCP3MODE0 1 0 :1:0 
+[s S1770 . 1 `uc 1 CCP3MODE0 1 0 :1:0 
 `uc 1 CCP3MODE1 1 0 :1:1 
 `uc 1 CCP3MODE2 1 0 :1:2 
 `uc 1 CCP3MODE3 1 0 :1:3 
 ]
-[s S1819 . 1 `uc 1 . 1 0 :7:0 
+[s S1775 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P3M1 1 0 :1:7 
 ]
-[u S1822 . 1 `S1683 1 . 1 0 `S1689 1 . 1 0 `S1808 1 . 1 0 `S1814 1 . 1 0 `S1819 1 . 1 0 ]
-[v _CCP3CONbits CCP3CONbits `VES1822  1 e 1 @790 ]
+[u S1778 . 1 `S1639 1 . 1 0 `S1645 1 . 1 0 `S1764 1 . 1 0 `S1770 1 . 1 0 `S1775 1 . 1 0 ]
+[v _CCP3CONbits CCP3CONbits `VES1778  1 e 1 @790 ]
 "12807
 [v _CCPR4L CCPR4L `VEuc  1 e 1 @792 ]
 "12827
 [v _CCPR4H CCPR4H `VEuc  1 e 1 @793 ]
 "12884
-[s S1865 . 1 `uc 1 CCP4MODE 1 0 :4:0 
+[s S1821 . 1 `uc 1 CCP4MODE 1 0 :4:0 
 `uc 1 CCP4FMT 1 0 :1:4 
 `uc 1 CCP4OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP4EN 1 0 :1:7 
 ]
-[s S1871 . 1 `uc 1 CCP4MODE0 1 0 :1:0 
+[s S1827 . 1 `uc 1 CCP4MODE0 1 0 :1:0 
 `uc 1 CCP4MODE1 1 0 :1:1 
 `uc 1 CCP4MODE2 1 0 :1:2 
 `uc 1 CCP4MODE3 1 0 :1:3 
 ]
-[s S1876 . 1 `uc 1 . 1 0 :7:0 
+[s S1832 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 P4M1 1 0 :1:7 
 ]
-[u S1879 . 1 `S1683 1 . 1 0 `S1689 1 . 1 0 `S1865 1 . 1 0 `S1871 1 . 1 0 `S1876 1 . 1 0 ]
-[v _CCP4CONbits CCP4CONbits `VES1879  1 e 1 @794 ]
+[u S1835 . 1 `S1639 1 . 1 0 `S1645 1 . 1 0 `S1821 1 . 1 0 `S1827 1 . 1 0 `S1832 1 . 1 0 ]
+[v _CCP4CONbits CCP4CONbits `VES1835  1 e 1 @794 ]
 "16651
 [v _TMR0L TMR0L `VEuc  1 e 1 @1436 ]
 "16789
@@ -924,14 +942,14 @@ channel_FVR_Buffer2 63
 [v dmx@lastTime lastTime `us  1 s 2 lastTime ]
 "33
 [v _toggleCheck toggleCheck `a  1 e 1 0 ]
-"121 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"110 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v led@lastTime lastTime `us  1 s 2 lastTime ]
-"123
+"112
 [v _fadeAmmount fadeAmmount `i  1 e 2 0 ]
-[s S1923 HSL 10 `i 1 H 2 0 `f 1 S 4 2 `f 1 L 4 6 ]
-"124
-[v _color color `S1923  1 e 10 0 ]
-"125
+[s S1879 HSL 10 `i 1 H 2 0 `f 1 S 4 2 `f 1 L 4 6 ]
+"113
+[v _color color `S1879  1 e 10 0 ]
+"114
 [v _changeColor changeColor `a  1 e 1 0 ]
 "58 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/adcc.c
 [v _ADCC_ADTI_InterruptHandler ADCC_ADTI_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -989,19 +1007,31 @@ channel_FVR_Buffer2 63
 [v _p_i2c1_current p_i2c1_current `*.5VES573  1 s 1 p_i2c1_current ]
 "59 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/tmr0.c
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
+"13 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
+[v _currentState currentState `i  1 e 2 0 ]
+"25
+[v _lastTimeCycle lastTimeCycle `us  1 s 2 lastTimeCycle ]
+"26
+[v _hueValCycle hueValCycle `i  1 e 2 0 ]
+"44
+[v _fadeTime fadeTime `f  1 e 4 0 ]
+"45
+[v _hueValPulse hueValPulse `i  1 e 2 0 ]
+"46
+[v _pulseColor pulseColor `S1879  1 e 10 0 ]
 "6 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _isOn isOn `a  1 s 1 isOn ]
 "8
 [v _charTable charTable `DC[96]uc  1 e 96 0 ]
-"15 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
+"16 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"52
+"50
 } 0
-"24 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+"13 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
 [v _initLED initLED `(v  1 e 1 0 ]
 {
-"49
+"38
 } 0
 "28 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _TM1650_init TM1650_init `(v  1 e 1 0 ]
@@ -1078,207 +1108,44 @@ channel_FVR_Buffer2 63
 {
 "119
 } 0
-"148 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
-[v _LED_task LED_task `(v  1 e 1 0 ]
+"71 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
+[v _MENU_task MENU_task `(v  1 e 1 0 ]
 {
-"160
+"98
 } 0
-"57 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
+"47
+[v _pulseColors pulseColors `(v  1 e 1 0 ]
+{
+"66
+} 0
+"15
+[v _menuButtons menuButtons `(v  1 e 1 0 ]
+{
+"23
+} 0
+"60 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
 [v _isDMXOn isDMXOn `(a  1 e 1 0 ]
 {
-"59
+"62
 } 0
-"126 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
-[v _fadeColor fadeColor `(v  1 e 1 0 ]
+"27 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\menu.c
+[v _cycleColors cycleColors `(v  1 e 1 0 ]
 {
-"127
-[v fadeColor@time time `us  1 a 2 60 ]
-"145
+[s S1879 HSL 10 `i 1 H 2 0 `f 1 S 4 2 `f 1 L 4 6 ]
+"39
+[v cycleColors@color color `S1879  1 a 10 62 ]
+"28
+[v cycleColors@time time `us  1 a 2 60 ]
+"38
+[v cycleColors@F104 F104 `S1879  1 s 10 F104 ]
+"41
 } 0
-"97
-[v _LED_setHSL LED_setHSL `(v  1 e 1 0 ]
+"51 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
+[v _adrControl_DMX adrControl_DMX `(v  1 e 1 0 ]
 {
-"106
-[v LED_setHSL@v2 v2 `f  1 a 4 51 ]
-"107
-[v LED_setHSL@hue hue `f  1 a 4 47 ]
-"106
-[v LED_setHSL@v1 v1 `f  1 a 4 43 ]
-[s S1927 RGB 3 `uc 1 R 1 0 `uc 1 G 1 1 `uc 1 B 1 2 ]
-"98
-[v LED_setHSL@rgb rgb `S1927  1 a 3 55 ]
-[s S1923 HSL 10 `i 1 H 2 0 `f 1 S 4 2 `f 1 L 4 6 ]
-"97
-[v LED_setHSL@hsl hsl `S1923  1 p 10 15 ]
-"118
-} 0
-"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-{
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-"13
-[v ___xxtofl@arg arg `ul  1 a 4 10 ]
-"12
-[v ___xxtofl@exp exp `uc  1 a 1 9 ]
-"10
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 0 ]
-"15
-[v ___xxtofl@sign sign `uc  1 a 1 8 ]
-"44
-} 0
-"43 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
-{
-"45
-[v ___fltol@exp1 exp1 `uc  1 a 1 14 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 13 ]
-"43
-[v ___fltol@f1 f1 `d  1 p 4 4 ]
-"70
-} 0
-"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
-[v ___fleq __fleq `(b  1 e 0 0 ]
-{
-[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
-[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
-"12
-} 0
-"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
-{
-"21
-[v ___fldiv@grs grs `ul  1 a 4 34 ]
-"22
-[v ___fldiv@rem rem `ul  1 a 4 27 ]
-"20
-[v ___fldiv@new_exp new_exp `i  1 a 2 32 ]
-"19
-[v ___fldiv@aexp aexp `uc  1 a 1 39 ]
-"18
-[v ___fldiv@bexp bexp `uc  1 a 1 38 ]
-"16
-[v ___fldiv@sign sign `uc  1 a 1 31 ]
-"8
-[v ___fldiv@a a `d  1 p 4 14 ]
-[v ___fldiv@b b `d  1 p 4 18 ]
-"185
-} 0
-"70 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
-[v _LED_setColor LED_setColor `(v  1 e 1 0 ]
-{
-[v LED_setColor@red red `uc  1 a 1 wreg ]
-"82
-[v LED_setColor@lo4 lo4 `i  1 a 2 19 ]
-"80
-[v LED_setColor@lo3 lo3 `i  1 a 2 15 ]
-"78
-[v LED_setColor@lo2 lo2 `i  1 a 2 11 ]
-"76
-[v LED_setColor@lo1 lo1 `i  1 a 2 7 ]
-"70
-[v LED_setColor@red red `uc  1 a 1 wreg ]
-[v LED_setColor@green green `uc  1 p 1 0 ]
-[v LED_setColor@white white `uc  1 p 1 1 ]
-[v LED_setColor@blue blue `uc  1 p 1 2 ]
-[v LED_setColor@red red `uc  1 a 1 21 ]
-"95
-} 0
-"51
-[v _HueToRGB HueToRGB `(f  1 e 4 0 ]
-{
-[v HueToRGB@v1 v1 `f  1 p 4 67 ]
-[v HueToRGB@v2 v2 `f  1 p 4 71 ]
-[v HueToRGB@vH vH `f  1 p 4 75 ]
-"68
-} 0
-"242 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
-[v ___flsub __flsub `(d  1 e 4 0 ]
-{
-[v ___flsub@a a `d  1 p 4 55 ]
-[v ___flsub@b b `d  1 p 4 59 ]
-"250
-} 0
-"10
-[v ___fladd __fladd `(d  1 e 4 0 ]
-{
-"17
-[v ___fladd@grs grs `uc  1 a 1 28 ]
-"15
-[v ___fladd@bexp bexp `uc  1 a 1 27 ]
-"16
-[v ___fladd@aexp aexp `uc  1 a 1 26 ]
-"13
-[v ___fladd@signs signs `uc  1 a 1 25 ]
-"10
-[v ___fladd@b b `d  1 p 4 9 ]
-[v ___fladd@a a `d  1 p 4 13 ]
-"237
-} 0
-"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S2310 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S2315 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S2318 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2310 1 fAsBytes 4 0 `S2315 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S2318  1 a 4 49 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 44 ]
-[s S2387 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S2390 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2387 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S2390  1 a 2 53 ]
-"10
-[v ___flmul@bexp bexp `uc  1 a 1 48 ]
-"11
-[v ___flmul@aexp aexp `uc  1 a 1 43 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 42 ]
-"8
-[v ___flmul@b b `d  1 p 4 29 ]
-[v ___flmul@a a `d  1 p 4 33 ]
-"205
-} 0
-"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
-[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-{
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-"6
-[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
-"5
-[v __Umul8_16@product product `ui  1 a 2 4 ]
-"4
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
-"60
-} 0
-"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\flge.c
-[v ___flge __flge `(b  1 e 0 0 ]
-{
-[v ___flge@ff1 ff1 `d  1 p 4 55 ]
-[v ___flge@ff2 ff2 `d  1 p 4 59 ]
-"19
-} 0
-"41 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\beat.c
-[v _BEAT_detected BEAT_detected `(a  1 e 1 0 ]
-{
-"47
-} 0
-"35 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
-[v _DMX_task DMX_task `(v  1 e 1 0 ]
-{
-"36
-[v DMX_task@time time `us  1 a 2 4 ]
-"55
-} 0
-"48 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
-[v _CONTROLLER_task CONTROLLER_task `(v  1 e 1 0 ]
-{
-"49
-[v CONTROLLER_task@time time `us  1 a 2 36 ]
-"69
+"52
+[v adrControl_DMX@time time `us  1 a 2 36 ]
+"72
 } 0
 "19
 [v _address_inc address_inc `(v  1 e 1 0 ]
@@ -1289,28 +1156,6 @@ channel_FVR_Buffer2 63
 [v _address_dec address_dec `(v  1 e 1 0 ]
 {
 "44
-} 0
-"56 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
-[v _TM1650_enable TM1650_enable `(v  1 e 1 0 ]
-{
-[v TM1650_enable@enable enable `a  1 a 1 wreg ]
-[v TM1650_enable@enable enable `a  1 a 1 wreg ]
-[v TM1650_enable@enable enable `a  1 a 1 20 ]
-"64
-} 0
-"71 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
-[v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
-{
-[s S1473 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
-[v BUTTONS_isClicked@button button `*.5S1473  1 a 1 wreg ]
-[v BUTTONS_isClicked@button button `*.5S1473  1 a 1 wreg ]
-[v BUTTONS_isClicked@button button `*.5S1473  1 a 1 3 ]
-"79
-} 0
-"12 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\controller.c
-[v _CONTROLLER_init CONTROLLER_init `(v  1 e 1 0 ]
-{
-"14
 } 0
 "36 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\tm1650.c
 [v _TM1650_fastPrintNum TM1650_fastPrintNum `(v  1 e 1 0 ]
@@ -1342,6 +1187,14 @@ channel_FVR_Buffer2 63
 [v TM1650_setDigit@dp dp `i  1 p 2 21 ]
 [v TM1650_setDigit@digit digit `uc  1 a 1 26 ]
 "26
+} 0
+"56
+[v _TM1650_enable TM1650_enable `(v  1 e 1 0 ]
+{
+[v TM1650_enable@enable enable `a  1 a 1 wreg ]
+[v TM1650_enable@enable enable `a  1 a 1 wreg ]
+[v TM1650_enable@enable enable `a  1 a 1 20 ]
+"64
 } 0
 "18
 [v _writeData writeData `(v  1 e 1 0 ]
@@ -1412,51 +1265,209 @@ channel_FVR_Buffer2 63
 {
 "652
 } 0
-"9 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
-[v _CLOCK_init CLOCK_init `(v  1 e 1 0 ]
+"74 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[v _BUTTONS_isClicked BUTTONS_isClicked `(i  1 e 2 0 ]
 {
+[s S1461 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+[v BUTTONS_isClicked@button button `*.6S1461  1 a 1 wreg ]
+[v BUTTONS_isClicked@button button `*.6S1461  1 a 1 wreg ]
+[v BUTTONS_isClicked@button button `*.6S1461  1 a 1 3 ]
+"82
+} 0
+"139 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+[v _LED_DMX LED_DMX `(v  1 e 1 0 ]
+{
+"141
+} 0
+"143
+[v _LED_Beat LED_Beat `(v  1 e 1 0 ]
+{
+"150
+} 0
+"115
+[v _fadeColor fadeColor `(v  1 e 1 0 ]
+{
+"116
+[v fadeColor@time time `us  1 a 2 60 ]
+"134
+} 0
+"86
+[v _LED_setHSL LED_setHSL `(v  1 e 1 0 ]
+{
+"95
+[v LED_setHSL@v2 v2 `f  1 a 4 51 ]
+"96
+[v LED_setHSL@hue hue `f  1 a 4 47 ]
+"95
+[v LED_setHSL@v1 v1 `f  1 a 4 43 ]
+[s S1883 RGB 3 `uc 1 R 1 0 `uc 1 G 1 1 `uc 1 B 1 2 ]
+"87
+[v LED_setHSL@rgb rgb `S1883  1 a 3 55 ]
+[s S1879 HSL 10 `i 1 H 2 0 `f 1 S 4 2 `f 1 L 4 6 ]
+"86
+[v LED_setHSL@hsl hsl `S1879  1 p 10 15 ]
+"107
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
 "15
-} 0
-"134 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/tmr0.c
-[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
-{
-[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
-"136
-} 0
-"34 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
-[v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
-{
-[s S1473 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
-"45
-[v BUTTONS_task@btn btn `*.5S1473  1 a 1 8 ]
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
 "44
-[v BUTTONS_task@i i `uc  1 a 1 5 ]
-"35
-[v BUTTONS_task@time time `us  1 a 2 6 ]
-"69
 } 0
+"43 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 14 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 13 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 4 ]
+"70
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+{
+[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
+"12
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
 "21
-[v _BUTTONS_init BUTTONS_init `(v  1 e 1 0 ]
-{
-"31
+[v ___fldiv@grs grs `ul  1 a 4 34 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 27 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 32 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 39 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 38 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 31 ]
+"8
+[v ___fldiv@a a `d  1 p 4 14 ]
+[v ___fldiv@b b `d  1 p 4 18 ]
+"185
 } 0
-"14
-[v _init init `(v  1 s 1 init ]
+"59 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\led.c
+[v _LED_setColor LED_setColor `(v  1 e 1 0 ]
 {
-[s S1473 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
-[v init@btn btn `*.5S1473  1 a 1 wreg ]
-[v init@btn btn `*.5S1473  1 a 1 wreg ]
-[v init@port port `*.39VEuc  1 p 2 0 ]
-[v init@pin pin `uc  1 p 1 2 ]
-[v init@btn btn `*.5S1473  1 a 1 4 ]
+[v LED_setColor@red red `uc  1 a 1 wreg ]
+"71
+[v LED_setColor@lo4 lo4 `i  1 a 2 19 ]
+"69
+[v LED_setColor@lo3 lo3 `i  1 a 2 15 ]
+"67
+[v LED_setColor@lo2 lo2 `i  1 a 2 11 ]
+"65
+[v LED_setColor@lo1 lo1 `i  1 a 2 7 ]
+"59
+[v LED_setColor@red red `uc  1 a 1 wreg ]
+[v LED_setColor@green green `uc  1 p 1 0 ]
+[v LED_setColor@white white `uc  1 p 1 1 ]
+[v LED_setColor@blue blue `uc  1 p 1 2 ]
+[v LED_setColor@red red `uc  1 a 1 21 ]
+"84
+} 0
+"40
+[v _HueToRGB HueToRGB `(f  1 e 4 0 ]
+{
+[v HueToRGB@v1 v1 `f  1 p 4 67 ]
+[v HueToRGB@v2 v2 `f  1 p 4 71 ]
+[v HueToRGB@vH vH `f  1 p 4 75 ]
+"57
+} 0
+"242 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@a a `d  1 p 4 55 ]
+[v ___flsub@b b `d  1 p 4 59 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 28 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 27 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 26 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 25 ]
+"10
+[v ___fladd@b b `d  1 p 4 9 ]
+[v ___fladd@a a `d  1 p 4 13 ]
+"237
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S2361 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S2366 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S2369 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2361 1 fAsBytes 4 0 `S2366 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2369  1 a 4 49 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 44 ]
+[s S2438 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S2441 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S2438 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2441  1 a 2 53 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 48 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 43 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 42 ]
+"8
+[v ___flmul@b b `d  1 p 4 29 ]
+[v ___flmul@a a `d  1 p 4 33 ]
+"205
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 4 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
+"60
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 55 ]
+[v ___flge@ff2 ff2 `d  1 p 4 59 ]
 "19
 } 0
-"57 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\beat.c
+"41 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\beat.c
+[v _BEAT_detected BEAT_detected `(a  1 e 1 0 ]
+{
+"47
+} 0
+"59
 [v _BEAT_task BEAT_task `(v  1 e 1 0 ]
 {
-"89
+"91
 [v BEAT_task@offset offset `us  1 a 2 10 ]
-"118
+"120
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
@@ -1475,9 +1486,55 @@ channel_FVR_Buffer2 63
 {
 "72
 } 0
+"38 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\dmx.c
+[v _DMX_task DMX_task `(v  1 e 1 0 ]
+{
+"39
+[v DMX_task@time time `us  1 a 2 4 ]
+"58
+} 0
+"9 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
+[v _CLOCK_init CLOCK_init `(v  1 e 1 0 ]
+{
+"15
+} 0
+"134 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\mcc_generated_files/tmr0.c
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"136
+} 0
+"37 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[v _BUTTONS_task BUTTONS_task `(v  1 e 1 0 ]
+{
+[s S1461 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+"48
+[v BUTTONS_task@btn btn `*.6S1461  1 a 1 8 ]
+"47
+[v BUTTONS_task@i i `uc  1 a 1 5 ]
+"38
+[v BUTTONS_task@time time `us  1 a 2 6 ]
+"72
+} 0
 "17 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\clock.c
 [v _CLOCK_getTime CLOCK_getTime `(us  1 e 2 0 ]
 {
+"19
+} 0
+"21 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\buttons.c
+[v _BUTTONS_init BUTTONS_init `(v  1 e 1 0 ]
+{
+"31
+} 0
+"14
+[v _init init `(v  1 s 1 init ]
+{
+[s S1461 . 8 `*.39VEuc 1 port 2 0 `uc 1 pin 1 2 `E10870 1 state 1 3 `E10870 1 lastState 1 4 `E10865 1 event 1 5 `us 1 pressTime 2 6 ]
+[v init@btn btn `*.6S1461  1 a 1 wreg ]
+[v init@btn btn `*.6S1461  1 a 1 wreg ]
+[v init@port port `*.39VEuc  1 p 2 0 ]
+[v init@pin pin `uc  1 p 1 2 ]
+[v init@btn btn `*.6S1461  1 a 1 4 ]
 "19
 } 0
 "31 C:\Users\User\MPLABXProjects\DMX_Light\DMX.X\beat.c

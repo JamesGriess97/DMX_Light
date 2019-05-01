@@ -53,7 +53,9 @@ void putch(char character) {
     TXREG = character;
 }
 
-
+/**
+ * handles beat detection
+ */
 void BEAT_task() {
     // don't bother doing anything if the display is on
     if (TM1650_isEnabled())

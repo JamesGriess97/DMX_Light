@@ -1454,28 +1454,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _lastTime
 -> -> 0 `i `us
 ]
-"34
-[; ;buttons.c: 34: void BUTTONS_task() {
+"37
+[; ;buttons.c: 37: void BUTTONS_task() {
 [v _BUTTONS_task `(v ~T0 @X0 1 ef ]
 {
 [e :U _BUTTONS_task ]
 [f ]
-"35
-[; ;buttons.c: 35:     time_t time = CLOCK_getTime();
+"38
+[; ;buttons.c: 38:     time_t time = CLOCK_getTime();
 [v _time `us ~T0 @X0 1 a ]
 [e = _time ( _CLOCK_getTime ..  ]
-"38
-[; ;buttons.c: 38:     if (time - lastTime < 50)
+"41
+[; ;buttons.c: 41:     if (time - lastTime < 50)
 [e $ ! < - -> _time `ui -> _lastTime `ui -> -> 50 `i `ui 1517  ]
-"39
-[; ;buttons.c: 39:         return;
+"42
+[; ;buttons.c: 42:         return;
 [e $UE 1516  ]
 [e :U 1517 ]
-"41
-[; ;buttons.c: 41:     lastTime = time;
-[e = _lastTime _time ]
 "44
-[; ;buttons.c: 44:     for (uint8_t i = 0; i < 4; i++) {
+[; ;buttons.c: 44:     lastTime = time;
+[e = _lastTime _time ]
+"47
+[; ;buttons.c: 47:     for (uint8_t i = 0; i < 4; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -1483,127 +1483,127 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1519  ]
 [e :U 1518 ]
 {
-"45
-[; ;buttons.c: 45:         button_t* btn = buttons + i;
+"48
+[; ;buttons.c: 48:         button_t* btn = buttons + i;
 [v _btn `*S1513 ~T0 @X0 1 a ]
 [e = _btn + &U _buttons * -> -> _i `i `x -> -> # *U &U _buttons `i `x ]
-"48
-[; ;buttons.c: 48:         if ((*(btn->port) & (1 << (btn->pin))) == 0) {
+"51
+[; ;buttons.c: 51:         if ((*(btn->port) & (1 << (btn->pin))) == 0) {
 [e $ ! == & -> *U . *U _btn 0 `i << -> 1 `i -> . *U _btn 1 `i -> 0 `i 1521  ]
 {
-"49
-[; ;buttons.c: 49:             btn->state = STATE_PRESSED;
+"52
+[; ;buttons.c: 52:             btn->state = STATE_PRESSED;
 [e = . *U _btn 2 . `E10870 1 ]
-"50
-[; ;buttons.c: 50:         } else {
+"53
+[; ;buttons.c: 53:         } else {
 }
 [e $U 1522  ]
 [e :U 1521 ]
 {
-"51
-[; ;buttons.c: 51:             btn->state = STATE_UNPRESSED;
+"54
+[; ;buttons.c: 54:             btn->state = STATE_UNPRESSED;
 [e = . *U _btn 2 . `E10870 0 ]
-"52
-[; ;buttons.c: 52:         }
+"55
+[; ;buttons.c: 55:         }
 }
 [e :U 1522 ]
-"54
-[; ;buttons.c: 54:         if (btn->state == STATE_PRESSED && btn->lastState == STATE_UNPRESSED) {
+"57
+[; ;buttons.c: 57:         if (btn->state == STATE_PRESSED && btn->lastState == STATE_UNPRESSED) {
 [e $ ! && == -> . *U _btn 2 `ui -> . `E10870 1 `ui == -> . *U _btn 3 `ui -> . `E10870 0 `ui 1523  ]
 {
-"56
-[; ;buttons.c: 56:             btn->event = EVENT_PRESSED;
+"59
+[; ;buttons.c: 59:             btn->event = EVENT_PRESSED;
 [e = . *U _btn 4 . `E10865 1 ]
-"57
-[; ;buttons.c: 57:             btn->pressTime = time;
+"60
+[; ;buttons.c: 60:             btn->pressTime = time;
 [e = . *U _btn 5 _time ]
-"58
-[; ;buttons.c: 58:         } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_PRESSED){
+"61
+[; ;buttons.c: 61:         } else if (btn->state == STATE_PRESSED && btn->lastState == STATE_PRESSED){
 }
 [e $U 1524  ]
 [e :U 1523 ]
 [e $ ! && == -> . *U _btn 2 `ui -> . `E10870 1 `ui == -> . *U _btn 3 `ui -> . `E10870 1 `ui 1525  ]
 {
-"60
-[; ;buttons.c: 60:             if(time - btn->pressTime > 500) {
+"63
+[; ;buttons.c: 63:             if(time - btn->pressTime > 500) {
 [e $ ! > - -> _time `ui -> . *U _btn 5 `ui -> -> 500 `i `ui 1526  ]
 {
-"61
-[; ;buttons.c: 61:                 btn->event = EVENT_HELD;
+"64
+[; ;buttons.c: 64:                 btn->event = EVENT_HELD;
 [e = . *U _btn 4 . `E10865 2 ]
-"62
-[; ;buttons.c: 62:             }
+"65
+[; ;buttons.c: 65:             }
 }
 [e :U 1526 ]
-"63
-[; ;buttons.c: 63:         } else if (btn->state == STATE_UNPRESSED && btn->lastState == STATE_PRESSED){
+"66
+[; ;buttons.c: 66:         } else if (btn->state == STATE_UNPRESSED && btn->lastState == STATE_PRESSED){
 }
 [e $U 1527  ]
 [e :U 1525 ]
 [e $ ! && == -> . *U _btn 2 `ui -> . `E10870 0 `ui == -> . *U _btn 3 `ui -> . `E10870 1 `ui 1528  ]
 {
-"64
-[; ;buttons.c: 64:             btn->event = EVENT_IDLE;
+"67
+[; ;buttons.c: 67:             btn->event = EVENT_IDLE;
 [e = . *U _btn 4 . `E10865 0 ]
-"65
-[; ;buttons.c: 65:         }
+"68
+[; ;buttons.c: 68:         }
 }
 [e :U 1528 ]
 [e :U 1527 ]
 [e :U 1524 ]
-"67
-[; ;buttons.c: 67:         btn->lastState = btn->state;
+"70
+[; ;buttons.c: 70:         btn->lastState = btn->state;
 [e = . *U _btn 3 . *U _btn 2 ]
-"68
-[; ;buttons.c: 68:     }
+"71
+[; ;buttons.c: 71:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 4 `i 1518  ]
 [e :U 1519 ]
 }
-"69
-[; ;buttons.c: 69: }
+"72
+[; ;buttons.c: 72: }
 [e :UE 1516 ]
 }
-"71
-[; ;buttons.c: 71: int BUTTONS_isClicked(button_t* button) {
+"74
+[; ;buttons.c: 74: int BUTTONS_isClicked(button_t* button) {
 [v _BUTTONS_isClicked `(i ~T0 @X0 1 ef1`*S1513 ]
 {
 [e :U _BUTTONS_isClicked ]
 [v _button `*S1513 ~T0 @X0 1 r1 ]
 [f ]
-"72
-[; ;buttons.c: 72:     if (button->event == EVENT_PRESSED) {
+"75
+[; ;buttons.c: 75:     if (button->event == EVENT_PRESSED) {
 [e $ ! == -> . *U _button 4 `ui -> . `E10865 1 `ui 1530  ]
 {
-"73
-[; ;buttons.c: 73:         button->event = EVENT_IDLE;
+"76
+[; ;buttons.c: 76:         button->event = EVENT_IDLE;
 [e = . *U _button 4 . `E10865 0 ]
-"74
-[; ;buttons.c: 74:         return 1;
+"77
+[; ;buttons.c: 77:         return 1;
 [e ) -> 1 `i ]
 [e $UE 1529  ]
-"75
-[; ;buttons.c: 75:     } else if(button->event == EVENT_HELD) {
+"78
+[; ;buttons.c: 78:     } else if(button->event == EVENT_HELD) {
 }
 [e $U 1531  ]
 [e :U 1530 ]
 [e $ ! == -> . *U _button 4 `ui -> . `E10865 2 `ui 1532  ]
 {
-"76
-[; ;buttons.c: 76:         return 1;
+"79
+[; ;buttons.c: 79:         return 1;
 [e ) -> 1 `i ]
 [e $UE 1529  ]
-"77
-[; ;buttons.c: 77:     }
+"80
+[; ;buttons.c: 80:     }
 }
 [e :U 1532 ]
 [e :U 1531 ]
-"78
-[; ;buttons.c: 78:     return 0;
+"81
+[; ;buttons.c: 81:     return 0;
 [e ) -> 0 `i ]
 [e $UE 1529  ]
-"79
-[; ;buttons.c: 79: }
+"82
+[; ;buttons.c: 82: }
 [e :UE 1529 ]
 }

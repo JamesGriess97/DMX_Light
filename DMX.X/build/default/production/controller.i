@@ -118,8 +118,8 @@ typedef uint32_t uint_fast32_t;
 # 14 "./controller.h" 2
 
 
-void CONTROLLER_task();
-void CONTROLLER_init();
+void adrControl_DMX();
+void adrControl_init();
 extern uint16_t address;
 # 3 "controller.c" 2
 
@@ -321,7 +321,7 @@ char *tempnam(const char *, const char *);
 
 uint16_t address = 1;
 
-void CONTROLLER_init() {
+void adrControl_init() {
     TM1650_fastPrintNum(address);
 }
 
@@ -357,7 +357,10 @@ void address_dec()
 
 static time_t lastTime = 0;
 time_t lastActiveTime;
-void CONTROLLER_task() {
+
+
+
+ void adrControl_DMX() {
     time_t time = CLOCK_getTime();
 
     if (time - lastTime < 35)

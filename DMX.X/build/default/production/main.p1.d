@@ -14,4 +14,5 @@ buttons.h  \
 controller.h  \
 beat.h  \
 dmx.h  \
-led.h 
+led.h  \
+menu.h 

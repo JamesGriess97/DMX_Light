@@ -21,7 +21,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 ./dmx.h
 [; ;./dmx.h: 15: void DMX_ISR();
 [v _DMX_ISR `(v ~T0 @X0 0 e? ]
-[v F11076 `(v ~T0 @X0 0 tf ]
+[v F11088 `(v ~T0 @X0 0 tf ]
 "419 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 419:     struct {
 [s S31 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -43,30 +43,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39 ./buttons.h
 [; ;./buttons.h: 39:     void BUTTONS_init();
 [v _BUTTONS_init `(v ~T0 @X0 0 e? ]
-"17 ./controller.h
-[; ;./controller.h: 17: void CONTROLLER_init();
-[v _CONTROLLER_init `(v ~T0 @X0 0 e? ]
-"16 ./led.h
-[; ;./led.h: 16: void initLED();
+"29 ./led.h
+[; ;./led.h: 29: void initLED();
 [v _initLED `(v ~T0 @X0 0 e? ]
 "13 ./beat.h
 [; ;./beat.h: 13: void BEAT_init();
 [v _BEAT_init `(v ~T0 @X0 0 e? ]
-"15
-[; ;./beat.h: 15: void BEAT_task();
-[v _BEAT_task `(v ~T0 @X0 0 e? ]
-"17 ./led.h
-[; ;./led.h: 17: void LED_task();
-[v _LED_task `(v ~T0 @X0 0 e? ]
-"40 ./buttons.h
-[; ;./buttons.h: 40:     void BUTTONS_task();
-[v _BUTTONS_task `(v ~T0 @X0 0 e? ]
-"16 ./controller.h
-[; ;./controller.h: 16: void CONTROLLER_task();
-[v _CONTROLLER_task `(v ~T0 @X0 0 e? ]
+"15 ./menu.h
+[; ;./menu.h: 15: void MENU_task();
+[v _MENU_task `(v ~T0 @X0 0 e? ]
 "17 ./dmx.h
 [; ;./dmx.h: 17: void DMX_task();
 [v _DMX_task `(v ~T0 @X0 0 e? ]
+"40 ./buttons.h
+[; ;./buttons.h: 40:     void BUTTONS_task();
+[v _BUTTONS_task `(v ~T0 @X0 0 e? ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1436,45 +1427,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/eusart1.h: 96: void (*EUSART1_RxDefaultInterruptHandler)(void);
 [v _EUSART1_RxDefaultInterruptHandler `*F10991 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"15 main.c
-[; ;main.c: 15: void main(void) {
+"16 main.c
+[; ;main.c: 16: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"17
-[; ;main.c: 17:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
 "18
-[; ;main.c: 18:     CLOCK_init();
-[e ( _CLOCK_init ..  ]
+[; ;main.c: 18:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "19
-[; ;main.c: 19:     TRISB6 = 0;
-[e = _TRISB6 -> -> 0 `i `b ]
+[; ;main.c: 19:     CLOCK_init();
+[e ( _CLOCK_init ..  ]
 "20
-[; ;main.c: 20:     LATB6 = 0;
-[e = _LATB6 -> -> 0 `i `b ]
+[; ;main.c: 20:     TRISB6 = 0;
+[e = _TRISB6 -> -> 0 `i `b ]
 "21
-[; ;main.c: 21:     EUSART1_SetRxInterruptHandler(DMX_ISR);
-[e ( _EUSART1_SetRxInterruptHandler (1 -> &U _DMX_ISR `*F11076 ]
-"27
-[; ;main.c: 27:     (INTCONbits.GIE = 1);
+[; ;main.c: 21:     LATB6 = 0;
+[e = _LATB6 -> -> 0 `i `b ]
+"22
+[; ;main.c: 22:     EUSART1_SetRxInterruptHandler(DMX_ISR);
+[e ( _EUSART1_SetRxInterruptHandler (1 -> &U _DMX_ISR `*F11088 ]
+"28
+[; ;main.c: 28:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"30
-[; ;main.c: 30:     (INTCONbits.PEIE = 1);
+"31
+[; ;main.c: 31:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"37
-[; ;main.c: 37:      _delay((unsigned long)((500)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "38
-[; ;main.c: 38:     TM1650_init();
-[e ( _TM1650_init ..  ]
+[; ;main.c: 38:      _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "39
-[; ;main.c: 39:     BUTTONS_init();
-[e ( _BUTTONS_init ..  ]
+[; ;main.c: 39:     TM1650_init();
+[e ( _TM1650_init ..  ]
 "40
-[; ;main.c: 40:     CONTROLLER_init();
-[e ( _CONTROLLER_init ..  ]
+[; ;main.c: 40:     BUTTONS_init();
+[e ( _BUTTONS_init ..  ]
 "41
 [; ;main.c: 41:     initLED();
 [e ( _initLED ..  ]
@@ -1483,30 +1471,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _BEAT_init ..  ]
 "44
 [; ;main.c: 44:     while (1) {
-[e :U 1519 ]
+[e :U 1521 ]
 {
 "46
-[; ;main.c: 46:         BEAT_task();
-[e ( _BEAT_task ..  ]
+[; ;main.c: 46:         MENU_task();
+[e ( _MENU_task ..  ]
 "47
-[; ;main.c: 47:         LED_task();
-[e ( _LED_task ..  ]
+[; ;main.c: 47:         DMX_task();
+[e ( _DMX_task ..  ]
 "48
 [; ;main.c: 48:         BUTTONS_task();
 [e ( _BUTTONS_task ..  ]
 "49
-[; ;main.c: 49:         CONTROLLER_task();
-[e ( _CONTROLLER_task ..  ]
-"50
-[; ;main.c: 50:         DMX_task();
-[e ( _DMX_task ..  ]
-"51
-[; ;main.c: 51:     }
+[; ;main.c: 49:     }
 }
-[e :U 1518 ]
-[e $U 1519  ]
 [e :U 1520 ]
-"52
-[; ;main.c: 52: }
-[e :UE 1517 ]
+[e $U 1521  ]
+[e :U 1522 ]
+"50
+[; ;main.c: 50: }
+[e :UE 1519 ]
 }

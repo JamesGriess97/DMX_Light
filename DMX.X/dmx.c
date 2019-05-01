@@ -32,6 +32,9 @@ void DMX_ISR(void) {
 static time_t lastTime = 0;
 bool toggleCheck = false;
 
+/**
+ * handles DMX data input
+ */
 void DMX_task() {
     time_t time = CLOCK_getTime();
     if (time - lastTime < DMX_CHECK_TIME)

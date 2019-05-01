@@ -9,7 +9,7 @@
 
 uint16_t address = 1;
 
-void CONTROLLER_init() {
+void adrControl_init() {
     TM1650_fastPrintNum(address);
 }
 
@@ -45,7 +45,10 @@ void address_dec()
 
 static time_t lastTime = 0;
 time_t lastActiveTime;
-void CONTROLLER_task() {
+/**
+ * handles number scrolling for DMX input
+ */
+ void adrControl_DMX() {
     time_t time = CLOCK_getTime();
 
     if (time - lastTime < SCROLL_SPEED)

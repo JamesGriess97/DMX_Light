@@ -31,6 +31,9 @@ void BUTTONS_init() {
 }
 
 static time_t lastTime = 0;
+/**
+ * Handles button input
+ */
 void BUTTONS_task() {
     time_t time = CLOCK_getTime();
 

@@ -9,17 +9,6 @@
 #include "clock.h"
 #include "dmx.h"
 
-struct RGB {
-	uint8_t R;
-	uint8_t G;
-	uint8_t B;
-};
-
-struct HSL {
-	int H;
-	float S;
-	float L;
-};
 
 void initLED() {
     //WPUB7 = 1;
@@ -144,18 +133,19 @@ void fadeColor() {
     LED_setHSL(color);
 }
 
+/**
+ * Sets the light to DMX mode or other mode
+ */
+void LED_DMX() {
+    LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
+}
 
-void LED_task() {
-    if(isDMXOn()) {
-        LED_setColor(dmxData[address+1], dmxData[address+2], dmxData[address+3], dmxData[address+4]);
-    } else {
-        if(BEAT_detected()) {
-            changeColor = true;
-        }
-        if(changeColor) {
-            fadeColor();
-        }
-        
+void LED_Beat() {
+    if(BEAT_detected()) {
+        changeColor = true;
+    }
+    if(changeColor) {
+        fadeColor();
     }
 }
 

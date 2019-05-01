@@ -5,8 +5,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14 ./clock.h
 [; ;./clock.h: 14: time_t CLOCK_getTime();
 [v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
-"55 controller.c
-[; ;controller.c: 55:     if (BUTTONS_isClicked(up)) {
+"58 controller.c
+[; ;controller.c: 58:     if (BUTTONS_isClicked(up)) {
 [c E42 0 1 .. ]
 [n E42 . STATE_UNPRESSED STATE_PRESSED  ]
 [c E37 0 1 2 .. ]
@@ -34,10 +34,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 1 `i `us
 ]
 "12
-[; ;controller.c: 12: void CONTROLLER_init() {
-[v _CONTROLLER_init `(v ~T0 @X0 1 ef ]
+[; ;controller.c: 12: void adrControl_init() {
+[v _adrControl_init `(v ~T0 @X0 1 ef ]
 {
-[e :U _CONTROLLER_init ]
+[e :U _adrControl_init ]
 [f ]
 "13
 [; ;controller.c: 13:     TM1650_fastPrintNum(address);
@@ -125,81 +125,81 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47
 [; ;controller.c: 47: time_t lastActiveTime;
 [v _lastActiveTime `us ~T0 @X0 1 e ]
-"48
-[; ;controller.c: 48: void CONTROLLER_task() {
-[v _CONTROLLER_task `(v ~T0 @X0 1 ef ]
+"51
+[; ;controller.c: 51:  void adrControl_DMX() {
+[v _adrControl_DMX `(v ~T0 @X0 1 ef ]
 {
-[e :U _CONTROLLER_task ]
+[e :U _adrControl_DMX ]
 [f ]
-"49
-[; ;controller.c: 49:     time_t time = CLOCK_getTime();
+"52
+[; ;controller.c: 52:     time_t time = CLOCK_getTime();
 [v _time `us ~T0 @X0 1 a ]
 [e = _time ( _CLOCK_getTime ..  ]
-"51
-[; ;controller.c: 51:     if (time - lastTime < 35)
+"54
+[; ;controller.c: 54:     if (time - lastTime < 35)
 [e $ ! < - -> _time `ui -> _lastTime `ui -> -> 35 `i `ui 12  ]
-"52
-[; ;controller.c: 52:         return;
+"55
+[; ;controller.c: 55:         return;
 [e $UE 11  ]
 [e :U 12 ]
-"53
-[; ;controller.c: 53:     lastTime = time;
+"56
+[; ;controller.c: 56:     lastTime = time;
 [e = _lastTime _time ]
-"55
-[; ;controller.c: 55:     if (BUTTONS_isClicked(up)) {
+"58
+[; ;controller.c: 58:     if (BUTTONS_isClicked(up)) {
 [e $ ! != ( _BUTTONS_isClicked (1 _up -> 0 `i 13  ]
 {
-"56
-[; ;controller.c: 56:         address_inc();
-[e ( _address_inc ..  ]
-"57
-[; ;controller.c: 57:         lastActiveTime = time;
-[e = _lastActiveTime _time ]
-"58
-[; ;controller.c: 58:         TM1650_enable(1);
-[e ( _TM1650_enable (1 -> -> 1 `i `a ]
 "59
-[; ;controller.c: 59:     } else if (BUTTONS_isClicked(down)) {
+[; ;controller.c: 59:         address_inc();
+[e ( _address_inc ..  ]
+"60
+[; ;controller.c: 60:         lastActiveTime = time;
+[e = _lastActiveTime _time ]
+"61
+[; ;controller.c: 61:         TM1650_enable(1);
+[e ( _TM1650_enable (1 -> -> 1 `i `a ]
+"62
+[; ;controller.c: 62:     } else if (BUTTONS_isClicked(down)) {
 }
 [e $U 14  ]
 [e :U 13 ]
 [e $ ! != ( _BUTTONS_isClicked (1 _down -> 0 `i 15  ]
 {
-"60
-[; ;controller.c: 60:         address_dec();
-[e ( _address_dec ..  ]
-"61
-[; ;controller.c: 61:         lastActiveTime = time;
-[e = _lastActiveTime _time ]
-"62
-[; ;controller.c: 62:         TM1650_enable(1);
-[e ( _TM1650_enable (1 -> -> 1 `i `a ]
 "63
-[; ;controller.c: 63:     } else {
+[; ;controller.c: 63:         address_dec();
+[e ( _address_dec ..  ]
+"64
+[; ;controller.c: 64:         lastActiveTime = time;
+[e = _lastActiveTime _time ]
+"65
+[; ;controller.c: 65:         TM1650_enable(1);
+[e ( _TM1650_enable (1 -> -> 1 `i `a ]
+"66
+[; ;controller.c: 66:     } else {
 }
 [e $U 16  ]
 [e :U 15 ]
 {
-"64
-[; ;controller.c: 64:         if (CLOCK_getTime() - lastActiveTime >= 5000) {
+"67
+[; ;controller.c: 67:         if (CLOCK_getTime() - lastActiveTime >= 5000) {
 [e $ ! >= - -> ( _CLOCK_getTime ..  `ui -> _lastActiveTime `ui -> -> 5000 `i `ui 17  ]
 {
-"65
-[; ;controller.c: 65:             TM1650_enable(0);
+"68
+[; ;controller.c: 68:             TM1650_enable(0);
 [e ( _TM1650_enable (1 -> -> 0 `i `a ]
-"66
-[; ;controller.c: 66:             lastActiveTime = CLOCK_getTime() - 5001;
+"69
+[; ;controller.c: 69:             lastActiveTime = CLOCK_getTime() - 5001;
 [e = _lastActiveTime -> - -> ( _CLOCK_getTime ..  `ui -> -> 5001 `i `ui `us ]
-"67
-[; ;controller.c: 67:         }
+"70
+[; ;controller.c: 70:         }
 }
 [e :U 17 ]
-"68
-[; ;controller.c: 68:     }
+"71
+[; ;controller.c: 71:     }
 }
 [e :U 16 ]
 [e :U 14 ]
-"69
-[; ;controller.c: 69: }
+"72
+[; ;controller.c: 72: }
 [e :UE 11 ]
 }

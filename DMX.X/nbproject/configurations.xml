@@ -42,17 +42,17 @@
       <itemPath>tm1650.h</itemPath>
       <itemPath>tm1650.c</itemPath>
       <itemPath>buttons.c</itemPath>
-      <itemPath>controller.c</itemPath>
       <itemPath>buttons.h</itemPath>
-      <itemPath>controller.h</itemPath>
       <itemPath>beat.c</itemPath>
       <itemPath>beat.h</itemPath>
       <itemPath>dmx.h</itemPath>
       <itemPath>dmx.c</itemPath>
       <itemPath>led.c</itemPath>
       <itemPath>led.h</itemPath>
-      <itemPath>DMX_Light.h</itemPath>
-      <itemPath>DMX_Light.c</itemPath>
+      <itemPath>menu.c</itemPath>
+      <itemPath>menu.h</itemPath>
+      <itemPath>controller.c</itemPath>
+      <itemPath>controller.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

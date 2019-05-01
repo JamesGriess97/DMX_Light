@@ -18431,8 +18431,8 @@ void TM1650_init();
 
 # 1 "./controller.h" 1
 # 16 "./controller.h"
-void CONTROLLER_task();
-void CONTROLLER_init();
+void adrControl_DMX();
+void adrControl_init();
 extern uint16_t address;
 # 5 "main.c" 2
 
@@ -18451,10 +18451,29 @@ void DMX_task();
 # 7 "main.c" 2
 
 # 1 "./led.h" 1
-# 16 "./led.h"
+# 17 "./led.h"
+struct RGB {
+ uint8_t R;
+ uint8_t G;
+ uint8_t B;
+};
+
+struct HSL {
+ int H;
+ float S;
+ float L;
+};
+
 void initLED();
-void LED_task();
+void LED_DMX();
+void LED_Beat();
+void LED_setHSL(struct HSL);
 # 8 "main.c" 2
+
+# 1 "./menu.h" 1
+# 15 "./menu.h"
+void MENU_task();
+# 9 "main.c" 2
 
 
 
@@ -18487,16 +18506,13 @@ void main(void) {
      _delay((unsigned long)((500)*(32000000/4000.0)));
     TM1650_init();
     BUTTONS_init();
-    CONTROLLER_init();
     initLED();
     BEAT_init();
 
     while (1) {
 
-        BEAT_task();
-        LED_task();
-        BUTTONS_task();
-        CONTROLLER_task();
+        MENU_task();
         DMX_task();
+        BUTTONS_task();
     }
 }

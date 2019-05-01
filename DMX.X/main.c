@@ -6,6 +6,7 @@
 #include "beat.h"
 #include "dmx.h"
 #include "led.h"
+#include "menu.h"
 
 /*
                          Main application
@@ -37,16 +38,13 @@ void main(void) {
      __delay_ms(500);
     TM1650_init();
     BUTTONS_init();
-    CONTROLLER_init();
     initLED();
     BEAT_init();
 
     while (1) {
         // Add your application code
-        BEAT_task();
-        LED_task();
-        BUTTONS_task();
-        CONTROLLER_task();    
+        MENU_task();
         DMX_task();
+        BUTTONS_task();
     }
 }

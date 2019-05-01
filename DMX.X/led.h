@@ -12,9 +12,24 @@
 extern "C" {
 #endif
 
+#include <stdint.h>
+    
+struct RGB {
+	uint8_t R;
+	uint8_t G;
+	uint8_t B;
+};
+
+struct HSL {
+	int H;
+	float S;
+	float L;
+};
 
 void initLED();
-void LED_task();
+void LED_DMX();
+void LED_Beat();
+void LED_setHSL(struct HSL);
 
 #ifdef	__cplusplus
 }
